@@ -1,0 +1,175 @@
+{
+  "dataset": "ROAD",
+  "generated_at": "2026-08-09T03:27:06.330+00:00",
+  "ground_truth_sha256": "17e00dd85a2a22d08436091ff02a78b9ebf2fbbc08d7c4c603ef98fa8c30d5ae",
+  "nano_run": {
+    "path": "${ROAD_ARTIFACT_ROOT}/runs/road-nano-uniform-24-evaluation-full-v1",
+    "results_sha256": "b2c6bf9a1a20fbd0c2745b3e1ad38a62bd70c9cc5b8fca76e130ccee938dc28d",
+    "usd_per_1000_clips": 0.6863777870811428
+  },
+  "policies": [
+    {
+      "clip_count": 875,
+      "counts": {
+        "abstained_negative": 0,
+        "abstained_positive": 0,
+        "false_negative": 926,
+        "false_positive": 648,
+        "known_pairs": 11314,
+        "true_negative": 7954,
+        "true_positive": 1786
+      },
+      "estimated_usd_per_1000_clips": 0.6863777870811428,
+      "metrics": {
+        "coverage": 1.0,
+        "overall_accuracy": 0.8608803252607389,
+        "precision": 0.733771569433032,
+        "selective_accuracy": 0.8608803252607389,
+        "selective_balanced_accuracy": 0.7916116269866581,
+        "selective_f1": 0.6941313641663428,
+        "selective_mcc": 0.6059162828432544,
+        "selective_recall": 0.6585545722713865,
+        "selective_specificity": 0.9246686817019297,
+        "strict_balanced_accuracy": 0.7916116269866581,
+        "strict_f1": 0.6941313641663428,
+        "strict_recall": 0.6585545722713865,
+        "strict_specificity": 0.9246686817019297
+      },
+      "policy": "nano_only",
+      "routed_clip_count": 0,
+      "routing_fraction": 0.0
+    },
+    {
+      "clip_count": 875,
+      "counts": {
+        "abstained_negative": 0,
+        "abstained_positive": 0,
+        "false_negative": 1004,
+        "false_positive": 431,
+        "known_pairs": 11314,
+        "true_negative": 8171,
+        "true_positive": 1708
+      },
+      "estimated_usd_per_1000_clips": 6.0493684231977936,
+      "metrics": {
+        "coverage": 1.0,
+        "overall_accuracy": 0.8731659890401273,
+        "precision": 0.7985039738195419,
+        "selective_accuracy": 0.8731659890401273,
+        "selective_balanced_accuracy": 0.7898444417467572,
+        "selective_f1": 0.7041847041847041,
+        "selective_mcc": 0.6320204126056536,
+        "selective_recall": 0.6297935103244838,
+        "selective_specificity": 0.9498953731690305,
+        "strict_balanced_accuracy": 0.7898444417467572,
+        "strict_f1": 0.7041847041847041,
+        "strict_recall": 0.6297935103244838,
+        "strict_specificity": 0.9498953731690305
+      },
+      "policy": "nano_positive_count_at_least_3",
+      "routed_clip_count": 348,
+      "routing_fraction": 0.3977142857142857
+    },
+    {
+      "clip_count": 875,
+      "counts": {
+        "abstained_negative": 0,
+        "abstained_positive": 0,
+        "false_negative": 982,
+        "false_positive": 477,
+        "known_pairs": 11314,
+        "true_negative": 8125,
+        "true_positive": 1730
+      },
+      "estimated_usd_per_1000_clips": 3.876432562012599,
+      "metrics": {
+        "coverage": 1.0,
+        "overall_accuracy": 0.8710447233515998,
+        "precision": 0.7838695061169008,
+        "selective_accuracy": 0.8710447233515998,
+        "selective_balanced_accuracy": 0.7912266921529534,
+        "selective_f1": 0.7033949989835332,
+        "selective_mcc": 0.6275045798748143,
+        "selective_recall": 0.637905604719764,
+        "selective_specificity": 0.9445477795861428,
+        "strict_balanced_accuracy": 0.7912266921529534,
+        "strict_f1": 0.7033949989835332,
+        "strict_recall": 0.637905604719764,
+        "strict_specificity": 0.9445477795861428
+      },
+      "policy": "nano_pedestrian_positive",
+      "routed_clip_count": 207,
+      "routing_fraction": 0.23657142857142857
+    },
+    {
+      "clip_count": 875,
+      "counts": {
+        "abstained_negative": 0,
+        "abstained_positive": 0,
+        "false_negative": 928,
+        "false_positive": 364,
+        "known_pairs": 11314,
+        "true_negative": 8238,
+        "true_positive": 1784
+      },
+      "estimated_usd_per_1000_clips": 10.009967829755206,
+      "metrics": {
+        "coverage": 1.0,
+        "overall_accuracy": 0.8858051971009369,
+        "precision": 0.8305400372439479,
+        "selective_accuracy": 0.8858051971009369,
+        "selective_balanced_accuracy": 0.8077506843095418,
+        "selective_f1": 0.7341563786008231,
+        "selective_mcc": 0.6699872216669097,
+        "selective_recall": 0.6578171091445427,
+        "selective_specificity": 0.9576842594745408,
+        "strict_balanced_accuracy": 0.8077506843095418,
+        "strict_f1": 0.7341563786008231,
+        "strict_recall": 0.6578171091445427,
+        "strict_specificity": 0.9576842594745408
+      },
+      "policy": "nano_complex_temporal_positive",
+      "routed_clip_count": 605,
+      "routing_fraction": 0.6914285714285714
+    },
+    {
+      "clip_count": 875,
+      "counts": {
+        "abstained_negative": 0,
+        "abstained_positive": 0,
+        "false_negative": 861,
+        "false_positive": 408,
+        "known_pairs": 11314,
+        "true_negative": 8194,
+        "true_positive": 1851
+      },
+      "estimated_usd_per_1000_clips": 13.484531053454223,
+      "metrics": {
+        "coverage": 1.0,
+        "overall_accuracy": 0.8878380767191091,
+        "precision": 0.8193891102257637,
+        "selective_accuracy": 0.8878380767191091,
+        "selective_balanced_accuracy": 0.8175456469271398,
+        "selective_f1": 0.7447193723596862,
+        "selective_mcc": 0.6782321586501792,
+        "selective_recall": 0.6825221238938053,
+        "selective_specificity": 0.9525691699604744,
+        "strict_balanced_accuracy": 0.8175456469271398,
+        "strict_f1": 0.7447193723596862,
+        "strict_recall": 0.6825221238938053,
+        "strict_specificity": 0.9525691699604744
+      },
+      "policy": "super_all",
+      "routed_clip_count": 875,
+      "routing_fraction": 1.0
+    }
+  ],
+  "routing_constraint": "Routing uses Nano predictions only; ROAD ground truth is used only for post-hoc evaluation",
+  "schema_version": 1,
+  "split": "evaluation",
+  "super_run": {
+    "path": "${ROAD_ARTIFACT_ROOT}/runs/road-super-evaluation-full-v1",
+    "results_sha256": "f630a7fd743f81dead2bce5a11d72227a4cd8918146251b92e8713f3df18d7d1",
+    "usd_per_1000_clips": 13.484531053454223
+  }
+}

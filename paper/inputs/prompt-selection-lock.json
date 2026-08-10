@@ -1,0 +1,60 @@
+{
+  "candidate_benchmark_keys": [
+    "road-super-prompt-hybrid-development-v1::road-adaptive-24-hybrid-core-v1",
+    "road-super-prompt-hybrid-development-v1::road-adaptive-24-hybrid-temporal-v1",
+    "road-super-prompt-hybrid-development-v1::road-adaptive-24-hybrid-f1-v1"
+  ],
+  "generated_at": "2026-08-09T14:31:46.471+00:00",
+  "inputs": {
+    "candidate_pairwise_summary_sha256": "a7edf7eaf9b622ff0e1a53144c82781d439cb75fdc0253716b50720849a40521",
+    "development_summary_sha256": "b23f8a90dc153ed0ca29ee4b8a8f31fb037f1b565d57558344f251c7070641e3",
+    "ground_truth_sha256": "17e00dd85a2a22d08436091ff02a78b9ebf2fbbc08d7c4c603ef98fa8c30d5ae",
+    "prompt_audit_sha256": "bec5d83758bb2019214212077869d0d02bc5d9242838e3008346e1bd6387624d"
+  },
+  "parsimony_comparison": {
+    "raw_best_benchmark_key": "road-super-prompt-hybrid-development-v1::road-adaptive-24-hybrid-temporal-v1",
+    "raw_best_minus_reference_f1_ci95": [
+      -0.004508499630450746,
+      0.006327683615819146
+    ],
+    "reason": "The direct paired 95% CI includes zero; select the shorter prompt.",
+    "reference_benchmark_key": "road-super-prompt-hybrid-development-v1::road-adaptive-24-hybrid-core-v1"
+  },
+  "raw_f1_best_benchmark_key": "road-super-prompt-hybrid-development-v1::road-adaptive-24-hybrid-temporal-v1",
+  "schema_version": 1,
+  "selected": {
+    "benchmark_key": "road-super-prompt-hybrid-development-v1::road-adaptive-24-hybrid-core-v1",
+    "detailed_tags": [
+      "ego_turn_left",
+      "ego_lane_change",
+      "car_stopped",
+      "pedestrian_waiting_to_cross",
+      "motorcycle_present"
+    ],
+    "metrics": {
+      "coverage": 1.0,
+      "precision": 0.8558139534883721,
+      "selective_mcc": 0.6945011573877329,
+      "strict_f1": 0.7556468172484601,
+      "strict_recall": 0.6764705882352942
+    },
+    "paired_f1_delta_ci95": [
+      0.013751451800232295,
+      0.04455603379563189
+    ],
+    "profile": "road-adaptive-24-hybrid-core-v1",
+    "prompt_criteria_words": 603,
+    "prompt_tokens_mean": 8347.739644970414,
+    "prompt_variant": "road-reasoned-hybrid-core-v1"
+  },
+  "selection_rule": {
+    "evaluation_split_used": false,
+    "primary": "micro.strict_f1",
+    "tie_breakers": [
+      "paired 95% CI statistical equivalence",
+      "micro.selective_mcc",
+      "shorter prompt criteria"
+    ]
+  },
+  "selection_split": "development"
+}

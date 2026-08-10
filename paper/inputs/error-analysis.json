@@ -1,0 +1,391 @@
+{
+  "classification_note": "temporally_covered_miss includes model, visual resolution, occlusion, and prompt/representation failures; it does not isolate model capacity",
+  "dataset": "ROAD",
+  "generated_at": "2026-08-09T03:27:05.267+00:00",
+  "ground_truth_path": "${ROAD_ARTIFACT_ROOT}/road-gt-v2/road-ground-truth.jsonl",
+  "ground_truth_sha256": "17e00dd85a2a22d08436091ff02a78b9ebf2fbbc08d7c4c603ef98fa8c30d5ae",
+  "profiles": [
+    {
+      "benchmark_key": "road-nano-evaluation-full-v1::road-adaptive-24-reasoned",
+      "clip_count": 875,
+      "counts": {
+        "false_positive": 728,
+        "temporally_covered_miss": 866,
+        "temporally_sparse_miss": 38,
+        "true_negative": 7874,
+        "true_positive": 1808,
+        "unknown_ground_truth": 61
+      },
+      "false_negative_count": 904,
+      "model": "nvidia/Cosmos3-Nano",
+      "profile": "road-adaptive-24-reasoned",
+      "run_id": "road-nano-evaluation-full-v1",
+      "sampling_or_sparse_fraction": 0.0420353982300885,
+      "tags": [
+        {
+          "false_negative_count": 48,
+          "sampling_or_sparse_fraction": 0.041666666666666664,
+          "tag": "car_braking",
+          "temporal_sampling_miss": 0,
+          "temporally_covered_miss": 46,
+          "temporally_sparse_miss": 2
+        },
+        {
+          "false_negative_count": 143,
+          "sampling_or_sparse_fraction": 0.06293706293706294,
+          "tag": "car_stopped",
+          "temporal_sampling_miss": 0,
+          "temporally_covered_miss": 134,
+          "temporally_sparse_miss": 9
+        },
+        {
+          "false_negative_count": 186,
+          "sampling_or_sparse_fraction": 0.0,
+          "tag": "cyclist_present",
+          "temporal_sampling_miss": 0,
+          "temporally_covered_miss": 186,
+          "temporally_sparse_miss": 0
+        },
+        {
+          "false_negative_count": 17,
+          "sampling_or_sparse_fraction": 0.0,
+          "tag": "ego_lane_change",
+          "temporal_sampling_miss": 0,
+          "temporally_covered_miss": 17,
+          "temporally_sparse_miss": 0
+        },
+        {
+          "false_negative_count": 67,
+          "sampling_or_sparse_fraction": 0.05970149253731343,
+          "tag": "ego_moving",
+          "temporal_sampling_miss": 0,
+          "temporally_covered_miss": 63,
+          "temporally_sparse_miss": 4
+        },
+        {
+          "false_negative_count": 20,
+          "sampling_or_sparse_fraction": 0.35,
+          "tag": "ego_stopped",
+          "temporal_sampling_miss": 0,
+          "temporally_covered_miss": 13,
+          "temporally_sparse_miss": 7
+        },
+        {
+          "false_negative_count": 7,
+          "sampling_or_sparse_fraction": 0.0,
+          "tag": "ego_turn_left",
+          "temporal_sampling_miss": 0,
+          "temporally_covered_miss": 7,
+          "temporally_sparse_miss": 0
+        },
+        {
+          "false_negative_count": 19,
+          "sampling_or_sparse_fraction": 0.05263157894736842,
+          "tag": "ego_turn_right",
+          "temporal_sampling_miss": 0,
+          "temporally_covered_miss": 18,
+          "temporally_sparse_miss": 1
+        },
+        {
+          "false_negative_count": 11,
+          "sampling_or_sparse_fraction": 0.0,
+          "tag": "motorcycle_present",
+          "temporal_sampling_miss": 0,
+          "temporally_covered_miss": 11,
+          "temporally_sparse_miss": 0
+        },
+        {
+          "false_negative_count": 134,
+          "sampling_or_sparse_fraction": 0.06716417910447761,
+          "tag": "pedestrian_crossing",
+          "temporal_sampling_miss": 0,
+          "temporally_covered_miss": 125,
+          "temporally_sparse_miss": 9
+        },
+        {
+          "false_negative_count": 87,
+          "sampling_or_sparse_fraction": 0.06896551724137931,
+          "tag": "pedestrian_waiting_to_cross",
+          "temporal_sampling_miss": 0,
+          "temporally_covered_miss": 81,
+          "temporally_sparse_miss": 6
+        },
+        {
+          "false_negative_count": 92,
+          "sampling_or_sparse_fraction": 0.0,
+          "tag": "traffic_light_green",
+          "temporal_sampling_miss": 0,
+          "temporally_covered_miss": 92,
+          "temporally_sparse_miss": 0
+        },
+        {
+          "false_negative_count": 73,
+          "sampling_or_sparse_fraction": 0.0,
+          "tag": "traffic_light_red",
+          "temporal_sampling_miss": 0,
+          "temporally_covered_miss": 73,
+          "temporally_sparse_miss": 0
+        }
+      ],
+      "temporal_sampling_miss": 0,
+      "temporally_covered_miss": 866,
+      "temporally_sparse_miss": 38
+    },
+    {
+      "benchmark_key": "road-nano-uniform-24-evaluation-full-v1::road-uniform-24-reasoned",
+      "clip_count": 875,
+      "counts": {
+        "false_positive": 648,
+        "temporal_sampling_miss": 5,
+        "temporally_covered_miss": 887,
+        "temporally_sparse_miss": 34,
+        "true_negative": 7954,
+        "true_positive": 1786,
+        "unknown_ground_truth": 61
+      },
+      "false_negative_count": 926,
+      "model": "nvidia/Cosmos3-Nano",
+      "profile": "road-uniform-24-reasoned",
+      "run_id": "road-nano-uniform-24-evaluation-full-v1",
+      "sampling_or_sparse_fraction": 0.042116630669546434,
+      "tags": [
+        {
+          "false_negative_count": 48,
+          "sampling_or_sparse_fraction": 0.0625,
+          "tag": "car_braking",
+          "temporal_sampling_miss": 0,
+          "temporally_covered_miss": 45,
+          "temporally_sparse_miss": 3
+        },
+        {
+          "false_negative_count": 149,
+          "sampling_or_sparse_fraction": 0.03355704697986577,
+          "tag": "car_stopped",
+          "temporal_sampling_miss": 0,
+          "temporally_covered_miss": 144,
+          "temporally_sparse_miss": 5
+        },
+        {
+          "false_negative_count": 200,
+          "sampling_or_sparse_fraction": 0.01,
+          "tag": "cyclist_present",
+          "temporal_sampling_miss": 2,
+          "temporally_covered_miss": 198,
+          "temporally_sparse_miss": 0
+        },
+        {
+          "false_negative_count": 18,
+          "sampling_or_sparse_fraction": 0.0,
+          "tag": "ego_lane_change",
+          "temporal_sampling_miss": 0,
+          "temporally_covered_miss": 18,
+          "temporally_sparse_miss": 0
+        },
+        {
+          "false_negative_count": 65,
+          "sampling_or_sparse_fraction": 0.07692307692307693,
+          "tag": "ego_moving",
+          "temporal_sampling_miss": 0,
+          "temporally_covered_miss": 60,
+          "temporally_sparse_miss": 5
+        },
+        {
+          "false_negative_count": 17,
+          "sampling_or_sparse_fraction": 0.17647058823529413,
+          "tag": "ego_stopped",
+          "temporal_sampling_miss": 0,
+          "temporally_covered_miss": 14,
+          "temporally_sparse_miss": 3
+        },
+        {
+          "false_negative_count": 9,
+          "sampling_or_sparse_fraction": 0.1111111111111111,
+          "tag": "ego_turn_left",
+          "temporal_sampling_miss": 0,
+          "temporally_covered_miss": 8,
+          "temporally_sparse_miss": 1
+        },
+        {
+          "false_negative_count": 24,
+          "sampling_or_sparse_fraction": 0.08333333333333333,
+          "tag": "ego_turn_right",
+          "temporal_sampling_miss": 0,
+          "temporally_covered_miss": 22,
+          "temporally_sparse_miss": 2
+        },
+        {
+          "false_negative_count": 10,
+          "sampling_or_sparse_fraction": 0.0,
+          "tag": "motorcycle_present",
+          "temporal_sampling_miss": 0,
+          "temporally_covered_miss": 10,
+          "temporally_sparse_miss": 0
+        },
+        {
+          "false_negative_count": 137,
+          "sampling_or_sparse_fraction": 0.058394160583941604,
+          "tag": "pedestrian_crossing",
+          "temporal_sampling_miss": 0,
+          "temporally_covered_miss": 129,
+          "temporally_sparse_miss": 8
+        },
+        {
+          "false_negative_count": 89,
+          "sampling_or_sparse_fraction": 0.07865168539325842,
+          "tag": "pedestrian_waiting_to_cross",
+          "temporal_sampling_miss": 0,
+          "temporally_covered_miss": 82,
+          "temporally_sparse_miss": 7
+        },
+        {
+          "false_negative_count": 86,
+          "sampling_or_sparse_fraction": 0.023255813953488372,
+          "tag": "traffic_light_green",
+          "temporal_sampling_miss": 2,
+          "temporally_covered_miss": 84,
+          "temporally_sparse_miss": 0
+        },
+        {
+          "false_negative_count": 74,
+          "sampling_or_sparse_fraction": 0.013513513513513514,
+          "tag": "traffic_light_red",
+          "temporal_sampling_miss": 1,
+          "temporally_covered_miss": 73,
+          "temporally_sparse_miss": 0
+        }
+      ],
+      "temporal_sampling_miss": 5,
+      "temporally_covered_miss": 887,
+      "temporally_sparse_miss": 34
+    },
+    {
+      "benchmark_key": "road-super-evaluation-full-v1::road-adaptive-24-reasoned",
+      "clip_count": 875,
+      "counts": {
+        "false_positive": 408,
+        "temporal_sampling_miss": 1,
+        "temporally_covered_miss": 819,
+        "temporally_sparse_miss": 41,
+        "true_negative": 8194,
+        "true_positive": 1851,
+        "unknown_ground_truth": 61
+      },
+      "false_negative_count": 861,
+      "model": "nvidia/Cosmos3-Super",
+      "profile": "road-adaptive-24-reasoned",
+      "run_id": "road-super-evaluation-full-v1",
+      "sampling_or_sparse_fraction": 0.04878048780487805,
+      "tags": [
+        {
+          "false_negative_count": 51,
+          "sampling_or_sparse_fraction": 0.0392156862745098,
+          "tag": "car_braking",
+          "temporal_sampling_miss": 0,
+          "temporally_covered_miss": 49,
+          "temporally_sparse_miss": 2
+        },
+        {
+          "false_negative_count": 182,
+          "sampling_or_sparse_fraction": 0.054945054945054944,
+          "tag": "car_stopped",
+          "temporal_sampling_miss": 0,
+          "temporally_covered_miss": 172,
+          "temporally_sparse_miss": 10
+        },
+        {
+          "false_negative_count": 119,
+          "sampling_or_sparse_fraction": 0.0,
+          "tag": "cyclist_present",
+          "temporal_sampling_miss": 0,
+          "temporally_covered_miss": 119,
+          "temporally_sparse_miss": 0
+        },
+        {
+          "false_negative_count": 17,
+          "sampling_or_sparse_fraction": 0.0,
+          "tag": "ego_lane_change",
+          "temporal_sampling_miss": 0,
+          "temporally_covered_miss": 17,
+          "temporally_sparse_miss": 0
+        },
+        {
+          "false_negative_count": 83,
+          "sampling_or_sparse_fraction": 0.04819277108433735,
+          "tag": "ego_moving",
+          "temporal_sampling_miss": 0,
+          "temporally_covered_miss": 79,
+          "temporally_sparse_miss": 4
+        },
+        {
+          "false_negative_count": 35,
+          "sampling_or_sparse_fraction": 0.2571428571428571,
+          "tag": "ego_stopped",
+          "temporal_sampling_miss": 1,
+          "temporally_covered_miss": 26,
+          "temporally_sparse_miss": 8
+        },
+        {
+          "false_negative_count": 9,
+          "sampling_or_sparse_fraction": 0.0,
+          "tag": "ego_turn_left",
+          "temporal_sampling_miss": 0,
+          "temporally_covered_miss": 9,
+          "temporally_sparse_miss": 0
+        },
+        {
+          "false_negative_count": 16,
+          "sampling_or_sparse_fraction": 0.0625,
+          "tag": "ego_turn_right",
+          "temporal_sampling_miss": 0,
+          "temporally_covered_miss": 15,
+          "temporally_sparse_miss": 1
+        },
+        {
+          "false_negative_count": 6,
+          "sampling_or_sparse_fraction": 0.0,
+          "tag": "motorcycle_present",
+          "temporal_sampling_miss": 0,
+          "temporally_covered_miss": 6,
+          "temporally_sparse_miss": 0
+        },
+        {
+          "false_negative_count": 138,
+          "sampling_or_sparse_fraction": 0.07246376811594203,
+          "tag": "pedestrian_crossing",
+          "temporal_sampling_miss": 0,
+          "temporally_covered_miss": 128,
+          "temporally_sparse_miss": 10
+        },
+        {
+          "false_negative_count": 92,
+          "sampling_or_sparse_fraction": 0.06521739130434782,
+          "tag": "pedestrian_waiting_to_cross",
+          "temporal_sampling_miss": 0,
+          "temporally_covered_miss": 86,
+          "temporally_sparse_miss": 6
+        },
+        {
+          "false_negative_count": 64,
+          "sampling_or_sparse_fraction": 0.0,
+          "tag": "traffic_light_green",
+          "temporal_sampling_miss": 0,
+          "temporally_covered_miss": 64,
+          "temporally_sparse_miss": 0
+        },
+        {
+          "false_negative_count": 49,
+          "sampling_or_sparse_fraction": 0.0,
+          "tag": "traffic_light_red",
+          "temporal_sampling_miss": 0,
+          "temporally_covered_miss": 49,
+          "temporally_sparse_miss": 0
+        }
+      ],
+      "temporal_sampling_miss": 1,
+      "temporally_covered_miss": 819,
+      "temporally_sparse_miss": 41
+    }
+  ],
+  "schema_version": 1,
+  "split": "evaluation"
+}

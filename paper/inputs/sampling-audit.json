@@ -1,0 +1,452 @@
+{
+  "dataset": "ROAD",
+  "generated_at": "2026-08-09T02:30:47.504+00:00",
+  "ground_truth_path": "${ROAD_ARTIFACT_ROOT}/road-gt-v2/road-ground-truth.jsonl",
+  "ground_truth_sha256": "17e00dd85a2a22d08436091ff02a78b9ebf2fbbc08d7c4c603ef98fa8c30d5ae",
+  "media_locks": [
+    {
+      "path": "${ROAD_DATA_ROOT}/media-sampling-finalists-development-v1/road-media-lock.json",
+      "profiles_config_sha256": "549f1570ba16f50e9b9311b9c3f9998b22deb741bea9c6312b62c995e109bf93",
+      "sha256": "bbc47fe4b6cf465101cabce000e2da83c976ece3dc1aaa0f0bf8df9d7eb11e38"
+    }
+  ],
+  "profiles": [
+    {
+      "any_event_hit_rate": 1.0,
+      "both_boundary_contexts_rate": 1.0,
+      "boundary_context_eligible_pairs": 37,
+      "clip_count": 169,
+      "event_span_at_least_0_5s_rate": 0.9613970588235294,
+      "max_selected_frames": 24,
+      "mean_event_samples": 16.740808823529413,
+      "mean_selected_frames": 23.349112426035504,
+      "positive_event_pairs": 544,
+      "profile": "road-adaptive-24-reasoned-v2",
+      "tags": [
+        {
+          "any_event_hit_rate": 1.0,
+          "both_boundary_contexts_rate": 1.0,
+          "boundary_context_eligible_pairs": 4,
+          "event_span_at_least_0_5s_rate": 0.9473684210526315,
+          "mean_event_samples": 17.017543859649123,
+          "positive_event_pairs": 57,
+          "tag": "car_braking",
+          "two_event_frame_rate": 0.9473684210526315
+        },
+        {
+          "any_event_hit_rate": 1.0,
+          "both_boundary_contexts_rate": 1.0,
+          "boundary_context_eligible_pairs": 4,
+          "event_span_at_least_0_5s_rate": 0.9605263157894737,
+          "mean_event_samples": 17.69736842105263,
+          "positive_event_pairs": 76,
+          "tag": "car_stopped",
+          "two_event_frame_rate": 0.9605263157894737
+        },
+        {
+          "any_event_hit_rate": 1.0,
+          "both_boundary_contexts_rate": 1.0,
+          "boundary_context_eligible_pairs": 10,
+          "event_span_at_least_0_5s_rate": 0.9634146341463414,
+          "mean_event_samples": 14.829268292682928,
+          "positive_event_pairs": 82,
+          "tag": "cyclist_present",
+          "two_event_frame_rate": 0.9878048780487805
+        },
+        {
+          "any_event_hit_rate": 1.0,
+          "both_boundary_contexts_rate": 1.0,
+          "boundary_context_eligible_pairs": 2,
+          "event_span_at_least_0_5s_rate": 1.0,
+          "mean_event_samples": 9.5,
+          "positive_event_pairs": 4,
+          "tag": "ego_lane_change",
+          "two_event_frame_rate": 1.0
+        },
+        {
+          "any_event_hit_rate": 1.0,
+          "both_boundary_contexts_rate": 1.0,
+          "boundary_context_eligible_pairs": 6,
+          "event_span_at_least_0_5s_rate": 0.9859154929577465,
+          "mean_event_samples": 19.302816901408452,
+          "positive_event_pairs": 142,
+          "tag": "ego_moving",
+          "two_event_frame_rate": 0.9929577464788732
+        },
+        {
+          "any_event_hit_rate": 1.0,
+          "both_boundary_contexts_rate": 1.0,
+          "boundary_context_eligible_pairs": 1,
+          "event_span_at_least_0_5s_rate": 0.9811320754716981,
+          "mean_event_samples": 16.150943396226417,
+          "positive_event_pairs": 53,
+          "tag": "ego_stopped",
+          "two_event_frame_rate": 0.9811320754716981
+        },
+        {
+          "any_event_hit_rate": 1.0,
+          "both_boundary_contexts_rate": 1.0,
+          "boundary_context_eligible_pairs": 1,
+          "event_span_at_least_0_5s_rate": 1.0,
+          "mean_event_samples": 13.615384615384615,
+          "positive_event_pairs": 13,
+          "tag": "ego_turn_left",
+          "two_event_frame_rate": 1.0
+        },
+        {
+          "any_event_hit_rate": 1.0,
+          "both_boundary_contexts_rate": 1.0,
+          "boundary_context_eligible_pairs": 1,
+          "event_span_at_least_0_5s_rate": 1.0,
+          "mean_event_samples": 16.5,
+          "positive_event_pairs": 8,
+          "tag": "ego_turn_right",
+          "two_event_frame_rate": 1.0
+        },
+        {
+          "any_event_hit_rate": 1.0,
+          "both_boundary_contexts_rate": 1.0,
+          "boundary_context_eligible_pairs": 1,
+          "event_span_at_least_0_5s_rate": 0.8888888888888888,
+          "mean_event_samples": 16.666666666666668,
+          "positive_event_pairs": 9,
+          "tag": "motorcycle_present",
+          "two_event_frame_rate": 1.0
+        },
+        {
+          "any_event_hit_rate": 1.0,
+          "both_boundary_contexts_rate": 1.0,
+          "boundary_context_eligible_pairs": 3,
+          "event_span_at_least_0_5s_rate": 0.92,
+          "mean_event_samples": 12.08,
+          "positive_event_pairs": 25,
+          "tag": "pedestrian_crossing",
+          "two_event_frame_rate": 0.92
+        },
+        {
+          "any_event_hit_rate": 1.0,
+          "both_boundary_contexts_rate": 1.0,
+          "boundary_context_eligible_pairs": 1,
+          "event_span_at_least_0_5s_rate": 0.9375,
+          "mean_event_samples": 13.6875,
+          "positive_event_pairs": 16,
+          "tag": "pedestrian_waiting_to_cross",
+          "two_event_frame_rate": 1.0
+        },
+        {
+          "any_event_hit_rate": 1.0,
+          "both_boundary_contexts_rate": 1.0,
+          "boundary_context_eligible_pairs": 2,
+          "event_span_at_least_0_5s_rate": 0.9090909090909091,
+          "mean_event_samples": 15.484848484848484,
+          "positive_event_pairs": 33,
+          "tag": "traffic_light_green",
+          "two_event_frame_rate": 0.9696969696969697
+        },
+        {
+          "any_event_hit_rate": 1.0,
+          "both_boundary_contexts_rate": 1.0,
+          "boundary_context_eligible_pairs": 1,
+          "event_span_at_least_0_5s_rate": 0.9230769230769231,
+          "mean_event_samples": 17.307692307692307,
+          "positive_event_pairs": 26,
+          "tag": "traffic_light_red",
+          "two_event_frame_rate": 0.9230769230769231
+        }
+      ],
+      "two_event_frame_rate": 0.9742647058823529
+    },
+    {
+      "any_event_hit_rate": 1.0,
+      "both_boundary_contexts_rate": 1.0,
+      "boundary_context_eligible_pairs": 37,
+      "clip_count": 169,
+      "event_span_at_least_0_5s_rate": 0.9705882352941176,
+      "max_selected_frames": 24,
+      "mean_event_samples": 16.549632352941178,
+      "mean_selected_frames": 23.201183431952664,
+      "positive_event_pairs": 544,
+      "profile": "road-hybrid-24-reasoned",
+      "tags": [
+        {
+          "any_event_hit_rate": 1.0,
+          "both_boundary_contexts_rate": 1.0,
+          "boundary_context_eligible_pairs": 4,
+          "event_span_at_least_0_5s_rate": 0.9473684210526315,
+          "mean_event_samples": 16.719298245614034,
+          "positive_event_pairs": 57,
+          "tag": "car_braking",
+          "two_event_frame_rate": 0.9649122807017544
+        },
+        {
+          "any_event_hit_rate": 1.0,
+          "both_boundary_contexts_rate": 1.0,
+          "boundary_context_eligible_pairs": 4,
+          "event_span_at_least_0_5s_rate": 0.9868421052631579,
+          "mean_event_samples": 17.592105263157894,
+          "positive_event_pairs": 76,
+          "tag": "car_stopped",
+          "two_event_frame_rate": 1.0
+        },
+        {
+          "any_event_hit_rate": 1.0,
+          "both_boundary_contexts_rate": 1.0,
+          "boundary_context_eligible_pairs": 10,
+          "event_span_at_least_0_5s_rate": 0.975609756097561,
+          "mean_event_samples": 14.439024390243903,
+          "positive_event_pairs": 82,
+          "tag": "cyclist_present",
+          "two_event_frame_rate": 0.9878048780487805
+        },
+        {
+          "any_event_hit_rate": 1.0,
+          "both_boundary_contexts_rate": 1.0,
+          "boundary_context_eligible_pairs": 2,
+          "event_span_at_least_0_5s_rate": 0.75,
+          "mean_event_samples": 8.75,
+          "positive_event_pairs": 4,
+          "tag": "ego_lane_change",
+          "two_event_frame_rate": 1.0
+        },
+        {
+          "any_event_hit_rate": 1.0,
+          "both_boundary_contexts_rate": 1.0,
+          "boundary_context_eligible_pairs": 6,
+          "event_span_at_least_0_5s_rate": 1.0,
+          "mean_event_samples": 19.035211267605632,
+          "positive_event_pairs": 142,
+          "tag": "ego_moving",
+          "two_event_frame_rate": 1.0
+        },
+        {
+          "any_event_hit_rate": 1.0,
+          "both_boundary_contexts_rate": 1.0,
+          "boundary_context_eligible_pairs": 1,
+          "event_span_at_least_0_5s_rate": 0.9622641509433962,
+          "mean_event_samples": 16.41509433962264,
+          "positive_event_pairs": 53,
+          "tag": "ego_stopped",
+          "two_event_frame_rate": 1.0
+        },
+        {
+          "any_event_hit_rate": 1.0,
+          "both_boundary_contexts_rate": 1.0,
+          "boundary_context_eligible_pairs": 1,
+          "event_span_at_least_0_5s_rate": 1.0,
+          "mean_event_samples": 13.307692307692308,
+          "positive_event_pairs": 13,
+          "tag": "ego_turn_left",
+          "two_event_frame_rate": 1.0
+        },
+        {
+          "any_event_hit_rate": 1.0,
+          "both_boundary_contexts_rate": 1.0,
+          "boundary_context_eligible_pairs": 1,
+          "event_span_at_least_0_5s_rate": 1.0,
+          "mean_event_samples": 15.75,
+          "positive_event_pairs": 8,
+          "tag": "ego_turn_right",
+          "two_event_frame_rate": 1.0
+        },
+        {
+          "any_event_hit_rate": 1.0,
+          "both_boundary_contexts_rate": 1.0,
+          "boundary_context_eligible_pairs": 1,
+          "event_span_at_least_0_5s_rate": 0.8888888888888888,
+          "mean_event_samples": 16.333333333333332,
+          "positive_event_pairs": 9,
+          "tag": "motorcycle_present",
+          "two_event_frame_rate": 1.0
+        },
+        {
+          "any_event_hit_rate": 1.0,
+          "both_boundary_contexts_rate": 1.0,
+          "boundary_context_eligible_pairs": 3,
+          "event_span_at_least_0_5s_rate": 0.92,
+          "mean_event_samples": 11.84,
+          "positive_event_pairs": 25,
+          "tag": "pedestrian_crossing",
+          "two_event_frame_rate": 1.0
+        },
+        {
+          "any_event_hit_rate": 1.0,
+          "both_boundary_contexts_rate": 1.0,
+          "boundary_context_eligible_pairs": 1,
+          "event_span_at_least_0_5s_rate": 0.9375,
+          "mean_event_samples": 14.5625,
+          "positive_event_pairs": 16,
+          "tag": "pedestrian_waiting_to_cross",
+          "two_event_frame_rate": 1.0
+        },
+        {
+          "any_event_hit_rate": 1.0,
+          "both_boundary_contexts_rate": 1.0,
+          "boundary_context_eligible_pairs": 2,
+          "event_span_at_least_0_5s_rate": 0.9393939393939394,
+          "mean_event_samples": 14.93939393939394,
+          "positive_event_pairs": 33,
+          "tag": "traffic_light_green",
+          "two_event_frame_rate": 0.9393939393939394
+        },
+        {
+          "any_event_hit_rate": 1.0,
+          "both_boundary_contexts_rate": 1.0,
+          "boundary_context_eligible_pairs": 1,
+          "event_span_at_least_0_5s_rate": 0.9615384615384616,
+          "mean_event_samples": 17.423076923076923,
+          "positive_event_pairs": 26,
+          "tag": "traffic_light_red",
+          "two_event_frame_rate": 0.9615384615384616
+        }
+      ],
+      "two_event_frame_rate": 0.9889705882352942
+    },
+    {
+      "any_event_hit_rate": 0.9981617647058824,
+      "both_boundary_contexts_rate": 0.8918918918918919,
+      "boundary_context_eligible_pairs": 37,
+      "clip_count": 169,
+      "event_span_at_least_0_5s_rate": 0.9705882352941176,
+      "max_selected_frames": 24,
+      "mean_event_samples": 17.356617647058822,
+      "mean_selected_frames": 24.0,
+      "positive_event_pairs": 544,
+      "profile": "road-uniform-24-reasoned",
+      "tags": [
+        {
+          "any_event_hit_rate": 1.0,
+          "both_boundary_contexts_rate": 1.0,
+          "boundary_context_eligible_pairs": 4,
+          "event_span_at_least_0_5s_rate": 0.9824561403508771,
+          "mean_event_samples": 17.771929824561404,
+          "positive_event_pairs": 57,
+          "tag": "car_braking",
+          "two_event_frame_rate": 1.0
+        },
+        {
+          "any_event_hit_rate": 1.0,
+          "both_boundary_contexts_rate": 0.5,
+          "boundary_context_eligible_pairs": 4,
+          "event_span_at_least_0_5s_rate": 0.9868421052631579,
+          "mean_event_samples": 18.92105263157895,
+          "positive_event_pairs": 76,
+          "tag": "car_stopped",
+          "two_event_frame_rate": 0.9868421052631579
+        },
+        {
+          "any_event_hit_rate": 1.0,
+          "both_boundary_contexts_rate": 0.8,
+          "boundary_context_eligible_pairs": 10,
+          "event_span_at_least_0_5s_rate": 0.9512195121951219,
+          "mean_event_samples": 15.012195121951219,
+          "positive_event_pairs": 82,
+          "tag": "cyclist_present",
+          "two_event_frame_rate": 0.9878048780487805
+        },
+        {
+          "any_event_hit_rate": 1.0,
+          "both_boundary_contexts_rate": 1.0,
+          "boundary_context_eligible_pairs": 2,
+          "event_span_at_least_0_5s_rate": 0.75,
+          "mean_event_samples": 8.0,
+          "positive_event_pairs": 4,
+          "tag": "ego_lane_change",
+          "two_event_frame_rate": 1.0
+        },
+        {
+          "any_event_hit_rate": 1.0,
+          "both_boundary_contexts_rate": 1.0,
+          "boundary_context_eligible_pairs": 6,
+          "event_span_at_least_0_5s_rate": 0.9929577464788732,
+          "mean_event_samples": 19.718309859154928,
+          "positive_event_pairs": 142,
+          "tag": "ego_moving",
+          "two_event_frame_rate": 1.0
+        },
+        {
+          "any_event_hit_rate": 1.0,
+          "both_boundary_contexts_rate": 1.0,
+          "boundary_context_eligible_pairs": 1,
+          "event_span_at_least_0_5s_rate": 0.9622641509433962,
+          "mean_event_samples": 18.471698113207548,
+          "positive_event_pairs": 53,
+          "tag": "ego_stopped",
+          "two_event_frame_rate": 0.9811320754716981
+        },
+        {
+          "any_event_hit_rate": 1.0,
+          "both_boundary_contexts_rate": 1.0,
+          "boundary_context_eligible_pairs": 1,
+          "event_span_at_least_0_5s_rate": 0.9230769230769231,
+          "mean_event_samples": 9.76923076923077,
+          "positive_event_pairs": 13,
+          "tag": "ego_turn_left",
+          "two_event_frame_rate": 0.9230769230769231
+        },
+        {
+          "any_event_hit_rate": 1.0,
+          "both_boundary_contexts_rate": 1.0,
+          "boundary_context_eligible_pairs": 1,
+          "event_span_at_least_0_5s_rate": 1.0,
+          "mean_event_samples": 14.0,
+          "positive_event_pairs": 8,
+          "tag": "ego_turn_right",
+          "two_event_frame_rate": 1.0
+        },
+        {
+          "any_event_hit_rate": 0.8888888888888888,
+          "both_boundary_contexts_rate": 1.0,
+          "boundary_context_eligible_pairs": 1,
+          "event_span_at_least_0_5s_rate": 0.8888888888888888,
+          "mean_event_samples": 17.333333333333332,
+          "positive_event_pairs": 9,
+          "tag": "motorcycle_present",
+          "two_event_frame_rate": 0.8888888888888888
+        },
+        {
+          "any_event_hit_rate": 1.0,
+          "both_boundary_contexts_rate": 1.0,
+          "boundary_context_eligible_pairs": 3,
+          "event_span_at_least_0_5s_rate": 0.96,
+          "mean_event_samples": 12.32,
+          "positive_event_pairs": 25,
+          "tag": "pedestrian_crossing",
+          "two_event_frame_rate": 1.0
+        },
+        {
+          "any_event_hit_rate": 1.0,
+          "both_boundary_contexts_rate": 1.0,
+          "boundary_context_eligible_pairs": 1,
+          "event_span_at_least_0_5s_rate": 0.9375,
+          "mean_event_samples": 13.875,
+          "positive_event_pairs": 16,
+          "tag": "pedestrian_waiting_to_cross",
+          "two_event_frame_rate": 0.9375
+        },
+        {
+          "any_event_hit_rate": 1.0,
+          "both_boundary_contexts_rate": 1.0,
+          "boundary_context_eligible_pairs": 2,
+          "event_span_at_least_0_5s_rate": 0.9696969696969697,
+          "mean_event_samples": 15.93939393939394,
+          "positive_event_pairs": 33,
+          "tag": "traffic_light_green",
+          "two_event_frame_rate": 1.0
+        },
+        {
+          "any_event_hit_rate": 1.0,
+          "both_boundary_contexts_rate": 1.0,
+          "boundary_context_eligible_pairs": 1,
+          "event_span_at_least_0_5s_rate": 0.9615384615384616,
+          "mean_event_samples": 19.153846153846153,
+          "positive_event_pairs": 26,
+          "tag": "traffic_light_red",
+          "two_event_frame_rate": 1.0
+        }
+      ],
+      "two_event_frame_rate": 0.9889705882352942
+    }
+  ],
+  "schema_version": 1,
+  "split": "development"
+}

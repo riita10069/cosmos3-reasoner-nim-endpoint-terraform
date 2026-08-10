@@ -1,0 +1,1875 @@
+{
+  "baseline": {
+    "counts": {
+      "abstained_negative": 0,
+      "abstained_positive": 0,
+      "false_negative": 861,
+      "false_positive": 408,
+      "known_pairs": 11314,
+      "true_negative": 8194,
+      "true_positive": 1851
+    },
+    "metrics": {
+      "coverage": 1.0,
+      "overall_accuracy": 0.8878380767191091,
+      "precision": 0.8193891102257637,
+      "selective_accuracy": 0.8878380767191091,
+      "selective_balanced_accuracy": 0.8175456469271398,
+      "selective_f1": 0.7447193723596862,
+      "selective_mcc": 0.6782321586501792,
+      "selective_recall": 0.6825221238938053,
+      "selective_specificity": 0.9525691699604744,
+      "strict_balanced_accuracy": 0.8175456469271398,
+      "strict_f1": 0.7447193723596862,
+      "strict_recall": 0.6825221238938053,
+      "strict_specificity": 0.9525691699604744
+    }
+  },
+  "baseline_profile": "road-adaptive-24-reasoned",
+  "bootstrap_ci95": {
+    "precision": [
+      0.7798238514094743,
+      0.8663325508928346
+    ],
+    "selective_mcc": [
+      0.6669421885372093,
+      0.7272010195625821
+    ],
+    "strict_f1": [
+      0.7371721245941779,
+      0.7840095419107095
+    ],
+    "strict_recall": [
+      0.6765602201119089,
+      0.7330621482564632
+    ]
+  },
+  "clip_count": 875,
+  "config_path": "${ROAD_ARTIFACT_ROOT}/evaluations/road-motion-prior-development-v1/road-motion-prior-config.json",
+  "config_sha256": "0660d4b0e3ceddbb4400ba563b4424d699a89b2f6589cd84dac960495defead1",
+  "dataset": "ROAD",
+  "fused": {
+    "counts": {
+      "abstained_negative": 0,
+      "abstained_positive": 0,
+      "false_negative": 799,
+      "false_positive": 396,
+      "known_pairs": 11314,
+      "true_negative": 8206,
+      "true_positive": 1913
+    },
+    "metrics": {
+      "coverage": 1.0,
+      "overall_accuracy": 0.8943786459254022,
+      "precision": 0.8284971849285405,
+      "selective_accuracy": 0.8943786459254022,
+      "selective_balanced_accuracy": 0.8296738375996802,
+      "selective_f1": 0.7619996016729735,
+      "selective_mcc": 0.6984015843530111,
+      "selective_recall": 0.7053834808259587,
+      "selective_specificity": 0.9539641943734015,
+      "strict_balanced_accuracy": 0.8296738375996802,
+      "strict_f1": 0.7619996016729735,
+      "strict_recall": 0.7053834808259587,
+      "strict_specificity": 0.9539641943734015
+    }
+  },
+  "generated_at": "2026-08-09T07:07:19.483+00:00",
+  "method_note": "Rules were fixed on the calibration split. Application adds no model request and changes only declared ego-motion tags.",
+  "motion_lock_path": "${ROAD_ARTIFACT_ROOT}/road-visual-motion-evaluation-v1/road-visual-motion-lock.json",
+  "motion_lock_sha256": "7034a770f9585e17bbd3e1f3ae680bf7932707f57bae2ea7b0ba215e48ea2d61",
+  "paired_changes": {
+    "improved_pairs": 90,
+    "regressed_pairs": 16,
+    "unchanged_correct_pairs": 10029,
+    "unchanged_incorrect_pairs": 1179
+  },
+  "paired_f1_delta": {
+    "ci95": [
+      0.012590414233178915,
+      0.02172874349148056
+    ],
+    "mean": 0.01726128349624544,
+    "samples": 10000
+  },
+  "results_sha256": "f630a7fd743f81dead2bce5a11d72227a4cd8918146251b92e8713f3df18d7d1",
+  "run_dir": "${ROAD_ARTIFACT_ROOT}/runs/road-super-evaluation-full-v1",
+  "schema_version": 1,
+  "source_videos": [
+    {
+      "baseline": {
+        "counts": {
+          "abstained_negative": 0,
+          "abstained_positive": 0,
+          "false_negative": 38,
+          "false_positive": 16,
+          "known_pairs": 791,
+          "true_negative": 607,
+          "true_positive": 130
+        },
+        "metrics": {
+          "coverage": 1.0,
+          "overall_accuracy": 0.93173198482933,
+          "precision": 0.8904109589041096,
+          "selective_accuracy": 0.93173198482933,
+          "selective_balanced_accuracy": 0.8740636704119851,
+          "selective_f1": 0.8280254777070064,
+          "selective_mcc": 0.7887110140102614,
+          "selective_recall": 0.7738095238095238,
+          "selective_specificity": 0.9743178170144462,
+          "strict_balanced_accuracy": 0.8740636704119851,
+          "strict_f1": 0.8280254777070064,
+          "strict_recall": 0.7738095238095238,
+          "strict_specificity": 0.9743178170144462
+        }
+      },
+      "clip_count": 61,
+      "fused": {
+        "counts": {
+          "abstained_negative": 0,
+          "abstained_positive": 0,
+          "false_negative": 36,
+          "false_positive": 16,
+          "known_pairs": 791,
+          "true_negative": 607,
+          "true_positive": 132
+        },
+        "metrics": {
+          "coverage": 1.0,
+          "overall_accuracy": 0.934260429835651,
+          "precision": 0.8918918918918919,
+          "selective_accuracy": 0.934260429835651,
+          "selective_balanced_accuracy": 0.880016051364366,
+          "selective_f1": 0.8354430379746834,
+          "selective_mcc": 0.7970659497961388,
+          "selective_recall": 0.7857142857142857,
+          "selective_specificity": 0.9743178170144462,
+          "strict_balanced_accuracy": 0.880016051364366,
+          "strict_f1": 0.8354430379746834,
+          "strict_recall": 0.7857142857142857,
+          "strict_specificity": 0.9743178170144462
+        }
+      },
+      "paired_changes": {
+        "improved_pairs": 3,
+        "regressed_pairs": 1,
+        "unchanged_correct_pairs": 736,
+        "unchanged_incorrect_pairs": 51
+      },
+      "source_video_id": "2014-06-26-09-53-12_stereo_centre_02"
+    },
+    {
+      "baseline": {
+        "counts": {
+          "abstained_negative": 0,
+          "abstained_positive": 0,
+          "false_negative": 67,
+          "false_positive": 12,
+          "known_pairs": 790,
+          "true_negative": 579,
+          "true_positive": 132
+        },
+        "metrics": {
+          "coverage": 1.0,
+          "overall_accuracy": 0.9,
+          "precision": 0.9166666666666666,
+          "selective_accuracy": 0.9,
+          "selective_balanced_accuracy": 0.8215060071933271,
+          "selective_f1": 0.7696793002915451,
+          "selective_mcc": 0.7230059330953732,
+          "selective_recall": 0.6633165829145728,
+          "selective_specificity": 0.9796954314720813,
+          "strict_balanced_accuracy": 0.8215060071933271,
+          "strict_f1": 0.7696793002915451,
+          "strict_recall": 0.6633165829145728,
+          "strict_specificity": 0.9796954314720813
+        }
+      },
+      "clip_count": 61,
+      "fused": {
+        "counts": {
+          "abstained_negative": 0,
+          "abstained_positive": 0,
+          "false_negative": 63,
+          "false_positive": 12,
+          "known_pairs": 790,
+          "true_negative": 579,
+          "true_positive": 136
+        },
+        "metrics": {
+          "coverage": 1.0,
+          "overall_accuracy": 0.9050632911392406,
+          "precision": 0.918918918918919,
+          "selective_accuracy": 0.9050632911392406,
+          "selective_balanced_accuracy": 0.8315562584496085,
+          "selective_f1": 0.7838616714697406,
+          "selective_mcc": 0.7377498546994907,
+          "selective_recall": 0.6834170854271356,
+          "selective_specificity": 0.9796954314720813,
+          "strict_balanced_accuracy": 0.8315562584496085,
+          "strict_f1": 0.7838616714697406,
+          "strict_recall": 0.6834170854271356,
+          "strict_specificity": 0.9796954314720813
+        }
+      },
+      "paired_changes": {
+        "improved_pairs": 4,
+        "regressed_pairs": 0,
+        "unchanged_correct_pairs": 711,
+        "unchanged_incorrect_pairs": 75
+      },
+      "source_video_id": "2014-07-14-14-49-50_stereo_centre_01"
+    },
+    {
+      "baseline": {
+        "counts": {
+          "abstained_negative": 0,
+          "abstained_positive": 0,
+          "false_negative": 71,
+          "false_positive": 28,
+          "known_pairs": 799,
+          "true_negative": 550,
+          "true_positive": 150
+        },
+        "metrics": {
+          "coverage": 1.0,
+          "overall_accuracy": 0.8760951188986232,
+          "precision": 0.8426966292134831,
+          "selective_accuracy": 0.8760951188986232,
+          "selective_balanced_accuracy": 0.8151450625499068,
+          "selective_f1": 0.7518796992481204,
+          "selective_mcc": 0.6775553171796056,
+          "selective_recall": 0.6787330316742082,
+          "selective_specificity": 0.9515570934256056,
+          "strict_balanced_accuracy": 0.8151450625499068,
+          "strict_f1": 0.7518796992481204,
+          "strict_recall": 0.6787330316742082,
+          "strict_specificity": 0.9515570934256056
+        }
+      },
+      "clip_count": 62,
+      "fused": {
+        "counts": {
+          "abstained_negative": 0,
+          "abstained_positive": 0,
+          "false_negative": 66,
+          "false_positive": 24,
+          "known_pairs": 799,
+          "true_negative": 554,
+          "true_positive": 155
+        },
+        "metrics": {
+          "coverage": 1.0,
+          "overall_accuracy": 0.8873591989987485,
+          "precision": 0.8659217877094972,
+          "selective_accuracy": 0.8873591989987485,
+          "selective_balanced_accuracy": 0.8299174873569337,
+          "selective_f1": 0.7750000000000001,
+          "selective_mcc": 0.7079018177609326,
+          "selective_recall": 0.7013574660633484,
+          "selective_specificity": 0.9584775086505191,
+          "strict_balanced_accuracy": 0.8299174873569337,
+          "strict_f1": 0.7750000000000001,
+          "strict_recall": 0.7013574660633484,
+          "strict_specificity": 0.9584775086505191
+        }
+      },
+      "paired_changes": {
+        "improved_pairs": 9,
+        "regressed_pairs": 0,
+        "unchanged_correct_pairs": 700,
+        "unchanged_incorrect_pairs": 90
+      },
+      "source_video_id": "2014-07-14-15-42-55_stereo_centre_03"
+    },
+    {
+      "baseline": {
+        "counts": {
+          "abstained_negative": 0,
+          "abstained_positive": 0,
+          "false_negative": 67,
+          "false_positive": 29,
+          "known_pairs": 800,
+          "true_negative": 564,
+          "true_positive": 140
+        },
+        "metrics": {
+          "coverage": 1.0,
+          "overall_accuracy": 0.88,
+          "precision": 0.8284023668639053,
+          "selective_accuracy": 0.88,
+          "selective_balanced_accuracy": 0.8137123119159926,
+          "selective_f1": 0.7446808510638298,
+          "selective_mcc": 0.6731565042636358,
+          "selective_recall": 0.6763285024154589,
+          "selective_specificity": 0.9510961214165261,
+          "strict_balanced_accuracy": 0.8137123119159926,
+          "strict_f1": 0.7446808510638298,
+          "strict_recall": 0.6763285024154589,
+          "strict_specificity": 0.9510961214165261
+        }
+      },
+      "clip_count": 62,
+      "fused": {
+        "counts": {
+          "abstained_negative": 0,
+          "abstained_positive": 0,
+          "false_negative": 63,
+          "false_positive": 29,
+          "known_pairs": 800,
+          "true_negative": 564,
+          "true_positive": 144
+        },
+        "metrics": {
+          "coverage": 1.0,
+          "overall_accuracy": 0.885,
+          "precision": 0.8323699421965318,
+          "selective_accuracy": 0.885,
+          "selective_balanced_accuracy": 0.8233741476647848,
+          "selective_f1": 0.7578947368421053,
+          "selective_mcc": 0.6880040426633325,
+          "selective_recall": 0.6956521739130435,
+          "selective_specificity": 0.9510961214165261,
+          "strict_balanced_accuracy": 0.8233741476647848,
+          "strict_f1": 0.7578947368421053,
+          "strict_recall": 0.6956521739130435,
+          "strict_specificity": 0.9510961214165261
+        }
+      },
+      "paired_changes": {
+        "improved_pairs": 6,
+        "regressed_pairs": 2,
+        "unchanged_correct_pairs": 702,
+        "unchanged_incorrect_pairs": 90
+      },
+      "source_video_id": "2014-08-08-13-15-11_stereo_centre_01"
+    },
+    {
+      "baseline": {
+        "counts": {
+          "abstained_negative": 0,
+          "abstained_positive": 0,
+          "false_negative": 14,
+          "false_positive": 7,
+          "known_pairs": 155,
+          "true_negative": 109,
+          "true_positive": 25
+        },
+        "metrics": {
+          "coverage": 1.0,
+          "overall_accuracy": 0.864516129032258,
+          "precision": 0.78125,
+          "selective_accuracy": 0.864516129032258,
+          "selective_balanced_accuracy": 0.7903404067197171,
+          "selective_f1": 0.7042253521126761,
+          "selective_mcc": 0.6225456885854806,
+          "selective_recall": 0.6410256410256411,
+          "selective_specificity": 0.9396551724137931,
+          "strict_balanced_accuracy": 0.7903404067197171,
+          "strict_f1": 0.7042253521126761,
+          "strict_recall": 0.6410256410256411,
+          "strict_specificity": 0.9396551724137931
+        }
+      },
+      "clip_count": 12,
+      "fused": {
+        "counts": {
+          "abstained_negative": 0,
+          "abstained_positive": 0,
+          "false_negative": 13,
+          "false_positive": 7,
+          "known_pairs": 155,
+          "true_negative": 109,
+          "true_positive": 26
+        },
+        "metrics": {
+          "coverage": 1.0,
+          "overall_accuracy": 0.8709677419354839,
+          "precision": 0.7878787878787878,
+          "selective_accuracy": 0.8709677419354839,
+          "selective_balanced_accuracy": 0.8031609195402298,
+          "selective_f1": 0.7222222222222221,
+          "selective_mcc": 0.6427285981027304,
+          "selective_recall": 0.6666666666666666,
+          "selective_specificity": 0.9396551724137931,
+          "strict_balanced_accuracy": 0.8031609195402298,
+          "strict_f1": 0.7222222222222221,
+          "strict_recall": 0.6666666666666666,
+          "strict_specificity": 0.9396551724137931
+        }
+      },
+      "paired_changes": {
+        "improved_pairs": 1,
+        "regressed_pairs": 0,
+        "unchanged_correct_pairs": 134,
+        "unchanged_incorrect_pairs": 20
+      },
+      "source_video_id": "2014-08-11-10-59-18_stereo_centre_02"
+    },
+    {
+      "baseline": {
+        "counts": {
+          "abstained_negative": 0,
+          "abstained_positive": 0,
+          "false_negative": 72,
+          "false_positive": 30,
+          "known_pairs": 801,
+          "true_negative": 533,
+          "true_positive": 166
+        },
+        "metrics": {
+          "coverage": 1.0,
+          "overall_accuracy": 0.8726591760299626,
+          "precision": 0.8469387755102041,
+          "selective_accuracy": 0.8726591760299626,
+          "selective_balanced_accuracy": 0.8220965117841097,
+          "selective_f1": 0.7649769585253458,
+          "selective_mcc": 0.684782999832195,
+          "selective_recall": 0.6974789915966386,
+          "selective_specificity": 0.9467140319715808,
+          "strict_balanced_accuracy": 0.8220965117841097,
+          "strict_f1": 0.7649769585253458,
+          "strict_recall": 0.6974789915966386,
+          "strict_specificity": 0.9467140319715808
+        }
+      },
+      "clip_count": 62,
+      "fused": {
+        "counts": {
+          "abstained_negative": 0,
+          "abstained_positive": 0,
+          "false_negative": 64,
+          "false_positive": 27,
+          "known_pairs": 801,
+          "true_negative": 536,
+          "true_positive": 174
+        },
+        "metrics": {
+          "coverage": 1.0,
+          "overall_accuracy": 0.8863920099875156,
+          "precision": 0.8656716417910447,
+          "selective_accuracy": 0.8863920099875156,
+          "selective_balanced_accuracy": 0.8415675328746063,
+          "selective_f1": 0.7927107061503416,
+          "selective_mcc": 0.7200714642211367,
+          "selective_recall": 0.7310924369747899,
+          "selective_specificity": 0.9520426287744227,
+          "strict_balanced_accuracy": 0.8415675328746063,
+          "strict_f1": 0.7927107061503416,
+          "strict_recall": 0.7310924369747899,
+          "strict_specificity": 0.9520426287744227
+        }
+      },
+      "paired_changes": {
+        "improved_pairs": 11,
+        "regressed_pairs": 0,
+        "unchanged_correct_pairs": 699,
+        "unchanged_incorrect_pairs": 91
+      },
+      "source_video_id": "2014-11-14-16-34-33_stereo_centre_06"
+    },
+    {
+      "baseline": {
+        "counts": {
+          "abstained_negative": 0,
+          "abstained_positive": 0,
+          "false_negative": 88,
+          "false_positive": 31,
+          "known_pairs": 801,
+          "true_negative": 579,
+          "true_positive": 103
+        },
+        "metrics": {
+          "coverage": 1.0,
+          "overall_accuracy": 0.8514357053682896,
+          "precision": 0.7686567164179104,
+          "selective_accuracy": 0.8514357053682896,
+          "selective_balanced_accuracy": 0.7442236717878293,
+          "selective_f1": 0.6338461538461538,
+          "selective_mcc": 0.5576786738955497,
+          "selective_recall": 0.5392670157068062,
+          "selective_specificity": 0.9491803278688524,
+          "strict_balanced_accuracy": 0.7442236717878293,
+          "strict_f1": 0.6338461538461538,
+          "strict_recall": 0.5392670157068062,
+          "strict_specificity": 0.9491803278688524
+        }
+      },
+      "clip_count": 62,
+      "fused": {
+        "counts": {
+          "abstained_negative": 0,
+          "abstained_positive": 0,
+          "false_negative": 83,
+          "false_positive": 30,
+          "known_pairs": 801,
+          "true_negative": 580,
+          "true_positive": 108
+        },
+        "metrics": {
+          "coverage": 1.0,
+          "overall_accuracy": 0.8589263420724095,
+          "precision": 0.782608695652174,
+          "selective_accuracy": 0.8589263420724095,
+          "selective_balanced_accuracy": 0.758132349154579,
+          "selective_f1": 0.6565349544072948,
+          "selective_mcc": 0.5825828867148969,
+          "selective_recall": 0.5654450261780105,
+          "selective_specificity": 0.9508196721311475,
+          "strict_balanced_accuracy": 0.758132349154579,
+          "strict_f1": 0.6565349544072948,
+          "strict_recall": 0.5654450261780105,
+          "strict_specificity": 0.9508196721311475
+        }
+      },
+      "paired_changes": {
+        "improved_pairs": 7,
+        "regressed_pairs": 1,
+        "unchanged_correct_pairs": 681,
+        "unchanged_incorrect_pairs": 112
+      },
+      "source_video_id": "2014-11-21-16-07-03_stereo_centre_01"
+    },
+    {
+      "baseline": {
+        "counts": {
+          "abstained_negative": 0,
+          "abstained_positive": 0,
+          "false_negative": 35,
+          "false_positive": 74,
+          "known_pairs": 766,
+          "true_negative": 552,
+          "true_positive": 105
+        },
+        "metrics": {
+          "coverage": 1.0,
+          "overall_accuracy": 0.8577023498694517,
+          "precision": 0.5865921787709497,
+          "selective_accuracy": 0.8577023498694517,
+          "selective_balanced_accuracy": 0.8158945686900958,
+          "selective_f1": 0.6583072100313481,
+          "selective_mcc": 0.5770026037771846,
+          "selective_recall": 0.75,
+          "selective_specificity": 0.8817891373801917,
+          "strict_balanced_accuracy": 0.8158945686900958,
+          "strict_f1": 0.6583072100313481,
+          "strict_recall": 0.75,
+          "strict_specificity": 0.8817891373801917
+        }
+      },
+      "clip_count": 59,
+      "fused": {
+        "counts": {
+          "abstained_negative": 0,
+          "abstained_positive": 0,
+          "false_negative": 31,
+          "false_positive": 74,
+          "known_pairs": 766,
+          "true_negative": 552,
+          "true_positive": 109
+        },
+        "metrics": {
+          "coverage": 1.0,
+          "overall_accuracy": 0.8629242819843342,
+          "precision": 0.5956284153005464,
+          "selective_accuracy": 0.8629242819843342,
+          "selective_balanced_accuracy": 0.8301802829758101,
+          "selective_f1": 0.6749226006191951,
+          "selective_mcc": 0.5985114914030847,
+          "selective_recall": 0.7785714285714286,
+          "selective_specificity": 0.8817891373801917,
+          "strict_balanced_accuracy": 0.8301802829758101,
+          "strict_f1": 0.6749226006191951,
+          "strict_recall": 0.7785714285714286,
+          "strict_specificity": 0.8817891373801917
+        }
+      },
+      "paired_changes": {
+        "improved_pairs": 5,
+        "regressed_pairs": 1,
+        "unchanged_correct_pairs": 656,
+        "unchanged_incorrect_pairs": 104
+      },
+      "source_video_id": "2014-11-25-09-18-32_stereo_centre_04"
+    },
+    {
+      "baseline": {
+        "counts": {
+          "abstained_negative": 0,
+          "abstained_positive": 0,
+          "false_negative": 78,
+          "false_positive": 24,
+          "known_pairs": 804,
+          "true_negative": 561,
+          "true_positive": 141
+        },
+        "metrics": {
+          "coverage": 1.0,
+          "overall_accuracy": 0.8731343283582089,
+          "precision": 0.8545454545454545,
+          "selective_accuracy": 0.8731343283582089,
+          "selective_balanced_accuracy": 0.8014049877063576,
+          "selective_f1": 0.7343750000000001,
+          "selective_mcc": 0.6644893423752587,
+          "selective_recall": 0.6438356164383562,
+          "selective_specificity": 0.958974358974359,
+          "strict_balanced_accuracy": 0.8014049877063576,
+          "strict_f1": 0.7343750000000001,
+          "strict_recall": 0.6438356164383562,
+          "strict_specificity": 0.958974358974359
+        }
+      },
+      "clip_count": 62,
+      "fused": {
+        "counts": {
+          "abstained_negative": 0,
+          "abstained_positive": 0,
+          "false_negative": 75,
+          "false_positive": 22,
+          "known_pairs": 804,
+          "true_negative": 563,
+          "true_positive": 144
+        },
+        "metrics": {
+          "coverage": 1.0,
+          "overall_accuracy": 0.8793532338308457,
+          "precision": 0.8674698795180723,
+          "selective_accuracy": 0.8793532338308457,
+          "selective_balanced_accuracy": 0.8099637044842525,
+          "selective_f1": 0.7480519480519481,
+          "selective_mcc": 0.6818305329457914,
+          "selective_recall": 0.6575342465753424,
+          "selective_specificity": 0.9623931623931624,
+          "strict_balanced_accuracy": 0.8099637044842525,
+          "strict_f1": 0.7480519480519481,
+          "strict_recall": 0.6575342465753424,
+          "strict_specificity": 0.9623931623931624
+        }
+      },
+      "paired_changes": {
+        "improved_pairs": 5,
+        "regressed_pairs": 0,
+        "unchanged_correct_pairs": 702,
+        "unchanged_incorrect_pairs": 97
+      },
+      "source_video_id": "2014-12-09-13-21-02_stereo_centre_01"
+    },
+    {
+      "baseline": {
+        "counts": {
+          "abstained_negative": 0,
+          "abstained_positive": 0,
+          "false_negative": 58,
+          "false_positive": 15,
+          "known_pairs": 802,
+          "true_negative": 594,
+          "true_positive": 135
+        },
+        "metrics": {
+          "coverage": 1.0,
+          "overall_accuracy": 0.9089775561097256,
+          "precision": 0.9,
+          "selective_accuracy": 0.9089775561097256,
+          "selective_balanced_accuracy": 0.8374256617065265,
+          "selective_f1": 0.7871720116618075,
+          "selective_mcc": 0.7398198460660292,
+          "selective_recall": 0.6994818652849741,
+          "selective_specificity": 0.9753694581280788,
+          "strict_balanced_accuracy": 0.8374256617065265,
+          "strict_f1": 0.7871720116618075,
+          "strict_recall": 0.6994818652849741,
+          "strict_specificity": 0.9753694581280788
+        }
+      },
+      "clip_count": 62,
+      "fused": {
+        "counts": {
+          "abstained_negative": 0,
+          "abstained_positive": 0,
+          "false_negative": 58,
+          "false_positive": 15,
+          "known_pairs": 802,
+          "true_negative": 594,
+          "true_positive": 135
+        },
+        "metrics": {
+          "coverage": 1.0,
+          "overall_accuracy": 0.9089775561097256,
+          "precision": 0.9,
+          "selective_accuracy": 0.9089775561097256,
+          "selective_balanced_accuracy": 0.8374256617065265,
+          "selective_f1": 0.7871720116618075,
+          "selective_mcc": 0.7398198460660292,
+          "selective_recall": 0.6994818652849741,
+          "selective_specificity": 0.9753694581280788,
+          "strict_balanced_accuracy": 0.8374256617065265,
+          "strict_f1": 0.7871720116618075,
+          "strict_recall": 0.6994818652849741,
+          "strict_specificity": 0.9753694581280788
+        }
+      },
+      "paired_changes": {
+        "improved_pairs": 1,
+        "regressed_pairs": 1,
+        "unchanged_correct_pairs": 728,
+        "unchanged_incorrect_pairs": 72
+      },
+      "source_video_id": "2015-02-03-08-45-10_stereo_centre_02"
+    },
+    {
+      "baseline": {
+        "counts": {
+          "abstained_negative": 0,
+          "abstained_positive": 0,
+          "false_negative": 53,
+          "false_positive": 27,
+          "known_pairs": 802,
+          "true_negative": 617,
+          "true_positive": 105
+        },
+        "metrics": {
+          "coverage": 1.0,
+          "overall_accuracy": 0.9002493765586035,
+          "precision": 0.7954545454545454,
+          "selective_accuracy": 0.9002493765586035,
+          "selective_balanced_accuracy": 0.8113157480934036,
+          "selective_f1": 0.7241379310344828,
+          "selective_mcc": 0.6678488710287396,
+          "selective_recall": 0.6645569620253164,
+          "selective_specificity": 0.9580745341614907,
+          "strict_balanced_accuracy": 0.8113157480934036,
+          "strict_f1": 0.7241379310344828,
+          "strict_recall": 0.6645569620253164,
+          "strict_specificity": 0.9580745341614907
+        }
+      },
+      "clip_count": 62,
+      "fused": {
+        "counts": {
+          "abstained_negative": 0,
+          "abstained_positive": 0,
+          "false_negative": 49,
+          "false_positive": 25,
+          "known_pairs": 802,
+          "true_negative": 619,
+          "true_positive": 109
+        },
+        "metrics": {
+          "coverage": 1.0,
+          "overall_accuracy": 0.9077306733167082,
+          "precision": 0.8134328358208955,
+          "selective_accuracy": 0.9077306733167082,
+          "selective_balanced_accuracy": 0.8255267709725607,
+          "selective_f1": 0.7465753424657535,
+          "selective_mcc": 0.6941407691568563,
+          "selective_recall": 0.689873417721519,
+          "selective_specificity": 0.9611801242236024,
+          "strict_balanced_accuracy": 0.8255267709725607,
+          "strict_f1": 0.7465753424657535,
+          "strict_recall": 0.689873417721519,
+          "strict_specificity": 0.9611801242236024
+        }
+      },
+      "paired_changes": {
+        "improved_pairs": 7,
+        "regressed_pairs": 1,
+        "unchanged_correct_pairs": 721,
+        "unchanged_incorrect_pairs": 73
+      },
+      "source_video_id": "2015-02-03-19-43-11_stereo_centre_04"
+    },
+    {
+      "baseline": {
+        "counts": {
+          "abstained_negative": 0,
+          "abstained_positive": 0,
+          "false_negative": 60,
+          "false_positive": 37,
+          "known_pairs": 800,
+          "true_negative": 572,
+          "true_positive": 131
+        },
+        "metrics": {
+          "coverage": 1.0,
+          "overall_accuracy": 0.87875,
+          "precision": 0.7797619047619048,
+          "selective_accuracy": 0.87875,
+          "selective_balanced_accuracy": 0.8125542688640721,
+          "selective_f1": 0.7298050139275767,
+          "selective_mcc": 0.654285928940211,
+          "selective_recall": 0.6858638743455497,
+          "selective_specificity": 0.9392446633825944,
+          "strict_balanced_accuracy": 0.8125542688640721,
+          "strict_f1": 0.7298050139275767,
+          "strict_recall": 0.6858638743455497,
+          "strict_specificity": 0.9392446633825944
+        }
+      },
+      "clip_count": 62,
+      "fused": {
+        "counts": {
+          "abstained_negative": 0,
+          "abstained_positive": 0,
+          "false_negative": 53,
+          "false_positive": 39,
+          "known_pairs": 800,
+          "true_negative": 570,
+          "true_positive": 138
+        },
+        "metrics": {
+          "coverage": 1.0,
+          "overall_accuracy": 0.885,
+          "precision": 0.7796610169491526,
+          "selective_accuracy": 0.885,
+          "selective_balanced_accuracy": 0.8292368400691202,
+          "selective_f1": 0.7500000000000001,
+          "selective_mcc": 0.6762901995258672,
+          "selective_recall": 0.7225130890052356,
+          "selective_specificity": 0.9359605911330049,
+          "strict_balanced_accuracy": 0.8292368400691202,
+          "strict_f1": 0.7500000000000001,
+          "strict_recall": 0.7225130890052356,
+          "strict_specificity": 0.9359605911330049
+        }
+      },
+      "paired_changes": {
+        "improved_pairs": 8,
+        "regressed_pairs": 3,
+        "unchanged_correct_pairs": 700,
+        "unchanged_incorrect_pairs": 89
+      },
+      "source_video_id": "2015-02-06-13-57-16_stereo_centre_02"
+    },
+    {
+      "baseline": {
+        "counts": {
+          "abstained_negative": 0,
+          "abstained_positive": 0,
+          "false_negative": 45,
+          "false_positive": 25,
+          "known_pairs": 801,
+          "true_negative": 587,
+          "true_positive": 144
+        },
+        "metrics": {
+          "coverage": 1.0,
+          "overall_accuracy": 0.9126092384519351,
+          "precision": 0.8520710059171598,
+          "selective_accuracy": 0.9126092384519351,
+          "selective_balanced_accuracy": 0.8605275443510738,
+          "selective_f1": 0.8044692737430168,
+          "selective_mcc": 0.7503660353324982,
+          "selective_recall": 0.7619047619047619,
+          "selective_specificity": 0.9591503267973857,
+          "strict_balanced_accuracy": 0.8605275443510738,
+          "strict_f1": 0.8044692737430168,
+          "strict_recall": 0.7619047619047619,
+          "strict_specificity": 0.9591503267973857
+        }
+      },
+      "clip_count": 62,
+      "fused": {
+        "counts": {
+          "abstained_negative": 0,
+          "abstained_positive": 0,
+          "false_negative": 38,
+          "false_positive": 26,
+          "known_pairs": 801,
+          "true_negative": 586,
+          "true_positive": 151
+        },
+        "metrics": {
+          "coverage": 1.0,
+          "overall_accuracy": 0.920099875156055,
+          "precision": 0.8531073446327684,
+          "selective_accuracy": 0.920099875156055,
+          "selective_balanced_accuracy": 0.87822906940554,
+          "selective_f1": 0.8251366120218581,
+          "selective_mcc": 0.7741276594397238,
+          "selective_recall": 0.798941798941799,
+          "selective_specificity": 0.9575163398692811,
+          "strict_balanced_accuracy": 0.87822906940554,
+          "strict_f1": 0.8251366120218581,
+          "strict_recall": 0.798941798941799,
+          "strict_specificity": 0.9575163398692811
+        }
+      },
+      "paired_changes": {
+        "improved_pairs": 8,
+        "regressed_pairs": 2,
+        "unchanged_correct_pairs": 729,
+        "unchanged_incorrect_pairs": 62
+      },
+      "source_video_id": "2015-02-13-09-16-26_stereo_centre_02"
+    },
+    {
+      "baseline": {
+        "counts": {
+          "abstained_negative": 0,
+          "abstained_positive": 0,
+          "false_negative": 62,
+          "false_positive": 15,
+          "known_pairs": 798,
+          "true_negative": 589,
+          "true_positive": 132
+        },
+        "metrics": {
+          "coverage": 1.0,
+          "overall_accuracy": 0.9035087719298246,
+          "precision": 0.8979591836734694,
+          "selective_accuracy": 0.9035087719298246,
+          "selective_balanced_accuracy": 0.827788967023964,
+          "selective_f1": 0.7741935483870969,
+          "selective_mcc": 0.7254283098784928,
+          "selective_recall": 0.6804123711340206,
+          "selective_specificity": 0.9751655629139073,
+          "strict_balanced_accuracy": 0.827788967023964,
+          "strict_f1": 0.7741935483870969,
+          "strict_recall": 0.6804123711340206,
+          "strict_specificity": 0.9751655629139073
+        }
+      },
+      "clip_count": 62,
+      "fused": {
+        "counts": {
+          "abstained_negative": 0,
+          "abstained_positive": 0,
+          "false_negative": 61,
+          "false_positive": 15,
+          "known_pairs": 798,
+          "true_negative": 589,
+          "true_positive": 133
+        },
+        "metrics": {
+          "coverage": 1.0,
+          "overall_accuracy": 0.9047619047619048,
+          "precision": 0.8986486486486487,
+          "selective_accuracy": 0.9047619047619048,
+          "selective_balanced_accuracy": 0.8303662866115928,
+          "selective_f1": 0.7777777777777778,
+          "selective_mcc": 0.7292182275062054,
+          "selective_recall": 0.6855670103092784,
+          "selective_specificity": 0.9751655629139073,
+          "strict_balanced_accuracy": 0.8303662866115928,
+          "strict_f1": 0.7777777777777778,
+          "strict_recall": 0.6855670103092784,
+          "strict_specificity": 0.9751655629139073
+        }
+      },
+      "paired_changes": {
+        "improved_pairs": 2,
+        "regressed_pairs": 1,
+        "unchanged_correct_pairs": 720,
+        "unchanged_incorrect_pairs": 75
+      },
+      "source_video_id": "2015-02-13-09-16-26_stereo_centre_05"
+    },
+    {
+      "baseline": {
+        "counts": {
+          "abstained_negative": 0,
+          "abstained_positive": 0,
+          "false_negative": 53,
+          "false_positive": 38,
+          "known_pairs": 804,
+          "true_negative": 601,
+          "true_positive": 112
+        },
+        "metrics": {
+          "coverage": 1.0,
+          "overall_accuracy": 0.8868159203980099,
+          "precision": 0.7466666666666667,
+          "selective_accuracy": 0.8868159203980099,
+          "selective_balanced_accuracy": 0.8096599800825153,
+          "selective_f1": 0.7111111111111111,
+          "selective_mcc": 0.6420560973936535,
+          "selective_recall": 0.6787878787878788,
+          "selective_specificity": 0.9405320813771518,
+          "strict_balanced_accuracy": 0.8096599800825153,
+          "strict_f1": 0.7111111111111111,
+          "strict_recall": 0.6787878787878788,
+          "strict_specificity": 0.9405320813771518
+        }
+      },
+      "clip_count": 62,
+      "fused": {
+        "counts": {
+          "abstained_negative": 0,
+          "abstained_positive": 0,
+          "false_negative": 46,
+          "false_positive": 35,
+          "known_pairs": 804,
+          "true_negative": 604,
+          "true_positive": 119
+        },
+        "metrics": {
+          "coverage": 1.0,
+          "overall_accuracy": 0.8992537313432836,
+          "precision": 0.7727272727272727,
+          "selective_accuracy": 0.8992537313432836,
+          "selective_balanced_accuracy": 0.833219519135012,
+          "selective_f1": 0.7460815047021943,
+          "selective_mcc": 0.6839680126938882,
+          "selective_recall": 0.7212121212121212,
+          "selective_specificity": 0.945226917057903,
+          "strict_balanced_accuracy": 0.833219519135012,
+          "strict_f1": 0.7460815047021943,
+          "strict_recall": 0.7212121212121212,
+          "strict_specificity": 0.945226917057903
+        }
+      },
+      "paired_changes": {
+        "improved_pairs": 13,
+        "regressed_pairs": 3,
+        "unchanged_correct_pairs": 710,
+        "unchanged_incorrect_pairs": 78
+      },
+      "source_video_id": "2015-02-24-12-32-19_stereo_centre_04"
+    }
+  ],
+  "split": "evaluation",
+  "tags": [
+    {
+      "baseline": {
+        "counts": {
+          "abstained_negative": 0,
+          "abstained_positive": 0,
+          "false_negative": 51,
+          "false_positive": 107,
+          "known_pairs": 866,
+          "true_negative": 607,
+          "true_positive": 101
+        },
+        "metrics": {
+          "coverage": 1.0,
+          "overall_accuracy": 0.8175519630484989,
+          "precision": 0.4855769230769231,
+          "selective_accuracy": 0.8175519630484989,
+          "selective_balanced_accuracy": 0.7573068701164676,
+          "selective_f1": 0.5611111111111111,
+          "selective_mcc": 0.4582554759613982,
+          "selective_recall": 0.6644736842105263,
+          "selective_specificity": 0.8501400560224089,
+          "strict_balanced_accuracy": 0.7573068701164676,
+          "strict_f1": 0.5611111111111111,
+          "strict_recall": 0.6644736842105263,
+          "strict_specificity": 0.8501400560224089
+        }
+      },
+      "fused": {
+        "counts": {
+          "abstained_negative": 0,
+          "abstained_positive": 0,
+          "false_negative": 51,
+          "false_positive": 107,
+          "known_pairs": 866,
+          "true_negative": 607,
+          "true_positive": 101
+        },
+        "metrics": {
+          "coverage": 1.0,
+          "overall_accuracy": 0.8175519630484989,
+          "precision": 0.4855769230769231,
+          "selective_accuracy": 0.8175519630484989,
+          "selective_balanced_accuracy": 0.7573068701164676,
+          "selective_f1": 0.5611111111111111,
+          "selective_mcc": 0.4582554759613982,
+          "selective_recall": 0.6644736842105263,
+          "selective_specificity": 0.8501400560224089,
+          "strict_balanced_accuracy": 0.7573068701164676,
+          "strict_f1": 0.5611111111111111,
+          "strict_recall": 0.6644736842105263,
+          "strict_specificity": 0.8501400560224089
+        }
+      },
+      "paired_changes": {
+        "improved_pairs": 0,
+        "regressed_pairs": 0,
+        "unchanged_correct_pairs": 708,
+        "unchanged_incorrect_pairs": 158
+      },
+      "rule": {
+        "kind": "identity"
+      },
+      "tag": "car_braking"
+    },
+    {
+      "baseline": {
+        "counts": {
+          "abstained_negative": 0,
+          "abstained_positive": 0,
+          "false_negative": 182,
+          "false_positive": 39,
+          "known_pairs": 867,
+          "true_negative": 556,
+          "true_positive": 90
+        },
+        "metrics": {
+          "coverage": 1.0,
+          "overall_accuracy": 0.7450980392156863,
+          "precision": 0.6976744186046512,
+          "selective_accuracy": 0.7450980392156863,
+          "selective_balanced_accuracy": 0.6326680672268907,
+          "selective_f1": 0.44887780548628425,
+          "selective_mcc": 0.3459523592493854,
+          "selective_recall": 0.33088235294117646,
+          "selective_specificity": 0.934453781512605,
+          "strict_balanced_accuracy": 0.6326680672268907,
+          "strict_f1": 0.44887780548628425,
+          "strict_recall": 0.33088235294117646,
+          "strict_specificity": 0.934453781512605
+        }
+      },
+      "fused": {
+        "counts": {
+          "abstained_negative": 0,
+          "abstained_positive": 0,
+          "false_negative": 182,
+          "false_positive": 39,
+          "known_pairs": 867,
+          "true_negative": 556,
+          "true_positive": 90
+        },
+        "metrics": {
+          "coverage": 1.0,
+          "overall_accuracy": 0.7450980392156863,
+          "precision": 0.6976744186046512,
+          "selective_accuracy": 0.7450980392156863,
+          "selective_balanced_accuracy": 0.6326680672268907,
+          "selective_f1": 0.44887780548628425,
+          "selective_mcc": 0.3459523592493854,
+          "selective_recall": 0.33088235294117646,
+          "selective_specificity": 0.934453781512605,
+          "strict_balanced_accuracy": 0.6326680672268907,
+          "strict_f1": 0.44887780548628425,
+          "strict_recall": 0.33088235294117646,
+          "strict_specificity": 0.934453781512605
+        }
+      },
+      "paired_changes": {
+        "improved_pairs": 0,
+        "regressed_pairs": 0,
+        "unchanged_correct_pairs": 646,
+        "unchanged_incorrect_pairs": 221
+      },
+      "rule": {
+        "kind": "identity"
+      },
+      "tag": "car_stopped"
+    },
+    {
+      "baseline": {
+        "counts": {
+          "abstained_negative": 0,
+          "abstained_positive": 0,
+          "false_negative": 119,
+          "false_positive": 8,
+          "known_pairs": 874,
+          "true_negative": 434,
+          "true_positive": 313
+        },
+        "metrics": {
+          "coverage": 1.0,
+          "overall_accuracy": 0.8546910755148741,
+          "precision": 0.9750778816199377,
+          "selective_accuracy": 0.8546910755148741,
+          "selective_balanced_accuracy": 0.8532187447628624,
+          "selective_f1": 0.8313413014608234,
+          "selective_mcc": 0.732675492175818,
+          "selective_recall": 0.7245370370370371,
+          "selective_specificity": 0.9819004524886877,
+          "strict_balanced_accuracy": 0.8532187447628624,
+          "strict_f1": 0.8313413014608234,
+          "strict_recall": 0.7245370370370371,
+          "strict_specificity": 0.9819004524886877
+        }
+      },
+      "fused": {
+        "counts": {
+          "abstained_negative": 0,
+          "abstained_positive": 0,
+          "false_negative": 119,
+          "false_positive": 8,
+          "known_pairs": 874,
+          "true_negative": 434,
+          "true_positive": 313
+        },
+        "metrics": {
+          "coverage": 1.0,
+          "overall_accuracy": 0.8546910755148741,
+          "precision": 0.9750778816199377,
+          "selective_accuracy": 0.8546910755148741,
+          "selective_balanced_accuracy": 0.8532187447628624,
+          "selective_f1": 0.8313413014608234,
+          "selective_mcc": 0.732675492175818,
+          "selective_recall": 0.7245370370370371,
+          "selective_specificity": 0.9819004524886877,
+          "strict_balanced_accuracy": 0.8532187447628624,
+          "strict_f1": 0.8313413014608234,
+          "strict_recall": 0.7245370370370371,
+          "strict_specificity": 0.9819004524886877
+        }
+      },
+      "paired_changes": {
+        "improved_pairs": 0,
+        "regressed_pairs": 0,
+        "unchanged_correct_pairs": 747,
+        "unchanged_incorrect_pairs": 127
+      },
+      "rule": {
+        "kind": "identity"
+      },
+      "tag": "cyclist_present"
+    },
+    {
+      "baseline": {
+        "counts": {
+          "abstained_negative": 0,
+          "abstained_positive": 0,
+          "false_negative": 17,
+          "false_positive": 17,
+          "known_pairs": 874,
+          "true_negative": 837,
+          "true_positive": 3
+        },
+        "metrics": {
+          "coverage": 1.0,
+          "overall_accuracy": 0.9610983981693364,
+          "precision": 0.15,
+          "selective_accuracy": 0.9610983981693364,
+          "selective_balanced_accuracy": 0.5650468384074941,
+          "selective_f1": 0.15,
+          "selective_mcc": 0.1300936768149883,
+          "selective_recall": 0.15,
+          "selective_specificity": 0.9800936768149883,
+          "strict_balanced_accuracy": 0.5650468384074941,
+          "strict_f1": 0.15,
+          "strict_recall": 0.15,
+          "strict_specificity": 0.9800936768149883
+        }
+      },
+      "fused": {
+        "counts": {
+          "abstained_negative": 0,
+          "abstained_positive": 0,
+          "false_negative": 17,
+          "false_positive": 17,
+          "known_pairs": 874,
+          "true_negative": 837,
+          "true_positive": 3
+        },
+        "metrics": {
+          "coverage": 1.0,
+          "overall_accuracy": 0.9610983981693364,
+          "precision": 0.15,
+          "selective_accuracy": 0.9610983981693364,
+          "selective_balanced_accuracy": 0.5650468384074941,
+          "selective_f1": 0.15,
+          "selective_mcc": 0.1300936768149883,
+          "selective_recall": 0.15,
+          "selective_specificity": 0.9800936768149883,
+          "strict_balanced_accuracy": 0.5650468384074941,
+          "strict_f1": 0.15,
+          "strict_recall": 0.15,
+          "strict_specificity": 0.9800936768149883
+        }
+      },
+      "paired_changes": {
+        "improved_pairs": 0,
+        "regressed_pairs": 0,
+        "unchanged_correct_pairs": 840,
+        "unchanged_incorrect_pairs": 34
+      },
+      "rule": {
+        "kind": "identity"
+      },
+      "tag": "ego_lane_change"
+    },
+    {
+      "baseline": {
+        "counts": {
+          "abstained_negative": 0,
+          "abstained_positive": 0,
+          "false_negative": 83,
+          "false_positive": 4,
+          "known_pairs": 870,
+          "true_negative": 165,
+          "true_positive": 618
+        },
+        "metrics": {
+          "coverage": 1.0,
+          "overall_accuracy": 0.9,
+          "precision": 0.9935691318327974,
+          "selective_accuracy": 0.9,
+          "selective_balanced_accuracy": 0.928964539246554,
+          "selective_f1": 0.9342403628117915,
+          "selective_mcc": 0.7518526183454846,
+          "selective_recall": 0.8815977175463623,
+          "selective_specificity": 0.9763313609467456,
+          "strict_balanced_accuracy": 0.928964539246554,
+          "strict_f1": 0.9342403628117915,
+          "strict_recall": 0.8815977175463623,
+          "strict_specificity": 0.9763313609467456
+        }
+      },
+      "fused": {
+        "counts": {
+          "abstained_negative": 0,
+          "abstained_positive": 0,
+          "false_negative": 46,
+          "false_positive": 11,
+          "known_pairs": 870,
+          "true_negative": 158,
+          "true_positive": 655
+        },
+        "metrics": {
+          "coverage": 1.0,
+          "overall_accuracy": 0.9344827586206896,
+          "precision": 0.9834834834834835,
+          "selective_accuracy": 0.9344827586206896,
+          "selective_balanced_accuracy": 0.9346453502604057,
+          "selective_f1": 0.9583028529626921,
+          "selective_mcc": 0.8117367281319791,
+          "selective_recall": 0.9343794579172611,
+          "selective_specificity": 0.9349112426035503,
+          "strict_balanced_accuracy": 0.9346453502604057,
+          "strict_f1": 0.9583028529626921,
+          "strict_recall": 0.9343794579172611,
+          "strict_specificity": 0.9349112426035503
+        }
+      },
+      "paired_changes": {
+        "improved_pairs": 37,
+        "regressed_pairs": 7,
+        "unchanged_correct_pairs": 776,
+        "unchanged_incorrect_pairs": 50
+      },
+      "rule": {
+        "kind": "moving_state",
+        "promote_flow_at_least": 0.5,
+        "promote_low_motion_at_most": 0.75,
+        "veto_flow_at_most": 0.05,
+        "veto_low_motion_at_least": 0.5
+      },
+      "tag": "ego_moving"
+    },
+    {
+      "baseline": {
+        "counts": {
+          "abstained_negative": 0,
+          "abstained_positive": 0,
+          "false_negative": 35,
+          "false_positive": 12,
+          "known_pairs": 868,
+          "true_negative": 592,
+          "true_positive": 229
+        },
+        "metrics": {
+          "coverage": 1.0,
+          "overall_accuracy": 0.945852534562212,
+          "precision": 0.950207468879668,
+          "selective_accuracy": 0.945852534562212,
+          "selective_balanced_accuracy": 0.9237783463776841,
+          "selective_f1": 0.9069306930693068,
+          "selective_mcc": 0.870656604320868,
+          "selective_recall": 0.8674242424242424,
+          "selective_specificity": 0.9801324503311258,
+          "strict_balanced_accuracy": 0.9237783463776841,
+          "strict_f1": 0.9069306930693068,
+          "strict_recall": 0.8674242424242424,
+          "strict_specificity": 0.9801324503311258
+        }
+      },
+      "fused": {
+        "counts": {
+          "abstained_negative": 0,
+          "abstained_positive": 0,
+          "false_negative": 7,
+          "false_positive": 12,
+          "known_pairs": 868,
+          "true_negative": 592,
+          "true_positive": 257
+        },
+        "metrics": {
+          "coverage": 1.0,
+          "overall_accuracy": 0.978110599078341,
+          "precision": 0.9553903345724907,
+          "selective_accuracy": 0.978110599078341,
+          "selective_balanced_accuracy": 0.9768086494079872,
+          "selective_f1": 0.9643527204502814,
+          "selective_mcc": 0.9486477963409867,
+          "selective_recall": 0.9734848484848485,
+          "selective_specificity": 0.9801324503311258,
+          "strict_balanced_accuracy": 0.9768086494079872,
+          "strict_f1": 0.9643527204502814,
+          "strict_recall": 0.9734848484848485,
+          "strict_specificity": 0.9801324503311258
+        }
+      },
+      "paired_changes": {
+        "improved_pairs": 34,
+        "regressed_pairs": 6,
+        "unchanged_correct_pairs": 815,
+        "unchanged_incorrect_pairs": 13
+      },
+      "rule": {
+        "kind": "stopped_state",
+        "promote_flow_at_most": 0.05,
+        "promote_low_motion_at_least": 0.1,
+        "veto_flow_at_least": 1.0,
+        "veto_low_motion_at_most": 0.05
+      },
+      "tag": "ego_stopped"
+    },
+    {
+      "baseline": {
+        "counts": {
+          "abstained_negative": 0,
+          "abstained_positive": 0,
+          "false_negative": 9,
+          "false_positive": 61,
+          "known_pairs": 867,
+          "true_negative": 745,
+          "true_positive": 52
+        },
+        "metrics": {
+          "coverage": 1.0,
+          "overall_accuracy": 0.9192618223760092,
+          "precision": 0.46017699115044247,
+          "selective_accuracy": 0.9192618223760092,
+          "selective_balanced_accuracy": 0.8883883171297238,
+          "selective_f1": 0.5977011494252873,
+          "selective_mcc": 0.5900702201516178,
+          "selective_recall": 0.8524590163934426,
+          "selective_specificity": 0.924317617866005,
+          "strict_balanced_accuracy": 0.8883883171297238,
+          "strict_f1": 0.5977011494252873,
+          "strict_recall": 0.8524590163934426,
+          "strict_specificity": 0.924317617866005
+        }
+      },
+      "fused": {
+        "counts": {
+          "abstained_negative": 0,
+          "abstained_positive": 0,
+          "false_negative": 12,
+          "false_positive": 42,
+          "known_pairs": 867,
+          "true_negative": 764,
+          "true_positive": 49
+        },
+        "metrics": {
+          "coverage": 1.0,
+          "overall_accuracy": 0.9377162629757786,
+          "precision": 0.5384615384615384,
+          "selective_accuracy": 0.9377162629757786,
+          "selective_balanced_accuracy": 0.8755847536915755,
+          "selective_f1": 0.644736842105263,
+          "selective_mcc": 0.6267853422670944,
+          "selective_recall": 0.8032786885245902,
+          "selective_specificity": 0.9478908188585607,
+          "strict_balanced_accuracy": 0.8755847536915755,
+          "strict_f1": 0.644736842105263,
+          "strict_recall": 0.8032786885245902,
+          "strict_specificity": 0.9478908188585607
+        }
+      },
+      "paired_changes": {
+        "improved_pairs": 19,
+        "regressed_pairs": 3,
+        "unchanged_correct_pairs": 794,
+        "unchanged_incorrect_pairs": 51
+      },
+      "rule": {
+        "direction": "left",
+        "kind": "turn_veto",
+        "minimum_signed_yaw_degrees": 3.0
+      },
+      "tag": "ego_turn_left"
+    },
+    {
+      "baseline": {
+        "counts": {
+          "abstained_negative": 0,
+          "abstained_positive": 0,
+          "false_negative": 16,
+          "false_positive": 52,
+          "known_pairs": 874,
+          "true_negative": 763,
+          "true_positive": 43
+        },
+        "metrics": {
+          "coverage": 1.0,
+          "overall_accuracy": 0.9221967963386728,
+          "precision": 0.45263157894736844,
+          "selective_accuracy": 0.9221967963386728,
+          "selective_balanced_accuracy": 0.8325049391702194,
+          "selective_f1": 0.5584415584415585,
+          "selective_mcc": 0.5360463895697097,
+          "selective_recall": 0.7288135593220338,
+          "selective_specificity": 0.9361963190184049,
+          "strict_balanced_accuracy": 0.8325049391702194,
+          "strict_f1": 0.5584415584415585,
+          "strict_recall": 0.7288135593220338,
+          "strict_specificity": 0.9361963190184049
+        }
+      },
+      "fused": {
+        "counts": {
+          "abstained_negative": 0,
+          "abstained_positive": 0,
+          "false_negative": 16,
+          "false_positive": 52,
+          "known_pairs": 874,
+          "true_negative": 763,
+          "true_positive": 43
+        },
+        "metrics": {
+          "coverage": 1.0,
+          "overall_accuracy": 0.9221967963386728,
+          "precision": 0.45263157894736844,
+          "selective_accuracy": 0.9221967963386728,
+          "selective_balanced_accuracy": 0.8325049391702194,
+          "selective_f1": 0.5584415584415585,
+          "selective_mcc": 0.5360463895697097,
+          "selective_recall": 0.7288135593220338,
+          "selective_specificity": 0.9361963190184049,
+          "strict_balanced_accuracy": 0.8325049391702194,
+          "strict_f1": 0.5584415584415585,
+          "strict_recall": 0.7288135593220338,
+          "strict_specificity": 0.9361963190184049
+        }
+      },
+      "paired_changes": {
+        "improved_pairs": 0,
+        "regressed_pairs": 0,
+        "unchanged_correct_pairs": 806,
+        "unchanged_incorrect_pairs": 68
+      },
+      "rule": {
+        "kind": "identity"
+      },
+      "tag": "ego_turn_right"
+    },
+    {
+      "baseline": {
+        "counts": {
+          "abstained_negative": 0,
+          "abstained_positive": 0,
+          "false_negative": 6,
+          "false_positive": 8,
+          "known_pairs": 875,
+          "true_negative": 833,
+          "true_positive": 28
+        },
+        "metrics": {
+          "coverage": 1.0,
+          "overall_accuracy": 0.984,
+          "precision": 0.7777777777777778,
+          "selective_accuracy": 0.984,
+          "selective_balanced_accuracy": 0.9070084633139819,
+          "selective_f1": 0.7999999999999999,
+          "selective_mcc": 0.7920245826264408,
+          "selective_recall": 0.8235294117647058,
+          "selective_specificity": 0.990487514863258,
+          "strict_balanced_accuracy": 0.9070084633139819,
+          "strict_f1": 0.7999999999999999,
+          "strict_recall": 0.8235294117647058,
+          "strict_specificity": 0.990487514863258
+        }
+      },
+      "fused": {
+        "counts": {
+          "abstained_negative": 0,
+          "abstained_positive": 0,
+          "false_negative": 6,
+          "false_positive": 8,
+          "known_pairs": 875,
+          "true_negative": 833,
+          "true_positive": 28
+        },
+        "metrics": {
+          "coverage": 1.0,
+          "overall_accuracy": 0.984,
+          "precision": 0.7777777777777778,
+          "selective_accuracy": 0.984,
+          "selective_balanced_accuracy": 0.9070084633139819,
+          "selective_f1": 0.7999999999999999,
+          "selective_mcc": 0.7920245826264408,
+          "selective_recall": 0.8235294117647058,
+          "selective_specificity": 0.990487514863258,
+          "strict_balanced_accuracy": 0.9070084633139819,
+          "strict_f1": 0.7999999999999999,
+          "strict_recall": 0.8235294117647058,
+          "strict_specificity": 0.990487514863258
+        }
+      },
+      "paired_changes": {
+        "improved_pairs": 0,
+        "regressed_pairs": 0,
+        "unchanged_correct_pairs": 861,
+        "unchanged_incorrect_pairs": 14
+      },
+      "rule": {
+        "kind": "identity"
+      },
+      "tag": "motorcycle_present"
+    },
+    {
+      "baseline": {
+        "counts": {
+          "abstained_negative": 0,
+          "abstained_positive": 0,
+          "false_negative": 138,
+          "false_positive": 6,
+          "known_pairs": 865,
+          "true_negative": 654,
+          "true_positive": 67
+        },
+        "metrics": {
+          "coverage": 1.0,
+          "overall_accuracy": 0.8335260115606936,
+          "precision": 0.9178082191780822,
+          "selective_accuracy": 0.8335260115606936,
+          "selective_balanced_accuracy": 0.658869179600887,
+          "selective_f1": 0.48201438848920863,
+          "selective_mcc": 0.486065196904097,
+          "selective_recall": 0.32682926829268294,
+          "selective_specificity": 0.990909090909091,
+          "strict_balanced_accuracy": 0.658869179600887,
+          "strict_f1": 0.48201438848920863,
+          "strict_recall": 0.32682926829268294,
+          "strict_specificity": 0.990909090909091
+        }
+      },
+      "fused": {
+        "counts": {
+          "abstained_negative": 0,
+          "abstained_positive": 0,
+          "false_negative": 138,
+          "false_positive": 6,
+          "known_pairs": 865,
+          "true_negative": 654,
+          "true_positive": 67
+        },
+        "metrics": {
+          "coverage": 1.0,
+          "overall_accuracy": 0.8335260115606936,
+          "precision": 0.9178082191780822,
+          "selective_accuracy": 0.8335260115606936,
+          "selective_balanced_accuracy": 0.658869179600887,
+          "selective_f1": 0.48201438848920863,
+          "selective_mcc": 0.486065196904097,
+          "selective_recall": 0.32682926829268294,
+          "selective_specificity": 0.990909090909091,
+          "strict_balanced_accuracy": 0.658869179600887,
+          "strict_f1": 0.48201438848920863,
+          "strict_recall": 0.32682926829268294,
+          "strict_specificity": 0.990909090909091
+        }
+      },
+      "paired_changes": {
+        "improved_pairs": 0,
+        "regressed_pairs": 0,
+        "unchanged_correct_pairs": 721,
+        "unchanged_incorrect_pairs": 144
+      },
+      "rule": {
+        "kind": "identity"
+      },
+      "tag": "pedestrian_crossing"
+    },
+    {
+      "baseline": {
+        "counts": {
+          "abstained_negative": 0,
+          "abstained_positive": 0,
+          "false_negative": 92,
+          "false_positive": 65,
+          "known_pairs": 865,
+          "true_negative": 677,
+          "true_positive": 31
+        },
+        "metrics": {
+          "coverage": 1.0,
+          "overall_accuracy": 0.8184971098265896,
+          "precision": 0.3229166666666667,
+          "selective_accuracy": 0.8184971098265896,
+          "selective_balanced_accuracy": 0.5822157210790436,
+          "selective_f1": 0.2831050228310502,
+          "selective_mcc": 0.18282710724659873,
+          "selective_recall": 0.25203252032520324,
+          "selective_specificity": 0.9123989218328841,
+          "strict_balanced_accuracy": 0.5822157210790436,
+          "strict_f1": 0.2831050228310502,
+          "strict_recall": 0.25203252032520324,
+          "strict_specificity": 0.9123989218328841
+        }
+      },
+      "fused": {
+        "counts": {
+          "abstained_negative": 0,
+          "abstained_positive": 0,
+          "false_negative": 92,
+          "false_positive": 65,
+          "known_pairs": 865,
+          "true_negative": 677,
+          "true_positive": 31
+        },
+        "metrics": {
+          "coverage": 1.0,
+          "overall_accuracy": 0.8184971098265896,
+          "precision": 0.3229166666666667,
+          "selective_accuracy": 0.8184971098265896,
+          "selective_balanced_accuracy": 0.5822157210790436,
+          "selective_f1": 0.2831050228310502,
+          "selective_mcc": 0.18282710724659873,
+          "selective_recall": 0.25203252032520324,
+          "selective_specificity": 0.9123989218328841,
+          "strict_balanced_accuracy": 0.5822157210790436,
+          "strict_f1": 0.2831050228310502,
+          "strict_recall": 0.25203252032520324,
+          "strict_specificity": 0.9123989218328841
+        }
+      },
+      "paired_changes": {
+        "improved_pairs": 0,
+        "regressed_pairs": 0,
+        "unchanged_correct_pairs": 708,
+        "unchanged_incorrect_pairs": 157
+      },
+      "rule": {
+        "kind": "identity"
+      },
+      "tag": "pedestrian_waiting_to_cross"
+    },
+    {
+      "baseline": {
+        "counts": {
+          "abstained_negative": 0,
+          "abstained_positive": 0,
+          "false_negative": 64,
+          "false_positive": 7,
+          "known_pairs": 874,
+          "true_negative": 704,
+          "true_positive": 99
+        },
+        "metrics": {
+          "coverage": 1.0,
+          "overall_accuracy": 0.9187643020594966,
+          "precision": 0.9339622641509434,
+          "selective_accuracy": 0.9187643020594966,
+          "selective_balanced_accuracy": 0.7987583374319416,
+          "selective_f1": 0.7360594795539033,
+          "selective_mcc": 0.7129270441532979,
+          "selective_recall": 0.6073619631901841,
+          "selective_specificity": 0.9901547116736991,
+          "strict_balanced_accuracy": 0.7987583374319416,
+          "strict_f1": 0.7360594795539033,
+          "strict_recall": 0.6073619631901841,
+          "strict_specificity": 0.9901547116736991
+        }
+      },
+      "fused": {
+        "counts": {
+          "abstained_negative": 0,
+          "abstained_positive": 0,
+          "false_negative": 64,
+          "false_positive": 7,
+          "known_pairs": 874,
+          "true_negative": 704,
+          "true_positive": 99
+        },
+        "metrics": {
+          "coverage": 1.0,
+          "overall_accuracy": 0.9187643020594966,
+          "precision": 0.9339622641509434,
+          "selective_accuracy": 0.9187643020594966,
+          "selective_balanced_accuracy": 0.7987583374319416,
+          "selective_f1": 0.7360594795539033,
+          "selective_mcc": 0.7129270441532979,
+          "selective_recall": 0.6073619631901841,
+          "selective_specificity": 0.9901547116736991,
+          "strict_balanced_accuracy": 0.7987583374319416,
+          "strict_f1": 0.7360594795539033,
+          "strict_recall": 0.6073619631901841,
+          "strict_specificity": 0.9901547116736991
+        }
+      },
+      "paired_changes": {
+        "improved_pairs": 0,
+        "regressed_pairs": 0,
+        "unchanged_correct_pairs": 803,
+        "unchanged_incorrect_pairs": 71
+      },
+      "rule": {
+        "kind": "identity"
+      },
+      "tag": "traffic_light_green"
+    },
+    {
+      "baseline": {
+        "counts": {
+          "abstained_negative": 0,
+          "abstained_positive": 0,
+          "false_negative": 49,
+          "false_positive": 22,
+          "known_pairs": 875,
+          "true_negative": 627,
+          "true_positive": 177
+        },
+        "metrics": {
+          "coverage": 1.0,
+          "overall_accuracy": 0.9188571428571428,
+          "precision": 0.8894472361809045,
+          "selective_accuracy": 0.9188571428571428,
+          "selective_balanced_accuracy": 0.8746437678116095,
+          "selective_f1": 0.8329411764705883,
+          "selective_mcc": 0.7823934211554517,
+          "selective_recall": 0.7831858407079646,
+          "selective_specificity": 0.9661016949152542,
+          "strict_balanced_accuracy": 0.8746437678116095,
+          "strict_f1": 0.8329411764705883,
+          "strict_recall": 0.7831858407079646,
+          "strict_specificity": 0.9661016949152542
+        }
+      },
+      "fused": {
+        "counts": {
+          "abstained_negative": 0,
+          "abstained_positive": 0,
+          "false_negative": 49,
+          "false_positive": 22,
+          "known_pairs": 875,
+          "true_negative": 627,
+          "true_positive": 177
+        },
+        "metrics": {
+          "coverage": 1.0,
+          "overall_accuracy": 0.9188571428571428,
+          "precision": 0.8894472361809045,
+          "selective_accuracy": 0.9188571428571428,
+          "selective_balanced_accuracy": 0.8746437678116095,
+          "selective_f1": 0.8329411764705883,
+          "selective_mcc": 0.7823934211554517,
+          "selective_recall": 0.7831858407079646,
+          "selective_specificity": 0.9661016949152542,
+          "strict_balanced_accuracy": 0.8746437678116095,
+          "strict_f1": 0.8329411764705883,
+          "strict_recall": 0.7831858407079646,
+          "strict_specificity": 0.9661016949152542
+        }
+      },
+      "paired_changes": {
+        "improved_pairs": 0,
+        "regressed_pairs": 0,
+        "unchanged_correct_pairs": 804,
+        "unchanged_incorrect_pairs": 71
+      },
+      "rule": {
+        "kind": "identity"
+      },
+      "tag": "traffic_light_red"
+    }
+  ]
+}

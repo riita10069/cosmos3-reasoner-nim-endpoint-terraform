@@ -1,0 +1,643 @@
+{
+  "generated_at": "2026-08-09T14:26:52.164+00:00",
+  "labeling_config": "${REPO_ROOT}/benchmark/configs/road-labeling.json",
+  "labeling_config_sha256": "f3abf8522e8207557ad162462106374796fdb954251e32e4ef0aa19f8c750dd5",
+  "schema_version": 1,
+  "variants": [
+    {
+      "criteria_characters": 1226,
+      "criteria_words": 213,
+      "instruction_characters": 348,
+      "instruction_words": 51,
+      "tag_reasoning_spec_set": null,
+      "tags": [
+        {
+          "characters": 203,
+          "definition": "The ego vehicle is on the move along its normal direction of travel during a sustained part of the interval. Do not count an interval whose only ego motion is a turn, lane change, or overtaking maneuver.",
+          "evidence_items": 0,
+          "has_explicit_temporal_test": false,
+          "rejection_items": 0,
+          "tag": "ego_moving",
+          "words": 37
+        },
+        {
+          "characters": 70,
+          "definition": "The ego vehicle is not moving during a sustained part of the interval.",
+          "evidence_items": 0,
+          "has_explicit_temporal_test": false,
+          "rejection_items": 0,
+          "tag": "ego_stopped",
+          "words": 13
+        },
+        {
+          "characters": 122,
+          "definition": "The ego vehicle turns left, evidenced by a sustained leftward heading change; distinguish this from a lateral lane change.",
+          "evidence_items": 0,
+          "has_explicit_temporal_test": false,
+          "rejection_items": 0,
+          "tag": "ego_turn_left",
+          "words": 19
+        },
+        {
+          "characters": 124,
+          "definition": "The ego vehicle turns right, evidenced by a sustained rightward heading change; distinguish this from a lateral lane change.",
+          "evidence_items": 0,
+          "has_explicit_temporal_test": false,
+          "rejection_items": 0,
+          "tag": "ego_turn_right",
+          "words": 19
+        },
+        {
+          "characters": 108,
+          "definition": "The ego vehicle moves from its current lane into an adjacent lane on either side without making a road turn.",
+          "evidence_items": 0,
+          "has_explicit_temporal_test": false,
+          "rejection_items": 0,
+          "tag": "ego_lane_change",
+          "words": 20
+        },
+        {
+          "characters": 73,
+          "definition": "At least one visible car slows down and its brake lights are illuminated.",
+          "evidence_items": 0,
+          "has_explicit_temporal_test": false,
+          "rejection_items": 0,
+          "tag": "car_braking",
+          "words": 13
+        },
+        {
+          "characters": 114,
+          "definition": "At least one visible car is stationary but in a position ready to move; do not count clearly parked inactive cars.",
+          "evidence_items": 0,
+          "has_explicit_temporal_test": false,
+          "rejection_items": 0,
+          "tag": "car_stopped",
+          "words": 21
+        },
+        {
+          "characters": 101,
+          "definition": "At least one pedestrian is stationary on a pavement and faces toward the road as if waiting to cross.",
+          "evidence_items": 0,
+          "has_explicit_temporal_test": false,
+          "rejection_items": 0,
+          "tag": "pedestrian_waiting_to_cross",
+          "words": 19
+        },
+        {
+          "characters": 78,
+          "definition": "At least one pedestrian crosses the road, including crossing from either side.",
+          "evidence_items": 0,
+          "has_explicit_temporal_test": false,
+          "rejection_items": 0,
+          "tag": "pedestrian_crossing",
+          "words": 12
+        },
+        {
+          "characters": 32,
+          "definition": "At least one cyclist is visible.",
+          "evidence_items": 0,
+          "has_explicit_temporal_test": false,
+          "rejection_items": 0,
+          "tag": "cyclist_present",
+          "words": 6
+        },
+        {
+          "characters": 51,
+          "definition": "At least one motorcycle or motorcyclist is visible.",
+          "evidence_items": 0,
+          "has_explicit_temporal_test": false,
+          "rejection_items": 0,
+          "tag": "motorcycle_present",
+          "words": 8
+        },
+        {
+          "characters": 74,
+          "definition": "A traffic light relevant to the ego vehicle has its red light illuminated.",
+          "evidence_items": 0,
+          "has_explicit_temporal_test": false,
+          "rejection_items": 0,
+          "tag": "traffic_light_red",
+          "words": 13
+        },
+        {
+          "characters": 76,
+          "definition": "A traffic light relevant to the ego vehicle has its green light illuminated.",
+          "evidence_items": 0,
+          "has_explicit_temporal_test": false,
+          "rejection_items": 0,
+          "tag": "traffic_light_green",
+          "words": 13
+        }
+      ],
+      "variant": "road-reasoned"
+    },
+    {
+      "criteria_characters": 8310,
+      "criteria_words": 1273,
+      "instruction_characters": 1070,
+      "instruction_words": 162,
+      "tag_reasoning_spec_set": "road-evidence-v2",
+      "tags": [
+        {
+          "characters": 737,
+          "definition": "Meaning: The ego vehicle travels in its normal forward direction for a sustained part of the interval; moving and stopped may both occur in different portions of one clip. Required evidence: persistent forward expansion or translation of static road structure across timestamps; changing distance to stationary landmarks or lead traffic that is consistent with ego translation. Temporal test: Confirm forward translation at two or more separated source timestamps, preferably spanning at least 0.5 seconds. Reject when: only another object moves while the static background is unchanged; the apparent displacement is camera shake or a single-frame jump; the only ego action in the interval is a turn, lane change, or overtaking maneuver.",
+          "evidence_items": 2,
+          "has_explicit_temporal_test": true,
+          "rejection_items": 3,
+          "tag": "ego_moving",
+          "words": 112
+        },
+        {
+          "characters": 648,
+          "definition": "Meaning: The ego vehicle remains stationary for a sustained part of the interval; a clip may contain both moving and stopped phases. Required evidence: static road geometry and stationary landmarks retain nearly the same perspective; the no-translation state persists rather than appearing in one duplicated or blurred frame. Temporal test: Confirm the stationary state at two or more separated source timestamps, preferably spanning at least 0.5 seconds. Reject when: the vehicle is rolling slowly but background perspective continues to change; only the lead vehicle is stationary; motion is obscured by a pan-like turn or transient camera shake.",
+          "evidence_items": 2,
+          "has_explicit_temporal_test": true,
+          "rejection_items": 3,
+          "tag": "ego_stopped",
+          "words": 98
+        },
+        {
+          "characters": 698,
+          "definition": "Meaning: The ego vehicle performs a semantic left turn onto a different road branch or direction, rather than merely drifting left. Required evidence: the continuing road or junction geometry supports a left branch; ego heading changes persistently left from entry to exit and the vehicle aligns with the new direction. Temporal test: Compare pre-turn, turning, and post-turn timestamps when available; require a sustained leftward heading change. Reject when: the vehicle follows a smoothly curving road without selecting a new branch; the vehicle crosses into an adjacent lane while the road direction remains continuous; the apparent turn is caused by camera shake or a moving foreground object.",
+          "evidence_items": 2,
+          "has_explicit_temporal_test": true,
+          "rejection_items": 3,
+          "tag": "ego_turn_left",
+          "words": 106
+        },
+        {
+          "characters": 703,
+          "definition": "Meaning: The ego vehicle performs a semantic right turn onto a different road branch or direction, rather than merely drifting right. Required evidence: the continuing road or junction geometry supports a right branch; ego heading changes persistently right from entry to exit and the vehicle aligns with the new direction. Temporal test: Compare pre-turn, turning, and post-turn timestamps when available; require a sustained rightward heading change. Reject when: the vehicle follows a smoothly curving road without selecting a new branch; the vehicle crosses into an adjacent lane while the road direction remains continuous; the apparent turn is caused by camera shake or a moving foreground object.",
+          "evidence_items": 2,
+          "has_explicit_temporal_test": true,
+          "rejection_items": 3,
+          "tag": "ego_turn_right",
+          "words": 106
+        },
+        {
+          "characters": 644,
+          "definition": "Meaning: The ego vehicle transfers from its current lane into an adjacent lane while remaining on the same continuing road. Required evidence: a lane boundary or stable lane-relative reference moves across the ego path; the vehicle is first aligned with one lane and later aligned with the adjacent lane. Temporal test: Seek before, boundary-crossing, and after states; require sustained lateral displacement relative to lane geometry. Reject when: the entire road bends while the ego vehicle remains in its lane; the ego vehicle turns onto another road at a junction; overtaking or lateral camera motion occurs without a visible lane transfer.",
+          "evidence_items": 2,
+          "has_explicit_temporal_test": true,
+          "rejection_items": 3,
+          "tag": "ego_lane_change",
+          "words": 100
+        },
+        {
+          "characters": 631,
+          "definition": "Meaning: At least one visible car decelerates while that same car's brake lamps are illuminated. Required evidence: track the same car across timestamps; its brake lamps illuminate or become clearly stronger; relative motion, wheel motion, or spacing is consistent with deceleration. Temporal test: Compare the same car before and during braking; do not infer a state transition from one isolated rear view. Reject when: rear lamps are steady tail lamps, reflections, indicators, or glare; the car is already stationary with no observed deceleration; apparent deceleration is explained only by ego motion or a changing camera view.",
+          "evidence_items": 3,
+          "has_explicit_temporal_test": true,
+          "rejection_items": 3,
+          "tag": "car_braking",
+          "words": 96
+        },
+        {
+          "characters": 536,
+          "definition": "Meaning: At least one visible car is stationary in traffic or another position from which it appears ready to move. Required evidence: track the same car and verify no meaningful displacement relative to stable road references; its lane or traffic context is consistent with a temporary stop. Temporal test: Confirm stationarity at two or more separated timestamps. Reject when: the car moves slowly but continuously; the vehicle is clearly parked inactive at the kerb or in a parking area; stationarity is inferred from a single frame.",
+          "evidence_items": 2,
+          "has_explicit_temporal_test": true,
+          "rejection_items": 3,
+          "tag": "car_stopped",
+          "words": 86
+        },
+        {
+          "characters": 665,
+          "definition": "Meaning: At least one pedestrian remains on the pavement or kerb and is oriented or positioned as if intending to enter the road. Required evidence: track the same pedestrian near the road edge across timestamps; the person remains outside the carriageway with body orientation, gaze, or stance directed toward a crossing opportunity. Temporal test: Confirm a persistent waiting state at two or more timestamps rather than a momentary pause. Reject when: the pedestrian is already in the carriageway and crossing; the person walks parallel to the road along the pavement; the person is merely standing near a bus stop, shop, or group without road-directed evidence.",
+          "evidence_items": 2,
+          "has_explicit_temporal_test": true,
+          "rejection_items": 3,
+          "tag": "pedestrian_waiting_to_cross",
+          "words": 105
+        },
+        {
+          "characters": 589,
+          "definition": "Meaning: At least one pedestrian moves through the carriageway from one side, kerb, or road region toward another. Required evidence: track the same pedestrian across timestamps; the track enters or occupies the road and shows lateral progress through the carriageway. Temporal test: Require displacement across at least two timestamps; use road boundaries and the ego path to establish crossing. Reject when: the pedestrian only waits at the kerb; the person walks parallel to traffic on the pavement; apparent displacement is caused by ego motion while the pedestrian remains stationary.",
+          "evidence_items": 2,
+          "has_explicit_temporal_test": true,
+          "rejection_items": 3,
+          "tag": "pedestrian_crossing",
+          "words": 89
+        },
+        {
+          "characters": 541,
+          "definition": "Meaning: At least one person riding a pedal bicycle is visibly present. Required evidence: a bicycle frame or wheel structure and a rider are jointly visible; the riding posture and vehicle proportions remain consistent across available timestamps. Temporal test: Use multiple views when the object is small or partly occluded; one unambiguous frame is sufficient for presence. Reject when: the two-wheeler is a powered motorcycle or scooter; the object is a pedestrian without a bicycle; a distant silhouette lacks visible bicycle evidence.",
+          "evidence_items": 2,
+          "has_explicit_temporal_test": true,
+          "rejection_items": 3,
+          "tag": "cyclist_present",
+          "words": 82
+        },
+        {
+          "characters": 538,
+          "definition": "Meaning: At least one powered motorcycle, scooter, or its rider is visibly present. Required evidence: the powered two-wheeler body, wheels, and rider geometry are visible; vehicle proportions or bodywork distinguish it from a pedal bicycle. Temporal test: Use multiple views when the object is small or partly occluded; one unambiguous frame is sufficient for presence. Reject when: the vehicle is a pedal bicycle or cyclist; the object is a pedestrian or unrelated narrow vehicle; a distant silhouette lacks powered-motorcycle evidence.",
+          "evidence_items": 2,
+          "has_explicit_temporal_test": true,
+          "rejection_items": 3,
+          "tag": "motorcycle_present",
+          "words": 80
+        },
+        {
+          "characters": 687,
+          "definition": "Meaning: A traffic signal governing the ego vehicle's current or imminent path visibly displays red. Required evidence: identify the signal head associated with the ego lane or planned path using lane and junction geometry; directly observe the red lamp illuminated in at least one clear frame. Temporal test: Confirm relevance from surrounding frames when possible; red and green may both occur only if each is clearly seen at different timestamps. Reject when: the signal governs cross traffic, pedestrians, or another lane movement; the red source is a brake lamp, reflection, sign, or lens flare; the colour is inferred from map context or lamp position without visible illumination.",
+          "evidence_items": 2,
+          "has_explicit_temporal_test": true,
+          "rejection_items": 3,
+          "tag": "traffic_light_red",
+          "words": 107
+        },
+        {
+          "characters": 693,
+          "definition": "Meaning: A traffic signal governing the ego vehicle's current or imminent path visibly displays green. Required evidence: identify the signal head associated with the ego lane or planned path using lane and junction geometry; directly observe the green lamp illuminated in at least one clear frame. Temporal test: Confirm relevance from surrounding frames when possible; red and green may both occur only if each is clearly seen at different timestamps. Reject when: the signal governs cross traffic, pedestrians, or another lane movement; the green source is a reflection, sign, vegetation, or lens flare; the colour is inferred from map context or lamp position without visible illumination.",
+          "evidence_items": 2,
+          "has_explicit_temporal_test": true,
+          "rejection_items": 3,
+          "tag": "traffic_light_green",
+          "words": 106
+        }
+      ],
+      "variant": "road-reasoned-contrastive-v2"
+    },
+    {
+      "criteria_characters": 3811,
+      "criteria_words": 603,
+      "instruction_characters": 793,
+      "instruction_words": 120,
+      "tag_reasoning_spec_set": "road-evidence-v2",
+      "tags": [
+        {
+          "characters": 203,
+          "definition": "The ego vehicle is on the move along its normal direction of travel during a sustained part of the interval. Do not count an interval whose only ego motion is a turn, lane change, or overtaking maneuver.",
+          "evidence_items": 0,
+          "has_explicit_temporal_test": false,
+          "rejection_items": 0,
+          "tag": "ego_moving",
+          "words": 37
+        },
+        {
+          "characters": 70,
+          "definition": "The ego vehicle is not moving during a sustained part of the interval.",
+          "evidence_items": 0,
+          "has_explicit_temporal_test": false,
+          "rejection_items": 0,
+          "tag": "ego_stopped",
+          "words": 13
+        },
+        {
+          "characters": 698,
+          "definition": "Meaning: The ego vehicle performs a semantic left turn onto a different road branch or direction, rather than merely drifting left. Required evidence: the continuing road or junction geometry supports a left branch; ego heading changes persistently left from entry to exit and the vehicle aligns with the new direction. Temporal test: Compare pre-turn, turning, and post-turn timestamps when available; require a sustained leftward heading change. Reject when: the vehicle follows a smoothly curving road without selecting a new branch; the vehicle crosses into an adjacent lane while the road direction remains continuous; the apparent turn is caused by camera shake or a moving foreground object.",
+          "evidence_items": 2,
+          "has_explicit_temporal_test": true,
+          "rejection_items": 3,
+          "tag": "ego_turn_left",
+          "words": 106
+        },
+        {
+          "characters": 124,
+          "definition": "The ego vehicle turns right, evidenced by a sustained rightward heading change; distinguish this from a lateral lane change.",
+          "evidence_items": 0,
+          "has_explicit_temporal_test": false,
+          "rejection_items": 0,
+          "tag": "ego_turn_right",
+          "words": 19
+        },
+        {
+          "characters": 644,
+          "definition": "Meaning: The ego vehicle transfers from its current lane into an adjacent lane while remaining on the same continuing road. Required evidence: a lane boundary or stable lane-relative reference moves across the ego path; the vehicle is first aligned with one lane and later aligned with the adjacent lane. Temporal test: Seek before, boundary-crossing, and after states; require sustained lateral displacement relative to lane geometry. Reject when: the entire road bends while the ego vehicle remains in its lane; the ego vehicle turns onto another road at a junction; overtaking or lateral camera motion occurs without a visible lane transfer.",
+          "evidence_items": 2,
+          "has_explicit_temporal_test": true,
+          "rejection_items": 3,
+          "tag": "ego_lane_change",
+          "words": 100
+        },
+        {
+          "characters": 73,
+          "definition": "At least one visible car slows down and its brake lights are illuminated.",
+          "evidence_items": 0,
+          "has_explicit_temporal_test": false,
+          "rejection_items": 0,
+          "tag": "car_braking",
+          "words": 13
+        },
+        {
+          "characters": 536,
+          "definition": "Meaning: At least one visible car is stationary in traffic or another position from which it appears ready to move. Required evidence: track the same car and verify no meaningful displacement relative to stable road references; its lane or traffic context is consistent with a temporary stop. Temporal test: Confirm stationarity at two or more separated timestamps. Reject when: the car moves slowly but continuously; the vehicle is clearly parked inactive at the kerb or in a parking area; stationarity is inferred from a single frame.",
+          "evidence_items": 2,
+          "has_explicit_temporal_test": true,
+          "rejection_items": 3,
+          "tag": "car_stopped",
+          "words": 86
+        },
+        {
+          "characters": 665,
+          "definition": "Meaning: At least one pedestrian remains on the pavement or kerb and is oriented or positioned as if intending to enter the road. Required evidence: track the same pedestrian near the road edge across timestamps; the person remains outside the carriageway with body orientation, gaze, or stance directed toward a crossing opportunity. Temporal test: Confirm a persistent waiting state at two or more timestamps rather than a momentary pause. Reject when: the pedestrian is already in the carriageway and crossing; the person walks parallel to the road along the pavement; the person is merely standing near a bus stop, shop, or group without road-directed evidence.",
+          "evidence_items": 2,
+          "has_explicit_temporal_test": true,
+          "rejection_items": 3,
+          "tag": "pedestrian_waiting_to_cross",
+          "words": 105
+        },
+        {
+          "characters": 78,
+          "definition": "At least one pedestrian crosses the road, including crossing from either side.",
+          "evidence_items": 0,
+          "has_explicit_temporal_test": false,
+          "rejection_items": 0,
+          "tag": "pedestrian_crossing",
+          "words": 12
+        },
+        {
+          "characters": 32,
+          "definition": "At least one cyclist is visible.",
+          "evidence_items": 0,
+          "has_explicit_temporal_test": false,
+          "rejection_items": 0,
+          "tag": "cyclist_present",
+          "words": 6
+        },
+        {
+          "characters": 538,
+          "definition": "Meaning: At least one powered motorcycle, scooter, or its rider is visibly present. Required evidence: the powered two-wheeler body, wheels, and rider geometry are visible; vehicle proportions or bodywork distinguish it from a pedal bicycle. Temporal test: Use multiple views when the object is small or partly occluded; one unambiguous frame is sufficient for presence. Reject when: the vehicle is a pedal bicycle or cyclist; the object is a pedestrian or unrelated narrow vehicle; a distant silhouette lacks powered-motorcycle evidence.",
+          "evidence_items": 2,
+          "has_explicit_temporal_test": true,
+          "rejection_items": 3,
+          "tag": "motorcycle_present",
+          "words": 80
+        },
+        {
+          "characters": 74,
+          "definition": "A traffic light relevant to the ego vehicle has its red light illuminated.",
+          "evidence_items": 0,
+          "has_explicit_temporal_test": false,
+          "rejection_items": 0,
+          "tag": "traffic_light_red",
+          "words": 13
+        },
+        {
+          "characters": 76,
+          "definition": "A traffic light relevant to the ego vehicle has its green light illuminated.",
+          "evidence_items": 0,
+          "has_explicit_temporal_test": false,
+          "rejection_items": 0,
+          "tag": "traffic_light_green",
+          "words": 13
+        }
+      ],
+      "variant": "road-reasoned-hybrid-core-v1"
+    },
+    {
+      "criteria_characters": 5015,
+      "criteria_words": 778,
+      "instruction_characters": 793,
+      "instruction_words": 120,
+      "tag_reasoning_spec_set": "road-evidence-v2",
+      "tags": [
+        {
+          "characters": 737,
+          "definition": "Meaning: The ego vehicle travels in its normal forward direction for a sustained part of the interval; moving and stopped may both occur in different portions of one clip. Required evidence: persistent forward expansion or translation of static road structure across timestamps; changing distance to stationary landmarks or lead traffic that is consistent with ego translation. Temporal test: Confirm forward translation at two or more separated source timestamps, preferably spanning at least 0.5 seconds. Reject when: only another object moves while the static background is unchanged; the apparent displacement is camera shake or a single-frame jump; the only ego action in the interval is a turn, lane change, or overtaking maneuver.",
+          "evidence_items": 2,
+          "has_explicit_temporal_test": true,
+          "rejection_items": 3,
+          "tag": "ego_moving",
+          "words": 112
+        },
+        {
+          "characters": 648,
+          "definition": "Meaning: The ego vehicle remains stationary for a sustained part of the interval; a clip may contain both moving and stopped phases. Required evidence: static road geometry and stationary landmarks retain nearly the same perspective; the no-translation state persists rather than appearing in one duplicated or blurred frame. Temporal test: Confirm the stationary state at two or more separated source timestamps, preferably spanning at least 0.5 seconds. Reject when: the vehicle is rolling slowly but background perspective continues to change; only the lead vehicle is stationary; motion is obscured by a pan-like turn or transient camera shake.",
+          "evidence_items": 2,
+          "has_explicit_temporal_test": true,
+          "rejection_items": 3,
+          "tag": "ego_stopped",
+          "words": 98
+        },
+        {
+          "characters": 698,
+          "definition": "Meaning: The ego vehicle performs a semantic left turn onto a different road branch or direction, rather than merely drifting left. Required evidence: the continuing road or junction geometry supports a left branch; ego heading changes persistently left from entry to exit and the vehicle aligns with the new direction. Temporal test: Compare pre-turn, turning, and post-turn timestamps when available; require a sustained leftward heading change. Reject when: the vehicle follows a smoothly curving road without selecting a new branch; the vehicle crosses into an adjacent lane while the road direction remains continuous; the apparent turn is caused by camera shake or a moving foreground object.",
+          "evidence_items": 2,
+          "has_explicit_temporal_test": true,
+          "rejection_items": 3,
+          "tag": "ego_turn_left",
+          "words": 106
+        },
+        {
+          "characters": 703,
+          "definition": "Meaning: The ego vehicle performs a semantic right turn onto a different road branch or direction, rather than merely drifting right. Required evidence: the continuing road or junction geometry supports a right branch; ego heading changes persistently right from entry to exit and the vehicle aligns with the new direction. Temporal test: Compare pre-turn, turning, and post-turn timestamps when available; require a sustained rightward heading change. Reject when: the vehicle follows a smoothly curving road without selecting a new branch; the vehicle crosses into an adjacent lane while the road direction remains continuous; the apparent turn is caused by camera shake or a moving foreground object.",
+          "evidence_items": 2,
+          "has_explicit_temporal_test": true,
+          "rejection_items": 3,
+          "tag": "ego_turn_right",
+          "words": 106
+        },
+        {
+          "characters": 644,
+          "definition": "Meaning: The ego vehicle transfers from its current lane into an adjacent lane while remaining on the same continuing road. Required evidence: a lane boundary or stable lane-relative reference moves across the ego path; the vehicle is first aligned with one lane and later aligned with the adjacent lane. Temporal test: Seek before, boundary-crossing, and after states; require sustained lateral displacement relative to lane geometry. Reject when: the entire road bends while the ego vehicle remains in its lane; the ego vehicle turns onto another road at a junction; overtaking or lateral camera motion occurs without a visible lane transfer.",
+          "evidence_items": 2,
+          "has_explicit_temporal_test": true,
+          "rejection_items": 3,
+          "tag": "ego_lane_change",
+          "words": 100
+        },
+        {
+          "characters": 73,
+          "definition": "At least one visible car slows down and its brake lights are illuminated.",
+          "evidence_items": 0,
+          "has_explicit_temporal_test": false,
+          "rejection_items": 0,
+          "tag": "car_braking",
+          "words": 13
+        },
+        {
+          "characters": 536,
+          "definition": "Meaning: At least one visible car is stationary in traffic or another position from which it appears ready to move. Required evidence: track the same car and verify no meaningful displacement relative to stable road references; its lane or traffic context is consistent with a temporary stop. Temporal test: Confirm stationarity at two or more separated timestamps. Reject when: the car moves slowly but continuously; the vehicle is clearly parked inactive at the kerb or in a parking area; stationarity is inferred from a single frame.",
+          "evidence_items": 2,
+          "has_explicit_temporal_test": true,
+          "rejection_items": 3,
+          "tag": "car_stopped",
+          "words": 86
+        },
+        {
+          "characters": 665,
+          "definition": "Meaning: At least one pedestrian remains on the pavement or kerb and is oriented or positioned as if intending to enter the road. Required evidence: track the same pedestrian near the road edge across timestamps; the person remains outside the carriageway with body orientation, gaze, or stance directed toward a crossing opportunity. Temporal test: Confirm a persistent waiting state at two or more timestamps rather than a momentary pause. Reject when: the pedestrian is already in the carriageway and crossing; the person walks parallel to the road along the pavement; the person is merely standing near a bus stop, shop, or group without road-directed evidence.",
+          "evidence_items": 2,
+          "has_explicit_temporal_test": true,
+          "rejection_items": 3,
+          "tag": "pedestrian_waiting_to_cross",
+          "words": 105
+        },
+        {
+          "characters": 78,
+          "definition": "At least one pedestrian crosses the road, including crossing from either side.",
+          "evidence_items": 0,
+          "has_explicit_temporal_test": false,
+          "rejection_items": 0,
+          "tag": "pedestrian_crossing",
+          "words": 12
+        },
+        {
+          "characters": 32,
+          "definition": "At least one cyclist is visible.",
+          "evidence_items": 0,
+          "has_explicit_temporal_test": false,
+          "rejection_items": 0,
+          "tag": "cyclist_present",
+          "words": 6
+        },
+        {
+          "characters": 51,
+          "definition": "At least one motorcycle or motorcyclist is visible.",
+          "evidence_items": 0,
+          "has_explicit_temporal_test": false,
+          "rejection_items": 0,
+          "tag": "motorcycle_present",
+          "words": 8
+        },
+        {
+          "characters": 74,
+          "definition": "A traffic light relevant to the ego vehicle has its red light illuminated.",
+          "evidence_items": 0,
+          "has_explicit_temporal_test": false,
+          "rejection_items": 0,
+          "tag": "traffic_light_red",
+          "words": 13
+        },
+        {
+          "characters": 76,
+          "definition": "A traffic light relevant to the ego vehicle has its green light illuminated.",
+          "evidence_items": 0,
+          "has_explicit_temporal_test": false,
+          "rejection_items": 0,
+          "tag": "traffic_light_green",
+          "words": 13
+        }
+      ],
+      "variant": "road-reasoned-hybrid-temporal-v1"
+    },
+    {
+      "criteria_characters": 5502,
+      "criteria_words": 850,
+      "instruction_characters": 793,
+      "instruction_words": 120,
+      "tag_reasoning_spec_set": "road-evidence-v2",
+      "tags": [
+        {
+          "characters": 737,
+          "definition": "Meaning: The ego vehicle travels in its normal forward direction for a sustained part of the interval; moving and stopped may both occur in different portions of one clip. Required evidence: persistent forward expansion or translation of static road structure across timestamps; changing distance to stationary landmarks or lead traffic that is consistent with ego translation. Temporal test: Confirm forward translation at two or more separated source timestamps, preferably spanning at least 0.5 seconds. Reject when: only another object moves while the static background is unchanged; the apparent displacement is camera shake or a single-frame jump; the only ego action in the interval is a turn, lane change, or overtaking maneuver.",
+          "evidence_items": 2,
+          "has_explicit_temporal_test": true,
+          "rejection_items": 3,
+          "tag": "ego_moving",
+          "words": 112
+        },
+        {
+          "characters": 648,
+          "definition": "Meaning: The ego vehicle remains stationary for a sustained part of the interval; a clip may contain both moving and stopped phases. Required evidence: static road geometry and stationary landmarks retain nearly the same perspective; the no-translation state persists rather than appearing in one duplicated or blurred frame. Temporal test: Confirm the stationary state at two or more separated source timestamps, preferably spanning at least 0.5 seconds. Reject when: the vehicle is rolling slowly but background perspective continues to change; only the lead vehicle is stationary; motion is obscured by a pan-like turn or transient camera shake.",
+          "evidence_items": 2,
+          "has_explicit_temporal_test": true,
+          "rejection_items": 3,
+          "tag": "ego_stopped",
+          "words": 98
+        },
+        {
+          "characters": 698,
+          "definition": "Meaning: The ego vehicle performs a semantic left turn onto a different road branch or direction, rather than merely drifting left. Required evidence: the continuing road or junction geometry supports a left branch; ego heading changes persistently left from entry to exit and the vehicle aligns with the new direction. Temporal test: Compare pre-turn, turning, and post-turn timestamps when available; require a sustained leftward heading change. Reject when: the vehicle follows a smoothly curving road without selecting a new branch; the vehicle crosses into an adjacent lane while the road direction remains continuous; the apparent turn is caused by camera shake or a moving foreground object.",
+          "evidence_items": 2,
+          "has_explicit_temporal_test": true,
+          "rejection_items": 3,
+          "tag": "ego_turn_left",
+          "words": 106
+        },
+        {
+          "characters": 703,
+          "definition": "Meaning: The ego vehicle performs a semantic right turn onto a different road branch or direction, rather than merely drifting right. Required evidence: the continuing road or junction geometry supports a right branch; ego heading changes persistently right from entry to exit and the vehicle aligns with the new direction. Temporal test: Compare pre-turn, turning, and post-turn timestamps when available; require a sustained rightward heading change. Reject when: the vehicle follows a smoothly curving road without selecting a new branch; the vehicle crosses into an adjacent lane while the road direction remains continuous; the apparent turn is caused by camera shake or a moving foreground object.",
+          "evidence_items": 2,
+          "has_explicit_temporal_test": true,
+          "rejection_items": 3,
+          "tag": "ego_turn_right",
+          "words": 106
+        },
+        {
+          "characters": 644,
+          "definition": "Meaning: The ego vehicle transfers from its current lane into an adjacent lane while remaining on the same continuing road. Required evidence: a lane boundary or stable lane-relative reference moves across the ego path; the vehicle is first aligned with one lane and later aligned with the adjacent lane. Temporal test: Seek before, boundary-crossing, and after states; require sustained lateral displacement relative to lane geometry. Reject when: the entire road bends while the ego vehicle remains in its lane; the ego vehicle turns onto another road at a junction; overtaking or lateral camera motion occurs without a visible lane transfer.",
+          "evidence_items": 2,
+          "has_explicit_temporal_test": true,
+          "rejection_items": 3,
+          "tag": "ego_lane_change",
+          "words": 100
+        },
+        {
+          "characters": 73,
+          "definition": "At least one visible car slows down and its brake lights are illuminated.",
+          "evidence_items": 0,
+          "has_explicit_temporal_test": false,
+          "rejection_items": 0,
+          "tag": "car_braking",
+          "words": 13
+        },
+        {
+          "characters": 536,
+          "definition": "Meaning: At least one visible car is stationary in traffic or another position from which it appears ready to move. Required evidence: track the same car and verify no meaningful displacement relative to stable road references; its lane or traffic context is consistent with a temporary stop. Temporal test: Confirm stationarity at two or more separated timestamps. Reject when: the car moves slowly but continuously; the vehicle is clearly parked inactive at the kerb or in a parking area; stationarity is inferred from a single frame.",
+          "evidence_items": 2,
+          "has_explicit_temporal_test": true,
+          "rejection_items": 3,
+          "tag": "car_stopped",
+          "words": 86
+        },
+        {
+          "characters": 665,
+          "definition": "Meaning: At least one pedestrian remains on the pavement or kerb and is oriented or positioned as if intending to enter the road. Required evidence: track the same pedestrian near the road edge across timestamps; the person remains outside the carriageway with body orientation, gaze, or stance directed toward a crossing opportunity. Temporal test: Confirm a persistent waiting state at two or more timestamps rather than a momentary pause. Reject when: the pedestrian is already in the carriageway and crossing; the person walks parallel to the road along the pavement; the person is merely standing near a bus stop, shop, or group without road-directed evidence.",
+          "evidence_items": 2,
+          "has_explicit_temporal_test": true,
+          "rejection_items": 3,
+          "tag": "pedestrian_waiting_to_cross",
+          "words": 105
+        },
+        {
+          "characters": 78,
+          "definition": "At least one pedestrian crosses the road, including crossing from either side.",
+          "evidence_items": 0,
+          "has_explicit_temporal_test": false,
+          "rejection_items": 0,
+          "tag": "pedestrian_crossing",
+          "words": 12
+        },
+        {
+          "characters": 32,
+          "definition": "At least one cyclist is visible.",
+          "evidence_items": 0,
+          "has_explicit_temporal_test": false,
+          "rejection_items": 0,
+          "tag": "cyclist_present",
+          "words": 6
+        },
+        {
+          "characters": 538,
+          "definition": "Meaning: At least one powered motorcycle, scooter, or its rider is visibly present. Required evidence: the powered two-wheeler body, wheels, and rider geometry are visible; vehicle proportions or bodywork distinguish it from a pedal bicycle. Temporal test: Use multiple views when the object is small or partly occluded; one unambiguous frame is sufficient for presence. Reject when: the vehicle is a pedal bicycle or cyclist; the object is a pedestrian or unrelated narrow vehicle; a distant silhouette lacks powered-motorcycle evidence.",
+          "evidence_items": 2,
+          "has_explicit_temporal_test": true,
+          "rejection_items": 3,
+          "tag": "motorcycle_present",
+          "words": 80
+        },
+        {
+          "characters": 74,
+          "definition": "A traffic light relevant to the ego vehicle has its red light illuminated.",
+          "evidence_items": 0,
+          "has_explicit_temporal_test": false,
+          "rejection_items": 0,
+          "tag": "traffic_light_red",
+          "words": 13
+        },
+        {
+          "characters": 76,
+          "definition": "A traffic light relevant to the ego vehicle has its green light illuminated.",
+          "evidence_items": 0,
+          "has_explicit_temporal_test": false,
+          "rejection_items": 0,
+          "tag": "traffic_light_green",
+          "words": 13
+        }
+      ],
+      "variant": "road-reasoned-hybrid-f1-v1"
+    }
+  ]
+}

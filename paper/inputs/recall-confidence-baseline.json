@@ -1,0 +1,941 @@
+{
+  "confidence": {
+    "request_count": 28,
+    "requests_with_yes_no_probability": 28,
+    "thresholds": [
+      {
+        "f1": 0.772727,
+        "fn": 4,
+        "fp": 6,
+        "negative_control_false_positives": 6,
+        "original_false_negatives_recovered": 10,
+        "original_true_positives_retained": 7,
+        "precision": 0.73913,
+        "recall": 0.809524,
+        "threshold": 0.05,
+        "tn": 1,
+        "tp": 17
+      },
+      {
+        "f1": 0.731707,
+        "fn": 6,
+        "fp": 5,
+        "negative_control_false_positives": 5,
+        "original_false_negatives_recovered": 8,
+        "original_true_positives_retained": 7,
+        "precision": 0.75,
+        "recall": 0.714286,
+        "threshold": 0.1,
+        "tn": 2,
+        "tp": 15
+      },
+      {
+        "f1": 0.75,
+        "fn": 6,
+        "fp": 4,
+        "negative_control_false_positives": 4,
+        "original_false_negatives_recovered": 8,
+        "original_true_positives_retained": 7,
+        "precision": 0.789474,
+        "recall": 0.714286,
+        "threshold": 0.2,
+        "tn": 3,
+        "tp": 15
+      },
+      {
+        "f1": 0.684211,
+        "fn": 8,
+        "fp": 4,
+        "negative_control_false_positives": 4,
+        "original_false_negatives_recovered": 6,
+        "original_true_positives_retained": 7,
+        "precision": 0.764706,
+        "recall": 0.619048,
+        "threshold": 0.3,
+        "tn": 3,
+        "tp": 13
+      },
+      {
+        "f1": 0.684211,
+        "fn": 8,
+        "fp": 4,
+        "negative_control_false_positives": 4,
+        "original_false_negatives_recovered": 6,
+        "original_true_positives_retained": 7,
+        "precision": 0.764706,
+        "recall": 0.619048,
+        "threshold": 0.4,
+        "tn": 3,
+        "tp": 13
+      },
+      {
+        "f1": 0.685714,
+        "fn": 9,
+        "fp": 2,
+        "negative_control_false_positives": 2,
+        "original_false_negatives_recovered": 5,
+        "original_true_positives_retained": 7,
+        "precision": 0.857143,
+        "recall": 0.571429,
+        "threshold": 0.5,
+        "tn": 5,
+        "tp": 12
+      },
+      {
+        "f1": 0.606061,
+        "fn": 11,
+        "fp": 2,
+        "negative_control_false_positives": 2,
+        "original_false_negatives_recovered": 3,
+        "original_true_positives_retained": 7,
+        "precision": 0.833333,
+        "recall": 0.47619,
+        "threshold": 0.6,
+        "tn": 5,
+        "tp": 10
+      },
+      {
+        "f1": 0.551724,
+        "fn": 13,
+        "fp": 0,
+        "negative_control_false_positives": 0,
+        "original_false_negatives_recovered": 2,
+        "original_true_positives_retained": 6,
+        "precision": 1.0,
+        "recall": 0.380952,
+        "threshold": 0.7,
+        "tn": 7,
+        "tp": 8
+      },
+      {
+        "f1": 0.5,
+        "fn": 14,
+        "fp": 0,
+        "negative_control_false_positives": 0,
+        "original_false_negatives_recovered": 1,
+        "original_true_positives_retained": 6,
+        "precision": 1.0,
+        "recall": 0.333333,
+        "threshold": 0.8,
+        "tn": 7,
+        "tp": 7
+      },
+      {
+        "f1": 0.25,
+        "fn": 18,
+        "fp": 0,
+        "negative_control_false_positives": 0,
+        "original_false_negatives_recovered": 0,
+        "original_true_positives_retained": 3,
+        "precision": 1.0,
+        "recall": 0.142857,
+        "threshold": 0.9,
+        "tn": 7,
+        "tp": 3
+      },
+      {
+        "f1": 0.25,
+        "fn": 18,
+        "fp": 0,
+        "negative_control_false_positives": 0,
+        "original_false_negatives_recovered": 0,
+        "original_true_positives_retained": 3,
+        "precision": 1.0,
+        "recall": 0.142857,
+        "threshold": 0.95,
+        "tn": 7,
+        "tp": 3
+      }
+    ]
+  },
+  "confidence_results_sha256": "ed1813362cb761bf3d012c809695fc01bdaa16138aa440c5e73e0cea45571a21",
+  "cost_note": "USD is a queue-adjusted proxy from mean request latency divided by configured concurrency, not an independently timed profile wall-clock benchmark.",
+  "diagnostic_only": true,
+  "failure_attribution": {
+    "adjacent_profile_changes": [
+      {
+        "from_profile": "road-recall-baseline-24-core",
+        "gains": 2,
+        "losses": 0,
+        "net": 2,
+        "to_profile": "road-recall-oracle-24-core"
+      },
+      {
+        "from_profile": "road-recall-oracle-24-core",
+        "gains": 3,
+        "losses": 0,
+        "net": 3,
+        "to_profile": "road-recall-oracle-48-core"
+      },
+      {
+        "from_profile": "road-recall-oracle-48-core",
+        "gains": 1,
+        "losses": 3,
+        "net": -2,
+        "to_profile": "road-recall-oracle-48-multiscale-core"
+      },
+      {
+        "from_profile": "road-recall-oracle-48-multiscale-core",
+        "gains": 2,
+        "losses": 1,
+        "net": 1,
+        "to_profile": "road-recall-oracle-48-roi-core"
+      },
+      {
+        "from_profile": "road-recall-oracle-48-roi-core",
+        "gains": 0,
+        "losses": 1,
+        "net": -1,
+        "to_profile": "road-recall-oracle-48-roi-motion-core"
+      },
+      {
+        "from_profile": "road-recall-oracle-48-roi-motion-core",
+        "gains": 2,
+        "losses": 0,
+        "net": 2,
+        "to_profile": "road-recall-oracle-48-roi-track-motion-core"
+      }
+    ],
+    "false_negative_count": 14,
+    "pairs": [
+      {
+        "clip_id": "2014-06-25-16-45-34_stereo_centre_02__f003457-f003552",
+        "predictions": {
+          "road-recall-baseline-24-core": "no",
+          "road-recall-oracle-24-core": "no",
+          "road-recall-oracle-48-core": "no",
+          "road-recall-oracle-48-multiscale-core": "no",
+          "road-recall-oracle-48-roi-core": "no",
+          "road-recall-oracle-48-roi-motion-core": "no",
+          "road-recall-oracle-48-roi-track-motion-core": "no"
+        },
+        "tag": "ego_lane_change"
+      },
+      {
+        "clip_id": "2014-06-25-16-45-34_stereo_centre_02__f000193-f000288",
+        "predictions": {
+          "road-recall-baseline-24-core": "no",
+          "road-recall-oracle-24-core": "no",
+          "road-recall-oracle-48-core": "yes",
+          "road-recall-oracle-48-multiscale-core": "no",
+          "road-recall-oracle-48-roi-core": "no",
+          "road-recall-oracle-48-roi-motion-core": "no",
+          "road-recall-oracle-48-roi-track-motion-core": "no"
+        },
+        "tag": "ego_lane_change"
+      },
+      {
+        "clip_id": "2015-03-03-11-31-36_stereo_centre_01__f002689-f002784",
+        "predictions": {
+          "road-recall-baseline-24-core": "no",
+          "road-recall-oracle-24-core": "no",
+          "road-recall-oracle-48-core": "no",
+          "road-recall-oracle-48-multiscale-core": "yes",
+          "road-recall-oracle-48-roi-core": "no",
+          "road-recall-oracle-48-roi-motion-core": "no",
+          "road-recall-oracle-48-roi-track-motion-core": "no"
+        },
+        "tag": "pedestrian_waiting_to_cross"
+      },
+      {
+        "clip_id": "2014-11-18-13-20-12_stereo_centre_05__f002497-f002592",
+        "predictions": {
+          "road-recall-baseline-24-core": "no",
+          "road-recall-oracle-24-core": "no",
+          "road-recall-oracle-48-core": "no",
+          "road-recall-oracle-48-multiscale-core": "no",
+          "road-recall-oracle-48-roi-core": "yes",
+          "road-recall-oracle-48-roi-motion-core": "yes",
+          "road-recall-oracle-48-roi-track-motion-core": "yes"
+        },
+        "tag": "pedestrian_waiting_to_cross"
+      },
+      {
+        "clip_id": "2015-03-03-11-31-36_stereo_centre_01__f002305-f002400",
+        "predictions": {
+          "road-recall-baseline-24-core": "no",
+          "road-recall-oracle-24-core": "no",
+          "road-recall-oracle-48-core": "no",
+          "road-recall-oracle-48-multiscale-core": "no",
+          "road-recall-oracle-48-roi-core": "no",
+          "road-recall-oracle-48-roi-motion-core": "no",
+          "road-recall-oracle-48-roi-track-motion-core": "no"
+        },
+        "tag": "pedestrian_crossing"
+      },
+      {
+        "clip_id": "2014-06-25-16-45-34_stereo_centre_02__f004129-f004224",
+        "predictions": {
+          "road-recall-baseline-24-core": "no",
+          "road-recall-oracle-24-core": "no",
+          "road-recall-oracle-48-core": "no",
+          "road-recall-oracle-48-multiscale-core": "no",
+          "road-recall-oracle-48-roi-core": "no",
+          "road-recall-oracle-48-roi-motion-core": "no",
+          "road-recall-oracle-48-roi-track-motion-core": "no"
+        },
+        "tag": "pedestrian_crossing"
+      },
+      {
+        "clip_id": "2014-11-18-13-20-12_stereo_centre_05__f005377-f005472",
+        "predictions": {
+          "road-recall-baseline-24-core": "no",
+          "road-recall-oracle-24-core": "no",
+          "road-recall-oracle-48-core": "no",
+          "road-recall-oracle-48-multiscale-core": "no",
+          "road-recall-oracle-48-roi-core": "no",
+          "road-recall-oracle-48-roi-motion-core": "no",
+          "road-recall-oracle-48-roi-track-motion-core": "yes"
+        },
+        "tag": "car_stopped"
+      },
+      {
+        "clip_id": "2014-11-18-13-20-12_stereo_centre_05__f000865-f000960",
+        "predictions": {
+          "road-recall-baseline-24-core": "no",
+          "road-recall-oracle-24-core": "yes",
+          "road-recall-oracle-48-core": "yes",
+          "road-recall-oracle-48-multiscale-core": "no",
+          "road-recall-oracle-48-roi-core": "no",
+          "road-recall-oracle-48-roi-motion-core": "no",
+          "road-recall-oracle-48-roi-track-motion-core": "yes"
+        },
+        "tag": "car_stopped"
+      },
+      {
+        "clip_id": "2014-11-18-13-20-12_stereo_centre_05__f002305-f002400",
+        "predictions": {
+          "road-recall-baseline-24-core": "no",
+          "road-recall-oracle-24-core": "no",
+          "road-recall-oracle-48-core": "yes",
+          "road-recall-oracle-48-multiscale-core": "no",
+          "road-recall-oracle-48-roi-core": "yes",
+          "road-recall-oracle-48-roi-motion-core": "no",
+          "road-recall-oracle-48-roi-track-motion-core": "no"
+        },
+        "tag": "traffic_light_green"
+      },
+      {
+        "clip_id": "2014-06-25-16-45-34_stereo_centre_02__f004225-f004320",
+        "predictions": {
+          "road-recall-baseline-24-core": "no",
+          "road-recall-oracle-24-core": "no",
+          "road-recall-oracle-48-core": "no",
+          "road-recall-oracle-48-multiscale-core": "no",
+          "road-recall-oracle-48-roi-core": "no",
+          "road-recall-oracle-48-roi-motion-core": "no",
+          "road-recall-oracle-48-roi-track-motion-core": "no"
+        },
+        "tag": "traffic_light_green"
+      },
+      {
+        "clip_id": "2014-06-25-16-45-34_stereo_centre_02__f000193-f000288",
+        "predictions": {
+          "road-recall-baseline-24-core": "no",
+          "road-recall-oracle-24-core": "no",
+          "road-recall-oracle-48-core": "no",
+          "road-recall-oracle-48-multiscale-core": "no",
+          "road-recall-oracle-48-roi-core": "no",
+          "road-recall-oracle-48-roi-motion-core": "no",
+          "road-recall-oracle-48-roi-track-motion-core": "no"
+        },
+        "tag": "car_braking"
+      },
+      {
+        "clip_id": "2014-06-25-16-45-34_stereo_centre_02__f002689-f002784",
+        "predictions": {
+          "road-recall-baseline-24-core": "no",
+          "road-recall-oracle-24-core": "yes",
+          "road-recall-oracle-48-core": "yes",
+          "road-recall-oracle-48-multiscale-core": "yes",
+          "road-recall-oracle-48-roi-core": "yes",
+          "road-recall-oracle-48-roi-motion-core": "yes",
+          "road-recall-oracle-48-roi-track-motion-core": "yes"
+        },
+        "tag": "car_braking"
+      },
+      {
+        "clip_id": "2015-03-03-11-31-36_stereo_centre_01__f004705-f004800",
+        "predictions": {
+          "road-recall-baseline-24-core": "no",
+          "road-recall-oracle-24-core": "no",
+          "road-recall-oracle-48-core": "no",
+          "road-recall-oracle-48-multiscale-core": "no",
+          "road-recall-oracle-48-roi-core": "no",
+          "road-recall-oracle-48-roi-motion-core": "no",
+          "road-recall-oracle-48-roi-track-motion-core": "no"
+        },
+        "tag": "cyclist_present"
+      },
+      {
+        "clip_id": "2014-06-25-16-45-34_stereo_centre_02__f000097-f000192",
+        "predictions": {
+          "road-recall-baseline-24-core": "no",
+          "road-recall-oracle-24-core": "no",
+          "road-recall-oracle-48-core": "yes",
+          "road-recall-oracle-48-multiscale-core": "yes",
+          "road-recall-oracle-48-roi-core": "yes",
+          "road-recall-oracle-48-roi-motion-core": "yes",
+          "road-recall-oracle-48-roi-track-motion-core": "yes"
+        },
+        "tag": "cyclist_present"
+      }
+    ],
+    "profiles": [
+      "road-recall-baseline-24-core",
+      "road-recall-oracle-24-core",
+      "road-recall-oracle-48-core",
+      "road-recall-oracle-48-multiscale-core",
+      "road-recall-oracle-48-roi-core",
+      "road-recall-oracle-48-roi-motion-core",
+      "road-recall-oracle-48-roi-track-motion-core"
+    ],
+    "recovered_by_profile": {
+      "road-recall-baseline-24-core": 0,
+      "road-recall-oracle-24-core": 2,
+      "road-recall-oracle-48-core": 5,
+      "road-recall-oracle-48-multiscale-core": 3,
+      "road-recall-oracle-48-roi-core": 4,
+      "road-recall-oracle-48-roi-motion-core": 3,
+      "road-recall-oracle-48-roi-track-motion-core": 5
+    },
+    "unresolved_by_all_profiles": 6
+  },
+  "generated_at": "2026-08-09T16:10:48.664+00:00",
+  "per_tag": [
+    {
+      "false_negative_count": 2,
+      "false_negatives_recovered": 0,
+      "negative_control_false_positive": 1,
+      "profile": "road-recall-baseline-24-core",
+      "tag": "ego_lane_change",
+      "true_positive_retained": 1
+    },
+    {
+      "false_negative_count": 2,
+      "false_negatives_recovered": 0,
+      "negative_control_false_positive": 1,
+      "profile": "road-recall-baseline-24-core",
+      "tag": "pedestrian_waiting_to_cross",
+      "true_positive_retained": 1
+    },
+    {
+      "false_negative_count": 2,
+      "false_negatives_recovered": 0,
+      "negative_control_false_positive": 1,
+      "profile": "road-recall-baseline-24-core",
+      "tag": "pedestrian_crossing",
+      "true_positive_retained": 1
+    },
+    {
+      "false_negative_count": 2,
+      "false_negatives_recovered": 0,
+      "negative_control_false_positive": 1,
+      "profile": "road-recall-baseline-24-core",
+      "tag": "car_stopped",
+      "true_positive_retained": 1
+    },
+    {
+      "false_negative_count": 2,
+      "false_negatives_recovered": 0,
+      "negative_control_false_positive": 0,
+      "profile": "road-recall-baseline-24-core",
+      "tag": "traffic_light_green",
+      "true_positive_retained": 1
+    },
+    {
+      "false_negative_count": 2,
+      "false_negatives_recovered": 0,
+      "negative_control_false_positive": 1,
+      "profile": "road-recall-baseline-24-core",
+      "tag": "car_braking",
+      "true_positive_retained": 1
+    },
+    {
+      "false_negative_count": 2,
+      "false_negatives_recovered": 0,
+      "negative_control_false_positive": 0,
+      "profile": "road-recall-baseline-24-core",
+      "tag": "cyclist_present",
+      "true_positive_retained": 1
+    },
+    {
+      "false_negative_count": 2,
+      "false_negatives_recovered": 0,
+      "negative_control_false_positive": 0,
+      "profile": "road-recall-oracle-24-core",
+      "tag": "ego_lane_change",
+      "true_positive_retained": 1
+    },
+    {
+      "false_negative_count": 2,
+      "false_negatives_recovered": 0,
+      "negative_control_false_positive": 1,
+      "profile": "road-recall-oracle-24-core",
+      "tag": "pedestrian_waiting_to_cross",
+      "true_positive_retained": 1
+    },
+    {
+      "false_negative_count": 2,
+      "false_negatives_recovered": 0,
+      "negative_control_false_positive": 1,
+      "profile": "road-recall-oracle-24-core",
+      "tag": "pedestrian_crossing",
+      "true_positive_retained": 1
+    },
+    {
+      "false_negative_count": 2,
+      "false_negatives_recovered": 1,
+      "negative_control_false_positive": 1,
+      "profile": "road-recall-oracle-24-core",
+      "tag": "car_stopped",
+      "true_positive_retained": 1
+    },
+    {
+      "false_negative_count": 2,
+      "false_negatives_recovered": 0,
+      "negative_control_false_positive": 0,
+      "profile": "road-recall-oracle-24-core",
+      "tag": "traffic_light_green",
+      "true_positive_retained": 1
+    },
+    {
+      "false_negative_count": 2,
+      "false_negatives_recovered": 1,
+      "negative_control_false_positive": 1,
+      "profile": "road-recall-oracle-24-core",
+      "tag": "car_braking",
+      "true_positive_retained": 1
+    },
+    {
+      "false_negative_count": 2,
+      "false_negatives_recovered": 0,
+      "negative_control_false_positive": 0,
+      "profile": "road-recall-oracle-24-core",
+      "tag": "cyclist_present",
+      "true_positive_retained": 1
+    },
+    {
+      "false_negative_count": 2,
+      "false_negatives_recovered": 1,
+      "negative_control_false_positive": 1,
+      "profile": "road-recall-oracle-48-core",
+      "tag": "ego_lane_change",
+      "true_positive_retained": 1
+    },
+    {
+      "false_negative_count": 2,
+      "false_negatives_recovered": 0,
+      "negative_control_false_positive": 0,
+      "profile": "road-recall-oracle-48-core",
+      "tag": "pedestrian_waiting_to_cross",
+      "true_positive_retained": 1
+    },
+    {
+      "false_negative_count": 2,
+      "false_negatives_recovered": 0,
+      "negative_control_false_positive": 1,
+      "profile": "road-recall-oracle-48-core",
+      "tag": "pedestrian_crossing",
+      "true_positive_retained": 1
+    },
+    {
+      "false_negative_count": 2,
+      "false_negatives_recovered": 1,
+      "negative_control_false_positive": 1,
+      "profile": "road-recall-oracle-48-core",
+      "tag": "car_stopped",
+      "true_positive_retained": 1
+    },
+    {
+      "false_negative_count": 2,
+      "false_negatives_recovered": 1,
+      "negative_control_false_positive": 0,
+      "profile": "road-recall-oracle-48-core",
+      "tag": "traffic_light_green",
+      "true_positive_retained": 1
+    },
+    {
+      "false_negative_count": 2,
+      "false_negatives_recovered": 1,
+      "negative_control_false_positive": 1,
+      "profile": "road-recall-oracle-48-core",
+      "tag": "car_braking",
+      "true_positive_retained": 1
+    },
+    {
+      "false_negative_count": 2,
+      "false_negatives_recovered": 1,
+      "negative_control_false_positive": 0,
+      "profile": "road-recall-oracle-48-core",
+      "tag": "cyclist_present",
+      "true_positive_retained": 1
+    },
+    {
+      "false_negative_count": 2,
+      "false_negatives_recovered": 0,
+      "negative_control_false_positive": 1,
+      "profile": "road-recall-oracle-48-multiscale-core",
+      "tag": "ego_lane_change",
+      "true_positive_retained": 1
+    },
+    {
+      "false_negative_count": 2,
+      "false_negatives_recovered": 1,
+      "negative_control_false_positive": 0,
+      "profile": "road-recall-oracle-48-multiscale-core",
+      "tag": "pedestrian_waiting_to_cross",
+      "true_positive_retained": 0
+    },
+    {
+      "false_negative_count": 2,
+      "false_negatives_recovered": 0,
+      "negative_control_false_positive": 1,
+      "profile": "road-recall-oracle-48-multiscale-core",
+      "tag": "pedestrian_crossing",
+      "true_positive_retained": 1
+    },
+    {
+      "false_negative_count": 2,
+      "false_negatives_recovered": 0,
+      "negative_control_false_positive": 0,
+      "profile": "road-recall-oracle-48-multiscale-core",
+      "tag": "car_stopped",
+      "true_positive_retained": 1
+    },
+    {
+      "false_negative_count": 2,
+      "false_negatives_recovered": 0,
+      "negative_control_false_positive": 0,
+      "profile": "road-recall-oracle-48-multiscale-core",
+      "tag": "traffic_light_green",
+      "true_positive_retained": 1
+    },
+    {
+      "false_negative_count": 2,
+      "false_negatives_recovered": 1,
+      "negative_control_false_positive": 0,
+      "profile": "road-recall-oracle-48-multiscale-core",
+      "tag": "car_braking",
+      "true_positive_retained": 1
+    },
+    {
+      "false_negative_count": 2,
+      "false_negatives_recovered": 1,
+      "negative_control_false_positive": 0,
+      "profile": "road-recall-oracle-48-multiscale-core",
+      "tag": "cyclist_present",
+      "true_positive_retained": 1
+    },
+    {
+      "false_negative_count": 2,
+      "false_negatives_recovered": 0,
+      "negative_control_false_positive": 0,
+      "profile": "road-recall-oracle-48-roi-core",
+      "tag": "ego_lane_change",
+      "true_positive_retained": 1
+    },
+    {
+      "false_negative_count": 2,
+      "false_negatives_recovered": 1,
+      "negative_control_false_positive": 1,
+      "profile": "road-recall-oracle-48-roi-core",
+      "tag": "pedestrian_waiting_to_cross",
+      "true_positive_retained": 0
+    },
+    {
+      "false_negative_count": 2,
+      "false_negatives_recovered": 0,
+      "negative_control_false_positive": 1,
+      "profile": "road-recall-oracle-48-roi-core",
+      "tag": "pedestrian_crossing",
+      "true_positive_retained": 1
+    },
+    {
+      "false_negative_count": 2,
+      "false_negatives_recovered": 0,
+      "negative_control_false_positive": 0,
+      "profile": "road-recall-oracle-48-roi-core",
+      "tag": "car_stopped",
+      "true_positive_retained": 1
+    },
+    {
+      "false_negative_count": 2,
+      "false_negatives_recovered": 1,
+      "negative_control_false_positive": 0,
+      "profile": "road-recall-oracle-48-roi-core",
+      "tag": "traffic_light_green",
+      "true_positive_retained": 1
+    },
+    {
+      "false_negative_count": 2,
+      "false_negatives_recovered": 1,
+      "negative_control_false_positive": 1,
+      "profile": "road-recall-oracle-48-roi-core",
+      "tag": "car_braking",
+      "true_positive_retained": 1
+    },
+    {
+      "false_negative_count": 2,
+      "false_negatives_recovered": 1,
+      "negative_control_false_positive": 0,
+      "profile": "road-recall-oracle-48-roi-core",
+      "tag": "cyclist_present",
+      "true_positive_retained": 0
+    },
+    {
+      "false_negative_count": 2,
+      "false_negatives_recovered": 0,
+      "negative_control_false_positive": 0,
+      "profile": "road-recall-oracle-48-roi-motion-core",
+      "tag": "ego_lane_change",
+      "true_positive_retained": 1
+    },
+    {
+      "false_negative_count": 2,
+      "false_negatives_recovered": 1,
+      "negative_control_false_positive": 0,
+      "profile": "road-recall-oracle-48-roi-motion-core",
+      "tag": "pedestrian_waiting_to_cross",
+      "true_positive_retained": 0
+    },
+    {
+      "false_negative_count": 2,
+      "false_negatives_recovered": 0,
+      "negative_control_false_positive": 0,
+      "profile": "road-recall-oracle-48-roi-motion-core",
+      "tag": "pedestrian_crossing",
+      "true_positive_retained": 1
+    },
+    {
+      "false_negative_count": 2,
+      "false_negatives_recovered": 0,
+      "negative_control_false_positive": 0,
+      "profile": "road-recall-oracle-48-roi-motion-core",
+      "tag": "car_stopped",
+      "true_positive_retained": 1
+    },
+    {
+      "false_negative_count": 2,
+      "false_negatives_recovered": 0,
+      "negative_control_false_positive": 0,
+      "profile": "road-recall-oracle-48-roi-motion-core",
+      "tag": "traffic_light_green",
+      "true_positive_retained": 1
+    },
+    {
+      "false_negative_count": 2,
+      "false_negatives_recovered": 1,
+      "negative_control_false_positive": 1,
+      "profile": "road-recall-oracle-48-roi-motion-core",
+      "tag": "car_braking",
+      "true_positive_retained": 1
+    },
+    {
+      "false_negative_count": 2,
+      "false_negatives_recovered": 1,
+      "negative_control_false_positive": 0,
+      "profile": "road-recall-oracle-48-roi-motion-core",
+      "tag": "cyclist_present",
+      "true_positive_retained": 0
+    },
+    {
+      "false_negative_count": 2,
+      "false_negatives_recovered": 0,
+      "negative_control_false_positive": 0,
+      "profile": "road-recall-oracle-48-roi-track-motion-core",
+      "tag": "ego_lane_change",
+      "true_positive_retained": 1
+    },
+    {
+      "false_negative_count": 2,
+      "false_negatives_recovered": 1,
+      "negative_control_false_positive": 1,
+      "profile": "road-recall-oracle-48-roi-track-motion-core",
+      "tag": "pedestrian_waiting_to_cross",
+      "true_positive_retained": 0
+    },
+    {
+      "false_negative_count": 2,
+      "false_negatives_recovered": 0,
+      "negative_control_false_positive": 1,
+      "profile": "road-recall-oracle-48-roi-track-motion-core",
+      "tag": "pedestrian_crossing",
+      "true_positive_retained": 1
+    },
+    {
+      "false_negative_count": 2,
+      "false_negatives_recovered": 2,
+      "negative_control_false_positive": 0,
+      "profile": "road-recall-oracle-48-roi-track-motion-core",
+      "tag": "car_stopped",
+      "true_positive_retained": 1
+    },
+    {
+      "false_negative_count": 2,
+      "false_negatives_recovered": 0,
+      "negative_control_false_positive": 0,
+      "profile": "road-recall-oracle-48-roi-track-motion-core",
+      "tag": "traffic_light_green",
+      "true_positive_retained": 1
+    },
+    {
+      "false_negative_count": 2,
+      "false_negatives_recovered": 1,
+      "negative_control_false_positive": 1,
+      "profile": "road-recall-oracle-48-roi-track-motion-core",
+      "tag": "car_braking",
+      "true_positive_retained": 1
+    },
+    {
+      "false_negative_count": 2,
+      "false_negatives_recovered": 1,
+      "negative_control_false_positive": 0,
+      "profile": "road-recall-oracle-48-roi-track-motion-core",
+      "tag": "cyclist_present",
+      "true_positive_retained": 0
+    }
+  ],
+  "profiles": [
+    {
+      "diagnostic_f1": 0.424242,
+      "diagnostic_pair_count": 28,
+      "diagnostic_precision": 0.583333,
+      "diagnostic_recall": 0.333333,
+      "estimated_usd_per_1000_proxy": 16.1898,
+      "mean_e2e_seconds": 17.463,
+      "mean_prompt_tokens": 8523.042,
+      "mean_selected_frames": 22.917,
+      "negative_control_count": 7,
+      "negative_control_false_positives": 5,
+      "original_false_negative_count": 14,
+      "original_false_negatives_recovered": 0,
+      "original_true_positive_count": 7,
+      "original_true_positives_retained": 7,
+      "profile": "road-recall-baseline-24-core"
+    },
+    {
+      "diagnostic_f1": 0.529412,
+      "diagnostic_pair_count": 28,
+      "diagnostic_precision": 0.692308,
+      "diagnostic_recall": 0.428571,
+      "estimated_usd_per_1000_proxy": 16.9403,
+      "mean_e2e_seconds": 18.272,
+      "mean_prompt_tokens": 8690.292,
+      "mean_selected_frames": 24.0,
+      "negative_control_count": 7,
+      "negative_control_false_positives": 4,
+      "original_false_negative_count": 14,
+      "original_false_negatives_recovered": 2,
+      "original_true_positive_count": 7,
+      "original_true_positives_retained": 7,
+      "profile": "road-recall-oracle-24-core"
+    },
+    {
+      "diagnostic_f1": 0.648649,
+      "diagnostic_pair_count": 28,
+      "diagnostic_precision": 0.75,
+      "diagnostic_recall": 0.571429,
+      "estimated_usd_per_1000_proxy": 19.8392,
+      "mean_e2e_seconds": 21.399,
+      "mean_prompt_tokens": 11461.625,
+      "mean_selected_frames": 48.0,
+      "negative_control_count": 7,
+      "negative_control_false_positives": 4,
+      "original_false_negative_count": 14,
+      "original_false_negatives_recovered": 5,
+      "original_true_positive_count": 7,
+      "original_true_positives_retained": 7,
+      "profile": "road-recall-oracle-48-core"
+    },
+    {
+      "diagnostic_f1": 0.5625,
+      "diagnostic_pair_count": 28,
+      "diagnostic_precision": 0.818182,
+      "diagnostic_recall": 0.428571,
+      "estimated_usd_per_1000_proxy": 19.1233,
+      "mean_e2e_seconds": 20.627,
+      "mean_prompt_tokens": 11461.625,
+      "mean_selected_frames": 48.0,
+      "negative_control_count": 7,
+      "negative_control_false_positives": 2,
+      "original_false_negative_count": 14,
+      "original_false_negatives_recovered": 3,
+      "original_true_positive_count": 7,
+      "original_true_positives_retained": 6,
+      "profile": "road-recall-oracle-48-multiscale-core"
+    },
+    {
+      "diagnostic_f1": 0.545455,
+      "diagnostic_pair_count": 28,
+      "diagnostic_precision": 0.75,
+      "diagnostic_recall": 0.428571,
+      "estimated_usd_per_1000_proxy": 17.9629,
+      "mean_e2e_seconds": 19.375,
+      "mean_prompt_tokens": 11461.625,
+      "mean_selected_frames": 48.0,
+      "negative_control_count": 7,
+      "negative_control_false_positives": 3,
+      "original_false_negative_count": 14,
+      "original_false_negatives_recovered": 4,
+      "original_true_positive_count": 7,
+      "original_true_positives_retained": 5,
+      "profile": "road-recall-oracle-48-roi-core"
+    },
+    {
+      "diagnostic_f1": 0.533333,
+      "diagnostic_pair_count": 28,
+      "diagnostic_precision": 0.888889,
+      "diagnostic_recall": 0.380952,
+      "estimated_usd_per_1000_proxy": 18.7909,
+      "mean_e2e_seconds": 20.268,
+      "mean_prompt_tokens": 11625.042,
+      "mean_selected_frames": 48.0,
+      "negative_control_count": 7,
+      "negative_control_false_positives": 1,
+      "original_false_negative_count": 14,
+      "original_false_negatives_recovered": 3,
+      "original_true_positive_count": 7,
+      "original_true_positives_retained": 5,
+      "profile": "road-recall-oracle-48-roi-motion-core"
+    },
+    {
+      "diagnostic_f1": 0.588235,
+      "diagnostic_pair_count": 28,
+      "diagnostic_precision": 0.769231,
+      "diagnostic_recall": 0.47619,
+      "estimated_usd_per_1000_proxy": 19.237,
+      "mean_e2e_seconds": 20.749,
+      "mean_prompt_tokens": 12529.833,
+      "mean_selected_frames": 48.0,
+      "negative_control_count": 7,
+      "negative_control_false_positives": 3,
+      "original_false_negative_count": 14,
+      "original_false_negatives_recovered": 5,
+      "original_true_positive_count": 7,
+      "original_true_positives_retained": 5,
+      "profile": "road-recall-oracle-48-roi-track-motion-core"
+    }
+  ],
+  "run_results_sha256": "c59f0805ece7a0de53dcf711e696e5bf8887cb79b52a63298311cac2ca7bc135",
+  "schema_version": 1,
+  "selection": {
+    "clip_count": 24,
+    "pair_count": 28,
+    "quotas_per_tag": {
+      "false_negative": 2,
+      "negative_control": 1,
+      "true_positive": 1
+    },
+    "target_tags": [
+      "ego_lane_change",
+      "pedestrian_waiting_to_cross",
+      "pedestrian_crossing",
+      "car_stopped",
+      "traffic_light_green",
+      "car_braking",
+      "cyclist_present"
+    ]
+  },
+  "selection_sha256": "056813c618f4ca76fe69024165e536350921f2198db6afd2c4571b9c312cfd8f"
+}

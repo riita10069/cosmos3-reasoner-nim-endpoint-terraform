@@ -1,0 +1,321 @@
+{
+  "annotations_path": "${ROAD_DATA_ROOT}/road_trainval_v1.0.json",
+  "annotations_sha256": "f31f59eca11827cba6e2951c42434225b5bc8200b405611445c8adae19d073e1",
+  "clip_count": 1044,
+  "config_path": "${REPO_ROOT}/benchmark/configs/road-open-benchmark.json",
+  "config_sha256": "ef30189b9f9326d22e35e1bf2b5b09a43da36f1096b0c0790b2747f2cc7e521b",
+  "dataset": "ROAD",
+  "fold": 3,
+  "fps": 12.0,
+  "generated_at": "2026-08-08T07:36:42.524+00:00",
+  "ground_truth_path": "${ROAD_ARTIFACT_ROOT}/road-gt-v2/road-ground-truth.jsonl",
+  "ground_truth_sha256": "17e00dd85a2a22d08436091ff02a78b9ebf2fbbc08d7c4c603ef98fa8c30d5ae",
+  "label_counts": {
+    "development": {
+      "car_braking": {
+        "negative": 111,
+        "positive": 57,
+        "unknown": 1
+      },
+      "car_stopped": {
+        "negative": 91,
+        "positive": 76,
+        "unknown": 2
+      },
+      "cyclist_present": {
+        "negative": 87,
+        "positive": 82
+      },
+      "ego_lane_change": {
+        "negative": 165,
+        "positive": 4
+      },
+      "ego_moving": {
+        "negative": 25,
+        "positive": 142,
+        "unknown": 2
+      },
+      "ego_stopped": {
+        "negative": 113,
+        "positive": 53,
+        "unknown": 3
+      },
+      "ego_turn_left": {
+        "negative": 156,
+        "positive": 13
+      },
+      "ego_turn_right": {
+        "negative": 159,
+        "positive": 8,
+        "unknown": 2
+      },
+      "motorcycle_present": {
+        "negative": 160,
+        "positive": 9
+      },
+      "pedestrian_crossing": {
+        "negative": 140,
+        "positive": 25,
+        "unknown": 4
+      },
+      "pedestrian_waiting_to_cross": {
+        "negative": 152,
+        "positive": 16,
+        "unknown": 1
+      },
+      "traffic_light_green": {
+        "negative": 135,
+        "positive": 33,
+        "unknown": 1
+      },
+      "traffic_light_red": {
+        "negative": 143,
+        "positive": 26
+      }
+    },
+    "evaluation": {
+      "car_braking": {
+        "negative": 714,
+        "positive": 152,
+        "unknown": 9
+      },
+      "car_stopped": {
+        "negative": 595,
+        "positive": 272,
+        "unknown": 8
+      },
+      "cyclist_present": {
+        "negative": 442,
+        "positive": 432,
+        "unknown": 1
+      },
+      "ego_lane_change": {
+        "negative": 854,
+        "positive": 20,
+        "unknown": 1
+      },
+      "ego_moving": {
+        "negative": 169,
+        "positive": 701,
+        "unknown": 5
+      },
+      "ego_stopped": {
+        "negative": 604,
+        "positive": 264,
+        "unknown": 7
+      },
+      "ego_turn_left": {
+        "negative": 806,
+        "positive": 61,
+        "unknown": 8
+      },
+      "ego_turn_right": {
+        "negative": 815,
+        "positive": 59,
+        "unknown": 1
+      },
+      "motorcycle_present": {
+        "negative": 841,
+        "positive": 34
+      },
+      "pedestrian_crossing": {
+        "negative": 660,
+        "positive": 205,
+        "unknown": 10
+      },
+      "pedestrian_waiting_to_cross": {
+        "negative": 742,
+        "positive": 123,
+        "unknown": 10
+      },
+      "traffic_light_green": {
+        "negative": 711,
+        "positive": 163,
+        "unknown": 1
+      },
+      "traffic_light_red": {
+        "negative": 649,
+        "positive": 226
+      }
+    }
+  },
+  "minimum_positive_frames": 6,
+  "require_fully_annotated": true,
+  "schema_version": 1,
+  "source_video_count": 18,
+  "split_clip_counts": {
+    "development": 169,
+    "evaluation": 875
+  },
+  "stride_seconds": 8.0,
+  "tags": [
+    {
+      "definition": "The ego vehicle is moving forward without a turn or lane-change maneuver.",
+      "id": "ego_moving",
+      "label_ids": [
+        1
+      ],
+      "label_type": "av_action",
+      "labels": [
+        "AV-Mov"
+      ],
+      "name_ja": "自車走行"
+    },
+    {
+      "definition": "The ego vehicle is stationary.",
+      "id": "ego_stopped",
+      "label_ids": [
+        0
+      ],
+      "label_type": "av_action",
+      "labels": [
+        "AV-Stop"
+      ],
+      "name_ja": "自車停止"
+    },
+    {
+      "definition": "The ego vehicle performs a left turn.",
+      "id": "ego_turn_left",
+      "label_ids": [
+        3
+      ],
+      "label_type": "av_action",
+      "labels": [
+        "AV-TurLft"
+      ],
+      "name_ja": "自車左折"
+    },
+    {
+      "definition": "The ego vehicle performs a right turn.",
+      "id": "ego_turn_right",
+      "label_ids": [
+        2
+      ],
+      "label_type": "av_action",
+      "labels": [
+        "AV-TurRht"
+      ],
+      "name_ja": "自車右折"
+    },
+    {
+      "definition": "The ego vehicle changes to a lane on either its left or right.",
+      "id": "ego_lane_change",
+      "label_ids": [
+        4,
+        5
+      ],
+      "label_type": "av_action",
+      "labels": [
+        "AV-MovLft",
+        "AV-MovRht"
+      ],
+      "name_ja": "自車車線変更"
+    },
+    {
+      "definition": "At least one car is braking.",
+      "id": "car_braking",
+      "label_ids": [
+        12
+      ],
+      "label_type": "duplex",
+      "labels": [
+        "Car-Brake"
+      ],
+      "name_ja": "車両制動"
+    },
+    {
+      "definition": "At least one car is stationary.",
+      "id": "car_stopped",
+      "label_ids": [
+        13
+      ],
+      "label_type": "duplex",
+      "labels": [
+        "Car-Stop"
+      ],
+      "name_ja": "停止車両"
+    },
+    {
+      "definition": "At least one pedestrian is waiting to cross the road.",
+      "id": "pedestrian_waiting_to_cross",
+      "label_ids": [
+        4
+      ],
+      "label_type": "duplex",
+      "labels": [
+        "Ped-Wait2X"
+      ],
+      "name_ja": "歩行者横断待ち"
+    },
+    {
+      "definition": "At least one pedestrian is crossing the road, in either direction.",
+      "id": "pedestrian_crossing",
+      "label_ids": [
+        5,
+        6,
+        7
+      ],
+      "label_type": "duplex",
+      "labels": [
+        "Ped-Xing",
+        "Ped-XingFmLft",
+        "Ped-XingFmRht"
+      ],
+      "name_ja": "歩行者横断"
+    },
+    {
+      "definition": "At least one cyclist is visible.",
+      "id": "cyclist_present",
+      "label_ids": [
+        2
+      ],
+      "label_type": "agent",
+      "labels": [
+        "Cyc"
+      ],
+      "minimum_positive_frames": 3,
+      "name_ja": "自転車存在"
+    },
+    {
+      "definition": "At least one motorcyclist or motorcycle is visible.",
+      "id": "motorcycle_present",
+      "label_ids": [
+        3
+      ],
+      "label_type": "agent",
+      "labels": [
+        "Mobike"
+      ],
+      "minimum_positive_frames": 3,
+      "name_ja": "二輪車存在"
+    },
+    {
+      "definition": "A traffic light relevant to the ego lane is red.",
+      "id": "traffic_light_red",
+      "label_ids": [
+        135
+      ],
+      "label_type": "duplex",
+      "labels": [
+        "TL-Red"
+      ],
+      "minimum_positive_frames": 3,
+      "name_ja": "対象信号赤"
+    },
+    {
+      "definition": "A traffic light relevant to the ego lane is green.",
+      "id": "traffic_light_green",
+      "label_ids": [
+        137
+      ],
+      "label_type": "duplex",
+      "labels": [
+        "TL-Green"
+      ],
+      "minimum_positive_frames": 3,
+      "name_ja": "対象信号青"
+    }
+  ],
+  "videos_dir": "${ROAD_DATA_ROOT}/folder-test/videos",
+  "window_seconds": 8.0
+}

@@ -1,0 +1,1235 @@
+\documentclass[9pt,a4paper]{extarticle}
+\usepackage{fontspec}
+\usepackage{xeCJK}
+\usepackage{amsmath,amssymb,booktabs,tabularx,array,siunitx,graphicx}
+\usepackage[margin=16mm,columnsep=7mm]{geometry}
+\usepackage{hyperref,titlesec,caption,multicol,ragged2e,needspace}
+\defaultfontfeatures{Ligatures=TeX}
+\IfFontExistsTF{TeX Gyre Termes}{
+  \setmainfont{TeX Gyre Termes}
+  \setsansfont{TeX Gyre Heros}
+}{
+  \setmainfont{Times New Roman}
+  \setsansfont{Helvetica Neue}
+}
+\setmonofont{Menlo}
+\IfFontExistsTF{Hiragino Mincho ProN}{
+  \setCJKmainfont{Hiragino Mincho ProN}
+  \setCJKsansfont{Hiragino Sans}
+  \setCJKmonofont{Hiragino Sans}
+}{
+  \IfFontExistsTF{Noto Serif CJK JP}{
+    \setCJKmainfont{Noto Serif CJK JP}
+    \setCJKsansfont{Noto Sans CJK JP}
+    \setCJKmonofont{Noto Sans CJK JP}
+  }{
+    \setCJKmainfont{Amazon Ember JP}
+    \setCJKsansfont{Amazon Ember JP}
+    \setCJKmonofont{Amazon Ember JP}
+  }
+}
+\hypersetup{
+  unicode=true,
+  colorlinks=false,
+  pdfborder={0 0 0},
+  pdftitle={公開自動運転動画に対する視覚言語モデルを用いた時系列シーンラベリング}
+}
+\setlength{\parindent}{1em}
+\setlength{\parskip}{0pt}
+\setlength{\columnsep}{7mm}
+\setlength{\tabcolsep}{2.6pt}
+\setlength{\emergencystretch}{2em}
+\renewcommand{\arraystretch}{1.08}
+\titleformat{\section}{\normalsize\bfseries\sffamily}{\thesection.}{0.45em}{}
+\titleformat{\subsection}{\small\bfseries\sffamily}{\thesubsection}{0.4em}{}
+\captionsetup{font=small,labelfont=bf}
+\newcommand{\modelname}[1]{\texttt{\small #1}}
+\renewcommand{\abstractname}{概要}
+\renewcommand{\tablename}{表}
+\renewcommand{\figurename}{図}
+\renewcommand{\refname}{参考文献}
+
+\title{\bfseries 公開自動運転動画に対する視覚言語モデルを用いた\\
+時系列シーンラベリングの品質・計算費用評価\\[2pt]
+\large Quality and Computational Cost of Temporal Scene Labeling\\
+with a Vision-Language Model on Public Driving Videos}
+\author{Ryota Yamada\\{\small Amazon Web Services, Inc.}}
+\date{}
+
+\begin{document}
+\maketitle
+\begin{abstract}
+自動運転用走行データのラベリングは、学習データの分布把握、希少事象の検索、
+hard-negative mining、およびactive learningにおける人手確認対象の選定に必要である。
+一方、既存の大規模走行データでは負例が網羅的に確認されていない場合があり、
+PrecisionやAccuracyを含む定量評価が成立しない。本稿では、密な時間注釈を持つ公開
+ROAD datasetを用い、8秒clipに対する13タグの完全な正負Ground Truthを構成した。
+元動画単位でdevelopment/evaluationを分離し、Cosmos 3 NanoおよびSuperについて、
+frame sampling、timestamp明示、prompt形式、grouped request、multimodal/prefix cacheが
+品質、tail latency、stage時間およびGPU費用へ与える影響を評価した。
+同一ROAD clipsを用いるcontrolled serving experimentにより、continuous batching、
+Chunked Prefillおよびcache再利用の効果を、入力内容とpromptを固定して分離した。
+方式探索はclass-balanced Smoke、方式固定はdevelopment、最終性能推定はevaluationへ分け、
+複雑な候補は単純baselineを上回った場合だけ次段階へ進めた。
+Evaluationで母集団性能まで確認した構成は、timestamp付き24-frame evidence、
+Super、および固定VO priorである。これに対し、タグ限定Hybrid Core Reasoningは
+developmentで選定し、候補駆動48-frame Recall passはGTを用いた難例診断で上限を調べた。
+従って後二者は提案系のextensionであるが、Evaluation性能へ数値合成しない。
+evaluationは875 clips、15 source videos、
+11,314 known clip--tag pairsを含む。最良条件Super / 固定VO motion priorは
+micro F1 76.2（source-video block bootstrap 95\% CI:
+73.7--78.4）、MCC 0.698、推定費用
+\$13.48/1,000 clipsであった。Cosmos3-Nano / adaptive 24-reasonedに対するCosmos3-Nano / uniform 24-reasonedのpaired F1差は+0.5 points（95\% CI: -0.2--+1.2）であった。
+公開ROAD動画から推定したVOを用いる固定motion priorにより、SuperのF1を74.5から76.2へ改善した。
+Developmentでは、難しい5タグだけを詳細化するHybrid Core Reasoningが、短いPromptのF1 72.2を75.6へ改善した。
+Development難例診断では、GT event近傍を48 framesへ高密度化して5/14 FNを回復した。タグ別の未校正YES scoreはRecall--Precision交換を制御できた。
+さらに、予測ラベルによる分布推定誤差と
+希少シーンの人手確認効率を評価し、自動ラベリングの利用可能範囲と限界を示す。
+\end{abstract}
+
+\noindent\textbf{キーワード:} 自動運転、視覚言語モデル、動画理解、シーンラベリング、
+active learning、データキュレーション
+
+\begin{multicols}{2}
+\section{はじめに}
+自動運転システムの開発では、長時間の走行動画から学習・検証に有用な区間を抽出し、
+データ集合の偏りやlong-tail scenarioを把握する必要がある。物体検出boxのような
+局所注釈だけでなく、「自車が車線変更した」「歩行者が横断を待っている」
+「先行車が制動した」といった時間的scene labelは、データ検索、失敗分析、
+評価set設計およびactive learningのacquisitionに利用できる。しかし、全動画を
+人手で網羅的に確認する費用は大きく、正例探索だけを目的とした弱いGround Truthでは
+false positiveを測れないため、モデルがyesを過剰出力しても高く評価され得る。
+
+本研究の目的は、(i) 完全な正負GT上でVision-Language Model（VLM）の時系列
+multi-label分類能力を測ること、(ii) 入力frameとrequest構成が品質・latency・費用へ
+及ぼす影響を分離すること、(iii) 生成ラベルが分布推定と希少scene抽出に与える
+実用的価値を測ることである。主な貢献は次の7点である。
+\begin{enumerate}
+  \item ROADの密な注釈から、unknownを明示した再現可能な13タグ・8秒clip benchmarkを構築した。
+  \item 24-frame budget下でUniform、Adaptive、Hybridおよび診断用samplingを比較し、
+        timestamp manifestとreasoned promptを組み合わせたevidence生成法を設計した。
+  \item タグの意味、肯定証拠、時系列検査、除外条件を分離し、難しい5タグだけを
+        詳細化するHybrid Core Reasoningをdevelopmentで固定した。
+  \item 低Recallタグについて、GT時刻を用いる24/48-frame Oracle、空間crop、
+        匿名trackおよびタグ別YES/NO scoreを段階的に比較し、見逃し原因を分解した。
+  \item continuous batching、Chunked Prefill、MM/prefix cache、request順序を統制し、
+        Prefill/Decode、tail latencyおよびGPU費用への作用を分離した。
+  \item Nano--Super cascade、分布誤差、希少scene retrieval、source-video block bootstrapを
+        含む、品質と運用費用を同時評価する再現可能な実験系を提示した。
+  \item 公開RTK派生軌跡とvideo-derived VOをquality gate付きで統合し、
+        evaluationへ再調整せず適用できる自車運動fusionを構築した。
+\end{enumerate}
+
+\section{関連研究}
+\subsection{道路事象dataset}
+ROADはOxford RobotCar動画に対し、agent、action、location、ego actionおよび
+複合road eventをframe/track単位で注釈したdatasetであり、online event detectionや
+anticipationを目的としている\cite{singh2022road,maddern2017robotcar}。
+本稿はbounding-box detectionを再学習するのではなく、公開注釈をclip-levelの
+multi-label GTへ決定論的に変換し、汎用VLMによるoff-line labelingを評価する。
+
+\subsection{VLMと動画推論}
+Cosmos 3はlanguage、image、video、audio、actionを統一architectureで扱う
+omnimodal world model familyである\cite{nvidia2026cosmos3}。本研究は同familyの
+Nano/Superを対象とし、モデル規模だけでなく入力時系列とserving構成を比較する。
+大量video tokenの処理ではprefillが支配的になり得るため、PagedAttention、
+continuous batchingおよびprefix reuseを実装するvLLM\cite{kwon2023vllm}上で計測した。
+
+\subsection{Active learningとデータキュレーション}
+自動運転におけるactive learningは、限られた注釈予算で情報量・多様性の高いframeを
+選択する問題として研究されている\cite{lin2024active,bengar2019temporal}。
+本稿ではdownstream modelの再学習効果を直接主張せず、VLM予測で人手確認対象を
+優先したときのPrecision@K、Recall@K、random sampling比enrichmentをproxyとして測る。
+
+\section{問題設定と評価方針}
+本研究は、8秒の走行clip $v\in\mathcal{V}$に対し、複数の道路事象タグ
+$t\in\mathcal{T}$を同時付与するmulti-label classificationとして定式化する。
+ROADの注釈からclip--tag pairごとにpositive、negative、unknownを構成し、unknownは
+品質指標の母数から除外した。一方、モデルが構文解析可能な回答を返さない場合や、
+要求したタグを欠落させた場合はabstention $\bot$として保存し、正答へ丸めずstrict指標へ
+反映した。この扱いにより、出力失敗を陰性予測として隠蔽せず、推論系全体の信頼性を
+分類品質と同時に評価する。
+
+品質比較にはPrecision、Recall、F1、Accuracy、Balanced Accuracy（BA）および
+Matthews Correlation Coefficient（MCC）を用いるが、モデル選定の中心はF1とMCCとした。
+Accuracyは負例の多いmulti-label問題で過大に見え得るため補助指標とし、出力pair coverageが
+99\%未満の条件は候補から除外した。また、近接するclipを独立標本と仮定すると信頼区間を
+過小評価するため、個々のclipではなくsource videoを再標本化単位とする10,000回の
+block bootstrapを採用した。
+
+自動ラベルをdataset解析へ用いる妥当性は、タグ別prevalenceのMean Absolute Error（MAE）と
+Jensen--Shannon divergence（JSD）で測定した。前者は各タグの出現率を何ポイント誤るか、
+後者はタグ構成全体がGT分布からどの程度乖離するかを表す。希少scene抽出については、
+予測positiveを先に人手確認した場合のPrecision@K、Recall@Kおよびrandom sampling比
+enrichmentを報告し、分類精度とは別にデータキュレーション上の効用を評価した。
+
+\subsection{研究課題と検証仮説}
+本稿では、品質だけを最大化する単一のmodel比較ではなく、入力生成からGPU servingまでを
+含む系全体を対象として、次の研究課題を設定した。
+\begin{description}
+  \item[RQ1:] 限られたframe budgetの下で、均等sampling、motion集中sampling、
+        timestamp表現および判定手続のうち、どの要因が時系列タグの品質を支配するか。
+        当初は短時間eventへ局所高FPSを割り当てるAdaptive/Hybrid方式が有利と仮定した。
+  \item[RQ2:] タグ定義へ肯定証拠、時系列検査、除外条件を追加するReasoning強化は、
+        全タグ一律よりも難しいタグへ限定した方が品質とPrompt長を両立できるか。
+  \item[RQ3:] NanoからSuperへのmodel規模拡大は、見逃し削減と誤検出削減のどちらへ
+        主に作用し、その改善は追加EC2費用を正当化するか。
+  \item[RQ4:] continuous batching、Chunked Prefill、MM/prefix cacheおよびrequest分割は、
+        throughput、tail latency、Prefill/Decode、費用へそれぞれどのように作用するか。
+  \item[RQ5:] 映像だけでは曖昧な自車走行・停止・旋回を、公開軌跡またはvideo-derived
+        Visual Odometry（VO）で補助すると品質を改善できるか。また、contextを再びVLMへ
+        入力する生成的fusionと、タグ単位の決定論的fusionのどちらが安定するか。
+  \item[RQ6:] event時刻を既に含むFalse Negativeは、局所48-frame化、空間crop、
+        track情報、またはタグ別の未校正YES scoreのどの段階で回復し、どの誤りが残るか。
+  \item[RQ7:] 生成ラベルは個別clipの分類に留まらず、dataset分布推定および希少sceneの
+        人手確認順序付けへ利用できるか。
+\end{description}
+これらを同時に変更すると因果を解釈できないため、RQ1ではmodelとserving、RQ2では
+mediaとmodel、RQ4ではmediaとprompt、RQ5では映像baselineを固定した。各候補はSmoke、development、
+evaluationの順に段階的に絞り込み、evaluationは方式固定後の性能推定にのみ用いた。
+
+\section{公開GTの構築}
+ROAD train/validation 18動画の101,780 annotated frames
+（全101,907 framesの99.9\%）を使用した。
+8秒window、8秒stride、12 FPS原時刻で1,044 clipsを生成し、ROAD公式fold 3に従って
+development 169 clips（3動画）とevaluation 875 clips
+（15動画）へ分離した。各タグは6 annotated frames以上、存在系は3 frames以上を
+positiveとし、全frameが注釈済みで対象eventがないclipをnegative、境界欠損を
+unknownとした。evaluationのunknownは61 pairsである。
+使用タグは自車走行、自車停止、自車左折、自車右折、自車車線変更、車両制動、停止車両、歩行者横断待ち、歩行者横断、自転車存在、二輪車存在、対象信号赤、対象信号青である。
+
+\section{提案手法}
+\subsection{全体構成}
+提案系は、(1) 元動画から24-frameの基準evidenceを生成し、(2) 各frameの元動画時刻を
+manifestとして保持し、(3) 難しいタグだけ詳細化したHybrid Core Reasoningで一次判定し、
+(4) 必要な自車運動タグだけを公開VO priorで補正し、(5) 軽量detector/tracker等の
+外部証拠と一次negativeが不一致な場合だけ候補化し、(6) event近傍48 framesとタグ別
+YES/NO scoreでRecallを補い、(7) 用途に応じてNanoとSuperをroutingする、という
+階層構成である。
+
+clip $v$から選択したframe集合を$M(v)$、その実時刻列を$\tau(v)$、タグ定義と判定手続を
+$D$、VLMを$f_\theta$とすると、映像予測は
+\[
+ \hat{\mathbf{y}}(v)=f_\theta\!\left(M(v),\tau(v),D\right)
+\]
+で表される。さらにVO特徴$\mathbf{z}(v)$とdevelopmentで固定したタグ別規則
+$g_t(\cdot;\phi_t)$を用い、対象タグ$t$だけを
+\[
+ \tilde{y}_t(v)=g_t\!\left(\hat{y}_t(v),\mathbf{z}(v);\phi_t\right)
+\]
+へ置換する。規則を持たないタグは$\tilde{y}_t=\hat{y}_t$とし、物体・歩行者・信号の
+予測を自車運動contextで不用意に変化させない。推論時にGTは使用せず、$\phi_t$は
+developmentで一度だけ固定する。
+
+本設計の要点は、VLMへ多量のcontextを与えて全タグを常時再生成させるのではなく、
+映像が得意な外観・意味判定と、VOが得意な自車状態判定を責務分離する点にある。
+また、48-frame passは全clipへ適用せず、一次判定と構造化証拠が矛盾するタグだけへ
+限定する。GT event時刻を使った結果はこの条件付きpassの上限診断であり、本番の候補時刻は
+detector/tracker、lane、VOから推定しなければならない。
+また、Sampling、Prompt、Model、Serving、Fusionを独立した操作因子として扱い、
+品質差がどの処理に由来するかを追跡可能にした。
+
+\subsection{Evidence mediaの構成}
+本稿でいうevidence mediaとは、元動画から選択した静止frameを時系列順に連結した、
+VLM入力用の短い動画である。元動画をそのまま入力する方式と比べ、frame budgetを明示的に
+管理でき、sampling、prompt、servingの各要因を独立に比較できる。8秒clip当たりの基準budgetを
+24 framesとし、次の三方式を主に検討した。
+
+\subsubsection*{Uniform sampling}
+clip全域を一定間隔で走査する。最終候補では3 FPS相当の24 timestampsを選択した。
+detectorやmotion scoreに依存しないため、意味的には重要だが画素変化の小さい停止、
+信号状態、遠方物体を一様に観測できる。また、処理内容が単純で、動画ごとの前処理時間と
+選択frame数を予測しやすい。
+
+\subsubsection*{Adaptive sampling}
+元動画を4 FPSで軽量解析し、frame差分とoptical flowからmotion peakを求めた。近接peakは
+2秒のnon-maximum suppressionで統合し、最大2箇所を採用する。全域を1 FPSで保持した上で、
+peak前後2秒を2 FPS、中心前後1秒を4 FPSへ高密度化し、24-frame上限を超える場合は
+優先度の低いframeと置換した。したがって、高FPS frameを無制限に追加する方式ではない。
+
+\subsubsection*{Hybrid sampling}
+全域を2 FPSで保持しつつ、8 FPSのmotion解析で選んだ1 peakの前後1秒を補強し、
+中心前後0.5秒だけを8 FPS相当とする。Uniformの広域coverageとAdaptiveの局所密度を
+同一24-frame budgetで両立させる設計である。
+
+これらに加え、局所burstを32/48 framesへ増やす条件、GT eventの開始・中央・終了を
+優先するdiagnostic oracle、道路上方・左右端を拡大するmulti-scale mosaicをdevelopment
+限定で評価した。oracleはsamplingの理論上限を診断するための条件であり、方式選定や
+evaluationには使用していない。multi-scaleも一部小物体を回復したがfalse positiveを
+増加させたため、Full Run候補から除外した。
+
+\subsection{実時間を保持するtimestamp表現}
+evidence mediaは4 FPSで再生されるため、動画内の見かけのframe間隔は元動画の実時間間隔と
+一致しない。特にAdaptive samplingでは、隣接frameが0.125秒差の場合と数秒差の場合が混在する。
+そこで、選択した全frameの元動画時刻をtext manifestとしてpromptへ付与した。これにより、
+モデルは単なる画像順序だけでなく、停止の持続時間、接近・離反の速度、右左折前後の時間関係を
+解釈できる。timestamp有無のみを比較する条件では、media bytesをhard linkで共有し、
+入力画像差が結果へ混入しないようにした。
+
+\begin{center}
+\small
+\fbox{ROAD video}
+$\rightarrow$
+\fbox{timestamp付きevidence media}
+$\rightarrow$
+\fbox{Cosmos 3}
+$\rightarrow$
+\fbox{13タグ}
+$\rightarrow$
+\fbox{分布推定・人手確認}
+\end{center}
+
+\subsection{Promptとrequest構成}
+\subsubsection*{Timestamp-only prompt}
+全13タグの定義とtimestamp manifestを提示し、固定順のbinary arrayを返させる。
+構造化出力として単純である一方、各タグの時間的根拠を順に照合する手続を明示しないため、
+後述の実験ではnegative側へ過度に保守的になる傾向を示した。
+
+\subsubsection*{Reasoned prompt}
+全frameを時系列順に確認し、タグごとの肯定条件と除外条件を照合してから、
+最終的なpositive indexのみを出力する手続を指示した。自由記述の説明文は要求せず、
+\texttt{FINAL\_POSITIVE\_INDICES}に相当する短い配列へ制約する。これにより、
+判定前の確認手順をprompt上で規定しつつ、decode token数とparse failureを抑える。
+最大出力は64 tokensであり、長い自然言語説明を生成する方式ではない。
+
+\subsubsection*{Hybrid Core Reasoning}
+短いbaseline定義はタグの意味を一文で与えるだけであった。これに対し詳細定義では、
+各タグ$t$について、(i) 意味、(ii) 追跡すべき対象、(iii) positiveを支持する視覚証拠、
+(iv) 複数timestamp間で確認すべき変化、(v) 類似事象を除外する反証、の五要素を
+$D_t=(m_t,o_t,e_t,\Delta_t,r_t)$として明示した。モデルには自由記述の思考過程を
+出力させず、全frameを時系列順に検査した後のpositive indexだけを返させる。
+従って、本稿のReasoning強化は長い回答を生成するchain-of-thoughtではなく、
+判定前に実施すべき証拠照合手順を入力契約として構造化する方法である。
+
+全13タグを詳細化するとPrompt長とKV-cache消費が増え、厳しい除外条件が視覚的に単純な
+タグのRecallを下げる可能性がある。そこで、Development上で全タグ詳細化と3種の部分詳細化を
+同一media・同一Superで比較した。数値上の最高候補と簡潔な候補のpaired 95\% CIが0を跨ぐ
+場合は短い方を選ぶparsimony規則を事前に採用し、最終的に
+\texttt{road-adaptive-24-hybrid-core-v1}を固定した。詳細化対象は自車左折、自車車線変更、停止車両、歩行者横断待ち、二輪車存在の
+5タグであり、残る8タグは短い定義を維持する。
+criteria語数はbaselineの213語から603語へ増えるが、
+全タグ詳細化より短い。選定にはEvaluationを使用していない。
+
+\subsubsection*{Grouped request}
+13タグをego action、road-user action、object/signalの3群へ分割する。同一media bytes、
+同一timestamp manifest、同一system prefixを維持し、群固有の判定基準だけを末尾へ加える。
+タグ間干渉の低減が期待できる一方、1 clip当たり3 requestとなるため、品質改善が追加latencyを
+正当化できるかを実測した。同一clipの3 requestは連続投入し、multimodal cacheとprefix cacheが
+効く順序を意図的に構成した。
+
+\subsection{候補駆動48-frame Recall refinement}
+一次passは13タグを一括して高Precisionに判定する一方、negative出力には、証拠不足、
+タグ間競合、実効判定閾値の高さが混在する。そこで本稿は、全clipを一律に高FPS化せず、
+軽量detector/tracker、lane、VOなどの外部証拠がタグ$t$を支持し、一次予測がnegativeである
+場合だけrouting変数$q_t(v)=1$とする条件付きsecond passを提案する。
+\[
+ q_t(v)=\mathbb{1}\!\left[\hat y_t(v)=0\ \land\
+ c_t(v)\ge\gamma_t\right],
+\]
+ここで$c_t(v)$はタグ固有candidate score、$\gamma_t$はDevelopmentで固定する閾値である。
+$q_t(v)=1$のとき、candidate時刻の前後を8 FPSで密にし、全域contextを残した48 frames
+$M_{48,t}(v)$を生成する。48枚は追加し続けるのではなく、低優先の全域frameと置換して
+budgetを固定する。
+
+second passは対象タグだけをYES/NOで問い合わせ、先頭tokenのlog probabilityから
+\[
+ s_t(v)=\frac{\exp \ell_{\mathrm{YES}}}
+ {\exp \ell_{\mathrm{YES}}+\exp \ell_{\mathrm{NO}}}
+\]
+を得る。$s_t$は校正済み確率ではなく、YES/NO間の相対的な未校正scoreである。
+最終判定は独立calibrationで固定するタグ別閾値$\eta_t$と、lane境界横断、相対速度、person--road交差、
+自車laneに対応する信号、brake-lamp変化等の構造化veto/promotionで決める。
+13タグすべてを個別callする設計ではなく、candidateになったタグだけを再確認する。
+
+この本番形の候補生成器はまだFull Runしていないため、本稿では自車車線変更、歩行者横断待ち、歩行者横断、停止車両、対象信号青、車両制動、自転車存在の7タグを対象とし、GT event時刻、GT box、匿名trackを順に用いる
+Oracle診断で各情報源の上限を分解した。GT action/class名はPromptへ渡していない。
+Oracle 48の回復はcandidate-guided 48-frame設計の可能性を示すが、本番性能の証明ではない。
+
+\subsection{Serving最適化}
+VLM推論を、動画・promptを内部表現へ変換するPrefillと、最終回答tokenを生成するDecodeへ
+分けて計測した。動画入力ではPrefill負荷が大きくなりやすい一方、本手法は短いindex配列のみを
+continuous batchingは、異なるrequestのPrefillとDecodeをGPU schedulerが逐次組み合わせ、
+GPUの遊休時間を減らす機構である。本稿では同時投入上限をconcurrency 1/2/4/8と変化させ、
+aggregate throughputとrequest単位のtail latencyを同時に測った。concurrencyを上げれば
+GPU利用率は向上するが、KV cacheの競合、待ち行列、再計算によってP95 latencyやpreemptionが
+悪化し得る。
+
+Chunked Prefillは長いPrefillを一定token数のchunkへ分割し、他requestのDecodeを割り込ませる。
+2,048および8,192 token budgetを比較し、短い応答を持つ24-frame workloadでも効果があるかを
+検証した。また、同一video embeddingを再利用するmultimodal（MM）cacheと、共通prompt tokenを
+再利用するprefix cacheを区別して記録した。cache効果を測るrunでは同一clipを連続投入する
+\texttt{video-grouped-hot}、純粋なserving比較では順序を乱す\texttt{shuffled-cold}を用いた。
+
+\subsection{公開自車運動contextとタグ限定fusion}
+公式Oxford RobotCarの生INS/GNSSは学術機関認証を要するため使用せず、
+認証不要のOPR公開派生物\cite{oprproject2026}とROAD動画だけから再計算可能なVOを用いた。
+OPR画像とROAD frameはperceptual hashで対応付け、複数anchor間のframe時刻を区分線形補間した。
+frame coverage 70\%以上かつleave-one-anchor-out時刻誤差P95 2秒以下を同期quality gateとし、
+条件を満たさない走行は外挿せずVOへfallbackした。公開OPR派生軌跡はquality gate後に341 clips・6 source videosをカバーした。video-derived VOは875 clips・15 source videosへ同一条件で適用した。
+
+VOでは元動画を5 frames間隔、幅480 pxへ縮小して走査した。空や道路中央の
+移動物体に偏らないよう背景寄りの領域から最大800個のShi--Tomasi特徴点を抽出し、
+Lucas--Kanade法で前後追跡した。forward--backward誤差1.5 px以下かつ20 tracks以上を
+有効pairとし、median flow、0.8 px未満のlow-motion pair率、Essential Matrixの
+RANSAC inlierおよび累積visual yawをclip単位へ要約した。yawはinlier率0.25以上のpairだけを
+集計し、全pairの50\%以上が有効なclipだけをfusion対象とした。
+
+生成的fusionでは、これらの数値を自然言語contextとしてSuperへ再入力し、自車actionを
+再判定させた。一方、提案する決定論的fusionでは、映像予測を保持したまま、development上の
+grid searchでF1、MCC、BAが改善し、かつ改善pair数が悪化pair数以上となる規則だけを採用した。
+条件を満たさないタグはidentityへ戻した。Evaluationでは閾値を変更せず、追加VLM requestを
+発生させない。採用規則は次の通りであり、3タグだけを変更し、残る
+10タグは映像出力を保持した。
+
+\begin{center}
+\captionof{table}{Developmentで固定したVO motion prior規則}
+\label{tab:motion-rules}
+\scriptsize
+\begin{tabularx}{\columnwidth}{l>{\raggedright\arraybackslash}X}
+\toprule
+対象タグ & 映像予測を変更する条件\\
+\midrule
+自車走行 & no→yes: median flowが0.50 px以上かつ low-motion率が0.75以下。yes→no: flowが0.05 px以下かつ low-motion率が0.50以上 \\
+自車停止 & no→yes: flowが0.05 px以下、または low-motion率が0.10以上。yes→no: flowが1.00 px以上かつ low-motion率が0.05以下 \\
+自車左折 & yesを維持するのは累積visual yawが正方向へ3.0°以上の場合だけ \\
+\bottomrule
+\end{tabularx}
+\end{center}
+
+このタグ限定設計は、motion情報が歩行者、物体、信号色などへ直接の根拠を持たないという
+帰納biasを明示する。すなわち、VOをVLMの代替分類器として用いるのではなく、映像だけでは
+曖昧な自車状態に対する支持またはvetoとして用いる。
+
+\subsection{Nano--Super cascade}
+全件を高価なSuperへ投入せず、まずNanoで一括判定し、Nanoの予測だけから再確認対象を選ぶ
+二段構成を評価した。routing条件は、positive数が3以上、歩行者系positiveを含む、
+複雑時系列タグpositiveを含む、の三種である。routing判断にGTは使用せず、選択されたclipだけ
+Superの出力へ置換した。この設計により、NanoのみとSuper全件の間に複数の実測運用点を構成する。
+
+\section{実験設定}
+developmentでは15 clipsのclass-balanced Smokeで明らかに劣る条件を除外し、その後
+全169 clipsでsampling/promptを選定した。evaluation 875 clipsは条件固定後に一度だけ
+Nano/Superへ適用した。temperature 0、seed 20260808とし、モデル、prompt、media、
+container digest、instance、GPU telemetryおよび全SHA-256をlock artifactへ保存した。
+Smokeは方式探索、developmentは方式選定、evaluationは最終性能推定という役割を持ち、
+evaluation結果を見てsamplingやpromptを再調整しない三段階設計とした。さらに、
+sampling比較ではpromptとmodelを固定し、serving比較ではmediaとpromptを固定することで、
+複数要因を同時に変更した比較を避けた。
+
+Recall原因診断は、developmentから低Recall 7タグについて、時間的にcoveredであった
+False Negative 2件、True Positive 1件、negative control 1件をタグごとに選び、
+重複を共有した24 clipsで実施した。この集合は難例を意図的に濃縮しているため、
+診断上のP/R/F1をROAD母集団性能として扱わず、FN回復数、TP維持数、
+negative-control FP数を主に報告する。
+GT event時刻およびROAD boxを用いる条件は原因切り分け専用であり、Evaluationの最終方式へ
+混入させていない。
+
+\begin{center}
+\captionof{table}{実験結果の証拠水準と許容する主張}
+\label{tab:claim-levels}
+\scriptsize
+\begin{tabularx}{\columnwidth}{l>{\raggedright\arraybackslash}X>{\raggedright\arraybackslash}X}
+\toprule
+水準 & 使用データ・GT利用 & 本稿で許容する主張\\
+\midrule
+Population evaluation & 未使用Evaluation 875 clips、推論入力へGT不使用 &
+固定方式の母集団品質、分布誤差、費用\\
+Development selection & 169 clips、方式・閾値の選定 &
+候補間の選定根拠。母集団性能とはしない\\
+Oracle diagnostic & 難例24 clips、時刻・box選択へGT使用 &
+原因分解と到達可能性。実運用性能とはしない\\
+Production proposal & detector/tracker等で候補を近似 &
+実装仮説。固定Evaluationでの検証を今後要する\\
+\bottomrule
+\end{tabularx}
+\end{center}
+
+Nanoはg6e.2xlarge（1 GPU）、Superはg6.24xlarge（4 GPU）で実行した。後者は
+GPU間がPCIe-onlyでvLLM custom all-reduceを利用できず、NCCL fallbackを含む実測である。
+EC2定常推論費用は、artifactに記録したon-demand単価$p$とitem当たりwall時間$t$から
+\[
+ C_{1000}=p\frac{t}{3600}\times 1000
+\]
+で算出した。観測単価はus-west-2におけるg6e.2xlargeの
+\$2.24208/hとg6.24xlargeの\$6.6752/hである。EKS control plane、EBS、NAT、
+data transfer、model download、compile、idle時間は含めない。
+したがって本稿の費用は、十分なrequestが継続して供給される定常状態のEC2下限に相当する。
+低頻度運用ではmodel起動とidle時間を償却できず、実際の1 clip当たり費用は増加する。
+
+\subsection{段階的実験設計と採用基準}
+実験は、少数で方式の成立性を確かめるSmoke、未知条件へ進める方式を固定するdevelopment、
+最終性能を一度だけ推定するevaluationに分けた。各段階の役割を混同しないため、
+次の採用規則を設けた。
+\begin{enumerate}
+  \item Smokeではrequest failure、parse failure、preemptionおよび明らかな品質劣化を確認し、
+        不安定な条件を全developmentへ拡張しない。
+  \item Developmentではcoverage 99\%以上を必須とし、F1、MCC、Balanced Accuracyを主に、
+        費用とlatencyを副に用いてPareto候補を選ぶ。複雑な方式は単純baselineを上回る場合だけ
+        evaluation候補とする。
+  \item Evaluationでは条件・閾値・promptを再調整しない。差はsource-video単位paired
+        bootstrapで評価し、CIが0を跨ぐ場合は明確な改善と主張しない。
+  \item 追加VLM passは、対象タグの改善が追加費用と誤変更を上回る場合だけ採用する。
+        全体F1が僅かに上がっても、無関係タグの揺らぎが支配する条件は棄却する。
+\end{enumerate}
+
+\begin{center}
+\captionof{table}{研究課題ごとの操作因子、固定条件および判断目的}
+\label{tab:experiment-intent}
+\scriptsize
+\begin{tabularx}{\columnwidth}{l>{\raggedright\arraybackslash}X>{\raggedright\arraybackslash}X}
+\toprule
+課題 & 変更した因子 & 固定した条件・判断目的\\
+\midrule
+RQ1 & Sampling、timestamp、prompt、request分割 &
+同一clip・model・frame budget。品質差の原因を入力設計へ限定\\
+RQ2 & 短い定義、全タグ詳細化、Hybrid Core &
+同一169 clips・media・Super。詳細化範囲とPrompt長を比較\\
+RQ3 & Nano / Super &
+同一evaluation clips・media・prompt。model規模の効果を測定\\
+RQ4 & concurrency、Prefill chunk、cache順序 &
+同一15 clips・media・prompt。速度、tail、費用を分離\\
+RQ5 & OPR/VO context、決定論的prior、Map pass &
+映像baseline固定。改善・悪化pairと追加pass費用で採否\\
+RQ6 & Oracle 24/48、ROI、track、tag score &
+Development難例24 clips。時間・空間・競合を段階分解\\
+RQ7 & 予測ラベルによる集計・ranking &
+同一GT。分布誤差と人手確認濃縮率を分類品質と分離\\
+\bottomrule
+\end{tabularx}
+\end{center}
+
+\section{実験結果}
+本節では、各実験を「検証意図、観測結果、解釈、次段階への採否」の順に記述する。
+Smoke値は方式探索またはserving境界の確認に限って用い、最終品質の主張はFull Runに限定する。
+\subsection{Development ablation}
+表\ref{tab:ablation}は全development splitの条件選定結果であり、evaluation性能ではない。
+\begin{center}
+\centering
+\captionof{table}{Development splitにおける入力・prompt ablation}
+\label{tab:ablation}
+\scriptsize
+\begin{tabular}{lrrrrr}
+\toprule
+条件 & P & R & F1 & BA & MCC\\
+\midrule
+uniform 24-reasoned & 74.1 & 68.4 & 71.1 & 80.2 & 0.621 \\
+hybrid-24-reasoned & 72.1 & 68.6 & 70.3 & 79.9 & 0.608 \\
+adaptive 24-reasoned & 73.3 & 67.3 & 70.2 & 79.6 & 0.609 \\
+adaptive 24-reasoned-v2 & 73.6 & 66.2 & 69.7 & 79.1 & 0.605 \\
+adaptive 24-grouped & 50.6 & 50.0 & 50.3 & 66.9 & 0.339 \\
+uniform 4fps+timestamp & 85.9 & 32.4 & 47.0 & 65.3 & 0.453 \\
+adaptive 24+timestamp & 67.9 & 34.6 & 45.8 & 64.6 & 0.378 \\
+uniform 2fps+timestamp & 64.8 & 30.5 & 41.5 & 62.5 & 0.336 \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+表\ref{tab:ablation}の各行は、同一development clipsに対して入力frameの選び方、
+timestamp表現、判定手続およびrequest分割だけを変更した条件である。
+\texttt{uniform 24-reasoned}はPrecision 74.1、Recall 68.4、F1 71.1、MCC 0.621で
+最良となった。これに対し、motion peakを用いる\texttt{hybrid}および
+\texttt{adaptive}はRecallを同程度に維持したものの、PrecisionまたはMCCで上回らなかった。
+画素変化の大きさは必ずしも意味的eventの重要度と一致せず、信号状態、停止、遠方の歩行者
+といった低motion事象を均等samplingが安定して保持したためと考えられる。
+
+\texttt{timestamp}のみの条件はPrecisionが高い一方、Recallが30--35\%程度へ低下した。
+これはモデルが確実なpositiveだけを返す保守的な判定へ偏ったことを示す。
+同じframe budgetでも\texttt{reasoned}手続を加えるとF1が約70\%へ上昇しており、
+本問題ではframe数の増加より、全時刻と除外条件を照合させるprompt構成が支配的であった。
+\texttt{grouped}はcache再利用を可能にするものの、タグ群ごとに文脈が分断され、
+この条件では品質改善を示さなかった。以上から、Full Runには単一requestのreasoned条件を
+採用し、uniformとadaptiveを最終候補とした。
+
+\subsection{タグ選択型Reasoning Prompt}
+表\ref{tab:prompt-selection}は、同一Development 169 clips、同一24-frame media、
+同一Cosmos 3 Super、temperature 0で、詳細定義を適用するタグ集合だけを変更した結果である。
+候補3条件は同一run内でランダムに混在させ、特定Promptだけがwarm stateを先取りする偏りを
+抑えた。P95はこの混在runにおける参考値であり、独立cold runの費用比較ではない。
+\end{multicols}
+\begin{center}
+\captionof{table}{DevelopmentにおけるReasoning Promptの選定}
+\label{tab:prompt-selection}
+\scriptsize
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{lrrrrrrrr}
+\toprule
+Prompt & criteria語数 & 詳細タグ & P & R & F1 & MCC & tokens & P95[s]\\
+\midrule
+短いReasoned baseline & 213 & 0 & 86.2 & 62.1 & 72.2 & 0.663 & 7785 & 17.5 \\
+全タグContrastive & 1273 & 13 & 85.6 & 65.8 & 74.4 & 0.683 & 9234 & 43.2 \\
+Hybrid Core（採用） & 603 & 5 & 85.6 & 67.6 & 75.6 & 0.695 & 8348 & 31.8 \\
+Hybrid Temporal & 778 & 7 & 85.8 & 67.8 & 75.8 & 0.697 & 8551 & 39.2 \\
+Hybrid F1-selected & 850 & 8 & 84.9 & 66.4 & 74.5 & 0.682 & 8646 & 44.8 \\
+\bottomrule
+\end{tabular}}
+\end{center}
+\begin{multicols}{2}
+短いbaselineに対し、全タグContrastiveはRecallを改善したが、Promptを一律に長文化した。
+Hybrid CoreはF1を+3.34 points改善し、source-video単位paired bootstrap 95\% CIは+1.38--+4.46 pointsで0を跨がなかった。数値上はHybrid Temporalが0.21 points高かったが、
+Coreとの差の95\% CIは-0.45--+0.63 pointsであり、統計的に区別できなかった。このため、criteriaが22.5\%短く、
+詳細化対象も少ないHybrid Coreを採用した。この選択は「最大値を出したPrompt」を
+後追いで採るのではなく、同等群から複雑さの小さい方式を選ぶことでDevelopmentへの
+過適合を抑える判断である。なお、この75.6\%はDevelopment値であり、Evaluation性能ではない。
+
+\subsection{Evaluation Full Run}
+表\ref{tab:quality}は固定した同一875 clipsに対するFull Runのみを示す。
+\end{multicols}
+\begin{center}
+\centering
+\captionof{table}{Evaluation splitにおける完全GT品質（Full Runのみ）}
+\label{tab:quality}
+\small
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{lrrrrrrrr}
+\toprule
+Model/条件 & clips & coverage & Precision & Recall & F1 & Accuracy & BA & MCC\\
+\midrule
+Cosmos3-Nano / adaptive 24-reasoned & 875 & 100.0 & 71.3 & 66.7 & 68.9 & 85.6 & 79.1 & 0.596 \\
+Cosmos3-Nano / uniform 24-reasoned & 875 & 100.0 & 73.4 & 65.9 & 69.4 & 86.1 & 79.2 & 0.606 \\
+Cosmos3-Super / adaptive 24-reasoned & 875 & 100.0 & 81.9 & 68.3 & 74.5 & 88.8 & 81.8 & 0.678 \\
+\bottomrule
+\end{tabular}
+}
+\end{center}
+
+表\ref{tab:quality}は、developmentで方式を固定した後に初めて実行した875 clipsの結果である。
+全条件のcoverageが100\%であるため、差は出力欠落ではなく判定内容に起因する。
+Nanoのuniform化はadaptive比でPrecisionを71.3から73.4へ改善した一方、Recallを66.7から
+65.9へ低下させ、F1差は+0.5 pointsに留まった。paired bootstrapの95\% CIは
+-0.2--+1.2 pointsで0を含むため、developmentで観測した優位が未知動画へ明確に一般化したとは
+結論しない。ただし、単純なuniform方式が複雑なmotion解析と同等の品質を示したこと自体は、
+前処理実装と運用保守を簡素化できる点で重要である。
+
+SuperはNano adaptive比でPrecisionを10.6 points、Recallを1.6 points改善し、F1 74.5、
+MCC 0.678に達した。改善の中心はfalse positiveの抑制であり、より大きなmodelが時系列eventを
+一律に多く発見したというより、肯定条件と除外条件を厳密に区別した結果と解釈できる。
+一方、定常EC2費用はNanoの約20倍であり、品質差だけから全件Superを選ぶことはできない。
+
+\begin{center}
+\centering
+\captionof{table}{タグ別F1。``--''は陽性予測または有効分母がなくF1を定義できない場合を示す}
+\label{tab:tags}
+\small
+\begin{tabular}{lrrrr}
+\toprule
+タグ & GT陽性 & Cosmos3-Nano / adaptive 24-reasoned & Cosmos3-Nano / uniform 24-reasoned & Cosmos3-Super / adaptive 24-reasoned\\
+\midrule
+車両制動 & 152 & 57.8 & 59.9 & 56.1 \\
+停止車両 & 272 & 52.2 & 53.5 & 44.9 \\
+自転車存在 & 432 & 72.1 & 69.2 & 83.1 \\
+自車車線変更 & 20 & 15.4 & 12.5 & 15.0 \\
+自車走行 & 701 & 94.5 & 94.7 & 93.4 \\
+自車停止 & 264 & 88.4 & 90.0 & 90.7 \\
+自車左折 & 61 & 28.2 & 27.8 & 59.8 \\
+自車右折 & 59 & 62.0 & 56.5 & 55.8 \\
+二輪車存在 & 34 & 74.2 & 78.7 & 80.0 \\
+歩行者横断 & 205 & 48.0 & 46.6 & 48.2 \\
+歩行者横断待ち & 123 & 25.8 & 26.1 & 28.3 \\
+対象信号青 & 163 & 60.7 & 64.2 & 73.6 \\
+対象信号赤 & 226 & 77.3 & 77.6 & 83.3 \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+表\ref{tab:tags}は、micro平均では隠れるタグごとの難易度差を示す。自車走行・自車停止は
+陽性例が多く、継続的な視覚変化も明瞭であるため、全modelでF1 88以上となった。
+対象信号赤、自転車存在、二輪車存在ではSuperの誤認抑制が寄与した。一方、自車車線変更は
+全条件でF1 15前後、歩行者横断待ちは30未満であり、静止画的な物体存在だけでなく、
+lane境界との関係、対象trackの継続、将来意図を判定する必要がある。
+
+Superは自車左折を28.2から59.8へ大きく改善したが、停止車両や自車右折ではNanoを下回った。
+したがって、model規模の増加は全タグへ一様に作用しない。特に陽性数20の車線変更や34の
+二輪車存在は推定分散が大きく、数pointsの順位を一般化すべきではない。運用上は、
+全体F1だけでmodelを選ぶのではなく、収集目的となるタグの陽性数、タグ別F1および誤り費用を
+併せて評価する必要がある。
+\begin{multicols}{2}
+
+\subsection{48-frame・ROI・未校正YES scoreによるRecall上限診断}
+本診断はDevelopmentから意図的に抽出した24 clips、28 clip--tag pairsであり、
+ROAD母集団の性能推定ではない。各低Recallタグについて、時間的にcoveredなFN 2件、
+TP 1件、negative control 1件を選び、hard-label条件では14 FNの回復、7 TPの維持、
+7 controlsに対するFPを数えた。
+\end{multicols}
+\begin{center}
+\captionof{table}{低Recallタグに対する入力証拠の上限診断}
+\label{tab:recall-diagnostic}
+\scriptsize
+\begin{tabular}{lrrrrrr}
+\toprule
+条件 & FN回復 & TP維持 & control FP & frames & E2E[s] & USD/1k proxy\\
+\midrule
+Baseline 24 & 0/14 & 7/7 & 5/7 & 22.9 & 17.46 & 16.19 \\
+Oracle時刻 24 & 2/14 & 7/7 & 4/7 & 24.0 & 18.27 & 16.94 \\
+Oracle時刻 48 & 5/14 & 7/7 & 4/7 & 48.0 & 21.40 & 19.84 \\
+48＋multiscale & 3/14 & 6/7 & 2/7 & 48.0 & 20.63 & 19.12 \\
+48＋GT-box ROI & 4/14 & 5/7 & 3/7 & 48.0 & 19.38 & 17.96 \\
+ROI＋VO & 3/14 & 5/7 & 1/7 & 48.0 & 20.27 & 18.79 \\
+ROI＋匿名track＋VO & 5/14 & 5/7 & 3/7 & 48.0 & 20.75 & 19.24 \\
+\bottomrule
+\end{tabular}
+\end{center}
+\begin{multicols}{2}
+同じ24-frame budgetでGT event周辺へ再配置すると2/14件、48 framesへ増やすと5/14件を
+回復し、TP 7/7を維持した。従って、event frameを1枚以上含むことと、行動を判定できる
+局所時間密度を持つことは同義ではない。一方、GT時刻を知る48 framesでも9件はhard labelの
+まま残り、時間密度だけで見逃しを解消する仮説は棄却された。
+
+GT-box ROIやmosaicは一部を回復したがTPも失った。cropは元画素を増やさず、mosaic化は
+全体contextを変形するためである。匿名track＋VOは停止車両に有効だったが、自然言語contextを
+全タグへ混ぜると無関係タグが揺れた。従って、本番ではfull-frameを保持し、candidate trackの
+高解像度still/sequenceを追加し、構造化証拠は対象タグだけへ融合すべきである。
+
+\end{multicols}
+\begin{center}
+\captionof{table}{タグ別の未校正YES/NO scoreによる探索的閾値比較}
+\label{tab:recall-confidence}
+\scriptsize
+\begin{tabular}{lrrrrrr}
+\toprule
+Media & threshold & FN回復 & TP維持 & control FP & 診断P & 診断R\\
+\midrule
+Baseline 24 & 0.05 & 10/14 & 7/7 & 6/7 & 73.9 & 81.0 \\
+Baseline 24 & 0.20 & 8/14 & 7/7 & 4/7 & 78.9 & 71.4 \\
+Baseline 24 & 0.40 & 6/14 & 7/7 & 4/7 & 76.5 & 61.9 \\
+Oracle 48 & 0.05 & 11/14 & 7/7 & 5/7 & 78.3 & 85.7 \\
+Oracle 48 & 0.20 & 8/14 & 7/7 & 3/7 & 83.3 & 71.4 \\
+Oracle 48 & 0.40 & 7/14 & 7/7 & 2/7 & 87.5 & 66.7 \\
+\bottomrule
+\end{tabular}
+\end{center}
+\begin{multicols}{2}
+Oracle 48の閾値0.05では11/14 FNを回復したが、control FPも5/7となった。閾値0.20では
+8/14回復、3/7 FPとなり、RecallとPrecisionの交換を明示的に制御できた。
+Baseline 24でもタグ別判定だけで多くのFNが回復したことから、見逃しには視覚証拠不足だけでなく、
+13タグ同時判定におけるtag competition、positive index抑制、実効閾値が関与する。
+ただし$s_t$はlog probabilityをYES/NO間で正規化した未校正scoreである。閾値は同じ
+小規模診断集合で比較した探索値であり、独立calibrationなしに本番へ固定してはならない。
+費用列はmean request latencyをconcurrencyで割ったqueue-adjusted
+proxyで、1,000 clipsではなく1,000 routed tag checks相当の参考値である。
+
+\begin{center}
+\captionof{table}{低Recallタグの診断結果と本番で必要となる追加証拠}
+\label{tab:recall-tag-diagnosis}
+\scriptsize
+\begin{tabularx}{\columnwidth}{l>{\raggedright\arraybackslash}X>{\raggedright\arraybackslash}X}
+\toprule
+タグ & 診断で観測した制約 & 本番で近似すべき証拠\\
+\midrule
+車線変更 & 時刻を増やしてもlane移行を同定できない &
+lane境界横断、道路方向に対する横軌跡\\
+横断待ち & 人物の存在だけでは意図を決められない &
+person track、縁石距離、身体方向、停止時間\\
+歩行者横断 & 小物体とego motionで移動方向が曖昧 &
+person--road ROI交差、進入・退出時系列\\
+停止車両 & 匿名track追加で2/2 FNを回復 &
+ego補償済み相対速度、stationary duration\\
+青信号 & crop後も元画素と自車lane対応が不足 &
+高解像度信号crop、lane--signal association\\
+車両制動 & 尾灯、反射、減速度を区別できない &
+rear cropの点灯差分と相対減速度\\
+自転車 & 遠方で二輪車・人物との識別が不安定 &
+class-aware detector cropと同一trackの複数時刻\\
+\bottomrule
+\end{tabularx}
+\end{center}
+
+\subsection{Evidence・prompt構成と実行時間}
+表\ref{tab:algorithm-runtime}はROAD development Smokeにおける入力・request構成の
+計測であり、品質の最終比較には用いない。同一clipと同一model上でuniform sampling、
+adaptive evidence、reasoned output、3-group requestを比較した。grouped条件では
+同一mediaのfollow-upを連続実行し、multimodal/prefix cacheを再利用した。
+この選定runはprofileをclipごとに連続する\texttt{video-grouped-hot}順序で実行したため、
+adaptive行は先行profileのMM cacheを利用し得る。したがって表\ref{tab:algorithm-runtime}は
+stageとcacheの観測に用い、profile間のcold latency比較には用いない。
+\end{multicols}
+\begin{center}
+\centering
+\captionof{table}{ROAD Smokeにおけるevidence・prompt構成別の実行時間}
+\label{tab:algorithm-runtime}
+\scriptsize
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{lrrrrrrrrr}
+\toprule
+Model/条件 & req/clip & wall/clip[s] & P95[s] & prefill[s] & decode[s] &
+MM hit & Prefix hit & preempt. & USD/1k\\
+\midrule
+Cosmos3-Nano / uniform 1fps+timestamp (c1) & 1.0 & 2.81 & 2.13 & 0.33 & 1.20 & 0.0 & 1.6 & 0 & 1.75 \\
+Cosmos3-Nano / uniform 2fps+timestamp (c1) & 1.0 & 3.70 & 2.74 & 0.66 & 1.21 & 0.0 & 0.9 & 0 & 2.31 \\
+Cosmos3-Nano / uniform 4fps+timestamp (c1) & 1.0 & 5.56 & 4.12 & 1.40 & 1.18 & 0.0 & 0.5 & 0 & 3.46 \\
+Cosmos3-Nano / uniform 8fps+timestamp (c1) & 1.0 & 5.60 & 4.14 & 1.44 & 1.12 & 0.0 & 0.4 & 0 & 3.49 \\
+Cosmos3-Nano / adaptive 24+timestamp (c1) & 1.0 & 2.03 & 1.71 & 0.05 & 1.09 & 100.0 & 95.3 & 0 & 1.27 \\
+Cosmos3-Nano / adaptive 24-reasoned (c1) & 1.0 & 1.04 & 0.87 & 0.09 & 0.37 & 100.0 & 89.5 & 0 & 0.65 \\
+Cosmos3-Nano / adaptive 24-grouped (c1) & 3.0 & 3.83 & 1.04 & 0.18 & 1.68 & 100.0 & 93.1 & 0 & 2.39 \\
+\bottomrule
+\end{tabular}
+}
+\end{center}
+\begin{multicols}{2}
+
+表\ref{tab:algorithm-runtime}の第2列は1 clipを判定するrequest数、第3列はrun全体の
+経過時間をclip数で割った実効処理時間である。P95はrequest latencyの遅い側5\%点を表す。
+PrefillとDecodeはvLLM metricsから得たstage時間、MM hitとPrefix hitはそれぞれ
+動画特徴およびprompt prefixの再利用率である。実効処理時間は運用費用に直結する
+throughput指標、P95は個々の利用者が経験し得る待ち時間、stage時間は最適化対象の所在を示す。
+
+Uniform条件では1 FPSから8 FPSへ増やすにつれ、wall/clipと費用が概ね増加したが、
+decode時間はほぼ一定であった。これは追加frameが主としてPrefill負荷を増やし、
+短い回答形式によってDecode負荷がframe数から分離されていることを示す。
+\texttt{adaptive 24-reasoned}は出力をpositive indexへ限定することで、同じ24-frame級でも
+wall/clipを低く保った。\texttt{grouped}はMM cache 100\%、Prefix cache 93.1\%を達成したが、
+3 requestのDecodeとscheduler overheadが累積し、単一reasoned requestより高価となった。
+従って、cache hit率の高さだけを最適化目標にしてはならず、再利用後に残るrequest数と
+Decode量を含むend-to-end時間で採否を決める必要がある。
+
+\subsection{制御されたServing最適化実験}
+表\ref{tab:serving-sweep}は、ROADの同一15 clips、adaptive 24-frame media、
+reasoned prompt、temperature 0を固定したserving sweepである。Nanoは各pointで
+podを再作成し、server defaultのconcurrency 1/2/4/8と、concurrency 4における
+Chunked Prefill budget 2,048/8,192 tokensを比較した。Superはconcurrency 4/8を
+比較した。これらは少数Smokeであるため、latencyの一般的な母平均ではなく、
+本構成における性能境界として解釈する。costはon-demand時間単価とrun wall timeから
+算出し、storage、control plane、model download、compile、idle startupを除く。
+\end{multicols}
+\begin{center}
+\centering
+\captionof{table}{ROAD同一15 clipsによるserving controlled sweep}
+\label{tab:serving-sweep}
+\scriptsize
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{lrrrrrrrrr}
+\toprule
+Model/条件 & req/clip & wall/clip[s] & P95[s] & prefill[s] & decode[s] &
+MM hit & Prefix hit & preempt. & USD/1k\\
+\midrule
+Cosmos3-Nano / server default (c1) & 1.0 & 3.62 & 2.58 & 0.96 & 0.38 & 0.0 & 0.6 & 0 & 2.26 \\
+Cosmos3-Nano / server default (c2) & 1.0 & 1.95 & 3.76 & 1.14 & 0.74 & 0.0 & 0.6 & 0 & 1.22 \\
+Cosmos3-Nano / server default (c4) & 1.0 & 1.38 & 5.78 & 1.40 & 1.44 & 0.0 & 0.6 & 0 & 0.86 \\
+Cosmos3-Nano / server default (c8) & 1.0 & 1.23 & 14.50 & 1.59 & 3.48 & 0.0 & 0.6 & 0 & 0.77 \\
+Cosmos3-Nano / Chunked Prefill 2,048 (c4) & 1.0 & 1.41 & 5.77 & 1.36 & 1.45 & 0.0 & 0.6 & 0 & 0.88 \\
+Cosmos3-Nano / Chunked Prefill 8,192 (c4) & 1.0 & 1.60 & 6.02 & 1.29 & 1.78 & 0.0 & 0.6 & 0 & 1.00 \\
+Cosmos3-Super / TP4, Chunked Prefill 8,192 (c4) & 1.0 & 7.38 & 30.47 & 11.52 & 9.52 & 0.0 & 0.6 & 0 & 13.68 \\
+Cosmos3-Super / TP4, Chunked Prefill 8,192 (c8) & 1.0 & 6.97 & 67.36 & 17.51 & 16.49 & 0.0 & 0.6 & 4 & 12.93 \\
+\bottomrule
+\end{tabular}
+}
+\end{center}
+\begin{multicols}{2}
+
+表\ref{tab:serving-sweep}では、同一media、同一prompt、同一15 clipsを固定し、
+serving設定だけを変更した。\texttt{c1}から\texttt{c8}は同時に処理待ちとするrequest数を表し、
+値が大きいほどGPUへ仕事を供給しやすい一方、各requestの待ち時間とKV-cache消費が増える。
+Chunked Prefillの2,048/8,192は、一度にschedulerへ渡すprefill token budgetであり、
+modelの最大context長ではない。\texttt{preempt.}はKV-cache不足等により進行中sequenceを
+退避・再計算した回数で、0であることを安定運用の重要なgateとした。
+
+ROADの同一15 clipsをcold start後に処理したNanoでは、server defaultのconcurrency 1から4でthroughputが2.62倍となり、EC2費用は\$2.26から\$0.86/1,000 clipsへ61.8\%低下した。一方、P95 latencyは2.58秒から5.78秒へ増加し、c8では14.50秒となった。concurrency 4におけるChunked Prefill 2,048 tokensは8,192 tokens比でthroughputが1.14倍であり、prefillは1.36秒/clip対1.29秒/clipであった。ただしserver default c4の費用は\$0.86/1,000 clipsで、2,048-token条件の\$0.88を下回り、Chunked Prefillの明確な優位は認められなかった。3-group requestでは同一mediaを連続再利用し、MM cache hit 100.0\%、Prefix cache hit 93.1\%を観測した。Superではc4のpreemptionが0件であったのに対し、c8は4件、P95 67.36秒となったため、Full Runにはc4を採用した。これらの結果は、throughput最大化とtail latency、KV-cache容量および再計算回避を同時に考慮する必要を示す。
+
+\subsection{Sampling coverage}
+GT event区間と入力timestampを照合し、eventを1枚以上含む率、2枚以上含む率、
+0.5秒以上の時間span、およびevent前後contextを測定した。これは方式選定後の
+品質評価とは別の原因診断であり、GT時刻を推論入力の選択には使用していない。
+\begin{center}
+\captionof{table}{Developmentにおけるsampling coverage}
+\label{tab:sampling-coverage}
+\scriptsize
+\resizebox{\columnwidth}{!}{%
+\begin{tabular}{lrrrrr}
+\toprule
+条件 & frames & any & 2 frames & span & context\\
+\midrule
+adaptive 24-reasoned-v2 & 23.3 & 100.0 & 97.4 & 96.1 & 100.0 \\
+hybrid-24-reasoned & 23.2 & 100.0 & 98.9 & 97.1 & 100.0 \\
+uniform 24-reasoned & 24.0 & 99.8 & 98.9 & 97.1 & 89.2 \\
+\bottomrule
+\end{tabular}}
+\end{center}
+\texttt{any}はGT event区間内のframeを1枚以上含む率、
+\texttt{2 frames}は時系列変化を比較できる最低2枚を含む率、
+\texttt{span}は選択frameがevent内で0.5秒以上に広がる率、
+\texttt{context}はevent開始前と終了後の双方を含む率である。
+Hybridは2-frame coverageとspanで最良、Adaptiveはboundary contextで最良となった。
+Uniformはcontextが89.2\%へ低下した一方、development F1では最良であった。
+これは、event境界を機械的に多く含めることと、VLMが正しく意味判定することが同値では
+ないことを示す。motion peakへの過度な集中より、clip全域の均等な観測が有効であった。
+
+\subsection{False negativeの原因分解}
+GT陽性に対するfalse negativeを、event区間内frameが0枚のtemporal miss、
+2枚未満または0.5秒未満のsparse coverage、および十分な時間coverageがある
+covered missへ分類した。
+\begin{center}
+\captionof{table}{Evaluation Full Runのfalse negative原因}
+\label{tab:error-analysis}
+\scriptsize
+\resizebox{\columnwidth}{!}{%
+\begin{tabular}{lrrrrr}
+\toprule
+Model & FN & miss & sparse & covered & miss+sparse\\
+\midrule
+Cosmos3-Nano / adaptive 24-reasoned & 904 & 0 & 38 & 866 & 4.2 \\
+Cosmos3-Nano / uniform 24-reasoned & 926 & 5 & 34 & 887 & 4.2 \\
+Cosmos3-Super / adaptive 24-reasoned & 861 & 1 & 41 & 819 & 4.9 \\
+\bottomrule
+\end{tabular}}
+\end{center}
+sampling missまたはsparse coverageで説明できるFNは4.2\%--4.9\%に留まった。covered missは、対象が小さい、遮蔽・夜間、
+taxonomy境界、prompt表現、またはモデル能力を含むため、純粋なモデル誤りとは
+断定しない。
+
+Nano adaptiveでは904 FN中866件、Nano uniformでは926 FN中887件、Superでは861 FN中
+819件がcovered missであった。すなわち、単純なframe追加によって直接回復し得る誤りは
+全体の約5\%未満である。実画像の監査では、遠方の信号・歩行者、自転車の小さな投影面積、
+夜間・逆光、および停止と減速のtaxonomy境界が含まれた。従って次の改善対象は、
+一律なFPS増加ではなく、候補物体crop、track summary、道路幾何、タグ別prompt、
+またはmodel規模である。
+
+\end{multicols}
+\noindent\begin{minipage}{\textwidth}
+\refstepcounter{table}\label{tab:serving-repeat}
+\begin{center}
+\scriptsize
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{lrrrrrr}
+\multicolumn{7}{c}{\textbf{\tablename~\thetable: ROAD 15 clipsを用いたNano serving 3反復
+（平均$\pm$標本標準偏差）}}\\[3pt]
+\toprule
+条件 & runs & wall/clip[s] & P95[s] & prefill[s] & decode[s] & USD/1k\\
+\midrule
+Chunked Prefill 2,048 (c4) & 3 & 1.38$\pm$0.01 & 5.73$\pm$0.12 & 1.40$\pm$0.01 & 1.44$\pm$0.01 & 0.861$\pm$0.007 \\
+Chunked Prefill 8,192 (c4) & 3 & 1.54$\pm$0.06 & 5.91$\pm$0.10 & 1.29$\pm$0.01 & 1.77$\pm$0.02 & 0.956$\pm$0.039 \\
+server default (c1) & 3 & 3.61$\pm$0.20 & 2.60$\pm$0.04 & 0.98$\pm$0.00 & 0.38$\pm$0.01 & 2.245$\pm$0.122 \\
+server default (c2) & 3 & 1.85$\pm$0.01 & 3.87$\pm$0.03 & 1.14$\pm$0.01 & 0.74$\pm$0.01 & 1.151$\pm$0.008 \\
+server default (c4) & 3 & 1.38$\pm$0.01 & 5.75$\pm$0.06 & 1.39$\pm$0.00 & 1.43$\pm$0.00 & 0.862$\pm$0.003 \\
+server default (c8) & 3 & 1.22$\pm$0.04 & 13.78$\pm$1.19 & 1.54$\pm$0.04 & 3.21$\pm$0.13 & 0.759$\pm$0.025 \\
+\bottomrule
+\end{tabular}}
+\end{center}
+\end{minipage}
+\begin{multicols}{2}
+3反復でもdefault c4はwall/clip $1.38\pm0.01$秒、費用
+\$0.862$\pm0.003$/1,000 clipsと安定した。c8は$1.22\pm0.04$秒まで短縮したが、
+P95は$13.78\pm1.19$秒へ増加した。Chunked Prefillはdefault c4を上回らなかった。
+従ってc4を対話的運用、c8をoffline batchの費用最小点とする。
+
+\end{multicols}
+\begin{center}
+\captionof{table}{Nano予測だけでroutingするNano--Super cascade}
+\label{tab:cascade}
+\scriptsize
+\begin{tabular}{lrrrrrr}
+\toprule
+方策 & Super率 & P & R & F1 & MCC & USD/1k\\
+\midrule
+Nanoのみ & 0.0 & 73.4 & 65.9 & 69.4 & 0.606 & 0.69 \\
+positive 3個以上をSuper & 39.8 & 79.9 & 63.0 & 70.4 & 0.632 & 6.05 \\
+歩行者positiveをSuper & 23.7 & 78.4 & 63.8 & 70.3 & 0.628 & 3.88 \\
+複雑時系列positiveをSuper & 69.1 & 83.1 & 65.8 & 73.4 & 0.670 & 10.01 \\
+Super全件 & 100.0 & 81.9 & 68.3 & 74.5 & 0.678 & 13.48 \\
+\bottomrule
+\end{tabular}
+\end{center}
+\begin{multicols}{2}
+routing判定にGTは用いず、Nanoの予測positiveだけを使用した。したがって、
+全件SuperとNanoのみの間に、実測された品質・費用の中間運用点を構成できる。
+
+歩行者系positiveだけを再判定する方策は全clipの23.7\%をSuperへ送り、F1を69.4から
+70.3へ改善し、費用は\$3.88/1,000 clipsとなった。複雑時系列positiveをroutingする方策は
+69.1\%をSuperへ送り、F1 73.4を\$10.01で達成した。これは全件SuperのF1 74.5、
+\$13.48に近い品質を25.7\%低い費用で得る中間点である。一方、Nanoの見逃しはrouting条件を
+発火しないため、cascadeはNanoのfalse negativeを完全には救済できない。運用方策は
+誤検出削減を重視するか、見逃し削減を重視するかに応じて選ぶ必要がある。
+
+\subsection{公開motion contextと決定論的fusion}
+公式Oxford RobotCarの生INS/GNSSは学術機関認証を要するため、本稿では使用しない。
+代わりに、認証不要のOPR公開派生物\cite{oprproject2026}に含まれるtimestamp画像と
+粗いRTK軌跡を用いた。
+ROAD frameと公開画像をperceptual hashで対応付け、anchor間を区分線形補間した。
+frame coverage 70\%以上かつleave-one-anchor-out時刻誤差P95 2秒以下を同期quality gateとし、
+条件を満たさない走行は外挿せずvideo-derived Visual Odometry（VO）へfallbackした。公開OPR軌跡は341 clips、6 source videosをquality gate後にカバーした。video-derived VOは875 clips、15 source videosをカバーした。
+
+VOは静的背景領域のLucas--Kanade feature track、forward--backward整合性、
+Essential MatrixのRANSAC inlierから、median flow、low-motion率および累積visual yawを
+clip単位へ要約する。これらをpromptへ自然言語として加える条件に加え、
+developmentだけで閾値を固定し、映像baselineの自車走行・停止・左折だけを補正する
+motion priorを評価した。evaluationでは閾値を再調整せず、追加VLM requestも発生しない。
+developmentの自車action 5タグ再判定はF1 74.6、改善/悪化27/8 pairsであった。無関係タグへの揺らぎを避けるため、全文置換は採用しなかった。さらに、公開OPR軌跡を固定OpenStreetMap snapshot\cite{openstreetmap2026}（2026-08-09T07:37:40Z、ODbL）へmap matchingし、交差点距離、分岐数、信号設備距離、軌跡方位変化を4タグ専用passへ入力した。信号色は映像だけで判定した。同一development subsetでF1 76.5から76.4へ低下し、3 pairs改善に対して7 pairs悪化した。追加費用は\$12.90/1,000 target clipsであったため、Full Run候補から除外した。
+\begin{center}
+\captionof{table}{Evaluationにおける公開VO motion fusion}
+\label{tab:public-motion}
+\scriptsize
+\resizebox{\columnwidth}{!}{%
+\begin{tabular}{lrrrrrr}
+\toprule
+方式 & pass & P & R & F1 & MCC & 改善/悪化\\
+\midrule
+Super映像baseline & 1 & 81.9 & 68.3 & 74.5 & 0.678 & 0/0 \\
+固定VO motion prior & 1 & 82.8 & 70.5 & 76.2 & 0.698 & 90/16 \\
+\bottomrule
+\end{tabular}}
+\end{center}
+固定motion priorはSuper baselineのF1 74.5から76.2へ改善した。改善は自車走行、停止、左折に集中し、映像だけでは曖昧な
+camera motionを補助情報で拘束した効果と解釈できる。最終方式Motion priorのF1は76.2、MCC 0.698であった。baselineに対するF1差の95\% CIは+1.3--+2.2 pointsである。 粗いRTK方位を右左折の答えとして直接使わず、同期品質が低い走行は
+VOへfallbackしたため、公開派生データの欠損を正解情報で補っていない。
+
+\subsection{分布推定と希少scene抽出}
+\begin{center}
+\centering
+\captionof{table}{生成ラベルによるdataset分布推定}
+\label{tab:distribution}
+\scriptsize
+\begin{tabular}{lrr}
+\toprule
+条件 & prevalence MAE & JSD\\
+\midrule
+Cosmos3-Nano / adaptive 24-reasoned & 0.084 & 0.048 \\
+Cosmos3-Nano / uniform 24-reasoned & 0.084 & 0.048 \\
+Cosmos3-Super / adaptive 24-reasoned & 0.066 & 0.022 \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+表\ref{tab:distribution}のprevalence MAEは、13タグそれぞれの出現率について、
+予測とGTの絶対差を平均した値である。JSDはタグ構成全体の形状差を表し、0に近いほど
+dataset分布を忠実に再現する。SuperはMAE 0.066、JSD 0.022でNanoを上回り、
+個別clipの分類だけでなく、収集datasetの構成把握にも有利であった。NanoのMAE 0.084は、
+大量一次走査には利用可能であるものの、数points単位の分布変化を監視する用途では
+人手監査またはSuperによる補正が必要であることを示す。
+
+\begin{center}
+\centering
+\captionof{table}{予測positiveを優先した希少scene人手確認}
+\label{tab:curation}
+\scriptsize
+\begin{tabular}{lrrrr}
+\toprule
+条件 & 確認率 & P@K & R@K & enrichment\\
+\midrule
+Cosmos3-Nano / adaptive 24-reasoned & 1.0 & 62.2 & 3.4 & 3.34 \\
+Cosmos3-Nano / adaptive 24-reasoned & 5.0 & 54.8 & 14.8 & 2.94 \\
+Cosmos3-Nano / adaptive 24-reasoned & 10.1 & 46.9 & 25.3 & 2.52 \\
+Cosmos3-Nano / adaptive 24-reasoned & 20.0 & 39.9 & 42.8 & 2.14 \\
+Cosmos3-Nano / uniform 24-reasoned & 1.0 & 60.7 & 3.3 & 3.26 \\
+Cosmos3-Nano / uniform 24-reasoned & 5.0 & 62.6 & 16.9 & 3.36 \\
+Cosmos3-Nano / uniform 24-reasoned & 10.1 & 49.9 & 27.0 & 2.68 \\
+Cosmos3-Nano / uniform 24-reasoned & 20.0 & 41.1 & 44.1 & 2.21 \\
+Cosmos3-Super / adaptive 24-reasoned & 1.0 & 88.9 & 4.9 & 4.77 \\
+Cosmos3-Super / adaptive 24-reasoned & 5.0 & 58.0 & 15.6 & 3.11 \\
+Cosmos3-Super / adaptive 24-reasoned & 10.1 & 53.8 & 29.0 & 2.89 \\
+Cosmos3-Super / adaptive 24-reasoned & 20.0 & 51.8 & 55.7 & 2.78 \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+表\ref{tab:curation}は、予測positiveを先頭へ並べ、人が上位何\%を確認するかを変えた結果である。
+\texttt{P@K}は確認対象の純度、\texttt{R@K}は全希少sceneのうち発見できた割合、
+\texttt{enrichment}は同数を無作為抽出した場合に対する陽性密度の倍率を表す。
+確認率を増やすほどR@Kは上昇する一方、確信度の低い候補まで含むためP@Kとenrichmentは低下する。
+Superの上位1\%はP@K 88.9\%、enrichment 4.77であり、限られた人手予算を高濃度候補へ
+集中できる。これはactive learningによる再学習効果そのものではなく、その前段となる
+候補抽出効率を示す結果である。
+
+\section{考察}
+\subsection{ラベリングの意義}
+scene labelは単なる検索metadataではない。第一に、タグprevalenceにより収集datasetの
+偏りを監視できる。第二に、希少event候補をrankし、人手確認をrandom samplingより
+集中できる。第三に、model disagreementや低信頼区間をactive learning候補として、
+downstream perception/planning modelの再学習setへ接続できる。ただし本稿の
+retrieval評価は人手確認効率のproxyであり、再学習後の性能向上を直接示すものではない。
+
+\subsection{品質と費用の解釈}
+最良条件はSuper / 固定VO motion priorで、F1 76.2、MCC 0.698であった。
+Cosmos3-Nano / adaptive 24-reasonedに対するCosmos3-Nano / uniform 24-reasonedのpaired F1差は+0.5 points（95\% CI: -0.2--+1.2）、定常推論費用は1.0倍であった。Cosmos3-Nano / uniform 24-reasonedの点推定値は高いが95\%信頼区間が0を跨ぐため、明確な品質優位は確認できない。実装の簡潔性、latency、費用を含めて運用条件を選ぶ必要がある。
+公開motion fusionは、公式生INS/GNSSを使用せず、認証不要の公開派生軌跡と全動画から再計算可能なVOだけで構成した。映像baselineに対するF1差のsource-video block bootstrap 95\% CIは+1.3--+2.2 pointsである。motion prior自体は追加GPU requestを要さず、閾値はdevelopmentで固定してevaluationでは変更していない。
+Hybrid CoreのDevelopmentにおけるbaseline比F1差は+3.3 points（95\% CI: +1.4--+4.5 points）であった。改善は、全タグを長文化することではなく、左折、車線変更、停止車両、横断待ち、二輪車の判定に必要な時系列証拠と反証を明示した結果である。ただし未使用Evaluationへはまだ適用していないため、Population性能の上昇としては主張しない。
+Recall診断は、Full Runでcoveredと分類されたFNにも、局所時間密度不足、小物体・track不足、multi-label競合という複数原因が残ることを示した。Oracle 48のhard labelは5/14回復に留まる一方、タグ別scoreではより多くを回復できたため、一律なFPS増加よりcandidate routingとtag-specific判定を組み合わせる方が妥当である。ただし本診断は難例濃縮かつGT Oracleであり、本番候補生成器のRecallと全体費用は未測定である。
+開発splitではUniform 24-frameが最良であったが、evaluationでのF1改善は0.5 pointsに留まり、
+信頼区間も0を跨いだ。従って「均等samplingが常に優れる」とは主張せず、motion peakへ
+frameを集中するsamplingでは明確な品質改善が得られなかったという否定的結果を重視する。
+一方、後述する構造化VO priorは有意な改善を示した。Uniformは前処理が
+単純で費用予測も容易であるため、同等品質なら実装上の既定値として合理的である。
+
+frame数を増やすだけでは性能は単調増加せず、timestampを提示した上で、全frameと除外条件を
+順序立てて照合させるprompt形式の影響が大きかった。また、FNの95\%超はevent区間を
+十分含む入力でも残った。従って、次段階の品質改善は一律なFPS増加ではなく、小物体crop、
+detector/track summary、lane geometry、タグ別のcontrastive criteria、およびSuperによる
+選択的再判定へ配分すべきである。
+
+grouped requestはMM/prefix cacheを高率に再利用したが、request数とDecodeが増えるため、
+end-to-end費用を削減しなかった。cacheは「複数回問い合わせる必要が既にある場合」の
+追加費用を抑える機構であり、cache hitを得るためにrequestを分割すること自体は目的にならない。
+タグ別では、自車走行（F1 93.4, positive $n=701$）、自車停止（F1 90.7, positive $n=264$）、対象信号赤（F1 83.3, positive $n=226$）が高かった一方、自車車線変更（F1 15.0, positive $n=20$）、歩行者横断待ち（F1 28.3, positive $n=123$）、停止車両（F1 44.9, positive $n=272$）が低く、希少maneuverと歩行者の意図・運動状態には追加のtrack情報または局所高FPS evidenceが必要である。
+
+\subsection{品質を支配した要因の階層}
+本実験で観測した改善幅は、すべて同じ種類の変更ではない。Promptはモデルが既に見ている
+evidenceの照合方法、model規模は視覚・意味推論能力、VO priorは映像で曖昧な自車状態の
+外部拘束、Samplingはどの時刻を観測するかに作用する。代表的な差を表
+\ref{tab:effect-hierarchy}に整理する。
+
+\begin{center}
+\captionof{table}{代表的な変更の効果量と解釈}
+\label{tab:effect-hierarchy}
+\scriptsize
+\begin{tabularx}{\columnwidth}{>{\raggedright\arraybackslash}Xrr>{\raggedright\arraybackslash}X}
+\toprule
+変更 & 基準F1 & 変更後F1 & 解釈\\
+\midrule
+timestamp-only→reasoned prompt（dev） & 45.8 & 70.2 &
+既存evidenceの確認手続が最大の改善要因\\
+Nano adaptive→Super（eval） & 68.9 & 74.5 &
+主にfalse positive抑制。model能力差\\
+Super→固定VO prior（eval） & 74.5 & 76.2 &
+自車状態だけを構造化運動で補正\\
+Nano adaptive→uniform（eval） & 68.9 & 69.4 &
+小差でCIは0を跨ぐ。Sampling優位は未確定\\
+\bottomrule
+\end{tabularx}
+\end{center}
+
+この順序は、時系列scene labelingでは「より多くのframeを入れる」ことが第一の改善策ではなく、
+まず判定手続と出力契約を安定させ、次にmodel能力、最後に残存誤りへ構造化contextを割り当てる
+方が効率的であることを示す。ただし、効果量は異なるsplitと操作因子から得たものであり、
+相互に加算可能な寄与率を表すものではない。
+
+\subsection{生成的contextと決定論的fusion}
+自車運動contextを自然言語としてSuperへ再入力するdevelopment実験では、映像baseline
+F1 72.2に対し、VO contextによる自車action再判定はF1 74.6、27 pairs改善・8 pairs悪化であった。
+一定の効果は確認できたが、動画Prefillを伴う追加requestが必要であり、contextが直接支持しない
+タグも再生成させると予測が変動する。公開OPR軌跡は速度・道路曲率を粗く表す一方、
+ROADの「交差点での右左折」と単なる道路湾曲を一意に区別できない。
+
+これに対し固定VO priorは、変更対象を走行、停止、左折の3タグへ限定し、13タグ全体では
+90 pairs改善・16 pairs悪化となった。追加VLM passを要さず、判断根拠と変更箇所を追跡できる。
+この結果は、異種sensor情報をVLM promptへ無制限に足すより、各情報源の観測能力を定義し、
+タグ単位のpromotion/vetoとして融合する方が安定することを示す。特に、粗いyawから右左折を
+新規positiveへpromotionするより、視覚positiveを支持しない場合だけvetoする保守的利用が安全である。
+
+\subsection{否定的結果から得られた設計知見}
+本稿では採用しなかった条件も、方式選定上の重要な結果である。
+\begin{itemize}
+  \item GTを使わないmotion peak集中はUniformを明確に上回らなかった。一方、対象をcovered FNへ
+        限定したSuperのGT Oracle 48は5/14件を回復した。従って局所時間密度は一部に有効だが、
+        全件一律の高FPS化を正当化するほど支配的ではない。
+  \item 48-frame化、multi-scale mosaic、GT-box ROIは回復と悪化が非単調であり、Prefill費用も
+        増加した。48 framesはFull Run済みの最終方式ではなく、candidate routingを前提とする
+        選択的extensionとして扱う必要がある。
+  \item grouped requestは高いMM/prefix cache hitを得たが、3回分のDecodeとscheduler overheadにより
+        単一requestより高価であった。cache hit率は最終目的ではない。
+  \item Chunked Prefillは24-frame workloadでserver default c4を上回らず、c8は費用最小でも
+        tail latencyとSuperのpreemptionを悪化させた。
+  \item 車線変更専用passおよびMap付き4タグpassは追加費用に対して悪化pairが多く、Evaluationへ
+        進めなかった。複雑なmaneuverにはprompt追加ではなくlane geometryとtrackの明示が必要である。
+\end{itemize}
+このように、複雑さを増す候補は単純baselineを上回った場合だけ次段階へ進めた。
+結果として最終方式は、最も多くのcomponentを持つ構成ではなく、効果が再現したcomponentだけを
+残した構成となった。
+
+\subsection{推奨構成}
+本実験範囲から、実証水準を分けて次の構成を提示する。
+\begin{enumerate}
+  \item \textbf{大量offline labeling:} Nano、Uniform 3 FPS/24 frames、
+        reasoned single requestを用いる。throughputと費用を優先する場合はconcurrency 8、
+        tail latencyを管理する場合はconcurrency 4とする。
+  \item \textbf{Evaluationで実証済みの品質優先構成:} Super、Adaptive 24 frames、
+        reasoned single request、concurrency 4を用いる。公開VOの固定motion priorを追加し、F1 76.2を得た。motion priorは追加GPU requestを要しないが、CPUによるVO前処理費用はGPU推論費用へ含めていない。
+        PCIe-only TP4であり、GPU推論費用はNanoの約20倍である。
+  \item \textbf{品質・費用の中間:} 全件をNanoで処理し、複雑時系列positiveだけをSuperへ送る。
+        本条件ではF1 73.4、\$10.01/1,000 clipsで、Super全件のF1 74.5へ近づいた。
+  \item \textbf{次に固定Evaluationすべき提案extension:} 一次passへHybrid Coreを用い、
+        detector/tracker等が強く支持するnegativeだけを48-frame・タグ別YES/NO passへ送る。
+        これはDevelopmentおよびOracle診断に基づく提案であり、76.2\%へ上乗せした性能値は
+        本稿では報告しない。
+\end{enumerate}
+Chunked Prefillは本workloadでserver defaultを上回らなかったため、既定設定を変更する根拠はない。
+一方、長時間動画やframe budgetを増やす場合はPrefill比率が上昇するため、同じ結論を外挿せず
+再測定する必要がある。
+
+\subsection{運用費用の感度}
+定常推論だけを線形換算すると、100万clipsのEC2費用はNano \$663、Super \$13485である。全件をNanoで処理し、予測positive等で選んだ上位5\%だけをSuperで再判定する場合、費用は\$1.34/1,000 clips、100万clipsで\$1337となり、Super全件適用比で90.1\%低い。これは費用の感度分析であり、二段構成の最終F1を直接測定した結果ではない。model download、compile、idle、storage、network費用を含まないため、低稼働率では実費が増える。
+
+\subsection{再現性と実験妥当性}
+品質評価は公開ROADだけから構成し、source video単位でdevelopment/evaluationを分離した。
+evaluation条件はdevelopmentで固定後に一度だけ適用し、serving Smokeの品質値を
+Full Run表へ混入させていない。全runは入力media、timestamp、prompt、container digest、
+vLLM command、pod profile、GPU telemetryおよびSHA-256を保存した。表
+\ref{tab:serving-sweep}は同一15 clipsに対する各1回の探索的計測であり、
+latencyの信頼区間やinstance間変動を推定していない。この制約を越えて
+小数点以下の差を一般化せず、採否は大きなthroughput差、tail latencyおよび
+preemptionの有無に基づけた。さらにNano servingの主要6条件はpodを再作成して3回反復し、
+平均と標本標準偏差を報告した。これにより、単一runの一時的なcache状態やscheduler揺らぎを
+一般化する危険を低減した。
+
+\subsection{限界}
+ROADは英国Oxford周辺の限定されたcamera/domainであり、天候・地域・sensor placementの
+一般化を保証しない。clip-level変換はevent onset/offsetのtemporal localization精度を
+直接測らない。Hybrid Coreは3 source videosのdevelopmentで選定され、未使用evaluationへ
+まだFull Runしていないため、75.6\%を母集団性能として扱えない。48-frame診断は同じ
+developmentから意図的に難例を濃縮し、GT event時刻とGT boxを含む上限条件を使用した。
+従って、診断P/R/F1、YES-score閾値、費用proxyは探索的結果であり、実運用のPrecision/Recallや
+全clip費用を表さない。log probabilityから作ったYES scoreは校正済み確率ではない
+\cite{guo2017calibration}。閾値も同じ診断集合上で比較したため、独立したcalibration splitで
+再固定し、Brier scoreやECE等で校正性を確認する必要がある。
+また、Hybrid候補3種と全Contrastiveを同一developmentで比較しており、多重比較を補正した
+検定ではない。簡潔性を選択規則へ含めたものの、3 source videosに対するblock bootstrapの
+cluster数は少なく、CI自体も粗い。従ってPrompt改善の母集団効果は固定Evaluationで確認すべきである。
+希少タグはsource video数が少なくbootstrap CIが広い。Superの速度はPCIe-only 4 GPU
+構成の制約を含み、NVLink/NVSwitch環境の上限性能ではない。これらを越える主張は行わない。
+
+\section{結論}
+本稿は、公開ROAD datasetの密な時間注釈から完全な正負GTを構成し、Cosmos 3による
+時系列scene labelingを品質、計算費用、serving効率、分布推定および希少scene抽出の
+観点から評価した。正例のみを信用する評価を避け、false positiveとabstentionを含む
+confusion matrix、元動画単位CI、99\% coverage gateを導入した点が重要である。
+結果は、入力frame数よりもtimestampを含む判定手順とprompt構成が品質へ大きく影響し、
+同一mediaを用いる複数requestではcache再利用により追加費用を抑えられることを示した。
+Developmentでは、全タグを一律に長文化するより、難しい5タグだけへ肯定証拠・時間検査・
+除外条件を付与するHybrid Coreが、短いbaselineに対してF1を3.3 points改善した。
+また、covered FNを対象とする上限診断ではGT event近傍48 framesにより5/14件、
+タグ別の未校正YES scoreでは閾値に応じて7--11/14件を回復した一方、
+negative-control FPも2--5/7件発生した。
+この結果から、全件のframe数を増やすのではなく、外部候補が支持するnegativeだけへ
+48-frame・tag-specific passを適用する階層方式を提案した。
+また、ROAD上のcontrolled serving実測から、continuous batching、Chunked Prefill、
+短いoutput、同一mediaのMM/prefix cache再利用が、互いに異なるstageへ作用することを
+確認した。したがって、モデル選択だけでなく、evidence生成からrequest schedulingまでを
+一体で設計する必要がある。
+さらに、静的背景のvisual flowとyawを用いる固定fusionは、Super映像baselineのF1 74.5を76.2へ改善し、frame追加よりも自車運動の構造化が有効であることを示した。
+今後は、Hybrid Coreと候補駆動48-frame passを未使用evaluationへ固定適用し、
+detector/trackerがGT Oracle時刻をどこまで近似できるかを検証する。さらに、
+異なる地域の公開dataset、event境界のtemporal mAP、独立calibration上の連続YES score、
+および実際のdownstream再学習を含むactive learning loopで検証する。
+
+{\footnotesize
+\raggedright
+\begin{thebibliography}{9}
+\bibitem{singh2022road}
+G. Singh et al., ``ROAD: The ROad event Awareness Dataset for Autonomous Driving,''
+\textit{IEEE Trans. Pattern Anal. Mach. Intell.}, 2022,
+doi:10.1109/TPAMI.2022.3150906.
+\bibitem{maddern2017robotcar}
+W. Maddern et al., ``1 Year, 1000 km: The Oxford RobotCar Dataset,''
+\textit{Int. J. Robotics Research}, 2017.
+\bibitem{nvidia2026cosmos3}
+NVIDIA et al., ``Cosmos 3: Omnimodal World Models for Physical AI,''
+arXiv:2606.02800, 2026.
+\bibitem{kwon2023vllm}
+W. Kwon et al., ``Efficient Memory Management for Large Language Model Serving
+with PagedAttention,'' in \textit{Proc. ACM SOSP}, 2023.
+\bibitem{lin2024active}
+J. Lin et al., ``Exploring Diversity-based Active Learning for 3D Object Detection
+in Autonomous Driving,'' \textit{IEEE Trans. Intell. Transp. Syst.}, 2024.
+\bibitem{bengar2019temporal}
+J. Z. Bengar et al., ``Temporal Coherence for Active Learning in Videos,''
+in \textit{Proc. ICCV Workshops}, 2019.
+\bibitem{oprproject2026}
+OPR Project, ``OxfordRobotCar OpenPlaceRecognition,'' Hugging Face Datasets,
+CC BY-NC-SA 4.0, accessed Aug. 9, 2026.
+\bibitem{openstreetmap2026}
+OpenStreetMap contributors, ``OpenStreetMap,'' Open Data Commons Open
+Database License (ODbL), fixed snapshot accessed Aug. 9, 2026.
+\bibitem{guo2017calibration}
+C. Guo, G. Pleiss, Y. Sun, and K. Q. Weinberger,
+``On Calibration of Modern Neural Networks,''
+in \textit{Proc. 34th Int. Conf. Machine Learning}, PMLR 70:1321--1330, 2017.
+\end{thebibliography}
+}
+\end{multicols}
+\end{document}

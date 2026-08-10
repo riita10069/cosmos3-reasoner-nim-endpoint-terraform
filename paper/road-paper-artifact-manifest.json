@@ -1,0 +1,112 @@
+{
+  "artifacts": [
+    {
+      "path": "ROAD_COSMOS3_SCENE_LABELING_PAPER.tex",
+      "sha256": "3c7d2e061811e275a1310042803e1ef122c358ebaee9bdd7d518084bccd4985f"
+    },
+    {
+      "path": "ROAD_COSMOS3_SCENE_LABELING_PAPER.md",
+      "sha256": "b645f94d3f608878837031825597805e85ed40512b59631a2ef0917cffefd239"
+    },
+    {
+      "path": "REPRODUCTION.md",
+      "sha256": "86d9c5fbf10e109a62b989b2b404f9ac4b4ae165d39787a1a6fe6704a10320fc"
+    },
+    {
+      "path": "ADVERSARIAL_SELF_REVIEW.md",
+      "sha256": "168c8c86f94b3ba9755b5c299043bf49d920d2768b1c49b3f7dd2bf6fc485c19"
+    },
+    {
+      "path": "ROAD_COSMOS3_SCENE_LABELING_PAPER.pdf",
+      "sha256": "1bf93140cea5c9be9fdb84005d95fd99d21818b2b894993c498e89295aaf932b"
+    }
+  ],
+  "generated_at": "2026-08-10T06:39:21.050+00:00",
+  "inputs": [
+    {
+      "path": "inputs/evaluation-summary.json",
+      "sha256": "91993c42a4fa0de480080587d67bd46fcfd9961fdcd9c8e95b79590c5c1de2e7"
+    },
+    {
+      "path": "inputs/development-summary.json",
+      "sha256": "ea1e7a4fa7aaa3888239029135f4d3105e72a30af6cb4e2c83c9015b7342ba87"
+    },
+    {
+      "path": "inputs/serving-smoke-summary.json",
+      "sha256": "96ec3562cc0dfb7d96e231eba6ff84b306f412ffe2886b150b1f8e85547d97f1"
+    },
+    {
+      "path": "inputs/road-benchmark-manifest.json",
+      "sha256": "77fa4d2e9229d8bbffadb1c0c6a98fc672b3bc94a95db17cf7a533f0061d7770"
+    },
+    {
+      "path": "inputs/road-annotation-audit.json",
+      "sha256": "c0924d97da3c52323226d5d66aab1f151caddae3da61640a6dc24873ad0fb327"
+    },
+    {
+      "path": "inputs/error-analysis.json",
+      "sha256": "6015358c770d596fa94690a9a69c593277646359e75adcfbddb7c016ac29b5bd"
+    },
+    {
+      "path": "inputs/sampling-audit.json",
+      "sha256": "5378cedc0ef396542cc0d0c5d226baf6df6e2bd051e0b3dbb412f80ce1cd5502"
+    },
+    {
+      "path": "inputs/serving-repeat-summary.json",
+      "sha256": "c8ebf9e6abfcc97d8aa1624b8a4b35ed9d1ef127df63eaa8579435d91e69c66b"
+    },
+    {
+      "path": "inputs/cascade-summary.json",
+      "sha256": "e5bbee46f26f871544ec6841c6735747471fef109b5d91e76c628a619e3d190f"
+    },
+    {
+      "path": "inputs/motion-prior-summary.json",
+      "sha256": "2ca6197918df46e6d540ee32a43dbe56f34b4fd52b4270648a35cdc1223ed352"
+    },
+    {
+      "path": "inputs/composed-motion-summary.json",
+      "sha256": "07372b9179e49fd00762e064c53d01bdf80ad14b26a3b3e6d41b658ca429aea7"
+    },
+    {
+      "path": "inputs/context-fusion-summary.json",
+      "sha256": "7d347b6fbc089c166e0b775fad902d5f0ea0c421214a7b150343f24f0403a358"
+    },
+    {
+      "path": "inputs/opr-motion-lock.json",
+      "sha256": "5d1542770b93d044fb7b8ecd710613704f844e0c6be20e706441f96760718ac7"
+    },
+    {
+      "path": "inputs/visual-motion-lock.json",
+      "sha256": "ce5156d5326dbdd05fdae04233375c8bce005a16e884a2a761c94302da2bf583"
+    },
+    {
+      "path": "inputs/map-context-lock.json",
+      "sha256": "0e8e921fcffc7103464f7a4a4941b7d4a05d30ac9adc8476772f35172a1aa054"
+    },
+    {
+      "path": "inputs/prompt-development-summary.json",
+      "sha256": "77ca5f30db00b8625c31faf5f18a849edad73508bb93b0cb277f4b37645b5bc1"
+    },
+    {
+      "path": "inputs/prompt-selection-lock.json",
+      "sha256": "1084193b0997f2179b6195e60c1df7ac443bd3e687f0f6a0c81e1c3c99bae901"
+    },
+    {
+      "path": "inputs/prompt-audit.json",
+      "sha256": "d75cb19d4336b7aac86d9bead14f95568a7ded4c45957a237183d55c224afc7a"
+    },
+    {
+      "path": "inputs/recall-diagnostic-summary.json",
+      "sha256": "be6350420fc20e4b9428e5a12f6c8d87a35f5cd4925f47672e23b363586f7bfc"
+    },
+    {
+      "path": "inputs/recall-confidence-baseline.json",
+      "sha256": "a1c1c7efe13b367a6a9cb25a161ec84a1cf4ab1b7a0657cfd7cee16799cc98cb"
+    },
+    {
+      "path": "inputs/recall-confidence-oracle.json",
+      "sha256": "be6350420fc20e4b9428e5a12f6c8d87a35f5cd4925f47672e23b363586f7bfc"
+    }
+  ],
+  "schema_version": 1
+}

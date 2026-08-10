@@ -1,0 +1,1743 @@
+{
+  "accepted_clip_count": 59,
+  "clip_count": 59,
+  "created_at": "2026-08-09T07:46:33.279+00:00",
+  "ground_truth_sha256": "17e00dd85a2a22d08436091ff02a78b9ebf2fbbc08d7c4c603ef98fa8c30d5ae",
+  "maximum_road_match_distance_m": 30.0,
+  "network": {
+    "drivable_way_count": 747,
+    "intersection_count": 462,
+    "road_segment_count": 2412,
+    "traffic_signal_count": 17
+  },
+  "opr_motion_lock_sha256": "31cbc4ba984db7bc30985fd3956194480a6e4064739568f95e32ad6fb678fa72",
+  "osm_snapshot": {
+    "copyright": "The data included in this document is from www.openstreetmap.org. The data is made available under ODbL.",
+    "file_name": "oxford-road-network-20260809.json",
+    "generator": "Overpass API 0.7.62.11 87bfad18",
+    "sha256": "fb118a8420f6926f515b16e458eb8da7dbbf7d907ab0b879cfd859c4aa512b10",
+    "timestamp_osm_base": "2026-08-09T07:37:40Z"
+  },
+  "records": [
+    {
+      "clip_id": "2014-11-18-13-20-12_stereo_centre_05__f000001-f000096",
+      "contexts": {
+        "public_map_topology": "PUBLIC MAP CONTEXT\nThis block is derived from a fixed OpenStreetMap snapshot and the public OPR trajectory. It is supporting evidence for road topology only; video evidence remains authoritative.\n- Nearest drivable intersection: 66.5 m; branches: 3.\n- Intersection distance at start/middle/end: 66.5/73.1/81.9 m.\n- Nearest mapped traffic signal: 248.6 m.\n- Coarse trajectory heading change: 101.1 deg (positive right, negative left).\n- Road-map match P95 error: 10.0 m."
+      },
+      "contexts_sha256": {
+        "public_map_topology": "28a35d0cd7ffe87724c3794cdc11b5d0f02573c2405e82f7eca3a2ec8d2a82c2"
+      },
+      "features": {
+        "intersection_branch_bearings_degrees": [
+          71.5,
+          157.8,
+          337.8
+        ],
+        "intersection_branch_count": 3,
+        "intersection_closest_sample_fraction": 0.0,
+        "intersection_distance_end_m": 81.916,
+        "intersection_distance_mid_m": 73.094,
+        "intersection_distance_min_m": 66.498,
+        "intersection_distance_start_m": 66.498,
+        "map_match_acceptable": true,
+        "road_match_distance_p50_m": 6.454,
+        "road_match_distance_p95_m": 9.956,
+        "traffic_signal_distance_min_m": 248.645,
+        "trajectory_heading_delta_degrees_right_positive": 101.052
+      },
+      "sequence": "2014-11-18-13-20-12",
+      "source_video_id": "2014-11-18-13-20-12_stereo_centre_05"
+    },
+    {
+      "clip_id": "2014-11-18-13-20-12_stereo_centre_05__f000097-f000192",
+      "contexts": {
+        "public_map_topology": "PUBLIC MAP CONTEXT\nThis block is derived from a fixed OpenStreetMap snapshot and the public OPR trajectory. It is supporting evidence for road topology only; video evidence remains authoritative.\n- Nearest drivable intersection: 70.1 m; branches: 3.\n- Intersection distance at start/middle/end: 82.2/90.8/70.1 m.\n- Nearest mapped traffic signal: 246.5 m.\n- Coarse trajectory heading change: -26.3 deg (positive right, negative left).\n- Road-map match P95 error: 2.1 m."
+      },
+      "contexts_sha256": {
+        "public_map_topology": "8e6f3d308ba0dc1eb97012a175dd66898feacb2e716ba5aa56936501271e0c6b"
+      },
+      "features": {
+        "intersection_branch_bearings_degrees": [
+          37.6,
+          203.5,
+          266.0
+        ],
+        "intersection_branch_count": 3,
+        "intersection_closest_sample_fraction": 1.0,
+        "intersection_distance_end_m": 70.091,
+        "intersection_distance_mid_m": 90.817,
+        "intersection_distance_min_m": 70.091,
+        "intersection_distance_start_m": 82.218,
+        "map_match_acceptable": true,
+        "road_match_distance_p50_m": 0.223,
+        "road_match_distance_p95_m": 2.074,
+        "traffic_signal_distance_min_m": 246.479,
+        "trajectory_heading_delta_degrees_right_positive": -26.252
+      },
+      "sequence": "2014-11-18-13-20-12",
+      "source_video_id": "2014-11-18-13-20-12_stereo_centre_05"
+    },
+    {
+      "clip_id": "2014-11-18-13-20-12_stereo_centre_05__f000193-f000288",
+      "contexts": {
+        "public_map_topology": "PUBLIC MAP CONTEXT\nThis block is derived from a fixed OpenStreetMap snapshot and the public OPR trajectory. It is supporting evidence for road topology only; video evidence remains authoritative.\n- Nearest drivable intersection: 21.7 m; branches: 3.\n- Intersection distance at start/middle/end: 69.6/45.5/21.7 m.\n- Nearest mapped traffic signal: 248.9 m.\n- Coarse trajectory heading change: -1.1 deg (positive right, negative left).\n- Road-map match P95 error: 1.2 m."
+      },
+      "contexts_sha256": {
+        "public_map_topology": "b40ad480e85e8ff63e2bdcab3d5e31895acc35ac306c183c6d93fa2300dff6b2"
+      },
+      "features": {
+        "intersection_branch_bearings_degrees": [
+          37.6,
+          203.5,
+          266.0
+        ],
+        "intersection_branch_count": 3,
+        "intersection_closest_sample_fraction": 1.0,
+        "intersection_distance_end_m": 21.677,
+        "intersection_distance_mid_m": 45.546,
+        "intersection_distance_min_m": 21.677,
+        "intersection_distance_start_m": 69.604,
+        "map_match_acceptable": true,
+        "road_match_distance_p50_m": 0.38,
+        "road_match_distance_p95_m": 1.158,
+        "traffic_signal_distance_min_m": 248.9,
+        "trajectory_heading_delta_degrees_right_positive": -1.119
+      },
+      "sequence": "2014-11-18-13-20-12",
+      "source_video_id": "2014-11-18-13-20-12_stereo_centre_05"
+    },
+    {
+      "clip_id": "2014-11-18-13-20-12_stereo_centre_05__f000289-f000384",
+      "contexts": {
+        "public_map_topology": "PUBLIC MAP CONTEXT\nThis block is derived from a fixed OpenStreetMap snapshot and the public OPR trajectory. It is supporting evidence for road topology only; video evidence remains authoritative.\n- Nearest drivable intersection: 6.6 m; branches: 3.\n- Intersection distance at start/middle/end: 21.2/8.6/6.6 m.\n- Nearest mapped traffic signal: 257.3 m.\n- Coarse trajectory heading change: 80.2 deg (positive right, negative left).\n- Road-map match P95 error: 8.1 m."
+      },
+      "contexts_sha256": {
+        "public_map_topology": "1ab65d14d8e3448fdaabc68dc77d8072251dce5a28de6d72ee5fc60e0bd7f345"
+      },
+      "features": {
+        "intersection_branch_bearings_degrees": [
+          37.6,
+          203.5,
+          266.0
+        ],
+        "intersection_branch_count": 3,
+        "intersection_closest_sample_fraction": 1.0,
+        "intersection_distance_end_m": 6.602,
+        "intersection_distance_mid_m": 8.622,
+        "intersection_distance_min_m": 6.602,
+        "intersection_distance_start_m": 21.229,
+        "map_match_acceptable": true,
+        "road_match_distance_p50_m": 6.847,
+        "road_match_distance_p95_m": 8.085,
+        "traffic_signal_distance_min_m": 257.287,
+        "trajectory_heading_delta_degrees_right_positive": 80.241
+      },
+      "sequence": "2014-11-18-13-20-12",
+      "source_video_id": "2014-11-18-13-20-12_stereo_centre_05"
+    },
+    {
+      "clip_id": "2014-11-18-13-20-12_stereo_centre_05__f000481-f000576",
+      "contexts": {
+        "public_map_topology": "PUBLIC MAP CONTEXT\nThis block is derived from a fixed OpenStreetMap snapshot and the public OPR trajectory. It is supporting evidence for road topology only; video evidence remains authoritative.\n- Nearest drivable intersection: 3.6 m; branches: 3.\n- Intersection distance at start/middle/end: 32.3/19.8/3.6 m.\n- Nearest mapped traffic signal: 234.2 m.\n- Coarse trajectory heading change: 18.7 deg (positive right, negative left).\n- Road-map match P95 error: 3.7 m."
+      },
+      "contexts_sha256": {
+        "public_map_topology": "60034b8b0088b140b274aaa8a73c8af8148f8832d0a765d4d6a360e4bbb6c130"
+      },
+      "features": {
+        "intersection_branch_bearings_degrees": [
+          91.3,
+          188.2,
+          304.1
+        ],
+        "intersection_branch_count": 3,
+        "intersection_closest_sample_fraction": 1.0,
+        "intersection_distance_end_m": 3.649,
+        "intersection_distance_mid_m": 19.819,
+        "intersection_distance_min_m": 3.649,
+        "intersection_distance_start_m": 32.332,
+        "map_match_acceptable": true,
+        "road_match_distance_p50_m": 2.654,
+        "road_match_distance_p95_m": 3.737,
+        "traffic_signal_distance_min_m": 234.199,
+        "trajectory_heading_delta_degrees_right_positive": 18.653
+      },
+      "sequence": "2014-11-18-13-20-12",
+      "source_video_id": "2014-11-18-13-20-12_stereo_centre_05"
+    },
+    {
+      "clip_id": "2014-11-18-13-20-12_stereo_centre_05__f000577-f000672",
+      "contexts": {
+        "public_map_topology": "PUBLIC MAP CONTEXT\nThis block is derived from a fixed OpenStreetMap snapshot and the public OPR trajectory. It is supporting evidence for road topology only; video evidence remains authoritative.\n- Nearest drivable intersection: 1.3 m; branches: 3.\n- Intersection distance at start/middle/end: 3.3/1.3/6.3 m.\n- Nearest mapped traffic signal: 214.6 m.\n- Coarse trajectory heading change: 32.6 deg (positive right, negative left).\n- Road-map match P95 error: 1.3 m."
+      },
+      "contexts_sha256": {
+        "public_map_topology": "28e4b5405bc23af72a4ceddd38bd738a780dde7c4eaa6bd7493bac0fcec25fbb"
+      },
+      "features": {
+        "intersection_branch_bearings_degrees": [
+          124.1,
+          224.5,
+          302.6
+        ],
+        "intersection_branch_count": 3,
+        "intersection_closest_sample_fraction": 0.5,
+        "intersection_distance_end_m": 6.342,
+        "intersection_distance_mid_m": 1.317,
+        "intersection_distance_min_m": 1.317,
+        "intersection_distance_start_m": 3.314,
+        "map_match_acceptable": true,
+        "road_match_distance_p50_m": 1.023,
+        "road_match_distance_p95_m": 1.333,
+        "traffic_signal_distance_min_m": 214.592,
+        "trajectory_heading_delta_degrees_right_positive": 32.569
+      },
+      "sequence": "2014-11-18-13-20-12",
+      "source_video_id": "2014-11-18-13-20-12_stereo_centre_05"
+    },
+    {
+      "clip_id": "2014-11-18-13-20-12_stereo_centre_05__f000673-f000768",
+      "contexts": {
+        "public_map_topology": "PUBLIC MAP CONTEXT\nThis block is derived from a fixed OpenStreetMap snapshot and the public OPR trajectory. It is supporting evidence for road topology only; video evidence remains authoritative.\n- Nearest drivable intersection: 2.2 m; branches: 3.\n- Intersection distance at start/middle/end: 6.7/8.4/20.2 m.\n- Nearest mapped traffic signal: 185.6 m.\n- Coarse trajectory heading change: -4.5 deg (positive right, negative left).\n- Road-map match P95 error: 4.0 m."
+      },
+      "contexts_sha256": {
+        "public_map_topology": "a0d910eb4f4df599e977d7c63a4dbb648b814e9ad4f37449094ba85786c7132e"
+      },
+      "features": {
+        "intersection_branch_bearings_degrees": [
+          124.5,
+          206.2,
+          304.5
+        ],
+        "intersection_branch_count": 3,
+        "intersection_closest_sample_fraction": 0.25,
+        "intersection_distance_end_m": 20.169,
+        "intersection_distance_mid_m": 8.366,
+        "intersection_distance_min_m": 2.227,
+        "intersection_distance_start_m": 6.699,
+        "map_match_acceptable": true,
+        "road_match_distance_p50_m": 3.552,
+        "road_match_distance_p95_m": 4.009,
+        "traffic_signal_distance_min_m": 185.629,
+        "trajectory_heading_delta_degrees_right_positive": -4.465
+      },
+      "sequence": "2014-11-18-13-20-12",
+      "source_video_id": "2014-11-18-13-20-12_stereo_centre_05"
+    },
+    {
+      "clip_id": "2014-11-18-13-20-12_stereo_centre_05__f000769-f000864",
+      "contexts": {
+        "public_map_topology": "PUBLIC MAP CONTEXT\nThis block is derived from a fixed OpenStreetMap snapshot and the public OPR trajectory. It is supporting evidence for road topology only; video evidence remains authoritative.\n- Nearest drivable intersection: 1.4 m; branches: 3.\n- Intersection distance at start/middle/end: 19.8/6.0/5.5 m.\n- Nearest mapped traffic signal: 169.5 m.\n- Coarse trajectory heading change: 32.4 deg (positive right, negative left).\n- Road-map match P95 error: 3.5 m."
+      },
+      "contexts_sha256": {
+        "public_map_topology": "26518fdf0d60debc04414bff4d7e1bc81967e668bd97868e00c0012927fe150e"
+      },
+      "features": {
+        "intersection_branch_bearings_degrees": [
+          150.2,
+          244.3,
+          346.7
+        ],
+        "intersection_branch_count": 3,
+        "intersection_closest_sample_fraction": 0.75,
+        "intersection_distance_end_m": 5.521,
+        "intersection_distance_mid_m": 5.991,
+        "intersection_distance_min_m": 1.378,
+        "intersection_distance_start_m": 19.78,
+        "map_match_acceptable": true,
+        "road_match_distance_p50_m": 1.72,
+        "road_match_distance_p95_m": 3.473,
+        "traffic_signal_distance_min_m": 169.543,
+        "trajectory_heading_delta_degrees_right_positive": 32.417
+      },
+      "sequence": "2014-11-18-13-20-12",
+      "source_video_id": "2014-11-18-13-20-12_stereo_centre_05"
+    },
+    {
+      "clip_id": "2014-11-18-13-20-12_stereo_centre_05__f000865-f000960",
+      "contexts": {
+        "public_map_topology": "PUBLIC MAP CONTEXT\nThis block is derived from a fixed OpenStreetMap snapshot and the public OPR trajectory. It is supporting evidence for road topology only; video evidence remains authoritative.\n- Nearest drivable intersection: 5.8 m; branches: 3.\n- Intersection distance at start/middle/end: 5.8/19.3/29.7 m.\n- Nearest mapped traffic signal: 145.5 m.\n- Coarse trajectory heading change: 13.8 deg (positive right, negative left).\n- Road-map match P95 error: 1.3 m."
+      },
+      "contexts_sha256": {
+        "public_map_topology": "842f4b8bd52e4112f4ebf32eca62af0fffe88938096ac42a38e447d78acec386"
+      },
+      "features": {
+        "intersection_branch_bearings_degrees": [
+          150.2,
+          244.3,
+          346.7
+        ],
+        "intersection_branch_count": 3,
+        "intersection_closest_sample_fraction": 0.0,
+        "intersection_distance_end_m": 29.702,
+        "intersection_distance_mid_m": 19.273,
+        "intersection_distance_min_m": 5.815,
+        "intersection_distance_start_m": 5.815,
+        "map_match_acceptable": true,
+        "road_match_distance_p50_m": 0.519,
+        "road_match_distance_p95_m": 1.34,
+        "traffic_signal_distance_min_m": 145.547,
+        "trajectory_heading_delta_degrees_right_positive": 13.822
+      },
+      "sequence": "2014-11-18-13-20-12",
+      "source_video_id": "2014-11-18-13-20-12_stereo_centre_05"
+    },
+    {
+      "clip_id": "2014-11-18-13-20-12_stereo_centre_05__f000961-f001056",
+      "contexts": {
+        "public_map_topology": "PUBLIC MAP CONTEXT\nThis block is derived from a fixed OpenStreetMap snapshot and the public OPR trajectory. It is supporting evidence for road topology only; video evidence remains authoritative.\n- Nearest drivable intersection: 8.9 m; branches: 3.\n- Intersection distance at start/middle/end: 29.9/25.7/8.9 m.\n- Nearest mapped traffic signal: 115.0 m.\n- Coarse trajectory heading change: 13.5 deg (positive right, negative left).\n- Road-map match P95 error: 4.3 m."
+      },
+      "contexts_sha256": {
+        "public_map_topology": "62d5dfb65e5f77faf501ebc21de5cb979fa9c06d4e05496131dd541237066be3"
+      },
+      "features": {
+        "intersection_branch_bearings_degrees": [
+          61.6,
+          148.2,
+          249.8
+        ],
+        "intersection_branch_count": 3,
+        "intersection_closest_sample_fraction": 1.0,
+        "intersection_distance_end_m": 8.928,
+        "intersection_distance_mid_m": 25.74,
+        "intersection_distance_min_m": 8.928,
+        "intersection_distance_start_m": 29.887,
+        "map_match_acceptable": true,
+        "road_match_distance_p50_m": 0.966,
+        "road_match_distance_p95_m": 4.259,
+        "traffic_signal_distance_min_m": 115.036,
+        "trajectory_heading_delta_degrees_right_positive": 13.507
+      },
+      "sequence": "2014-11-18-13-20-12",
+      "source_video_id": "2014-11-18-13-20-12_stereo_centre_05"
+    },
+    {
+      "clip_id": "2014-11-18-13-20-12_stereo_centre_05__f001057-f001152",
+      "contexts": {
+        "public_map_topology": "PUBLIC MAP CONTEXT\nThis block is derived from a fixed OpenStreetMap snapshot and the public OPR trajectory. It is supporting evidence for road topology only; video evidence remains authoritative.\n- Nearest drivable intersection: 3.1 m; branches: 3.\n- Intersection distance at start/middle/end: 8.8/8.4/4.8 m.\n- Nearest mapped traffic signal: 106.1 m.\n- Coarse trajectory heading change: -126.1 deg (positive right, negative left).\n- Road-map match P95 error: 5.1 m."
+      },
+      "contexts_sha256": {
+        "public_map_topology": "694d203ce8453d4cb702fdbb1a828c129a8e3c0df52d3c5ade06bea62177291d"
+      },
+      "features": {
+        "intersection_branch_bearings_degrees": [
+          61.6,
+          148.2,
+          249.8
+        ],
+        "intersection_branch_count": 3,
+        "intersection_closest_sample_fraction": 0.875,
+        "intersection_distance_end_m": 4.802,
+        "intersection_distance_mid_m": 8.447,
+        "intersection_distance_min_m": 3.125,
+        "intersection_distance_start_m": 8.802,
+        "map_match_acceptable": true,
+        "road_match_distance_p50_m": 2.933,
+        "road_match_distance_p95_m": 5.06,
+        "traffic_signal_distance_min_m": 106.133,
+        "trajectory_heading_delta_degrees_right_positive": -126.118
+      },
+      "sequence": "2014-11-18-13-20-12",
+      "source_video_id": "2014-11-18-13-20-12_stereo_centre_05"
+    },
+    {
+      "clip_id": "2014-11-18-13-20-12_stereo_centre_05__f001153-f001248",
+      "contexts": {
+        "public_map_topology": "PUBLIC MAP CONTEXT\nThis block is derived from a fixed OpenStreetMap snapshot and the public OPR trajectory. It is supporting evidence for road topology only; video evidence remains authoritative.\n- Nearest drivable intersection: 5.0 m; branches: 3.\n- Intersection distance at start/middle/end: 5.0/18.0/20.5 m.\n- Nearest mapped traffic signal: 113.4 m.\n- Coarse trajectory heading change: 29.0 deg (positive right, negative left).\n- Road-map match P95 error: 1.9 m."
+      },
+      "contexts_sha256": {
+        "public_map_topology": "2df0da7abbceec4c01e4d924cce7dc351a2a37d8020db91616e7733602a204ea"
+      },
+      "features": {
+        "intersection_branch_bearings_degrees": [
+          61.6,
+          148.2,
+          249.8
+        ],
+        "intersection_branch_count": 3,
+        "intersection_closest_sample_fraction": 0.0,
+        "intersection_distance_end_m": 20.536,
+        "intersection_distance_mid_m": 17.968,
+        "intersection_distance_min_m": 5.027,
+        "intersection_distance_start_m": 5.027,
+        "map_match_acceptable": true,
+        "road_match_distance_p50_m": 0.735,
+        "road_match_distance_p95_m": 1.922,
+        "traffic_signal_distance_min_m": 113.355,
+        "trajectory_heading_delta_degrees_right_positive": 28.969
+      },
+      "sequence": "2014-11-18-13-20-12",
+      "source_video_id": "2014-11-18-13-20-12_stereo_centre_05"
+    },
+    {
+      "clip_id": "2014-11-18-13-20-12_stereo_centre_05__f001249-f001344",
+      "contexts": {
+        "public_map_topology": "PUBLIC MAP CONTEXT\nThis block is derived from a fixed OpenStreetMap snapshot and the public OPR trajectory. It is supporting evidence for road topology only; video evidence remains authoritative.\n- Nearest drivable intersection: 3.4 m; branches: 3.\n- Intersection distance at start/middle/end: 20.2/4.9/14.4 m.\n- Nearest mapped traffic signal: 129.8 m.\n- Coarse trajectory heading change: 4.9 deg (positive right, negative left).\n- Road-map match P95 error: 3.3 m."
+      },
+      "contexts_sha256": {
+        "public_map_topology": "2e7c3eb422c521dd9b8a668ec67d9b1db148eca2b1bd8de8afac8dd27641246b"
+      },
+      "features": {
+        "intersection_branch_bearings_degrees": [
+          77.1,
+          169.5,
+          261.5
+        ],
+        "intersection_branch_count": 3,
+        "intersection_closest_sample_fraction": 0.625,
+        "intersection_distance_end_m": 14.354,
+        "intersection_distance_mid_m": 4.902,
+        "intersection_distance_min_m": 3.407,
+        "intersection_distance_start_m": 20.187,
+        "map_match_acceptable": true,
+        "road_match_distance_p50_m": 1.83,
+        "road_match_distance_p95_m": 3.327,
+        "traffic_signal_distance_min_m": 129.825,
+        "trajectory_heading_delta_degrees_right_positive": 4.887
+      },
+      "sequence": "2014-11-18-13-20-12",
+      "source_video_id": "2014-11-18-13-20-12_stereo_centre_05"
+    },
+    {
+      "clip_id": "2014-11-18-13-20-12_stereo_centre_05__f001345-f001440",
+      "contexts": {
+        "public_map_topology": "PUBLIC MAP CONTEXT\nThis block is derived from a fixed OpenStreetMap snapshot and the public OPR trajectory. It is supporting evidence for road topology only; video evidence remains authoritative.\n- Nearest drivable intersection: 2.5 m; branches: 3.\n- Intersection distance at start/middle/end: 14.5/2.5/3.1 m.\n- Nearest mapped traffic signal: 150.2 m.\n- Coarse trajectory heading change: 15.7 deg (positive right, negative left).\n- Road-map match P95 error: 2.9 m."
+      },
+      "contexts_sha256": {
+        "public_map_topology": "2a89e2fa544ec0d0b713ce38f607a2402b219b6f60cf079fa296cc45845142f4"
+      },
+      "features": {
+        "intersection_branch_bearings_degrees": [
+          95.0,
+          175.1,
+          279.6
+        ],
+        "intersection_branch_count": 3,
+        "intersection_closest_sample_fraction": 0.5,
+        "intersection_distance_end_m": 3.096,
+        "intersection_distance_mid_m": 2.481,
+        "intersection_distance_min_m": 2.481,
+        "intersection_distance_start_m": 14.503,
+        "map_match_acceptable": true,
+        "road_match_distance_p50_m": 1.913,
+        "road_match_distance_p95_m": 2.87,
+        "traffic_signal_distance_min_m": 150.172,
+        "trajectory_heading_delta_degrees_right_positive": 15.738
+      },
+      "sequence": "2014-11-18-13-20-12",
+      "source_video_id": "2014-11-18-13-20-12_stereo_centre_05"
+    },
+    {
+      "clip_id": "2014-11-18-13-20-12_stereo_centre_05__f001441-f001536",
+      "contexts": {
+        "public_map_topology": "PUBLIC MAP CONTEXT\nThis block is derived from a fixed OpenStreetMap snapshot and the public OPR trajectory. It is supporting evidence for road topology only; video evidence remains authoritative.\n- Nearest drivable intersection: 3.4 m; branches: 3.\n- Intersection distance at start/middle/end: 3.4/21.8/9.8 m.\n- Nearest mapped traffic signal: 167.5 m.\n- Coarse trajectory heading change: 12.2 deg (positive right, negative left).\n- Road-map match P95 error: 3.4 m."
+      },
+      "contexts_sha256": {
+        "public_map_topology": "c0f00d20986557e02c4497a1ac046b9cd12f3ccb7410f721aa9af57c293d5a3d"
+      },
+      "features": {
+        "intersection_branch_bearings_degrees": [
+          9.8,
+          99.6,
+          279.7
+        ],
+        "intersection_branch_count": 3,
+        "intersection_closest_sample_fraction": 0.0,
+        "intersection_distance_end_m": 9.807,
+        "intersection_distance_mid_m": 21.762,
+        "intersection_distance_min_m": 3.413,
+        "intersection_distance_start_m": 3.413,
+        "map_match_acceptable": true,
+        "road_match_distance_p50_m": 2.348,
+        "road_match_distance_p95_m": 3.413,
+        "traffic_signal_distance_min_m": 167.485,
+        "trajectory_heading_delta_degrees_right_positive": 12.152
+      },
+      "sequence": "2014-11-18-13-20-12",
+      "source_video_id": "2014-11-18-13-20-12_stereo_centre_05"
+    },
+    {
+      "clip_id": "2014-11-18-13-20-12_stereo_centre_05__f001537-f001632",
+      "contexts": {
+        "public_map_topology": "PUBLIC MAP CONTEXT\nThis block is derived from a fixed OpenStreetMap snapshot and the public OPR trajectory. It is supporting evidence for road topology only; video evidence remains authoritative.\n- Nearest drivable intersection: 3.7 m; branches: 3.\n- Intersection distance at start/middle/end: 9.4/11.1/4.8 m.\n- Nearest mapped traffic signal: 185.0 m.\n- Coarse trajectory heading change: -21.8 deg (positive right, negative left).\n- Road-map match P95 error: 4.6 m."
+      },
+      "contexts_sha256": {
+        "public_map_topology": "d702032333167b2d79046669feecc5a3c314f4a9ce9090f63013c6e694ac5794"
+      },
+      "features": {
+        "intersection_branch_bearings_degrees": [
+          85.0,
+          174.3,
+          263.8
+        ],
+        "intersection_branch_count": 3,
+        "intersection_closest_sample_fraction": 0.875,
+        "intersection_distance_end_m": 4.786,
+        "intersection_distance_mid_m": 11.076,
+        "intersection_distance_min_m": 3.696,
+        "intersection_distance_start_m": 9.402,
+        "map_match_acceptable": true,
+        "road_match_distance_p50_m": 3.242,
+        "road_match_distance_p95_m": 4.575,
+        "traffic_signal_distance_min_m": 185.026,
+        "trajectory_heading_delta_degrees_right_positive": -21.793
+      },
+      "sequence": "2014-11-18-13-20-12",
+      "source_video_id": "2014-11-18-13-20-12_stereo_centre_05"
+    },
+    {
+      "clip_id": "2014-11-18-13-20-12_stereo_centre_05__f001633-f001728",
+      "contexts": {
+        "public_map_topology": "PUBLIC MAP CONTEXT\nThis block is derived from a fixed OpenStreetMap snapshot and the public OPR trajectory. It is supporting evidence for road topology only; video evidence remains authoritative.\n- Nearest drivable intersection: 5.0 m; branches: 3.\n- Intersection distance at start/middle/end: 5.0/7.7/8.4 m.\n- Nearest mapped traffic signal: 198.3 m.\n- Coarse trajectory heading change: -11.4 deg (positive right, negative left).\n- Road-map match P95 error: 4.2 m."
+      },
+      "contexts_sha256": {
+        "public_map_topology": "ef6f1a0b5f3bf112566f868d6bb6ab1f1b479f8a7aca27a37111555a8ce20caa"
+      },
+      "features": {
+        "intersection_branch_bearings_degrees": [
+          85.0,
+          174.3,
+          263.8
+        ],
+        "intersection_branch_count": 3,
+        "intersection_closest_sample_fraction": 0.0,
+        "intersection_distance_end_m": 8.439,
+        "intersection_distance_mid_m": 7.748,
+        "intersection_distance_min_m": 5.029,
+        "intersection_distance_start_m": 5.029,
+        "map_match_acceptable": true,
+        "road_match_distance_p50_m": 1.345,
+        "road_match_distance_p95_m": 4.15,
+        "traffic_signal_distance_min_m": 198.342,
+        "trajectory_heading_delta_degrees_right_positive": -11.407
+      },
+      "sequence": "2014-11-18-13-20-12",
+      "source_video_id": "2014-11-18-13-20-12_stereo_centre_05"
+    },
+    {
+      "clip_id": "2014-11-18-13-20-12_stereo_centre_05__f001729-f001824",
+      "contexts": {
+        "public_map_topology": "PUBLIC MAP CONTEXT\nThis block is derived from a fixed OpenStreetMap snapshot and the public OPR trajectory. It is supporting evidence for road topology only; video evidence remains authoritative.\n- Nearest drivable intersection: 1.1 m; branches: 4.\n- Intersection distance at start/middle/end: 8.2/2.0/2.5 m.\n- Nearest mapped traffic signal: 220.1 m.\n- Coarse trajectory heading change: 62.6 deg (positive right, negative left).\n- Road-map match P95 error: 1.3 m."
+      },
+      "contexts_sha256": {
+        "public_map_topology": "e3a4a4fc3baaeb67ebc63229d5fbde7db15617957fbc1643b7f458905d72a512"
+      },
+      "features": {
+        "intersection_branch_bearings_degrees": [
+          84.0,
+          171.5,
+          260.4,
+          350.5
+        ],
+        "intersection_branch_count": 4,
+        "intersection_closest_sample_fraction": 0.375,
+        "intersection_distance_end_m": 2.49,
+        "intersection_distance_mid_m": 2.018,
+        "intersection_distance_min_m": 1.121,
+        "intersection_distance_start_m": 8.213,
+        "map_match_acceptable": true,
+        "road_match_distance_p50_m": 0.588,
+        "road_match_distance_p95_m": 1.31,
+        "traffic_signal_distance_min_m": 220.087,
+        "trajectory_heading_delta_degrees_right_positive": 62.57
+      },
+      "sequence": "2014-11-18-13-20-12",
+      "source_video_id": "2014-11-18-13-20-12_stereo_centre_05"
+    },
+    {
+      "clip_id": "2014-11-18-13-20-12_stereo_centre_05__f001825-f001920",
+      "contexts": {
+        "public_map_topology": "PUBLIC MAP CONTEXT\nThis block is derived from a fixed OpenStreetMap snapshot and the public OPR trajectory. It is supporting evidence for road topology only; video evidence remains authoritative.\n- Nearest drivable intersection: 2.5 m; branches: 4.\n- Intersection distance at start/middle/end: 2.5/3.6/5.0 m.\n- Nearest mapped traffic signal: 224.0 m.\n- Coarse trajectory heading change: 0.0 deg (positive right, negative left).\n- Road-map match P95 error: 3.3 m."
+      },
+      "contexts_sha256": {
+        "public_map_topology": "64296674c33069a0c4ba0053752465f172dd9f97875c297953e831adf155223d"
+      },
+      "features": {
+        "intersection_branch_bearings_degrees": [
+          84.0,
+          171.5,
+          260.4,
+          350.5
+        ],
+        "intersection_branch_count": 4,
+        "intersection_closest_sample_fraction": 0.0,
+        "intersection_distance_end_m": 4.99,
+        "intersection_distance_mid_m": 3.638,
+        "intersection_distance_min_m": 2.509,
+        "intersection_distance_start_m": 2.509,
+        "map_match_acceptable": true,
+        "road_match_distance_p50_m": 2.038,
+        "road_match_distance_p95_m": 3.317,
+        "traffic_signal_distance_min_m": 223.958,
+        "trajectory_heading_delta_degrees_right_positive": 0.0
+      },
+      "sequence": "2014-11-18-13-20-12",
+      "source_video_id": "2014-11-18-13-20-12_stereo_centre_05"
+    },
+    {
+      "clip_id": "2014-11-18-13-20-12_stereo_centre_05__f001921-f002016",
+      "contexts": {
+        "public_map_topology": "PUBLIC MAP CONTEXT\nThis block is derived from a fixed OpenStreetMap snapshot and the public OPR trajectory. It is supporting evidence for road topology only; video evidence remains authoritative.\n- Nearest drivable intersection: 5.0 m; branches: 4.\n- Intersection distance at start/middle/end: 5.0/6.5/10.1 m.\n- Nearest mapped traffic signal: 219.6 m.\n- Coarse trajectory heading change: 41.5 deg (positive right, negative left).\n- Road-map match P95 error: 4.6 m."
+      },
+      "contexts_sha256": {
+        "public_map_topology": "48e6b0c6b3b64ccc602440c97c7004e551d8fe720c1587e13ab7fd608b9d10fc"
+      },
+      "features": {
+        "intersection_branch_bearings_degrees": [
+          84.0,
+          171.5,
+          260.4,
+          350.5
+        ],
+        "intersection_branch_count": 4,
+        "intersection_closest_sample_fraction": 0.0,
+        "intersection_distance_end_m": 10.083,
+        "intersection_distance_mid_m": 6.455,
+        "intersection_distance_min_m": 5.019,
+        "intersection_distance_start_m": 5.019,
+        "map_match_acceptable": true,
+        "road_match_distance_p50_m": 4.055,
+        "road_match_distance_p95_m": 4.582,
+        "traffic_signal_distance_min_m": 219.622,
+        "trajectory_heading_delta_degrees_right_positive": 41.547
+      },
+      "sequence": "2014-11-18-13-20-12",
+      "source_video_id": "2014-11-18-13-20-12_stereo_centre_05"
+    },
+    {
+      "clip_id": "2014-11-18-13-20-12_stereo_centre_05__f002113-f002208",
+      "contexts": {
+        "public_map_topology": "PUBLIC MAP CONTEXT\nThis block is derived from a fixed OpenStreetMap snapshot and the public OPR trajectory. It is supporting evidence for road topology only; video evidence remains authoritative.\n- Nearest drivable intersection: 43.0 m; branches: 4.\n- Intersection distance at start/middle/end: 43.0/49.9/46.4 m.\n- Nearest mapped traffic signal: 185.6 m.\n- Coarse trajectory heading change: 18.3 deg (positive right, negative left).\n- Road-map match P95 error: 1.7 m."
+      },
+      "contexts_sha256": {
+        "public_map_topology": "5fc29d2697b25728f1945c76650a7f823506f23f4b6cbbb24338e441c6e1fa2e"
+      },
+      "features": {
+        "intersection_branch_bearings_degrees": [
+          84.0,
+          171.5,
+          260.4,
+          350.5
+        ],
+        "intersection_branch_count": 4,
+        "intersection_closest_sample_fraction": 0.0,
+        "intersection_distance_end_m": 46.415,
+        "intersection_distance_mid_m": 49.878,
+        "intersection_distance_min_m": 42.96,
+        "intersection_distance_start_m": 42.96,
+        "map_match_acceptable": true,
+        "road_match_distance_p50_m": 0.917,
+        "road_match_distance_p95_m": 1.693,
+        "traffic_signal_distance_min_m": 185.556,
+        "trajectory_heading_delta_degrees_right_positive": 18.272
+      },
+      "sequence": "2014-11-18-13-20-12",
+      "source_video_id": "2014-11-18-13-20-12_stereo_centre_05"
+    },
+    {
+      "clip_id": "2014-11-18-13-20-12_stereo_centre_05__f002209-f002304",
+      "contexts": {
+        "public_map_topology": "PUBLIC MAP CONTEXT\nThis block is derived from a fixed OpenStreetMap snapshot and the public OPR trajectory. It is supporting evidence for road topology only; video evidence remains authoritative.\n- Nearest drivable intersection: 39.4 m; branches: 3.\n- Intersection distance at start/middle/end: 46.3/42.9/39.4 m.\n- Nearest mapped traffic signal: 180.1 m.\n- Coarse trajectory heading change: -15.2 deg (positive right, negative left).\n- Road-map match P95 error: 3.2 m."
+      },
+      "contexts_sha256": {
+        "public_map_topology": "27ba7108f468f213914e1ac0cdd108e9913dd3faf2c69d1f6eb3270ae1e688d3"
+      },
+      "features": {
+        "intersection_branch_bearings_degrees": [
+          75.4,
+          177.9,
+          308.9
+        ],
+        "intersection_branch_count": 3,
+        "intersection_closest_sample_fraction": 1.0,
+        "intersection_distance_end_m": 39.384,
+        "intersection_distance_mid_m": 42.892,
+        "intersection_distance_min_m": 39.384,
+        "intersection_distance_start_m": 46.342,
+        "map_match_acceptable": true,
+        "road_match_distance_p50_m": 2.649,
+        "road_match_distance_p95_m": 3.181,
+        "traffic_signal_distance_min_m": 180.119,
+        "trajectory_heading_delta_degrees_right_positive": -15.242
+      },
+      "sequence": "2014-11-18-13-20-12",
+      "source_video_id": "2014-11-18-13-20-12_stereo_centre_05"
+    },
+    {
+      "clip_id": "2014-11-18-13-20-12_stereo_centre_05__f002305-f002400",
+      "contexts": {
+        "public_map_topology": "PUBLIC MAP CONTEXT\nThis block is derived from a fixed OpenStreetMap snapshot and the public OPR trajectory. It is supporting evidence for road topology only; video evidence remains authoritative.\n- Nearest drivable intersection: 31.4 m; branches: 3.\n- Intersection distance at start/middle/end: 39.3/35.4/31.4 m.\n- Nearest mapped traffic signal: 175.8 m.\n- Coarse trajectory heading change: 0.0 deg (positive right, negative left).\n- Road-map match P95 error: 3.2 m."
+      },
+      "contexts_sha256": {
+        "public_map_topology": "41ab0989dd1a930f8b205c46a6bdf8e29ffe420525813bc321e0a9a33760e665"
+      },
+      "features": {
+        "intersection_branch_bearings_degrees": [
+          75.4,
+          177.9,
+          308.9
+        ],
+        "intersection_branch_count": 3,
+        "intersection_closest_sample_fraction": 1.0,
+        "intersection_distance_end_m": 31.429,
+        "intersection_distance_mid_m": 35.365,
+        "intersection_distance_min_m": 31.429,
+        "intersection_distance_start_m": 39.302,
+        "map_match_acceptable": true,
+        "road_match_distance_p50_m": 2.906,
+        "road_match_distance_p95_m": 3.161,
+        "traffic_signal_distance_min_m": 175.751,
+        "trajectory_heading_delta_degrees_right_positive": 0.0
+      },
+      "sequence": "2014-11-18-13-20-12",
+      "source_video_id": "2014-11-18-13-20-12_stereo_centre_05"
+    },
+    {
+      "clip_id": "2014-11-18-13-20-12_stereo_centre_05__f002401-f002496",
+      "contexts": {
+        "public_map_topology": "PUBLIC MAP CONTEXT\nThis block is derived from a fixed OpenStreetMap snapshot and the public OPR trajectory. It is supporting evidence for road topology only; video evidence remains authoritative.\n- Nearest drivable intersection: 14.7 m; branches: 3.\n- Intersection distance at start/middle/end: 31.3/25.1/14.7 m.\n- Nearest mapped traffic signal: 167.2 m.\n- Coarse trajectory heading change: -40.5 deg (positive right, negative left).\n- Road-map match P95 error: 4.3 m."
+      },
+      "contexts_sha256": {
+        "public_map_topology": "5ccccdfad306d7e5027805234e2237f3145eb79f11b2a0370aafb1b566477dab"
+      },
+      "features": {
+        "intersection_branch_bearings_degrees": [
+          75.4,
+          177.9,
+          308.9
+        ],
+        "intersection_branch_count": 3,
+        "intersection_closest_sample_fraction": 1.0,
+        "intersection_distance_end_m": 14.736,
+        "intersection_distance_mid_m": 25.071,
+        "intersection_distance_min_m": 14.736,
+        "intersection_distance_start_m": 31.346,
+        "map_match_acceptable": true,
+        "road_match_distance_p50_m": 2.618,
+        "road_match_distance_p95_m": 4.308,
+        "traffic_signal_distance_min_m": 167.24,
+        "trajectory_heading_delta_degrees_right_positive": -40.545
+      },
+      "sequence": "2014-11-18-13-20-12",
+      "source_video_id": "2014-11-18-13-20-12_stereo_centre_05"
+    },
+    {
+      "clip_id": "2014-11-18-13-20-12_stereo_centre_05__f002497-f002592",
+      "contexts": {
+        "public_map_topology": "PUBLIC MAP CONTEXT\nThis block is derived from a fixed OpenStreetMap snapshot and the public OPR trajectory. It is supporting evidence for road topology only; video evidence remains authoritative.\n- Nearest drivable intersection: 9.1 m; branches: 3.\n- Intersection distance at start/middle/end: 14.6/10.8/9.1 m.\n- Nearest mapped traffic signal: 168.7 m.\n- Coarse trajectory heading change: 26.3 deg (positive right, negative left).\n- Road-map match P95 error: 5.6 m."
+      },
+      "contexts_sha256": {
+        "public_map_topology": "a2a3615e597a562950bed7b6f81bc39c1b18c756d71e63a09d940674353aefa0"
+      },
+      "features": {
+        "intersection_branch_bearings_degrees": [
+          75.4,
+          177.9,
+          308.9
+        ],
+        "intersection_branch_count": 3,
+        "intersection_closest_sample_fraction": 1.0,
+        "intersection_distance_end_m": 9.117,
+        "intersection_distance_mid_m": 10.813,
+        "intersection_distance_min_m": 9.117,
+        "intersection_distance_start_m": 14.557,
+        "map_match_acceptable": true,
+        "road_match_distance_p50_m": 4.602,
+        "road_match_distance_p95_m": 5.583,
+        "traffic_signal_distance_min_m": 168.711,
+        "trajectory_heading_delta_degrees_right_positive": 26.283
+      },
+      "sequence": "2014-11-18-13-20-12",
+      "source_video_id": "2014-11-18-13-20-12_stereo_centre_05"
+    },
+    {
+      "clip_id": "2014-11-18-13-20-12_stereo_centre_05__f002593-f002688",
+      "contexts": {
+        "public_map_topology": "PUBLIC MAP CONTEXT\nThis block is derived from a fixed OpenStreetMap snapshot and the public OPR trajectory. It is supporting evidence for road topology only; video evidence remains authoritative.\n- Nearest drivable intersection: 6.0 m; branches: 3.\n- Intersection distance at start/middle/end: 9.1/8.1/6.0 m.\n- Nearest mapped traffic signal: 162.9 m.\n- Coarse trajectory heading change: 46.1 deg (positive right, negative left).\n- Road-map match P95 error: 7.1 m."
+      },
+      "contexts_sha256": {
+        "public_map_topology": "6a6bdf939b80084fe93b8144a6d6f1db1fc6ca52f9ab568a3fa00f030fd8f8d3"
+      },
+      "features": {
+        "intersection_branch_bearings_degrees": [
+          75.4,
+          177.9,
+          308.9
+        ],
+        "intersection_branch_count": 3,
+        "intersection_closest_sample_fraction": 1.0,
+        "intersection_distance_end_m": 5.961,
+        "intersection_distance_mid_m": 8.122,
+        "intersection_distance_min_m": 5.961,
+        "intersection_distance_start_m": 9.088,
+        "map_match_acceptable": true,
+        "road_match_distance_p50_m": 6.243,
+        "road_match_distance_p95_m": 7.133,
+        "traffic_signal_distance_min_m": 162.894,
+        "trajectory_heading_delta_degrees_right_positive": 46.108
+      },
+      "sequence": "2014-11-18-13-20-12",
+      "source_video_id": "2014-11-18-13-20-12_stereo_centre_05"
+    },
+    {
+      "clip_id": "2014-11-18-13-20-12_stereo_centre_05__f002689-f002784",
+      "contexts": {
+        "public_map_topology": "PUBLIC MAP CONTEXT\nThis block is derived from a fixed OpenStreetMap snapshot and the public OPR trajectory. It is supporting evidence for road topology only; video evidence remains authoritative.\n- Nearest drivable intersection: 6.1 m; branches: 3.\n- Intersection distance at start/middle/end: 6.1/13.2/9.3 m.\n- Nearest mapped traffic signal: 155.3 m.\n- Coarse trajectory heading change: -46.5 deg (positive right, negative left).\n- Road-map match P95 error: 10.5 m."
+      },
+      "contexts_sha256": {
+        "public_map_topology": "b92e11c0d8930af5d47e9c0c920284b5d77867324edfc32d4b0f40615022ddb1"
+      },
+      "features": {
+        "intersection_branch_bearings_degrees": [
+          75.4,
+          177.9,
+          308.9
+        ],
+        "intersection_branch_count": 3,
+        "intersection_closest_sample_fraction": 0.0,
+        "intersection_distance_end_m": 9.301,
+        "intersection_distance_mid_m": 13.166,
+        "intersection_distance_min_m": 6.087,
+        "intersection_distance_start_m": 6.087,
+        "map_match_acceptable": true,
+        "road_match_distance_p50_m": 7.78,
+        "road_match_distance_p95_m": 10.543,
+        "traffic_signal_distance_min_m": 155.273,
+        "trajectory_heading_delta_degrees_right_positive": -46.474
+      },
+      "sequence": "2014-11-18-13-20-12",
+      "source_video_id": "2014-11-18-13-20-12_stereo_centre_05"
+    },
+    {
+      "clip_id": "2014-11-18-13-20-12_stereo_centre_05__f002785-f002880",
+      "contexts": {
+        "public_map_topology": "PUBLIC MAP CONTEXT\nThis block is derived from a fixed OpenStreetMap snapshot and the public OPR trajectory. It is supporting evidence for road topology only; video evidence remains authoritative.\n- Nearest drivable intersection: 8.7 m; branches: 3.\n- Intersection distance at start/middle/end: 9.4/8.7/18.7 m.\n- Nearest mapped traffic signal: 128.6 m.\n- Coarse trajectory heading change: 119.6 deg (positive right, negative left).\n- Road-map match P95 error: 9.7 m."
+      },
+      "contexts_sha256": {
+        "public_map_topology": "73d5b695b5f91765c02cef1db287784eaab1d2b702dc12e5dde576cc43a8048c"
+      },
+      "features": {
+        "intersection_branch_bearings_degrees": [
+          67.7,
+          233.6,
+          346.3
+        ],
+        "intersection_branch_count": 3,
+        "intersection_closest_sample_fraction": 0.5,
+        "intersection_distance_end_m": 18.685,
+        "intersection_distance_mid_m": 8.69,
+        "intersection_distance_min_m": 8.69,
+        "intersection_distance_start_m": 9.429,
+        "map_match_acceptable": true,
+        "road_match_distance_p50_m": 4.204,
+        "road_match_distance_p95_m": 9.66,
+        "traffic_signal_distance_min_m": 128.647,
+        "trajectory_heading_delta_degrees_right_positive": 119.624
+      },
+      "sequence": "2014-11-18-13-20-12",
+      "source_video_id": "2014-11-18-13-20-12_stereo_centre_05"
+    },
+    {
+      "clip_id": "2014-11-18-13-20-12_stereo_centre_05__f002977-f003072",
+      "contexts": {
+        "public_map_topology": "PUBLIC MAP CONTEXT\nThis block is derived from a fixed OpenStreetMap snapshot and the public OPR trajectory. It is supporting evidence for road topology only; video evidence remains authoritative.\n- Nearest drivable intersection: 17.3 m; branches: 3.\n- Intersection distance at start/middle/end: 39.5/26.8/17.3 m.\n- Nearest mapped traffic signal: 82.2 m.\n- Coarse trajectory heading change: -2.4 deg (positive right, negative left).\n- Road-map match P95 error: 1.4 m."
+      },
+      "contexts_sha256": {
+        "public_map_topology": "4362d1a484ac81fdc05110344f6af843e2918a2536b88be80f7e702d04acc528"
+      },
+      "features": {
+        "intersection_branch_bearings_degrees": [
+          72.0,
+          163.3,
+          253.3
+        ],
+        "intersection_branch_count": 3,
+        "intersection_closest_sample_fraction": 1.0,
+        "intersection_distance_end_m": 17.3,
+        "intersection_distance_mid_m": 26.831,
+        "intersection_distance_min_m": 17.3,
+        "intersection_distance_start_m": 39.538,
+        "map_match_acceptable": true,
+        "road_match_distance_p50_m": 0.241,
+        "road_match_distance_p95_m": 1.359,
+        "traffic_signal_distance_min_m": 82.176,
+        "trajectory_heading_delta_degrees_right_positive": -2.357
+      },
+      "sequence": "2014-11-18-13-20-12",
+      "source_video_id": "2014-11-18-13-20-12_stereo_centre_05"
+    },
+    {
+      "clip_id": "2014-11-18-13-20-12_stereo_centre_05__f003073-f003168",
+      "contexts": {
+        "public_map_topology": "PUBLIC MAP CONTEXT\nThis block is derived from a fixed OpenStreetMap snapshot and the public OPR trajectory. It is supporting evidence for road topology only; video evidence remains authoritative.\n- Nearest drivable intersection: 3.6 m; branches: 3.\n- Intersection distance at start/middle/end: 17.1/7.6/3.9 m.\n- Nearest mapped traffic signal: 63.8 m.\n- Coarse trajectory heading change: 38.2 deg (positive right, negative left).\n- Road-map match P95 error: 3.3 m."
+      },
+      "contexts_sha256": {
+        "public_map_topology": "c5c45dfd7bfa24c4d6536ba362bd559b150d189d4a513838e7af2370551aabb4"
+      },
+      "features": {
+        "intersection_branch_bearings_degrees": [
+          72.0,
+          163.3,
+          253.3
+        ],
+        "intersection_branch_count": 3,
+        "intersection_closest_sample_fraction": 0.875,
+        "intersection_distance_end_m": 3.935,
+        "intersection_distance_mid_m": 7.566,
+        "intersection_distance_min_m": 3.618,
+        "intersection_distance_start_m": 17.08,
+        "map_match_acceptable": true,
+        "road_match_distance_p50_m": 2.536,
+        "road_match_distance_p95_m": 3.333,
+        "traffic_signal_distance_min_m": 63.811,
+        "trajectory_heading_delta_degrees_right_positive": 38.196
+      },
+      "sequence": "2014-11-18-13-20-12",
+      "source_video_id": "2014-11-18-13-20-12_stereo_centre_05"
+    },
+    {
+      "clip_id": "2014-11-18-13-20-12_stereo_centre_05__f003169-f003264",
+      "contexts": {
+        "public_map_topology": "PUBLIC MAP CONTEXT\nThis block is derived from a fixed OpenStreetMap snapshot and the public OPR trajectory. It is supporting evidence for road topology only; video evidence remains authoritative.\n- Nearest drivable intersection: 2.9 m; branches: 3.\n- Intersection distance at start/middle/end: 3.9/3.3/2.9 m.\n- Nearest mapped traffic signal: 61.8 m.\n- Coarse trajectory heading change: 0.0 deg (positive right, negative left).\n- Road-map match P95 error: 1.4 m."
+      },
+      "contexts_sha256": {
+        "public_map_topology": "31a5c099e2633268659676789d00bc14e6966ced5d591113cb440b791d14c381"
+      },
+      "features": {
+        "intersection_branch_bearings_degrees": [
+          73.8,
+          252.0,
+          342.8
+        ],
+        "intersection_branch_count": 3,
+        "intersection_closest_sample_fraction": 1.0,
+        "intersection_distance_end_m": 2.929,
+        "intersection_distance_mid_m": 3.331,
+        "intersection_distance_min_m": 2.929,
+        "intersection_distance_start_m": 3.934,
+        "map_match_acceptable": true,
+        "road_match_distance_p50_m": 0.522,
+        "road_match_distance_p95_m": 1.391,
+        "traffic_signal_distance_min_m": 61.805,
+        "trajectory_heading_delta_degrees_right_positive": 0.0
+      },
+      "sequence": "2014-11-18-13-20-12",
+      "source_video_id": "2014-11-18-13-20-12_stereo_centre_05"
+    },
+    {
+      "clip_id": "2014-11-18-13-20-12_stereo_centre_05__f003265-f003360",
+      "contexts": {
+        "public_map_topology": "PUBLIC MAP CONTEXT\nThis block is derived from a fixed OpenStreetMap snapshot and the public OPR trajectory. It is supporting evidence for road topology only; video evidence remains authoritative.\n- Nearest drivable intersection: 2.9 m; branches: 3.\n- Intersection distance at start/middle/end: 2.9/2.9/3.2 m.\n- Nearest mapped traffic signal: 59.8 m.\n- Coarse trajectory heading change: 0.0 deg (positive right, negative left).\n- Road-map match P95 error: 2.1 m."
+      },
+      "contexts_sha256": {
+        "public_map_topology": "5e70fec6cdaa75ef7be61db82ca5aa5b8a058712ea2ba39d8051ed60b87712df"
+      },
+      "features": {
+        "intersection_branch_bearings_degrees": [
+          73.8,
+          252.0,
+          342.8
+        ],
+        "intersection_branch_count": 3,
+        "intersection_closest_sample_fraction": 0.375,
+        "intersection_distance_end_m": 3.184,
+        "intersection_distance_mid_m": 2.873,
+        "intersection_distance_min_m": 2.85,
+        "intersection_distance_start_m": 2.924,
+        "map_match_acceptable": true,
+        "road_match_distance_p50_m": 1.431,
+        "road_match_distance_p95_m": 2.149,
+        "traffic_signal_distance_min_m": 59.806,
+        "trajectory_heading_delta_degrees_right_positive": 0.0
+      },
+      "sequence": "2014-11-18-13-20-12",
+      "source_video_id": "2014-11-18-13-20-12_stereo_centre_05"
+    },
+    {
+      "clip_id": "2014-11-18-13-20-12_stereo_centre_05__f003361-f003456",
+      "contexts": {
+        "public_map_topology": "PUBLIC MAP CONTEXT\nThis block is derived from a fixed OpenStreetMap snapshot and the public OPR trajectory. It is supporting evidence for road topology only; video evidence remains authoritative.\n- Nearest drivable intersection: 3.2 m; branches: 3.\n- Intersection distance at start/middle/end: 3.2/3.8/4.5 m.\n- Nearest mapped traffic signal: 57.8 m.\n- Coarse trajectory heading change: 0.0 deg (positive right, negative left).\n- Road-map match P95 error: 2.1 m."
+      },
+      "contexts_sha256": {
+        "public_map_topology": "0a3bf02788f75d1b821a832613c2ccf3c04b0d1f3e8a91a3546b88e31f284eb2"
+      },
+      "features": {
+        "intersection_branch_bearings_degrees": [
+          73.8,
+          252.0,
+          342.8
+        ],
+        "intersection_branch_count": 3,
+        "intersection_closest_sample_fraction": 0.0,
+        "intersection_distance_end_m": 4.539,
+        "intersection_distance_mid_m": 3.783,
+        "intersection_distance_min_m": 3.194,
+        "intersection_distance_start_m": 3.194,
+        "map_match_acceptable": true,
+        "road_match_distance_p50_m": 1.755,
+        "road_match_distance_p95_m": 2.095,
+        "traffic_signal_distance_min_m": 57.815,
+        "trajectory_heading_delta_degrees_right_positive": 0.0
+      },
+      "sequence": "2014-11-18-13-20-12",
+      "source_video_id": "2014-11-18-13-20-12_stereo_centre_05"
+    },
+    {
+      "clip_id": "2014-11-18-13-20-12_stereo_centre_05__f003457-f003552",
+      "contexts": {
+        "public_map_topology": "PUBLIC MAP CONTEXT\nThis block is derived from a fixed OpenStreetMap snapshot and the public OPR trajectory. It is supporting evidence for road topology only; video evidence remains authoritative.\n- Nearest drivable intersection: 4.6 m; branches: 3.\n- Intersection distance at start/middle/end: 4.6/5.4/6.3 m.\n- Nearest mapped traffic signal: 55.8 m.\n- Coarse trajectory heading change: 0.0 deg (positive right, negative left).\n- Road-map match P95 error: 1.3 m."
+      },
+      "contexts_sha256": {
+        "public_map_topology": "b098e2593e6149f2e1cf1fa224275da956e27a8bc3e722155067f6e3c4159d16"
+      },
+      "features": {
+        "intersection_branch_bearings_degrees": [
+          73.8,
+          252.0,
+          342.8
+        ],
+        "intersection_branch_count": 3,
+        "intersection_closest_sample_fraction": 0.0,
+        "intersection_distance_end_m": 6.322,
+        "intersection_distance_mid_m": 5.41,
+        "intersection_distance_min_m": 4.556,
+        "intersection_distance_start_m": 4.556,
+        "map_match_acceptable": true,
+        "road_match_distance_p50_m": 0.993,
+        "road_match_distance_p95_m": 1.332,
+        "traffic_signal_distance_min_m": 55.832,
+        "trajectory_heading_delta_degrees_right_positive": 0.0
+      },
+      "sequence": "2014-11-18-13-20-12",
+      "source_video_id": "2014-11-18-13-20-12_stereo_centre_05"
+    },
+    {
+      "clip_id": "2014-11-18-13-20-12_stereo_centre_05__f003553-f003648",
+      "contexts": {
+        "public_map_topology": "PUBLIC MAP CONTEXT\nThis block is derived from a fixed OpenStreetMap snapshot and the public OPR trajectory. It is supporting evidence for road topology only; video evidence remains authoritative.\n- Nearest drivable intersection: 6.3 m; branches: 3.\n- Intersection distance at start/middle/end: 6.3/11.7/20.0 m.\n- Nearest mapped traffic signal: 42.4 m.\n- Coarse trajectory heading change: -18.0 deg (positive right, negative left).\n- Road-map match P95 error: 2.9 m."
+      },
+      "contexts_sha256": {
+        "public_map_topology": "1778d3bda603de6bd27fc31cfc87426c5d36715077eeebdacc3365d90c4a25d4"
+      },
+      "features": {
+        "intersection_branch_bearings_degrees": [
+          73.8,
+          252.0,
+          342.8
+        ],
+        "intersection_branch_count": 3,
+        "intersection_closest_sample_fraction": 0.0,
+        "intersection_distance_end_m": 20.026,
+        "intersection_distance_mid_m": 11.689,
+        "intersection_distance_min_m": 6.341,
+        "intersection_distance_start_m": 6.341,
+        "map_match_acceptable": true,
+        "road_match_distance_p50_m": 1.018,
+        "road_match_distance_p95_m": 2.875,
+        "traffic_signal_distance_min_m": 42.408,
+        "trajectory_heading_delta_degrees_right_positive": -17.991
+      },
+      "sequence": "2014-11-18-13-20-12",
+      "source_video_id": "2014-11-18-13-20-12_stereo_centre_05"
+    },
+    {
+      "clip_id": "2014-11-18-13-20-12_stereo_centre_05__f003649-f003744",
+      "contexts": {
+        "public_map_topology": "PUBLIC MAP CONTEXT\nThis block is derived from a fixed OpenStreetMap snapshot and the public OPR trajectory. It is supporting evidence for road topology only; video evidence remains authoritative.\n- Nearest drivable intersection: 20.3 m; branches: 3.\n- Intersection distance at start/middle/end: 20.3/32.2/27.3 m.\n- Nearest mapped traffic signal: 15.0 m.\n- Coarse trajectory heading change: 9.9 deg (positive right, negative left).\n- Road-map match P95 error: 3.7 m."
+      },
+      "contexts_sha256": {
+        "public_map_topology": "8d432964a227d24874993443c0ada9bff582717bcf9bbf9b5e3b5893b05e6d87"
+      },
+      "features": {
+        "intersection_branch_bearings_degrees": [
+          73.8,
+          252.0,
+          342.8
+        ],
+        "intersection_branch_count": 3,
+        "intersection_closest_sample_fraction": 0.0,
+        "intersection_distance_end_m": 27.311,
+        "intersection_distance_mid_m": 32.181,
+        "intersection_distance_min_m": 20.254,
+        "intersection_distance_start_m": 20.254,
+        "map_match_acceptable": true,
+        "road_match_distance_p50_m": 2.993,
+        "road_match_distance_p95_m": 3.667,
+        "traffic_signal_distance_min_m": 14.955,
+        "trajectory_heading_delta_degrees_right_positive": 9.876
+      },
+      "sequence": "2014-11-18-13-20-12",
+      "source_video_id": "2014-11-18-13-20-12_stereo_centre_05"
+    },
+    {
+      "clip_id": "2014-11-18-13-20-12_stereo_centre_05__f003745-f003840",
+      "contexts": {
+        "public_map_topology": "PUBLIC MAP CONTEXT\nThis block is derived from a fixed OpenStreetMap snapshot and the public OPR trajectory. It is supporting evidence for road topology only; video evidence remains authoritative.\n- Nearest drivable intersection: 1.8 m; branches: 3.\n- Intersection distance at start/middle/end: 27.0/12.2/4.5 m.\n- Nearest mapped traffic signal: 2.9 m.\n- Coarse trajectory heading change: -24.4 deg (positive right, negative left).\n- Road-map match P95 error: 5.1 m."
+      },
+      "contexts_sha256": {
+        "public_map_topology": "94280acfe61e3e32fdf611673fbc6589f990801b97418f07d2bed130bd055ccc"
+      },
+      "features": {
+        "intersection_branch_bearings_degrees": [
+          76.6,
+          254.2,
+          344.0
+        ],
+        "intersection_branch_count": 3,
+        "intersection_closest_sample_fraction": 0.875,
+        "intersection_distance_end_m": 4.478,
+        "intersection_distance_mid_m": 12.156,
+        "intersection_distance_min_m": 1.778,
+        "intersection_distance_start_m": 26.993,
+        "map_match_acceptable": true,
+        "road_match_distance_p50_m": 2.844,
+        "road_match_distance_p95_m": 5.054,
+        "traffic_signal_distance_min_m": 2.945,
+        "trajectory_heading_delta_degrees_right_positive": -24.405
+      },
+      "sequence": "2014-11-18-13-20-12",
+      "source_video_id": "2014-11-18-13-20-12_stereo_centre_05"
+    },
+    {
+      "clip_id": "2014-11-18-13-20-12_stereo_centre_05__f003841-f003936",
+      "contexts": {
+        "public_map_topology": "PUBLIC MAP CONTEXT\nThis block is derived from a fixed OpenStreetMap snapshot and the public OPR trajectory. It is supporting evidence for road topology only; video evidence remains authoritative.\n- Nearest drivable intersection: 4.9 m; branches: 3.\n- Intersection distance at start/middle/end: 4.9/17.1/17.4 m.\n- Nearest mapped traffic signal: 17.4 m.\n- Coarse trajectory heading change: -27.1 deg (positive right, negative left).\n- Road-map match P95 error: 2.1 m."
+      },
+      "contexts_sha256": {
+        "public_map_topology": "1c9aa0dc3ecf9866ac19cd628808d95628c3f06a741b15614a7b286902e1c8fe"
+      },
+      "features": {
+        "intersection_branch_bearings_degrees": [
+          76.6,
+          254.2,
+          344.0
+        ],
+        "intersection_branch_count": 3,
+        "intersection_closest_sample_fraction": 0.0,
+        "intersection_distance_end_m": 17.403,
+        "intersection_distance_mid_m": 17.077,
+        "intersection_distance_min_m": 4.903,
+        "intersection_distance_start_m": 4.903,
+        "map_match_acceptable": true,
+        "road_match_distance_p50_m": 1.836,
+        "road_match_distance_p95_m": 2.063,
+        "traffic_signal_distance_min_m": 17.383,
+        "trajectory_heading_delta_degrees_right_positive": -27.105
+      },
+      "sequence": "2014-11-18-13-20-12",
+      "source_video_id": "2014-11-18-13-20-12_stereo_centre_05"
+    },
+    {
+      "clip_id": "2014-11-18-13-20-12_stereo_centre_05__f003937-f004032",
+      "contexts": {
+        "public_map_topology": "PUBLIC MAP CONTEXT\nThis block is derived from a fixed OpenStreetMap snapshot and the public OPR trajectory. It is supporting evidence for road topology only; video evidence remains authoritative.\n- Nearest drivable intersection: 17.4 m; branches: 3.\n- Intersection distance at start/middle/end: 17.4/17.7/18.1 m.\n- Nearest mapped traffic signal: 30.0 m.\n- Coarse trajectory heading change: 0.0 deg (positive right, negative left).\n- Road-map match P95 error: 2.6 m."
+      },
+      "contexts_sha256": {
+        "public_map_topology": "51cf1a6bfd3eff8053c9717b9dcb4d5fe008c014877c2fa831c5801d9c6b084d"
+      },
+      "features": {
+        "intersection_branch_bearings_degrees": [
+          76.6,
+          254.2,
+          344.0
+        ],
+        "intersection_branch_count": 3,
+        "intersection_closest_sample_fraction": 0.0,
+        "intersection_distance_end_m": 18.073,
+        "intersection_distance_mid_m": 17.74,
+        "intersection_distance_min_m": 17.41,
+        "intersection_distance_start_m": 17.41,
+        "map_match_acceptable": true,
+        "road_match_distance_p50_m": 2.346,
+        "road_match_distance_p95_m": 2.573,
+        "traffic_signal_distance_min_m": 29.958,
+        "trajectory_heading_delta_degrees_right_positive": 0.0
+      },
+      "sequence": "2014-11-18-13-20-12",
+      "source_video_id": "2014-11-18-13-20-12_stereo_centre_05"
+    },
+    {
+      "clip_id": "2014-11-18-13-20-12_stereo_centre_05__f004033-f004128",
+      "contexts": {
+        "public_map_topology": "PUBLIC MAP CONTEXT\nThis block is derived from a fixed OpenStreetMap snapshot and the public OPR trajectory. It is supporting evidence for road topology only; video evidence remains authoritative.\n- Nearest drivable intersection: 18.1 m; branches: 3.\n- Intersection distance at start/middle/end: 18.1/18.4/18.8 m.\n- Nearest mapped traffic signal: 30.6 m.\n- Coarse trajectory heading change: 0.0 deg (positive right, negative left).\n- Road-map match P95 error: 3.1 m."
+      },
+      "contexts_sha256": {
+        "public_map_topology": "8f7498620adb579a3a04ca5ca56603c88bd0690d8ea90158f375126a7a8db49f"
+      },
+      "features": {
+        "intersection_branch_bearings_degrees": [
+          76.6,
+          254.2,
+          344.0
+        ],
+        "intersection_branch_count": 3,
+        "intersection_closest_sample_fraction": 0.0,
+        "intersection_distance_end_m": 18.752,
+        "intersection_distance_mid_m": 18.414,
+        "intersection_distance_min_m": 18.08,
+        "intersection_distance_start_m": 18.08,
+        "map_match_acceptable": true,
+        "road_match_distance_p50_m": 2.856,
+        "road_match_distance_p95_m": 3.084,
+        "traffic_signal_distance_min_m": 30.607,
+        "trajectory_heading_delta_degrees_right_positive": 0.0
+      },
+      "sequence": "2014-11-18-13-20-12",
+      "source_video_id": "2014-11-18-13-20-12_stereo_centre_05"
+    },
+    {
+      "clip_id": "2014-11-18-13-20-12_stereo_centre_05__f004129-f004224",
+      "contexts": {
+        "public_map_topology": "PUBLIC MAP CONTEXT\nThis block is derived from a fixed OpenStreetMap snapshot and the public OPR trajectory. It is supporting evidence for road topology only; video evidence remains authoritative.\n- Nearest drivable intersection: 18.8 m; branches: 3.\n- Intersection distance at start/middle/end: 18.8/19.1/19.4 m.\n- Nearest mapped traffic signal: 31.3 m.\n- Coarse trajectory heading change: 0.0 deg (positive right, negative left).\n- Road-map match P95 error: 3.6 m."
+      },
+      "contexts_sha256": {
+        "public_map_topology": "03eede79cd7bc327e325ce59d134afdf6dc5fe2fdb6db7d579a39304f1551f47"
+      },
+      "features": {
+        "intersection_branch_bearings_degrees": [
+          76.6,
+          254.2,
+          344.0
+        ],
+        "intersection_branch_count": 3,
+        "intersection_closest_sample_fraction": 0.0,
+        "intersection_distance_end_m": 19.439,
+        "intersection_distance_mid_m": 19.098,
+        "intersection_distance_min_m": 18.759,
+        "intersection_distance_start_m": 18.759,
+        "map_match_acceptable": true,
+        "road_match_distance_p50_m": 3.367,
+        "road_match_distance_p95_m": 3.594,
+        "traffic_signal_distance_min_m": 31.263,
+        "trajectory_heading_delta_degrees_right_positive": 0.0
+      },
+      "sequence": "2014-11-18-13-20-12",
+      "source_video_id": "2014-11-18-13-20-12_stereo_centre_05"
+    },
+    {
+      "clip_id": "2014-11-18-13-20-12_stereo_centre_05__f004225-f004320",
+      "contexts": {
+        "public_map_topology": "PUBLIC MAP CONTEXT\nThis block is derived from a fixed OpenStreetMap snapshot and the public OPR trajectory. It is supporting evidence for road topology only; video evidence remains authoritative.\n- Nearest drivable intersection: 19.4 m; branches: 3.\n- Intersection distance at start/middle/end: 19.4/19.8/20.1 m.\n- Nearest mapped traffic signal: 31.9 m.\n- Coarse trajectory heading change: 0.0 deg (positive right, negative left).\n- Road-map match P95 error: 4.1 m."
+      },
+      "contexts_sha256": {
+        "public_map_topology": "45569d7f4055ef8ca98b465d09ed1267917605c1a488e327465e11d474d9463d"
+      },
+      "features": {
+        "intersection_branch_bearings_degrees": [
+          76.6,
+          254.2,
+          344.0
+        ],
+        "intersection_branch_count": 3,
+        "intersection_closest_sample_fraction": 0.0,
+        "intersection_distance_end_m": 20.135,
+        "intersection_distance_mid_m": 19.79,
+        "intersection_distance_min_m": 19.447,
+        "intersection_distance_start_m": 19.447,
+        "map_match_acceptable": true,
+        "road_match_distance_p50_m": 3.878,
+        "road_match_distance_p95_m": 4.105,
+        "traffic_signal_distance_min_m": 31.926,
+        "trajectory_heading_delta_degrees_right_positive": 0.0
+      },
+      "sequence": "2014-11-18-13-20-12",
+      "source_video_id": "2014-11-18-13-20-12_stereo_centre_05"
+    },
+    {
+      "clip_id": "2014-11-18-13-20-12_stereo_centre_05__f004321-f004416",
+      "contexts": {
+        "public_map_topology": "PUBLIC MAP CONTEXT\nThis block is derived from a fixed OpenStreetMap snapshot and the public OPR trajectory. It is supporting evidence for road topology only; video evidence remains authoritative.\n- Nearest drivable intersection: 20.1 m; branches: 3.\n- Intersection distance at start/middle/end: 20.1/20.5/20.8 m.\n- Nearest mapped traffic signal: 32.6 m.\n- Coarse trajectory heading change: 0.0 deg (positive right, negative left).\n- Road-map match P95 error: 4.6 m."
+      },
+      "contexts_sha256": {
+        "public_map_topology": "c72785532c95d0714c420706d4c2aea35bc25c1de5c9d047fcfbaa780db19073"
+      },
+      "features": {
+        "intersection_branch_bearings_degrees": [
+          76.6,
+          254.2,
+          344.0
+        ],
+        "intersection_branch_count": 3,
+        "intersection_closest_sample_fraction": 0.0,
+        "intersection_distance_end_m": 20.838,
+        "intersection_distance_mid_m": 20.489,
+        "intersection_distance_min_m": 20.142,
+        "intersection_distance_start_m": 20.142,
+        "map_match_acceptable": true,
+        "road_match_distance_p50_m": 4.388,
+        "road_match_distance_p95_m": 4.616,
+        "traffic_signal_distance_min_m": 32.594,
+        "trajectory_heading_delta_degrees_right_positive": 0.0
+      },
+      "sequence": "2014-11-18-13-20-12",
+      "source_video_id": "2014-11-18-13-20-12_stereo_centre_05"
+    },
+    {
+      "clip_id": "2014-11-18-13-20-12_stereo_centre_05__f004417-f004512",
+      "contexts": {
+        "public_map_topology": "PUBLIC MAP CONTEXT\nThis block is derived from a fixed OpenStreetMap snapshot and the public OPR trajectory. It is supporting evidence for road topology only; video evidence remains authoritative.\n- Nearest drivable intersection: 20.8 m; branches: 3.\n- Intersection distance at start/middle/end: 20.8/21.2/21.5 m.\n- Nearest mapped traffic signal: 33.3 m.\n- Coarse trajectory heading change: 0.0 deg (positive right, negative left).\n- Road-map match P95 error: 5.1 m."
+      },
+      "contexts_sha256": {
+        "public_map_topology": "5c08814c77a6ef71116e7115a7c00076f64ff14409dc405e1548db5313f5f228"
+      },
+      "features": {
+        "intersection_branch_bearings_degrees": [
+          76.6,
+          254.2,
+          344.0
+        ],
+        "intersection_branch_count": 3,
+        "intersection_closest_sample_fraction": 0.0,
+        "intersection_distance_end_m": 21.547,
+        "intersection_distance_mid_m": 21.195,
+        "intersection_distance_min_m": 20.845,
+        "intersection_distance_start_m": 20.845,
+        "map_match_acceptable": true,
+        "road_match_distance_p50_m": 4.899,
+        "road_match_distance_p95_m": 5.126,
+        "traffic_signal_distance_min_m": 33.268,
+        "trajectory_heading_delta_degrees_right_positive": 0.0
+      },
+      "sequence": "2014-11-18-13-20-12",
+      "source_video_id": "2014-11-18-13-20-12_stereo_centre_05"
+    },
+    {
+      "clip_id": "2014-11-18-13-20-12_stereo_centre_05__f004513-f004608",
+      "contexts": {
+        "public_map_topology": "PUBLIC MAP CONTEXT\nThis block is derived from a fixed OpenStreetMap snapshot and the public OPR trajectory. It is supporting evidence for road topology only; video evidence remains authoritative.\n- Nearest drivable intersection: 21.6 m; branches: 3.\n- Intersection distance at start/middle/end: 21.6/21.9/22.3 m.\n- Nearest mapped traffic signal: 33.9 m.\n- Coarse trajectory heading change: 0.0 deg (positive right, negative left).\n- Road-map match P95 error: 5.6 m."
+      },
+      "contexts_sha256": {
+        "public_map_topology": "1f02566373ff8bbb92972415e7582c95439f9268d3fc95b9606e3196e356d33f"
+      },
+      "features": {
+        "intersection_branch_bearings_degrees": [
+          76.6,
+          254.2,
+          344.0
+        ],
+        "intersection_branch_count": 3,
+        "intersection_closest_sample_fraction": 0.0,
+        "intersection_distance_end_m": 22.261,
+        "intersection_distance_mid_m": 21.907,
+        "intersection_distance_min_m": 21.554,
+        "intersection_distance_start_m": 21.554,
+        "map_match_acceptable": true,
+        "road_match_distance_p50_m": 5.409,
+        "road_match_distance_p95_m": 5.637,
+        "traffic_signal_distance_min_m": 33.946,
+        "trajectory_heading_delta_degrees_right_positive": 0.0
+      },
+      "sequence": "2014-11-18-13-20-12",
+      "source_video_id": "2014-11-18-13-20-12_stereo_centre_05"
+    },
+    {
+      "clip_id": "2014-11-18-13-20-12_stereo_centre_05__f004609-f004704",
+      "contexts": {
+        "public_map_topology": "PUBLIC MAP CONTEXT\nThis block is derived from a fixed OpenStreetMap snapshot and the public OPR trajectory. It is supporting evidence for road topology only; video evidence remains authoritative.\n- Nearest drivable intersection: 22.3 m; branches: 3.\n- Intersection distance at start/middle/end: 22.3/22.6/23.0 m.\n- Nearest mapped traffic signal: 34.6 m.\n- Coarse trajectory heading change: 0.0 deg (positive right, negative left).\n- Road-map match P95 error: 6.1 m."
+      },
+      "contexts_sha256": {
+        "public_map_topology": "52ac930b41304f8b989cfa3e00e5f7d93231b488b9eedda7ced63646245be8ef"
+      },
+      "features": {
+        "intersection_branch_bearings_degrees": [
+          76.6,
+          254.2,
+          344.0
+        ],
+        "intersection_branch_count": 3,
+        "intersection_closest_sample_fraction": 0.0,
+        "intersection_distance_end_m": 22.981,
+        "intersection_distance_mid_m": 22.625,
+        "intersection_distance_min_m": 22.269,
+        "intersection_distance_start_m": 22.269,
+        "map_match_acceptable": true,
+        "road_match_distance_p50_m": 5.92,
+        "road_match_distance_p95_m": 6.147,
+        "traffic_signal_distance_min_m": 34.63,
+        "trajectory_heading_delta_degrees_right_positive": 0.0
+      },
+      "sequence": "2014-11-18-13-20-12",
+      "source_video_id": "2014-11-18-13-20-12_stereo_centre_05"
+    },
+    {
+      "clip_id": "2014-11-18-13-20-12_stereo_centre_05__f004705-f004800",
+      "contexts": {
+        "public_map_topology": "PUBLIC MAP CONTEXT\nThis block is derived from a fixed OpenStreetMap snapshot and the public OPR trajectory. It is supporting evidence for road topology only; video evidence remains authoritative.\n- Nearest drivable intersection: 23.0 m; branches: 3.\n- Intersection distance at start/middle/end: 23.0/23.3/23.7 m.\n- Nearest mapped traffic signal: 35.3 m.\n- Coarse trajectory heading change: 0.0 deg (positive right, negative left).\n- Road-map match P95 error: 6.7 m."
+      },
+      "contexts_sha256": {
+        "public_map_topology": "ff195a185db28591c9ca9d1018d7fae0eb854060b34b95941d35ecf92f3982a0"
+      },
+      "features": {
+        "intersection_branch_bearings_degrees": [
+          76.6,
+          254.2,
+          344.0
+        ],
+        "intersection_branch_count": 3,
+        "intersection_closest_sample_fraction": 0.0,
+        "intersection_distance_end_m": 23.706,
+        "intersection_distance_mid_m": 23.347,
+        "intersection_distance_min_m": 22.989,
+        "intersection_distance_start_m": 22.989,
+        "map_match_acceptable": true,
+        "road_match_distance_p50_m": 6.431,
+        "road_match_distance_p95_m": 6.658,
+        "traffic_signal_distance_min_m": 35.319,
+        "trajectory_heading_delta_degrees_right_positive": 0.0
+      },
+      "sequence": "2014-11-18-13-20-12",
+      "source_video_id": "2014-11-18-13-20-12_stereo_centre_05"
+    },
+    {
+      "clip_id": "2014-11-18-13-20-12_stereo_centre_05__f004801-f004896",
+      "contexts": {
+        "public_map_topology": "PUBLIC MAP CONTEXT\nThis block is derived from a fixed OpenStreetMap snapshot and the public OPR trajectory. It is supporting evidence for road topology only; video evidence remains authoritative.\n- Nearest drivable intersection: 23.7 m; branches: 3.\n- Intersection distance at start/middle/end: 23.7/24.1/24.4 m.\n- Nearest mapped traffic signal: 36.0 m.\n- Coarse trajectory heading change: 0.0 deg (positive right, negative left).\n- Road-map match P95 error: 7.2 m."
+      },
+      "contexts_sha256": {
+        "public_map_topology": "53fcbf5045bbbf56ed550926524586313192aa25488905f473e838c7edac05fa"
+      },
+      "features": {
+        "intersection_branch_bearings_degrees": [
+          76.6,
+          254.2,
+          344.0
+        ],
+        "intersection_branch_count": 3,
+        "intersection_closest_sample_fraction": 0.0,
+        "intersection_distance_end_m": 24.435,
+        "intersection_distance_mid_m": 24.074,
+        "intersection_distance_min_m": 23.714,
+        "intersection_distance_start_m": 23.714,
+        "map_match_acceptable": true,
+        "road_match_distance_p50_m": 6.941,
+        "road_match_distance_p95_m": 7.169,
+        "traffic_signal_distance_min_m": 36.011,
+        "trajectory_heading_delta_degrees_right_positive": 0.0
+      },
+      "sequence": "2014-11-18-13-20-12",
+      "source_video_id": "2014-11-18-13-20-12_stereo_centre_05"
+    },
+    {
+      "clip_id": "2014-11-18-13-20-12_stereo_centre_05__f004897-f004992",
+      "contexts": {
+        "public_map_topology": "PUBLIC MAP CONTEXT\nThis block is derived from a fixed OpenStreetMap snapshot and the public OPR trajectory. It is supporting evidence for road topology only; video evidence remains authoritative.\n- Nearest drivable intersection: 24.4 m; branches: 3.\n- Intersection distance at start/middle/end: 24.4/24.8/32.9 m.\n- Nearest mapped traffic signal: 36.7 m.\n- Coarse trajectory heading change: 35.3 deg (positive right, negative left).\n- Road-map match P95 error: 8.9 m."
+      },
+      "contexts_sha256": {
+        "public_map_topology": "d458ffd045d584b3948b8699cc71aff591cef0cbb5293bb66210084e7dce985f"
+      },
+      "features": {
+        "intersection_branch_bearings_degrees": [
+          76.6,
+          254.2,
+          344.0
+        ],
+        "intersection_branch_count": 3,
+        "intersection_closest_sample_fraction": 0.0,
+        "intersection_distance_end_m": 32.873,
+        "intersection_distance_mid_m": 24.805,
+        "intersection_distance_min_m": 24.443,
+        "intersection_distance_start_m": 24.443,
+        "map_match_acceptable": true,
+        "road_match_distance_p50_m": 7.452,
+        "road_match_distance_p95_m": 8.888,
+        "traffic_signal_distance_min_m": 36.708,
+        "trajectory_heading_delta_degrees_right_positive": 35.343
+      },
+      "sequence": "2014-11-18-13-20-12",
+      "source_video_id": "2014-11-18-13-20-12_stereo_centre_05"
+    },
+    {
+      "clip_id": "2014-11-18-13-20-12_stereo_centre_05__f004993-f005088",
+      "contexts": {
+        "public_map_topology": "PUBLIC MAP CONTEXT\nThis block is derived from a fixed OpenStreetMap snapshot and the public OPR trajectory. It is supporting evidence for road topology only; video evidence remains authoritative.\n- Nearest drivable intersection: 33.2 m; branches: 3.\n- Intersection distance at start/middle/end: 33.2/41.4/44.0 m.\n- Nearest mapped traffic signal: 33.0 m.\n- Coarse trajectory heading change: 13.8 deg (positive right, negative left).\n- Road-map match P95 error: 10.1 m."
+      },
+      "contexts_sha256": {
+        "public_map_topology": "079f6b5e69db4cd2254890382e3ad13318a8c87d05a82cdd7afbb41fef615374"
+      },
+      "features": {
+        "intersection_branch_bearings_degrees": [
+          76.6,
+          254.2,
+          344.0
+        ],
+        "intersection_branch_count": 3,
+        "intersection_closest_sample_fraction": 0.0,
+        "intersection_distance_end_m": 43.996,
+        "intersection_distance_mid_m": 41.443,
+        "intersection_distance_min_m": 33.155,
+        "intersection_distance_start_m": 33.155,
+        "map_match_acceptable": true,
+        "road_match_distance_p50_m": 9.109,
+        "road_match_distance_p95_m": 10.088,
+        "traffic_signal_distance_min_m": 33.05,
+        "trajectory_heading_delta_degrees_right_positive": 13.798
+      },
+      "sequence": "2014-11-18-13-20-12",
+      "source_video_id": "2014-11-18-13-20-12_stereo_centre_05"
+    },
+    {
+      "clip_id": "2014-11-18-13-20-12_stereo_centre_05__f005089-f005184",
+      "contexts": {
+        "public_map_topology": "PUBLIC MAP CONTEXT\nThis block is derived from a fixed OpenStreetMap snapshot and the public OPR trajectory. It is supporting evidence for road topology only; video evidence remains authoritative.\n- Nearest drivable intersection: 19.3 m; branches: 3.\n- Intersection distance at start/middle/end: 43.7/32.4/19.3 m.\n- Nearest mapped traffic signal: 9.7 m.\n- Coarse trajectory heading change: 6.2 deg (positive right, negative left).\n- Road-map match P95 error: 7.0 m."
+      },
+      "contexts_sha256": {
+        "public_map_topology": "25362a5612ac9fd2c6504411a13fa7864886aac80507620ac31330dcb7773205"
+      },
+      "features": {
+        "intersection_branch_bearings_degrees": [
+          71.2,
+          108.4,
+          266.8
+        ],
+        "intersection_branch_count": 3,
+        "intersection_closest_sample_fraction": 1.0,
+        "intersection_distance_end_m": 19.337,
+        "intersection_distance_mid_m": 32.412,
+        "intersection_distance_min_m": 19.337,
+        "intersection_distance_start_m": 43.662,
+        "map_match_acceptable": true,
+        "road_match_distance_p50_m": 6.396,
+        "road_match_distance_p95_m": 6.979,
+        "traffic_signal_distance_min_m": 9.723,
+        "trajectory_heading_delta_degrees_right_positive": 6.243
+      },
+      "sequence": "2014-11-18-13-20-12",
+      "source_video_id": "2014-11-18-13-20-12_stereo_centre_05"
+    },
+    {
+      "clip_id": "2014-11-18-13-20-12_stereo_centre_05__f005185-f005280",
+      "contexts": {
+        "public_map_topology": "PUBLIC MAP CONTEXT\nThis block is derived from a fixed OpenStreetMap snapshot and the public OPR trajectory. It is supporting evidence for road topology only; video evidence remains authoritative.\n- Nearest drivable intersection: 4.4 m; branches: 3.\n- Intersection distance at start/middle/end: 19.1/6.8/10.7 m.\n- Nearest mapped traffic signal: 6.1 m.\n- Coarse trajectory heading change: -52.7 deg (positive right, negative left).\n- Road-map match P95 error: 6.5 m."
+      },
+      "contexts_sha256": {
+        "public_map_topology": "3177c133e3577aa2e35e7b0a42da0b01ec09969a812af3dcf54ad26db5aa0b95"
+      },
+      "features": {
+        "intersection_branch_bearings_degrees": [
+          71.2,
+          108.4,
+          266.8
+        ],
+        "intersection_branch_count": 3,
+        "intersection_closest_sample_fraction": 0.625,
+        "intersection_distance_end_m": 10.729,
+        "intersection_distance_mid_m": 6.815,
+        "intersection_distance_min_m": 4.39,
+        "intersection_distance_start_m": 19.102,
+        "map_match_acceptable": true,
+        "road_match_distance_p50_m": 5.075,
+        "road_match_distance_p95_m": 6.532,
+        "traffic_signal_distance_min_m": 6.076,
+        "trajectory_heading_delta_degrees_right_positive": -52.737
+      },
+      "sequence": "2014-11-18-13-20-12",
+      "source_video_id": "2014-11-18-13-20-12_stereo_centre_05"
+    },
+    {
+      "clip_id": "2014-11-18-13-20-12_stereo_centre_05__f005281-f005376",
+      "contexts": {
+        "public_map_topology": "PUBLIC MAP CONTEXT\nThis block is derived from a fixed OpenStreetMap snapshot and the public OPR trajectory. It is supporting evidence for road topology only; video evidence remains authoritative.\n- Nearest drivable intersection: 3.1 m; branches: 3.\n- Intersection distance at start/middle/end: 10.5/3.1/17.6 m.\n- Nearest mapped traffic signal: 2.7 m.\n- Coarse trajectory heading change: -28.4 deg (positive right, negative left).\n- Road-map match P95 error: 2.3 m."
+      },
+      "contexts_sha256": {
+        "public_map_topology": "489f3332722ea4bbdd5e93833b1a11d2ea69b19d5f04d356a212c3ac663ad1fc"
+      },
+      "features": {
+        "intersection_branch_bearings_degrees": [
+          6.9,
+          170.7,
+          220.0
+        ],
+        "intersection_branch_count": 3,
+        "intersection_closest_sample_fraction": 0.5,
+        "intersection_distance_end_m": 17.616,
+        "intersection_distance_mid_m": 3.057,
+        "intersection_distance_min_m": 3.057,
+        "intersection_distance_start_m": 10.486,
+        "map_match_acceptable": true,
+        "road_match_distance_p50_m": 1.412,
+        "road_match_distance_p95_m": 2.256,
+        "traffic_signal_distance_min_m": 2.682,
+        "trajectory_heading_delta_degrees_right_positive": -28.373
+      },
+      "sequence": "2014-11-18-13-20-12",
+      "source_video_id": "2014-11-18-13-20-12_stereo_centre_05"
+    },
+    {
+      "clip_id": "2014-11-18-13-20-12_stereo_centre_05__f005377-f005472",
+      "contexts": {
+        "public_map_topology": "PUBLIC MAP CONTEXT\nThis block is derived from a fixed OpenStreetMap snapshot and the public OPR trajectory. It is supporting evidence for road topology only; video evidence remains authoritative.\n- Nearest drivable intersection: 17.9 m; branches: 3.\n- Intersection distance at start/middle/end: 17.9/34.6/38.1 m.\n- Nearest mapped traffic signal: 13.9 m.\n- Coarse trajectory heading change: 0.8 deg (positive right, negative left).\n- Road-map match P95 error: 1.6 m."
+      },
+      "contexts_sha256": {
+        "public_map_topology": "33c5a02434ce8df03f0e7e8ad4864a84230e36174faa2941a22b89ef309d55ba"
+      },
+      "features": {
+        "intersection_branch_bearings_degrees": [
+          6.9,
+          170.7,
+          220.0
+        ],
+        "intersection_branch_count": 3,
+        "intersection_closest_sample_fraction": 0.0,
+        "intersection_distance_end_m": 38.073,
+        "intersection_distance_mid_m": 34.595,
+        "intersection_distance_min_m": 17.935,
+        "intersection_distance_start_m": 17.935,
+        "map_match_acceptable": true,
+        "road_match_distance_p50_m": 1.266,
+        "road_match_distance_p95_m": 1.644,
+        "traffic_signal_distance_min_m": 13.881,
+        "trajectory_heading_delta_degrees_right_positive": 0.831
+      },
+      "sequence": "2014-11-18-13-20-12",
+      "source_video_id": "2014-11-18-13-20-12_stereo_centre_05"
+    },
+    {
+      "clip_id": "2014-11-18-13-20-12_stereo_centre_05__f005473-f005568",
+      "contexts": {
+        "public_map_topology": "PUBLIC MAP CONTEXT\nThis block is derived from a fixed OpenStreetMap snapshot and the public OPR trajectory. It is supporting evidence for road topology only; video evidence remains authoritative.\n- Nearest drivable intersection: 13.2 m; branches: 3.\n- Intersection distance at start/middle/end: 38.1/27.9/13.2 m.\n- Nearest mapped traffic signal: 47.2 m.\n- Coarse trajectory heading change: 32.1 deg (positive right, negative left).\n- Road-map match P95 error: 3.5 m."
+      },
+      "contexts_sha256": {
+        "public_map_topology": "a1d5ae3c021cf3a6107606e10d354921253c97462da86e34d4e15b135519a0a1"
+      },
+      "features": {
+        "intersection_branch_bearings_degrees": [
+          2.1,
+          94.4,
+          195.7
+        ],
+        "intersection_branch_count": 3,
+        "intersection_closest_sample_fraction": 1.0,
+        "intersection_distance_end_m": 13.245,
+        "intersection_distance_mid_m": 27.926,
+        "intersection_distance_min_m": 13.245,
+        "intersection_distance_start_m": 38.07,
+        "map_match_acceptable": true,
+        "road_match_distance_p50_m": 0.581,
+        "road_match_distance_p95_m": 3.477,
+        "traffic_signal_distance_min_m": 47.202,
+        "trajectory_heading_delta_degrees_right_positive": 32.077
+      },
+      "sequence": "2014-11-18-13-20-12",
+      "source_video_id": "2014-11-18-13-20-12_stereo_centre_05"
+    },
+    {
+      "clip_id": "2014-11-18-13-20-12_stereo_centre_05__f005569-f005664",
+      "contexts": {
+        "public_map_topology": "PUBLIC MAP CONTEXT\nThis block is derived from a fixed OpenStreetMap snapshot and the public OPR trajectory. It is supporting evidence for road topology only; video evidence remains authoritative.\n- Nearest drivable intersection: 6.7 m; branches: 3.\n- Intersection distance at start/middle/end: 13.0/6.7/19.4 m.\n- Nearest mapped traffic signal: 24.0 m.\n- Coarse trajectory heading change: -46.2 deg (positive right, negative left).\n- Road-map match P95 error: 6.1 m."
+      },
+      "contexts_sha256": {
+        "public_map_topology": "51951034fe177a850fe4bc28df3b43b40d715960f223790eb67542ae6e32abe0"
+      },
+      "features": {
+        "intersection_branch_bearings_degrees": [
+          2.1,
+          94.4,
+          195.7
+        ],
+        "intersection_branch_count": 3,
+        "intersection_closest_sample_fraction": 0.5,
+        "intersection_distance_end_m": 19.374,
+        "intersection_distance_mid_m": 6.675,
+        "intersection_distance_min_m": 6.675,
+        "intersection_distance_start_m": 12.991,
+        "map_match_acceptable": true,
+        "road_match_distance_p50_m": 4.255,
+        "road_match_distance_p95_m": 6.116,
+        "traffic_signal_distance_min_m": 23.972,
+        "trajectory_heading_delta_degrees_right_positive": -46.226
+      },
+      "sequence": "2014-11-18-13-20-12",
+      "source_video_id": "2014-11-18-13-20-12_stereo_centre_05"
+    },
+    {
+      "clip_id": "2014-11-18-13-20-12_stereo_centre_05__f005665-f005760",
+      "contexts": {
+        "public_map_topology": "PUBLIC MAP CONTEXT\nThis block is derived from a fixed OpenStreetMap snapshot and the public OPR trajectory. It is supporting evidence for road topology only; video evidence remains authoritative.\n- Nearest drivable intersection: 5.3 m; branches: 3.\n- Intersection distance at start/middle/end: 19.7/11.1/5.9 m.\n- Nearest mapped traffic signal: 5.3 m.\n- Coarse trajectory heading change: 97.4 deg (positive right, negative left).\n- Road-map match P95 error: 4.7 m."
+      },
+      "contexts_sha256": {
+        "public_map_topology": "c0622bf39fd7e28b3e786acbe272f1a99171437169dac5d1021f4ee7262d85c7"
+      },
+      "features": {
+        "intersection_branch_bearings_degrees": [
+          83.8,
+          221.5,
+          317.7
+        ],
+        "intersection_branch_count": 3,
+        "intersection_closest_sample_fraction": 0.75,
+        "intersection_distance_end_m": 5.884,
+        "intersection_distance_mid_m": 11.066,
+        "intersection_distance_min_m": 5.308,
+        "intersection_distance_start_m": 19.698,
+        "map_match_acceptable": true,
+        "road_match_distance_p50_m": 2.394,
+        "road_match_distance_p95_m": 4.737,
+        "traffic_signal_distance_min_m": 5.308,
+        "trajectory_heading_delta_degrees_right_positive": 97.4
+      },
+      "sequence": "2014-11-18-13-20-12",
+      "source_video_id": "2014-11-18-13-20-12_stereo_centre_05"
+    },
+    {
+      "clip_id": "2014-11-18-13-20-12_stereo_centre_05__f005761-f005856",
+      "contexts": {
+        "public_map_topology": "PUBLIC MAP CONTEXT\nThis block is derived from a fixed OpenStreetMap snapshot and the public OPR trajectory. It is supporting evidence for road topology only; video evidence remains authoritative.\n- Nearest drivable intersection: 6.0 m; branches: 3.\n- Intersection distance at start/middle/end: 6.0/24.5/39.8 m.\n- Nearest mapped traffic signal: 6.0 m.\n- Coarse trajectory heading change: -22.3 deg (positive right, negative left).\n- Road-map match P95 error: 4.6 m."
+      },
+      "contexts_sha256": {
+        "public_map_topology": "a8cc24766b0471f9c754b1ddaa4c24d124e2c7fe85327379e857f584d01196bd"
+      },
+      "features": {
+        "intersection_branch_bearings_degrees": [
+          83.8,
+          221.5,
+          317.7
+        ],
+        "intersection_branch_count": 3,
+        "intersection_closest_sample_fraction": 0.0,
+        "intersection_distance_end_m": 39.778,
+        "intersection_distance_mid_m": 24.517,
+        "intersection_distance_min_m": 6.045,
+        "intersection_distance_start_m": 6.045,
+        "map_match_acceptable": true,
+        "road_match_distance_p50_m": 2.5,
+        "road_match_distance_p95_m": 4.552,
+        "traffic_signal_distance_min_m": 6.045,
+        "trajectory_heading_delta_degrees_right_positive": -22.296
+      },
+      "sequence": "2014-11-18-13-20-12",
+      "source_video_id": "2014-11-18-13-20-12_stereo_centre_05"
+    },
+    {
+      "clip_id": "2014-11-18-13-20-12_stereo_centre_05__f005857-f005952",
+      "contexts": {
+        "public_map_topology": "PUBLIC MAP CONTEXT\nThis block is derived from a fixed OpenStreetMap snapshot and the public OPR trajectory. It is supporting evidence for road topology only; video evidence remains authoritative.\n- Nearest drivable intersection: 21.6 m; branches: 3.\n- Intersection distance at start/middle/end: 39.4/38.8/21.6 m.\n- Nearest mapped traffic signal: 47.2 m.\n- Coarse trajectory heading change: 16.0 deg (positive right, negative left).\n- Road-map match P95 error: 2.1 m."
+      },
+      "contexts_sha256": {
+        "public_map_topology": "e0c184f964e7135b5263a2c881ce583fd912c924f40246a1ea91b2959a6cb7b1"
+      },
+      "features": {
+        "intersection_branch_bearings_degrees": [
+          85.9,
+          265.6,
+          351.4
+        ],
+        "intersection_branch_count": 3,
+        "intersection_closest_sample_fraction": 1.0,
+        "intersection_distance_end_m": 21.555,
+        "intersection_distance_mid_m": 38.751,
+        "intersection_distance_min_m": 21.555,
+        "intersection_distance_start_m": 39.427,
+        "map_match_acceptable": true,
+        "road_match_distance_p50_m": 1.333,
+        "road_match_distance_p95_m": 2.124,
+        "traffic_signal_distance_min_m": 47.185,
+        "trajectory_heading_delta_degrees_right_positive": 16.014
+      },
+      "sequence": "2014-11-18-13-20-12",
+      "source_video_id": "2014-11-18-13-20-12_stereo_centre_05"
+    }
+  ],
+  "schema_version": 1,
+  "source": "OpenStreetMap snapshot fused with public OPR trajectory",
+  "source_video_count": 1,
+  "split": "development",
+  "utm_epsg": 32630
+}

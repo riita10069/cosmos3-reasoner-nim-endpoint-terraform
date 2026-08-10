@@ -1,0 +1,410 @@
+{
+  "generated_at": "2026-08-09T02:02:08.224+00:00",
+  "groups": [
+    {
+      "concurrency": 4,
+      "failed_requests": [
+        0,
+        0,
+        0
+      ],
+      "metrics": {
+        "clips_per_gpu_hour": {
+          "count": 3,
+          "maximum": 2630.0181110839776,
+          "mean": 2605.3570603009757,
+          "minimum": 2586.480285535928,
+          "sample_standard_deviation": 22.33783673841336
+        },
+        "decode_seconds_per_clip": {
+          "count": 3,
+          "maximum": 1.4474627333333332,
+          "mean": 1.4351613555555556,
+          "minimum": 1.4244208666666667,
+          "sample_standard_deviation": 0.011599964890623662
+        },
+        "estimated_usd_per_1000_clips": {
+          "count": 3,
+          "maximum": 0.8668459653600001,
+          "mean": 0.8606073916,
+          "minimum": 0.8524960305600001,
+          "sample_standard_deviation": 0.007355994585245432
+        },
+        "prefill_seconds_per_clip": {
+          "count": 3,
+          "maximum": 1.4165670000000001,
+          "mean": 1.3993680222222222,
+          "minimum": 1.3892142,
+          "sample_standard_deviation": 0.01497563286013258
+        },
+        "request_e2e_seconds_p95": {
+          "count": 3,
+          "maximum": 5.8694334,
+          "mean": 5.727893666666667,
+          "minimum": 5.640159799999999,
+          "sample_standard_deviation": 0.12374530043623246
+        },
+        "wall_seconds_per_clip": {
+          "count": 3,
+          "maximum": 1.3918528666666667,
+          "mean": 1.381835888888889,
+          "minimum": 1.3688118666666667,
+          "sample_standard_deviation": 0.011811166642976016
+        }
+      },
+      "model": "nvidia/Cosmos3-Nano",
+      "preemptions": [
+        0,
+        0,
+        0
+      ],
+      "profile": "road-adaptive-24-reasoned",
+      "replicate_count": 3,
+      "run_ids": [
+        "road-serving-repeat-v2-road-nano-nano-chunked-2048-c4-r01",
+        "road-serving-repeat-v2-road-nano-nano-chunked-2048-c4-r02",
+        "road-serving-repeat-v2-road-nano-nano-chunked-2048-c4-r03"
+      ],
+      "serving_profile": "nano-chunked-2048",
+      "speedup_vs_default_c1": 2.608944139772828
+    },
+    {
+      "concurrency": 4,
+      "failed_requests": [
+        0,
+        0,
+        0
+      ],
+      "metrics": {
+        "clips_per_gpu_hour": {
+          "count": 3,
+          "maximum": 2462.349311062022,
+          "mean": 2347.9655298794482,
+          "minimum": 2285.4321013570516,
+          "sample_standard_deviation": 99.20317069371637
+        },
+        "decode_seconds_per_clip": {
+          "count": 3,
+          "maximum": 1.7985870000000002,
+          "mean": 1.7743971111111112,
+          "minimum": 1.7601752,
+          "sample_standard_deviation": 0.021056757360612504
+        },
+        "estimated_usd_per_1000_clips": {
+          "count": 3,
+          "maximum": 0.98103111384,
+          "mean": 0.95601428968,
+          "minimum": 0.9105450595200001,
+          "sample_standard_deviation": 0.039443588158180054
+        },
+        "prefill_seconds_per_clip": {
+          "count": 3,
+          "maximum": 1.3050253333333333,
+          "mean": 1.2940656888888888,
+          "minimum": 1.2839398666666668,
+          "sample_standard_deviation": 0.01056743444557283
+        },
+        "request_e2e_seconds_p95": {
+          "count": 3,
+          "maximum": 6.0224934999999995,
+          "mean": 5.9139823,
+          "minimum": 5.8453804,
+          "sample_standard_deviation": 0.09506222550398234
+        },
+        "wall_seconds_per_clip": {
+          "count": 3,
+          "maximum": 1.5751944666666666,
+          "mean": 1.5350261555555555,
+          "minimum": 1.4620184,
+          "sample_standard_deviation": 0.06333267205873484
+        }
+      },
+      "model": "nvidia/Cosmos3-Nano",
+      "preemptions": [
+        0,
+        0,
+        0
+      ],
+      "profile": "road-adaptive-24-reasoned",
+      "replicate_count": 3,
+      "run_ids": [
+        "road-serving-repeat-v2-road-nano-nano-chunked-8192-c4-r01",
+        "road-serving-repeat-v2-road-nano-nano-chunked-8192-c4-r02",
+        "road-serving-repeat-v2-road-nano-nano-chunked-8192-c4-r03"
+      ],
+      "serving_profile": "nano-chunked-8192",
+      "speedup_vs_default_c1": 2.348580596751902
+    },
+    {
+      "concurrency": 1,
+      "failed_requests": [
+        0,
+        0,
+        0
+      ],
+      "metrics": {
+        "clips_per_gpu_hour": {
+          "count": 3,
+          "maximum": 1049.236735651197,
+          "mean": 1000.5196932215177,
+          "minimum": 943.0399174651465,
+          "sample_standard_deviation": 53.63795456322239
+        },
+        "decode_seconds_per_clip": {
+          "count": 3,
+          "maximum": 0.3831655333333333,
+          "mean": 0.3769380222222222,
+          "minimum": 0.37379993333333333,
+          "sample_standard_deviation": 0.005393237718696468
+        },
+        "estimated_usd_per_1000_clips": {
+          "count": 3,
+          "maximum": 2.37750275304,
+          "mean": 2.24527661096,
+          "minimum": 2.13686761416,
+          "sample_standard_deviation": 0.12207276446003709
+        },
+        "prefill_seconds_per_clip": {
+          "count": 3,
+          "maximum": 0.9794538,
+          "mean": 0.9780035111111111,
+          "minimum": 0.976796,
+          "sample_standard_deviation": 0.0013454296700448874
+        },
+        "request_e2e_seconds_p95": {
+          "count": 3,
+          "maximum": 2.6478102999999997,
+          "mean": 2.6014548666666664,
+          "minimum": 2.5693335999999998,
+          "sample_standard_deviation": 0.04112914704006556
+        },
+        "wall_seconds_per_clip": {
+          "count": 3,
+          "maximum": 3.8174417999999997,
+          "mean": 3.6051326444444443,
+          "minimum": 3.4310655333333333,
+          "sample_standard_deviation": 0.19600636554276968
+        }
+      },
+      "model": "nvidia/Cosmos3-Nano",
+      "preemptions": [
+        0,
+        0,
+        0
+      ],
+      "profile": "road-adaptive-24-reasoned",
+      "replicate_count": 3,
+      "run_ids": [
+        "road-serving-repeat-v2-road-nano-nano-server-default-c1-r01",
+        "road-serving-repeat-v2-road-nano-nano-server-default-c1-r02",
+        "road-serving-repeat-v2-road-nano-nano-server-default-c1-r03"
+      ],
+      "serving_profile": "nano-server-default",
+      "speedup_vs_default_c1": 1.0
+    },
+    {
+      "concurrency": 2,
+      "failed_requests": [
+        0,
+        0,
+        0
+      ],
+      "metrics": {
+        "clips_per_gpu_hour": {
+          "count": 3,
+          "maximum": 1957.4624558700966,
+          "mean": 1947.5378303877385,
+          "minimum": 1933.2663659411166,
+          "sample_standard_deviation": 12.670199236742551
+        },
+        "decode_seconds_per_clip": {
+          "count": 3,
+          "maximum": 0.7467774666666667,
+          "mean": 0.739184,
+          "minimum": 0.7351526666666667,
+          "sample_standard_deviation": 0.006580318318541517
+        },
+        "estimated_usd_per_1000_clips": {
+          "count": 3,
+          "maximum": 1.15973672304,
+          "mean": 1.1512708088799999,
+          "minimum": 1.1454012787199999,
+          "sample_standard_deviation": 0.007512133409993964
+        },
+        "prefill_seconds_per_clip": {
+          "count": 3,
+          "maximum": 1.154965,
+          "mean": 1.1441362888888889,
+          "minimum": 1.1309359333333333,
+          "sample_standard_deviation": 0.012188828255657974
+        },
+        "request_e2e_seconds_p95": {
+          "count": 3,
+          "maximum": 3.8966866,
+          "mean": 3.8705996666666667,
+          "minimum": 3.8368528,
+          "sample_standard_deviation": 0.030643544827799015
+        },
+        "wall_seconds_per_clip": {
+          "count": 3,
+          "maximum": 1.8621334666666667,
+          "mean": 1.8485401555555556,
+          "minimum": 1.8391157333333332,
+          "sample_standard_deviation": 0.012061871242764864
+        }
+      },
+      "model": "nvidia/Cosmos3-Nano",
+      "preemptions": [
+        0,
+        0,
+        0
+      ],
+      "profile": "road-adaptive-24-reasoned",
+      "replicate_count": 3,
+      "run_ids": [
+        "road-serving-repeat-v2-road-nano-nano-server-default-c2-r01",
+        "road-serving-repeat-v2-road-nano-nano-server-default-c2-r02",
+        "road-serving-repeat-v2-road-nano-nano-server-default-c2-r03"
+      ],
+      "serving_profile": "nano-server-default",
+      "speedup_vs_default_c1": 1.95025930792451
+    },
+    {
+      "concurrency": 4,
+      "failed_requests": [
+        0,
+        0,
+        0
+      ],
+      "metrics": {
+        "clips_per_gpu_hour": {
+          "count": 3,
+          "maximum": 2612.357622276599,
+          "mean": 2601.27129848418,
+          "minimum": 2593.1377028632032,
+          "sample_standard_deviation": 9.944359119881977
+        },
+        "decode_seconds_per_clip": {
+          "count": 3,
+          "maximum": 1.4323027333333334,
+          "mean": 1.4306796444444443,
+          "minimum": 1.4275123333333333,
+          "sample_standard_deviation": 0.0027432553187233507
+        },
+        "estimated_usd_per_1000_clips": {
+          "count": 3,
+          "maximum": 0.86462049336,
+          "mean": 0.8619254024799999,
+          "minimum": 0.8582592141600001,
+          "sample_standard_deviation": 0.0032899454317007835
+        },
+        "prefill_seconds_per_clip": {
+          "count": 3,
+          "maximum": 1.3974014,
+          "mean": 1.3946708666666667,
+          "minimum": 1.3900822,
+          "sample_standard_deviation": 0.003997770225179734
+        },
+        "request_e2e_seconds_p95": {
+          "count": 3,
+          "maximum": 5.8103576,
+          "mean": 5.7497907999999995,
+          "minimum": 5.6958557999999995,
+          "sample_standard_deviation": 0.05753825796146427
+        },
+        "wall_seconds_per_clip": {
+          "count": 3,
+          "maximum": 1.3882795333333333,
+          "mean": 1.3839521555555556,
+          "minimum": 1.3780655333333334,
+          "sample_standard_deviation": 0.005282507115768778
+        }
+      },
+      "model": "nvidia/Cosmos3-Nano",
+      "preemptions": [
+        0,
+        0,
+        0
+      ],
+      "profile": "road-adaptive-24-reasoned",
+      "replicate_count": 3,
+      "run_ids": [
+        "road-serving-repeat-v2-road-nano-nano-server-default-c4-r01",
+        "road-serving-repeat-v2-road-nano-nano-server-default-c4-r02",
+        "road-serving-repeat-v2-road-nano-nano-server-default-c4-r03"
+      ],
+      "serving_profile": "nano-server-default",
+      "speedup_vs_default_c1": 2.6049546799522467
+    },
+    {
+      "concurrency": 8,
+      "failed_requests": [
+        0,
+        0,
+        0
+      ],
+      "metrics": {
+        "clips_per_gpu_hour": {
+          "count": 3,
+          "maximum": 3075.1134033487306,
+          "mean": 2958.2106092857757,
+          "minimum": 2894.5918303897834,
+          "sample_standard_deviation": 101.37257656845807
+        },
+        "decode_seconds_per_clip": {
+          "count": 3,
+          "maximum": 3.3047678,
+          "mean": 3.213786333333333,
+          "minimum": 3.0704371333333333,
+          "sample_standard_deviation": 0.12563637990631712
+        },
+        "estimated_usd_per_1000_clips": {
+          "count": 3,
+          "maximum": 0.7745755296000001,
+          "mean": 0.7585000651200001,
+          "minimum": 0.72910481856,
+          "sample_standard_deviation": 0.02549429027478142
+        },
+        "prefill_seconds_per_clip": {
+          "count": 3,
+          "maximum": 1.586438,
+          "mean": 1.5442313111111112,
+          "minimum": 1.5192880666666668,
+          "sample_standard_deviation": 0.036753207645491164
+        },
+        "request_e2e_seconds_p95": {
+          "count": 3,
+          "maximum": 15.1478269,
+          "mean": 13.777866333333334,
+          "minimum": 13.0251226,
+          "sample_standard_deviation": 1.1883542614987102
+        },
+        "wall_seconds_per_clip": {
+          "count": 3,
+          "maximum": 1.2436986666666667,
+          "mean": 1.2178870666666668,
+          "minimum": 1.1706885333333332,
+          "sample_standard_deviation": 0.04093495548295029
+        }
+      },
+      "model": "nvidia/Cosmos3-Nano",
+      "preemptions": [
+        0,
+        0,
+        0
+      ],
+      "profile": "road-adaptive-24-reasoned",
+      "replicate_count": 3,
+      "run_ids": [
+        "road-serving-repeat-v2-road-nano-nano-server-default-c8-r01",
+        "road-serving-repeat-v2-road-nano-nano-server-default-c8-r02",
+        "road-serving-repeat-v2-road-nano-nano-server-default-c8-r03"
+      ],
+      "serving_profile": "nano-server-default",
+      "speedup_vs_default_c1": 2.960153484765728
+    }
+  ],
+  "schema_version": 1,
+  "source_path": "${ROAD_ARTIFACT_ROOT}/evaluations/road-serving-repeat-v2/road-complete-gt-summary.json",
+  "source_sha256": "dda1e4d9dbb9c6b34d65d98c6a2302741e551f2b83d9768f843a478da293883e"
+}

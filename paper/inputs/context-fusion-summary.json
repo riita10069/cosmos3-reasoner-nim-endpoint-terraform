@@ -1,0 +1,2056 @@
+{
+  "baseline_profile": "road-adaptive-24-reasoned",
+  "context_profiles": [
+    "road-adaptive-24-reasoned-opr-numeric-ego",
+    "road-adaptive-24-reasoned-visual-motion-ego"
+  ],
+  "dataset": "ROAD",
+  "fusion_constraint": "Late fusion replaces only the predeclared tag group. ROAD ground truth is used only for post-hoc evaluation.",
+  "generated_at": "2026-08-09T06:49:50.394+00:00",
+  "ground_truth_path": "${ROAD_ARTIFACT_ROOT}/road-gt-v2/road-ground-truth.jsonl",
+  "ground_truth_sha256": "17e00dd85a2a22d08436091ff02a78b9ebf2fbbc08d7c4c603ef98fa8c30d5ae",
+  "results_sha256": "72a2cdaef4d597e7a7a569642fb1782be05db25b4cd44feea13034727cb804c6",
+  "rows": [
+    {
+      "baseline_profile": "road-adaptive-24-reasoned",
+      "clip_count": 169,
+      "context_profile": null,
+      "counts": {
+        "abstained_negative": 0,
+        "abstained_positive": 0,
+        "false_negative": 206,
+        "false_positive": 54,
+        "known_pairs": 2181,
+        "true_negative": 1583,
+        "true_positive": 338
+      },
+      "metrics": {
+        "coverage": 1.0,
+        "overall_accuracy": 0.8807886290692343,
+        "precision": 0.8622448979591837,
+        "selective_accuracy": 0.8807886290692343,
+        "selective_balanced_accuracy": 0.7941681788781487,
+        "selective_f1": 0.7222222222222223,
+        "selective_mcc": 0.6629812914822807,
+        "selective_recall": 0.6213235294117647,
+        "selective_specificity": 0.9670128283445327,
+        "strict_balanced_accuracy": 0.7941681788781487,
+        "strict_f1": 0.7222222222222223,
+        "strict_recall": 0.6213235294117647,
+        "strict_specificity": 0.9670128283445327
+      },
+      "paired_correctness": {
+        "improved_pairs": 0,
+        "regressed_pairs": 0,
+        "unchanged_correct_pairs": 1921,
+        "unchanged_incorrect_pairs": 260
+      },
+      "policy": "baseline",
+      "replaced_tags": [],
+      "request_passes": 1,
+      "tags": [
+        {
+          "counts": {
+            "abstained_negative": 0,
+            "abstained_positive": 0,
+            "false_negative": 31,
+            "false_positive": 8,
+            "known_pairs": 168,
+            "true_negative": 103,
+            "true_positive": 26
+          },
+          "metrics": {
+            "coverage": 1.0,
+            "overall_accuracy": 0.7678571428571429,
+            "precision": 0.7647058823529411,
+            "selective_accuracy": 0.7678571428571429,
+            "selective_balanced_accuracy": 0.6920341394025604,
+            "selective_f1": 0.5714285714285713,
+            "selective_mcc": 0.4526009890498996,
+            "selective_recall": 0.45614035087719296,
+            "selective_specificity": 0.9279279279279279,
+            "strict_balanced_accuracy": 0.6920341394025604,
+            "strict_f1": 0.5714285714285713,
+            "strict_recall": 0.45614035087719296,
+            "strict_specificity": 0.9279279279279279
+          },
+          "replaced_from_context": false,
+          "tag": "car_braking"
+        },
+        {
+          "counts": {
+            "abstained_negative": 0,
+            "abstained_positive": 0,
+            "false_negative": 46,
+            "false_positive": 2,
+            "known_pairs": 167,
+            "true_negative": 89,
+            "true_positive": 30
+          },
+          "metrics": {
+            "coverage": 1.0,
+            "overall_accuracy": 0.7125748502994012,
+            "precision": 0.9375,
+            "selective_accuracy": 0.7125748502994012,
+            "selective_balanced_accuracy": 0.6863794100636206,
+            "selective_f1": 0.5555555555555556,
+            "selective_mcc": 0.47164316742796975,
+            "selective_recall": 0.39473684210526316,
+            "selective_specificity": 0.978021978021978,
+            "strict_balanced_accuracy": 0.6863794100636206,
+            "strict_f1": 0.5555555555555556,
+            "strict_recall": 0.39473684210526316,
+            "strict_specificity": 0.978021978021978
+          },
+          "replaced_from_context": false,
+          "tag": "car_stopped"
+        },
+        {
+          "counts": {
+            "abstained_negative": 0,
+            "abstained_positive": 0,
+            "false_negative": 33,
+            "false_positive": 1,
+            "known_pairs": 169,
+            "true_negative": 86,
+            "true_positive": 49
+          },
+          "metrics": {
+            "coverage": 1.0,
+            "overall_accuracy": 0.7988165680473372,
+            "precision": 0.98,
+            "selective_accuracy": 0.7988165680473372,
+            "selective_balanced_accuracy": 0.7930333613680964,
+            "selective_f1": 0.7424242424242423,
+            "selective_mcc": 0.641734122247794,
+            "selective_recall": 0.5975609756097561,
+            "selective_specificity": 0.9885057471264368,
+            "strict_balanced_accuracy": 0.7930333613680964,
+            "strict_f1": 0.7424242424242423,
+            "strict_recall": 0.5975609756097561,
+            "strict_specificity": 0.9885057471264368
+          },
+          "replaced_from_context": false,
+          "tag": "cyclist_present"
+        },
+        {
+          "counts": {
+            "abstained_negative": 0,
+            "abstained_positive": 0,
+            "false_negative": 1,
+            "false_positive": 3,
+            "known_pairs": 169,
+            "true_negative": 162,
+            "true_positive": 3
+          },
+          "metrics": {
+            "coverage": 1.0,
+            "overall_accuracy": 0.9763313609467456,
+            "precision": 0.5,
+            "selective_accuracy": 0.9763313609467456,
+            "selective_balanced_accuracy": 0.865909090909091,
+            "selective_f1": 0.6,
+            "selective_mcc": 0.6011816770428444,
+            "selective_recall": 0.75,
+            "selective_specificity": 0.9818181818181818,
+            "strict_balanced_accuracy": 0.865909090909091,
+            "strict_f1": 0.6,
+            "strict_recall": 0.75,
+            "strict_specificity": 0.9818181818181818
+          },
+          "replaced_from_context": false,
+          "tag": "ego_lane_change"
+        },
+        {
+          "counts": {
+            "abstained_negative": 0,
+            "abstained_positive": 0,
+            "false_negative": 35,
+            "false_positive": 0,
+            "known_pairs": 167,
+            "true_negative": 25,
+            "true_positive": 107
+          },
+          "metrics": {
+            "coverage": 1.0,
+            "overall_accuracy": 0.7904191616766467,
+            "precision": 1.0,
+            "selective_accuracy": 0.7904191616766467,
+            "selective_balanced_accuracy": 0.8767605633802817,
+            "selective_f1": 0.859437751004016,
+            "selective_mcc": 0.5603277042501421,
+            "selective_recall": 0.7535211267605634,
+            "selective_specificity": 1.0,
+            "strict_balanced_accuracy": 0.8767605633802817,
+            "strict_f1": 0.859437751004016,
+            "strict_recall": 0.7535211267605634,
+            "strict_specificity": 1.0
+          },
+          "replaced_from_context": false,
+          "tag": "ego_moving"
+        },
+        {
+          "counts": {
+            "abstained_negative": 0,
+            "abstained_positive": 0,
+            "false_negative": 9,
+            "false_positive": 3,
+            "known_pairs": 166,
+            "true_negative": 110,
+            "true_positive": 44
+          },
+          "metrics": {
+            "coverage": 1.0,
+            "overall_accuracy": 0.927710843373494,
+            "precision": 0.9361702127659575,
+            "selective_accuracy": 0.927710843373494,
+            "selective_balanced_accuracy": 0.9018200033394557,
+            "selective_f1": 0.88,
+            "selective_mcc": 0.8316034750627157,
+            "selective_recall": 0.8301886792452831,
+            "selective_specificity": 0.9734513274336283,
+            "strict_balanced_accuracy": 0.9018200033394557,
+            "strict_f1": 0.88,
+            "strict_recall": 0.8301886792452831,
+            "strict_specificity": 0.9734513274336283
+          },
+          "replaced_from_context": false,
+          "tag": "ego_stopped"
+        },
+        {
+          "counts": {
+            "abstained_negative": 0,
+            "abstained_positive": 0,
+            "false_negative": 2,
+            "false_positive": 15,
+            "known_pairs": 169,
+            "true_negative": 141,
+            "true_positive": 11
+          },
+          "metrics": {
+            "coverage": 1.0,
+            "overall_accuracy": 0.8994082840236687,
+            "precision": 0.4230769230769231,
+            "selective_accuracy": 0.8994082840236687,
+            "selective_balanced_accuracy": 0.875,
+            "selective_f1": 0.5641025641025641,
+            "selective_mcc": 0.5539117094069973,
+            "selective_recall": 0.8461538461538461,
+            "selective_specificity": 0.9038461538461539,
+            "strict_balanced_accuracy": 0.875,
+            "strict_f1": 0.5641025641025641,
+            "strict_recall": 0.8461538461538461,
+            "strict_specificity": 0.9038461538461539
+          },
+          "replaced_from_context": false,
+          "tag": "ego_turn_left"
+        },
+        {
+          "counts": {
+            "abstained_negative": 0,
+            "abstained_positive": 0,
+            "false_negative": 0,
+            "false_positive": 11,
+            "known_pairs": 167,
+            "true_negative": 148,
+            "true_positive": 8
+          },
+          "metrics": {
+            "coverage": 1.0,
+            "overall_accuracy": 0.9341317365269461,
+            "precision": 0.42105263157894735,
+            "selective_accuracy": 0.9341317365269461,
+            "selective_balanced_accuracy": 0.9654088050314465,
+            "selective_f1": 0.5925925925925926,
+            "selective_mcc": 0.6260377019293707,
+            "selective_recall": 1.0,
+            "selective_specificity": 0.9308176100628931,
+            "strict_balanced_accuracy": 0.9654088050314465,
+            "strict_f1": 0.5925925925925926,
+            "strict_recall": 1.0,
+            "strict_specificity": 0.9308176100628931
+          },
+          "replaced_from_context": false,
+          "tag": "ego_turn_right"
+        },
+        {
+          "counts": {
+            "abstained_negative": 0,
+            "abstained_positive": 0,
+            "false_negative": 1,
+            "false_positive": 1,
+            "known_pairs": 169,
+            "true_negative": 159,
+            "true_positive": 8
+          },
+          "metrics": {
+            "coverage": 1.0,
+            "overall_accuracy": 0.9881656804733728,
+            "precision": 0.8888888888888888,
+            "selective_accuracy": 0.9881656804733728,
+            "selective_balanced_accuracy": 0.9413194444444444,
+            "selective_f1": 0.8888888888888888,
+            "selective_mcc": 0.8826388888888889,
+            "selective_recall": 0.8888888888888888,
+            "selective_specificity": 0.99375,
+            "strict_balanced_accuracy": 0.9413194444444444,
+            "strict_f1": 0.8888888888888888,
+            "strict_recall": 0.8888888888888888,
+            "strict_specificity": 0.99375
+          },
+          "replaced_from_context": false,
+          "tag": "motorcycle_present"
+        },
+        {
+          "counts": {
+            "abstained_negative": 0,
+            "abstained_positive": 0,
+            "false_negative": 12,
+            "false_positive": 3,
+            "known_pairs": 165,
+            "true_negative": 137,
+            "true_positive": 13
+          },
+          "metrics": {
+            "coverage": 1.0,
+            "overall_accuracy": 0.9090909090909091,
+            "precision": 0.8125,
+            "selective_accuracy": 0.9090909090909091,
+            "selective_balanced_accuracy": 0.7492857142857143,
+            "selective_f1": 0.6341463414634146,
+            "selective_mcc": 0.6040992319734806,
+            "selective_recall": 0.52,
+            "selective_specificity": 0.9785714285714285,
+            "strict_balanced_accuracy": 0.7492857142857143,
+            "strict_f1": 0.6341463414634146,
+            "strict_recall": 0.52,
+            "strict_specificity": 0.9785714285714285
+          },
+          "replaced_from_context": false,
+          "tag": "pedestrian_crossing"
+        },
+        {
+          "counts": {
+            "abstained_negative": 0,
+            "abstained_positive": 0,
+            "false_negative": 15,
+            "false_positive": 5,
+            "known_pairs": 168,
+            "true_negative": 147,
+            "true_positive": 1
+          },
+          "metrics": {
+            "coverage": 1.0,
+            "overall_accuracy": 0.8809523809523809,
+            "precision": 0.16666666666666666,
+            "selective_accuracy": 0.8809523809523809,
+            "selective_balanced_accuracy": 0.5148026315789473,
+            "selective_f1": 0.09090909090909091,
+            "selective_mcc": 0.0468292905790847,
+            "selective_recall": 0.0625,
+            "selective_specificity": 0.9671052631578947,
+            "strict_balanced_accuracy": 0.5148026315789473,
+            "strict_f1": 0.09090909090909091,
+            "strict_recall": 0.0625,
+            "strict_specificity": 0.9671052631578947
+          },
+          "replaced_from_context": false,
+          "tag": "pedestrian_waiting_to_cross"
+        },
+        {
+          "counts": {
+            "abstained_negative": 0,
+            "abstained_positive": 0,
+            "false_negative": 12,
+            "false_positive": 0,
+            "known_pairs": 168,
+            "true_negative": 135,
+            "true_positive": 21
+          },
+          "metrics": {
+            "coverage": 1.0,
+            "overall_accuracy": 0.9285714285714286,
+            "precision": 1.0,
+            "selective_accuracy": 0.9285714285714286,
+            "selective_balanced_accuracy": 0.8181818181818181,
+            "selective_f1": 0.7777777777777778,
+            "selective_mcc": 0.7644707871564383,
+            "selective_recall": 0.6363636363636364,
+            "selective_specificity": 1.0,
+            "strict_balanced_accuracy": 0.8181818181818181,
+            "strict_f1": 0.7777777777777778,
+            "strict_recall": 0.6363636363636364,
+            "strict_specificity": 1.0
+          },
+          "replaced_from_context": false,
+          "tag": "traffic_light_green"
+        },
+        {
+          "counts": {
+            "abstained_negative": 0,
+            "abstained_positive": 0,
+            "false_negative": 9,
+            "false_positive": 2,
+            "known_pairs": 169,
+            "true_negative": 141,
+            "true_positive": 17
+          },
+          "metrics": {
+            "coverage": 1.0,
+            "overall_accuracy": 0.9349112426035503,
+            "precision": 0.8947368421052632,
+            "selective_accuracy": 0.9349112426035503,
+            "selective_balanced_accuracy": 0.81993006993007,
+            "selective_f1": 0.7555555555555555,
+            "selective_mcc": 0.7308316034052477,
+            "selective_recall": 0.6538461538461539,
+            "selective_specificity": 0.986013986013986,
+            "strict_balanced_accuracy": 0.81993006993007,
+            "strict_f1": 0.7555555555555555,
+            "strict_recall": 0.6538461538461539,
+            "strict_specificity": 0.986013986013986
+          },
+          "replaced_from_context": false,
+          "tag": "traffic_light_red"
+        }
+      ]
+    },
+    {
+      "baseline_profile": "road-adaptive-24-reasoned",
+      "clip_count": 59,
+      "context_profile": "road-adaptive-24-reasoned-opr-numeric-ego",
+      "counts": {
+        "abstained_negative": 0,
+        "abstained_positive": 0,
+        "false_negative": 67,
+        "false_positive": 31,
+        "known_pairs": 761,
+        "true_negative": 538,
+        "true_positive": 125
+      },
+      "metrics": {
+        "coverage": 1.0,
+        "overall_accuracy": 0.871222076215506,
+        "precision": 0.8012820512820513,
+        "selective_accuracy": 0.871222076215506,
+        "selective_balanced_accuracy": 0.7982800600468658,
+        "selective_f1": 0.7183908045977011,
+        "selective_mcc": 0.6418314273452853,
+        "selective_recall": 0.6510416666666666,
+        "selective_specificity": 0.945518453427065,
+        "strict_balanced_accuracy": 0.7982800600468658,
+        "strict_f1": 0.7183908045977011,
+        "strict_recall": 0.6510416666666666,
+        "strict_specificity": 0.945518453427065
+      },
+      "paired_correctness": {
+        "improved_pairs": 8,
+        "regressed_pairs": 7,
+        "unchanged_correct_pairs": 655,
+        "unchanged_incorrect_pairs": 91
+      },
+      "policy": "full_context",
+      "replaced_tags": [
+        "ego_lane_change",
+        "ego_moving",
+        "ego_stopped",
+        "ego_turn_left",
+        "ego_turn_right"
+      ],
+      "request_passes": 2,
+      "tags": [
+        {
+          "counts": {
+            "abstained_negative": 0,
+            "abstained_positive": 0,
+            "false_negative": 12,
+            "false_positive": 3,
+            "known_pairs": 59,
+            "true_negative": 28,
+            "true_positive": 16
+          },
+          "metrics": {
+            "coverage": 1.0,
+            "overall_accuracy": 0.7457627118644068,
+            "precision": 0.8421052631578947,
+            "selective_accuracy": 0.7457627118644068,
+            "selective_balanced_accuracy": 0.7373271889400921,
+            "selective_f1": 0.6808510638297872,
+            "selective_mcc": 0.5072599298483808,
+            "selective_recall": 0.5714285714285714,
+            "selective_specificity": 0.9032258064516129,
+            "strict_balanced_accuracy": 0.7373271889400921,
+            "strict_f1": 0.6808510638297872,
+            "strict_recall": 0.5714285714285714,
+            "strict_specificity": 0.9032258064516129
+          },
+          "replaced_from_context": false,
+          "tag": "car_braking"
+        },
+        {
+          "counts": {
+            "abstained_negative": 0,
+            "abstained_positive": 0,
+            "false_negative": 18,
+            "false_positive": 2,
+            "known_pairs": 58,
+            "true_negative": 22,
+            "true_positive": 16
+          },
+          "metrics": {
+            "coverage": 1.0,
+            "overall_accuracy": 0.6551724137931034,
+            "precision": 0.8888888888888888,
+            "selective_accuracy": 0.6551724137931034,
+            "selective_balanced_accuracy": 0.6936274509803921,
+            "selective_f1": 0.6153846153846153,
+            "selective_mcc": 0.41226432496439,
+            "selective_recall": 0.47058823529411764,
+            "selective_specificity": 0.9166666666666666,
+            "strict_balanced_accuracy": 0.6936274509803921,
+            "strict_f1": 0.6153846153846153,
+            "strict_recall": 0.47058823529411764,
+            "strict_specificity": 0.9166666666666666
+          },
+          "replaced_from_context": false,
+          "tag": "car_stopped"
+        },
+        {
+          "counts": {
+            "abstained_negative": 0,
+            "abstained_positive": 0,
+            "false_negative": 10,
+            "false_positive": 0,
+            "known_pairs": 59,
+            "true_negative": 32,
+            "true_positive": 17
+          },
+          "metrics": {
+            "coverage": 1.0,
+            "overall_accuracy": 0.8305084745762712,
+            "precision": 1.0,
+            "selective_accuracy": 0.8305084745762712,
+            "selective_balanced_accuracy": 0.8148148148148149,
+            "selective_f1": 0.7727272727272727,
+            "selective_mcc": 0.692616642199093,
+            "selective_recall": 0.6296296296296297,
+            "selective_specificity": 1.0,
+            "strict_balanced_accuracy": 0.8148148148148149,
+            "strict_f1": 0.7727272727272727,
+            "strict_recall": 0.6296296296296297,
+            "strict_specificity": 1.0
+          },
+          "replaced_from_context": false,
+          "tag": "cyclist_present"
+        },
+        {
+          "counts": {
+            "abstained_negative": 0,
+            "abstained_positive": 0,
+            "false_negative": 0,
+            "false_positive": 0,
+            "known_pairs": 59,
+            "true_negative": 59,
+            "true_positive": 0
+          },
+          "metrics": {
+            "coverage": 1.0,
+            "overall_accuracy": 1.0,
+            "precision": null,
+            "selective_accuracy": 1.0,
+            "selective_balanced_accuracy": 1.0,
+            "selective_f1": null,
+            "selective_mcc": null,
+            "selective_recall": null,
+            "selective_specificity": 1.0,
+            "strict_balanced_accuracy": 1.0,
+            "strict_f1": null,
+            "strict_recall": null,
+            "strict_specificity": 1.0
+          },
+          "replaced_from_context": true,
+          "tag": "ego_lane_change"
+        },
+        {
+          "counts": {
+            "abstained_negative": 0,
+            "abstained_positive": 0,
+            "false_negative": 4,
+            "false_positive": 0,
+            "known_pairs": 58,
+            "true_negative": 11,
+            "true_positive": 43
+          },
+          "metrics": {
+            "coverage": 1.0,
+            "overall_accuracy": 0.9310344827586207,
+            "precision": 1.0,
+            "selective_accuracy": 0.9310344827586207,
+            "selective_balanced_accuracy": 0.9574468085106382,
+            "selective_f1": 0.9555555555555556,
+            "selective_mcc": 0.8190982760423824,
+            "selective_recall": 0.9148936170212766,
+            "selective_specificity": 1.0,
+            "strict_balanced_accuracy": 0.9574468085106382,
+            "strict_f1": 0.9555555555555556,
+            "strict_recall": 0.9148936170212766,
+            "strict_specificity": 1.0
+          },
+          "replaced_from_context": true,
+          "tag": "ego_moving"
+        },
+        {
+          "counts": {
+            "abstained_negative": 0,
+            "abstained_positive": 0,
+            "false_negative": 4,
+            "false_positive": 1,
+            "known_pairs": 57,
+            "true_negative": 36,
+            "true_positive": 16
+          },
+          "metrics": {
+            "coverage": 1.0,
+            "overall_accuracy": 0.9122807017543859,
+            "precision": 0.9411764705882353,
+            "selective_accuracy": 0.9122807017543859,
+            "selective_balanced_accuracy": 0.8864864864864865,
+            "selective_f1": 0.8648648648648648,
+            "selective_mcc": 0.8063539404414793,
+            "selective_recall": 0.8,
+            "selective_specificity": 0.972972972972973,
+            "strict_balanced_accuracy": 0.8864864864864865,
+            "strict_f1": 0.8648648648648648,
+            "strict_recall": 0.8,
+            "strict_specificity": 0.972972972972973
+          },
+          "replaced_from_context": true,
+          "tag": "ego_stopped"
+        },
+        {
+          "counts": {
+            "abstained_negative": 0,
+            "abstained_positive": 0,
+            "false_negative": 0,
+            "false_positive": 10,
+            "known_pairs": 59,
+            "true_negative": 47,
+            "true_positive": 2
+          },
+          "metrics": {
+            "coverage": 1.0,
+            "overall_accuracy": 0.8305084745762712,
+            "precision": 0.16666666666666666,
+            "selective_accuracy": 0.8305084745762712,
+            "selective_balanced_accuracy": 0.9122807017543859,
+            "selective_f1": 0.2857142857142857,
+            "selective_mcc": 0.3707113440195691,
+            "selective_recall": 1.0,
+            "selective_specificity": 0.8245614035087719,
+            "strict_balanced_accuracy": 0.9122807017543859,
+            "strict_f1": 0.2857142857142857,
+            "strict_recall": 1.0,
+            "strict_specificity": 0.8245614035087719
+          },
+          "replaced_from_context": true,
+          "tag": "ego_turn_left"
+        },
+        {
+          "counts": {
+            "abstained_negative": 0,
+            "abstained_positive": 0,
+            "false_negative": 0,
+            "false_positive": 10,
+            "known_pairs": 58,
+            "true_negative": 47,
+            "true_positive": 1
+          },
+          "metrics": {
+            "coverage": 1.0,
+            "overall_accuracy": 0.8275862068965517,
+            "precision": 0.09090909090909091,
+            "selective_accuracy": 0.8275862068965517,
+            "selective_balanced_accuracy": 0.9122807017543859,
+            "selective_f1": 0.16666666666666669,
+            "selective_mcc": 0.27378847234992665,
+            "selective_recall": 1.0,
+            "selective_specificity": 0.8245614035087719,
+            "strict_balanced_accuracy": 0.9122807017543859,
+            "strict_f1": 0.16666666666666669,
+            "strict_recall": 1.0,
+            "strict_specificity": 0.8245614035087719
+          },
+          "replaced_from_context": true,
+          "tag": "ego_turn_right"
+        },
+        {
+          "counts": {
+            "abstained_negative": 0,
+            "abstained_positive": 0,
+            "false_negative": 0,
+            "false_positive": 1,
+            "known_pairs": 59,
+            "true_negative": 58,
+            "true_positive": 0
+          },
+          "metrics": {
+            "coverage": 1.0,
+            "overall_accuracy": 0.9830508474576272,
+            "precision": 0.0,
+            "selective_accuracy": 0.9830508474576272,
+            "selective_balanced_accuracy": 0.9830508474576272,
+            "selective_f1": null,
+            "selective_mcc": null,
+            "selective_recall": null,
+            "selective_specificity": 0.9830508474576272,
+            "strict_balanced_accuracy": 0.9830508474576272,
+            "strict_f1": null,
+            "strict_recall": null,
+            "strict_specificity": 0.9830508474576272
+          },
+          "replaced_from_context": false,
+          "tag": "motorcycle_present"
+        },
+        {
+          "counts": {
+            "abstained_negative": 0,
+            "abstained_positive": 0,
+            "false_negative": 7,
+            "false_positive": 1,
+            "known_pairs": 58,
+            "true_negative": 48,
+            "true_positive": 2
+          },
+          "metrics": {
+            "coverage": 1.0,
+            "overall_accuracy": 0.8620689655172413,
+            "precision": 0.6666666666666666,
+            "selective_accuracy": 0.8620689655172413,
+            "selective_balanced_accuracy": 0.600907029478458,
+            "selective_f1": 0.3333333333333333,
+            "selective_mcc": 0.32993526681131213,
+            "selective_recall": 0.2222222222222222,
+            "selective_specificity": 0.9795918367346939,
+            "strict_balanced_accuracy": 0.600907029478458,
+            "strict_f1": 0.3333333333333333,
+            "strict_recall": 0.2222222222222222,
+            "strict_specificity": 0.9795918367346939
+          },
+          "replaced_from_context": false,
+          "tag": "pedestrian_crossing"
+        },
+        {
+          "counts": {
+            "abstained_negative": 0,
+            "abstained_positive": 0,
+            "false_negative": 9,
+            "false_positive": 3,
+            "known_pairs": 59,
+            "true_negative": 46,
+            "true_positive": 1
+          },
+          "metrics": {
+            "coverage": 1.0,
+            "overall_accuracy": 0.7966101694915254,
+            "precision": 0.25,
+            "selective_accuracy": 0.7966101694915254,
+            "selective_balanced_accuracy": 0.5193877551020408,
+            "selective_f1": 0.14285714285714288,
+            "selective_mcc": 0.05786876586795141,
+            "selective_recall": 0.1,
+            "selective_specificity": 0.9387755102040817,
+            "strict_balanced_accuracy": 0.5193877551020408,
+            "strict_f1": 0.14285714285714288,
+            "strict_recall": 0.1,
+            "strict_specificity": 0.9387755102040817
+          },
+          "replaced_from_context": false,
+          "tag": "pedestrian_waiting_to_cross"
+        },
+        {
+          "counts": {
+            "abstained_negative": 0,
+            "abstained_positive": 0,
+            "false_negative": 3,
+            "false_positive": 0,
+            "known_pairs": 59,
+            "true_negative": 46,
+            "true_positive": 10
+          },
+          "metrics": {
+            "coverage": 1.0,
+            "overall_accuracy": 0.9491525423728814,
+            "precision": 1.0,
+            "selective_accuracy": 0.9491525423728814,
+            "selective_balanced_accuracy": 0.8846153846153846,
+            "selective_f1": 0.8695652173913044,
+            "selective_mcc": 0.8497852716123606,
+            "selective_recall": 0.7692307692307693,
+            "selective_specificity": 1.0,
+            "strict_balanced_accuracy": 0.8846153846153846,
+            "strict_f1": 0.8695652173913044,
+            "strict_recall": 0.7692307692307693,
+            "strict_specificity": 1.0
+          },
+          "replaced_from_context": false,
+          "tag": "traffic_light_green"
+        },
+        {
+          "counts": {
+            "abstained_negative": 0,
+            "abstained_positive": 0,
+            "false_negative": 0,
+            "false_positive": 0,
+            "known_pairs": 59,
+            "true_negative": 58,
+            "true_positive": 1
+          },
+          "metrics": {
+            "coverage": 1.0,
+            "overall_accuracy": 1.0,
+            "precision": 1.0,
+            "selective_accuracy": 1.0,
+            "selective_balanced_accuracy": 1.0,
+            "selective_f1": 1.0,
+            "selective_mcc": 1.0,
+            "selective_recall": 1.0,
+            "selective_specificity": 1.0,
+            "strict_balanced_accuracy": 1.0,
+            "strict_f1": 1.0,
+            "strict_recall": 1.0,
+            "strict_specificity": 1.0
+          },
+          "replaced_from_context": false,
+          "tag": "traffic_light_red"
+        }
+      ]
+    },
+    {
+      "baseline_profile": "road-adaptive-24-reasoned",
+      "clip_count": 59,
+      "context_profile": "road-adaptive-24-reasoned-opr-numeric-ego",
+      "counts": {
+        "abstained_negative": 0,
+        "abstained_positive": 0,
+        "false_negative": 67,
+        "false_positive": 28,
+        "known_pairs": 761,
+        "true_negative": 541,
+        "true_positive": 125
+      },
+      "metrics": {
+        "coverage": 1.0,
+        "overall_accuracy": 0.8751642575558476,
+        "precision": 0.8169934640522876,
+        "selective_accuracy": 0.8751642575558476,
+        "selective_balanced_accuracy": 0.8009162639132982,
+        "selective_f1": 0.7246376811594203,
+        "selective_mcc": 0.6522061644079385,
+        "selective_recall": 0.6510416666666666,
+        "selective_specificity": 0.9507908611599297,
+        "strict_balanced_accuracy": 0.8009162639132982,
+        "strict_f1": 0.7246376811594203,
+        "strict_recall": 0.6510416666666666,
+        "strict_specificity": 0.9507908611599297
+      },
+      "paired_correctness": {
+        "improved_pairs": 6,
+        "regressed_pairs": 2,
+        "unchanged_correct_pairs": 660,
+        "unchanged_incorrect_pairs": 93
+      },
+      "policy": "late_fusion_ego_state",
+      "replaced_tags": [
+        "ego_moving",
+        "ego_stopped"
+      ],
+      "request_passes": 2,
+      "tags": [
+        {
+          "counts": {
+            "abstained_negative": 0,
+            "abstained_positive": 0,
+            "false_negative": 12,
+            "false_positive": 3,
+            "known_pairs": 59,
+            "true_negative": 28,
+            "true_positive": 16
+          },
+          "metrics": {
+            "coverage": 1.0,
+            "overall_accuracy": 0.7457627118644068,
+            "precision": 0.8421052631578947,
+            "selective_accuracy": 0.7457627118644068,
+            "selective_balanced_accuracy": 0.7373271889400921,
+            "selective_f1": 0.6808510638297872,
+            "selective_mcc": 0.5072599298483808,
+            "selective_recall": 0.5714285714285714,
+            "selective_specificity": 0.9032258064516129,
+            "strict_balanced_accuracy": 0.7373271889400921,
+            "strict_f1": 0.6808510638297872,
+            "strict_recall": 0.5714285714285714,
+            "strict_specificity": 0.9032258064516129
+          },
+          "replaced_from_context": false,
+          "tag": "car_braking"
+        },
+        {
+          "counts": {
+            "abstained_negative": 0,
+            "abstained_positive": 0,
+            "false_negative": 18,
+            "false_positive": 2,
+            "known_pairs": 58,
+            "true_negative": 22,
+            "true_positive": 16
+          },
+          "metrics": {
+            "coverage": 1.0,
+            "overall_accuracy": 0.6551724137931034,
+            "precision": 0.8888888888888888,
+            "selective_accuracy": 0.6551724137931034,
+            "selective_balanced_accuracy": 0.6936274509803921,
+            "selective_f1": 0.6153846153846153,
+            "selective_mcc": 0.41226432496439,
+            "selective_recall": 0.47058823529411764,
+            "selective_specificity": 0.9166666666666666,
+            "strict_balanced_accuracy": 0.6936274509803921,
+            "strict_f1": 0.6153846153846153,
+            "strict_recall": 0.47058823529411764,
+            "strict_specificity": 0.9166666666666666
+          },
+          "replaced_from_context": false,
+          "tag": "car_stopped"
+        },
+        {
+          "counts": {
+            "abstained_negative": 0,
+            "abstained_positive": 0,
+            "false_negative": 10,
+            "false_positive": 0,
+            "known_pairs": 59,
+            "true_negative": 32,
+            "true_positive": 17
+          },
+          "metrics": {
+            "coverage": 1.0,
+            "overall_accuracy": 0.8305084745762712,
+            "precision": 1.0,
+            "selective_accuracy": 0.8305084745762712,
+            "selective_balanced_accuracy": 0.8148148148148149,
+            "selective_f1": 0.7727272727272727,
+            "selective_mcc": 0.692616642199093,
+            "selective_recall": 0.6296296296296297,
+            "selective_specificity": 1.0,
+            "strict_balanced_accuracy": 0.8148148148148149,
+            "strict_f1": 0.7727272727272727,
+            "strict_recall": 0.6296296296296297,
+            "strict_specificity": 1.0
+          },
+          "replaced_from_context": false,
+          "tag": "cyclist_present"
+        },
+        {
+          "counts": {
+            "abstained_negative": 0,
+            "abstained_positive": 0,
+            "false_negative": 0,
+            "false_positive": 1,
+            "known_pairs": 59,
+            "true_negative": 58,
+            "true_positive": 0
+          },
+          "metrics": {
+            "coverage": 1.0,
+            "overall_accuracy": 0.9830508474576272,
+            "precision": 0.0,
+            "selective_accuracy": 0.9830508474576272,
+            "selective_balanced_accuracy": 0.9830508474576272,
+            "selective_f1": null,
+            "selective_mcc": null,
+            "selective_recall": null,
+            "selective_specificity": 0.9830508474576272,
+            "strict_balanced_accuracy": 0.9830508474576272,
+            "strict_f1": null,
+            "strict_recall": null,
+            "strict_specificity": 0.9830508474576272
+          },
+          "replaced_from_context": false,
+          "tag": "ego_lane_change"
+        },
+        {
+          "counts": {
+            "abstained_negative": 0,
+            "abstained_positive": 0,
+            "false_negative": 4,
+            "false_positive": 0,
+            "known_pairs": 58,
+            "true_negative": 11,
+            "true_positive": 43
+          },
+          "metrics": {
+            "coverage": 1.0,
+            "overall_accuracy": 0.9310344827586207,
+            "precision": 1.0,
+            "selective_accuracy": 0.9310344827586207,
+            "selective_balanced_accuracy": 0.9574468085106382,
+            "selective_f1": 0.9555555555555556,
+            "selective_mcc": 0.8190982760423824,
+            "selective_recall": 0.9148936170212766,
+            "selective_specificity": 1.0,
+            "strict_balanced_accuracy": 0.9574468085106382,
+            "strict_f1": 0.9555555555555556,
+            "strict_recall": 0.9148936170212766,
+            "strict_specificity": 1.0
+          },
+          "replaced_from_context": true,
+          "tag": "ego_moving"
+        },
+        {
+          "counts": {
+            "abstained_negative": 0,
+            "abstained_positive": 0,
+            "false_negative": 4,
+            "false_positive": 1,
+            "known_pairs": 57,
+            "true_negative": 36,
+            "true_positive": 16
+          },
+          "metrics": {
+            "coverage": 1.0,
+            "overall_accuracy": 0.9122807017543859,
+            "precision": 0.9411764705882353,
+            "selective_accuracy": 0.9122807017543859,
+            "selective_balanced_accuracy": 0.8864864864864865,
+            "selective_f1": 0.8648648648648648,
+            "selective_mcc": 0.8063539404414793,
+            "selective_recall": 0.8,
+            "selective_specificity": 0.972972972972973,
+            "strict_balanced_accuracy": 0.8864864864864865,
+            "strict_f1": 0.8648648648648648,
+            "strict_recall": 0.8,
+            "strict_specificity": 0.972972972972973
+          },
+          "replaced_from_context": true,
+          "tag": "ego_stopped"
+        },
+        {
+          "counts": {
+            "abstained_negative": 0,
+            "abstained_positive": 0,
+            "false_negative": 0,
+            "false_positive": 8,
+            "known_pairs": 59,
+            "true_negative": 49,
+            "true_positive": 2
+          },
+          "metrics": {
+            "coverage": 1.0,
+            "overall_accuracy": 0.864406779661017,
+            "precision": 0.2,
+            "selective_accuracy": 0.864406779661017,
+            "selective_balanced_accuracy": 0.9298245614035088,
+            "selective_f1": 0.33333333333333337,
+            "selective_mcc": 0.4146442144313647,
+            "selective_recall": 1.0,
+            "selective_specificity": 0.8596491228070176,
+            "strict_balanced_accuracy": 0.9298245614035088,
+            "strict_f1": 0.33333333333333337,
+            "strict_recall": 1.0,
+            "strict_specificity": 0.8596491228070176
+          },
+          "replaced_from_context": false,
+          "tag": "ego_turn_left"
+        },
+        {
+          "counts": {
+            "abstained_negative": 0,
+            "abstained_positive": 0,
+            "false_negative": 0,
+            "false_positive": 8,
+            "known_pairs": 58,
+            "true_negative": 49,
+            "true_positive": 1
+          },
+          "metrics": {
+            "coverage": 1.0,
+            "overall_accuracy": 0.8620689655172413,
+            "precision": 0.1111111111111111,
+            "selective_accuracy": 0.8620689655172413,
+            "selective_balanced_accuracy": 0.9298245614035088,
+            "selective_f1": 0.19999999999999998,
+            "selective_mcc": 0.3090575499818436,
+            "selective_recall": 1.0,
+            "selective_specificity": 0.8596491228070176,
+            "strict_balanced_accuracy": 0.9298245614035088,
+            "strict_f1": 0.19999999999999998,
+            "strict_recall": 1.0,
+            "strict_specificity": 0.8596491228070176
+          },
+          "replaced_from_context": false,
+          "tag": "ego_turn_right"
+        },
+        {
+          "counts": {
+            "abstained_negative": 0,
+            "abstained_positive": 0,
+            "false_negative": 0,
+            "false_positive": 1,
+            "known_pairs": 59,
+            "true_negative": 58,
+            "true_positive": 0
+          },
+          "metrics": {
+            "coverage": 1.0,
+            "overall_accuracy": 0.9830508474576272,
+            "precision": 0.0,
+            "selective_accuracy": 0.9830508474576272,
+            "selective_balanced_accuracy": 0.9830508474576272,
+            "selective_f1": null,
+            "selective_mcc": null,
+            "selective_recall": null,
+            "selective_specificity": 0.9830508474576272,
+            "strict_balanced_accuracy": 0.9830508474576272,
+            "strict_f1": null,
+            "strict_recall": null,
+            "strict_specificity": 0.9830508474576272
+          },
+          "replaced_from_context": false,
+          "tag": "motorcycle_present"
+        },
+        {
+          "counts": {
+            "abstained_negative": 0,
+            "abstained_positive": 0,
+            "false_negative": 7,
+            "false_positive": 1,
+            "known_pairs": 58,
+            "true_negative": 48,
+            "true_positive": 2
+          },
+          "metrics": {
+            "coverage": 1.0,
+            "overall_accuracy": 0.8620689655172413,
+            "precision": 0.6666666666666666,
+            "selective_accuracy": 0.8620689655172413,
+            "selective_balanced_accuracy": 0.600907029478458,
+            "selective_f1": 0.3333333333333333,
+            "selective_mcc": 0.32993526681131213,
+            "selective_recall": 0.2222222222222222,
+            "selective_specificity": 0.9795918367346939,
+            "strict_balanced_accuracy": 0.600907029478458,
+            "strict_f1": 0.3333333333333333,
+            "strict_recall": 0.2222222222222222,
+            "strict_specificity": 0.9795918367346939
+          },
+          "replaced_from_context": false,
+          "tag": "pedestrian_crossing"
+        },
+        {
+          "counts": {
+            "abstained_negative": 0,
+            "abstained_positive": 0,
+            "false_negative": 9,
+            "false_positive": 3,
+            "known_pairs": 59,
+            "true_negative": 46,
+            "true_positive": 1
+          },
+          "metrics": {
+            "coverage": 1.0,
+            "overall_accuracy": 0.7966101694915254,
+            "precision": 0.25,
+            "selective_accuracy": 0.7966101694915254,
+            "selective_balanced_accuracy": 0.5193877551020408,
+            "selective_f1": 0.14285714285714288,
+            "selective_mcc": 0.05786876586795141,
+            "selective_recall": 0.1,
+            "selective_specificity": 0.9387755102040817,
+            "strict_balanced_accuracy": 0.5193877551020408,
+            "strict_f1": 0.14285714285714288,
+            "strict_recall": 0.1,
+            "strict_specificity": 0.9387755102040817
+          },
+          "replaced_from_context": false,
+          "tag": "pedestrian_waiting_to_cross"
+        },
+        {
+          "counts": {
+            "abstained_negative": 0,
+            "abstained_positive": 0,
+            "false_negative": 3,
+            "false_positive": 0,
+            "known_pairs": 59,
+            "true_negative": 46,
+            "true_positive": 10
+          },
+          "metrics": {
+            "coverage": 1.0,
+            "overall_accuracy": 0.9491525423728814,
+            "precision": 1.0,
+            "selective_accuracy": 0.9491525423728814,
+            "selective_balanced_accuracy": 0.8846153846153846,
+            "selective_f1": 0.8695652173913044,
+            "selective_mcc": 0.8497852716123606,
+            "selective_recall": 0.7692307692307693,
+            "selective_specificity": 1.0,
+            "strict_balanced_accuracy": 0.8846153846153846,
+            "strict_f1": 0.8695652173913044,
+            "strict_recall": 0.7692307692307693,
+            "strict_specificity": 1.0
+          },
+          "replaced_from_context": false,
+          "tag": "traffic_light_green"
+        },
+        {
+          "counts": {
+            "abstained_negative": 0,
+            "abstained_positive": 0,
+            "false_negative": 0,
+            "false_positive": 0,
+            "known_pairs": 59,
+            "true_negative": 58,
+            "true_positive": 1
+          },
+          "metrics": {
+            "coverage": 1.0,
+            "overall_accuracy": 1.0,
+            "precision": 1.0,
+            "selective_accuracy": 1.0,
+            "selective_balanced_accuracy": 1.0,
+            "selective_f1": 1.0,
+            "selective_mcc": 1.0,
+            "selective_recall": 1.0,
+            "selective_specificity": 1.0,
+            "strict_balanced_accuracy": 1.0,
+            "strict_f1": 1.0,
+            "strict_recall": 1.0,
+            "strict_specificity": 1.0
+          },
+          "replaced_from_context": false,
+          "tag": "traffic_light_red"
+        }
+      ]
+    },
+    {
+      "baseline_profile": "road-adaptive-24-reasoned",
+      "clip_count": 169,
+      "context_profile": "road-adaptive-24-reasoned-visual-motion-ego",
+      "counts": {
+        "abstained_negative": 0,
+        "abstained_positive": 0,
+        "false_negative": 191,
+        "false_positive": 50,
+        "known_pairs": 2181,
+        "true_negative": 1587,
+        "true_positive": 353
+      },
+      "metrics": {
+        "coverage": 1.0,
+        "overall_accuracy": 0.8895002292526364,
+        "precision": 0.8759305210918115,
+        "selective_accuracy": 0.8895002292526364,
+        "selective_balanced_accuracy": 0.8091766906823816,
+        "selective_f1": 0.7455121436114045,
+        "selective_mcc": 0.6893537273433092,
+        "selective_recall": 0.6488970588235294,
+        "selective_specificity": 0.9694563225412339,
+        "strict_balanced_accuracy": 0.8091766906823816,
+        "strict_f1": 0.7455121436114045,
+        "strict_recall": 0.6488970588235294,
+        "strict_specificity": 0.9694563225412339
+      },
+      "paired_correctness": {
+        "improved_pairs": 27,
+        "regressed_pairs": 8,
+        "unchanged_correct_pairs": 1913,
+        "unchanged_incorrect_pairs": 233
+      },
+      "policy": "full_context",
+      "replaced_tags": [
+        "ego_lane_change",
+        "ego_moving",
+        "ego_stopped",
+        "ego_turn_left",
+        "ego_turn_right"
+      ],
+      "request_passes": 2,
+      "tags": [
+        {
+          "counts": {
+            "abstained_negative": 0,
+            "abstained_positive": 0,
+            "false_negative": 31,
+            "false_positive": 8,
+            "known_pairs": 168,
+            "true_negative": 103,
+            "true_positive": 26
+          },
+          "metrics": {
+            "coverage": 1.0,
+            "overall_accuracy": 0.7678571428571429,
+            "precision": 0.7647058823529411,
+            "selective_accuracy": 0.7678571428571429,
+            "selective_balanced_accuracy": 0.6920341394025604,
+            "selective_f1": 0.5714285714285713,
+            "selective_mcc": 0.4526009890498996,
+            "selective_recall": 0.45614035087719296,
+            "selective_specificity": 0.9279279279279279,
+            "strict_balanced_accuracy": 0.6920341394025604,
+            "strict_f1": 0.5714285714285713,
+            "strict_recall": 0.45614035087719296,
+            "strict_specificity": 0.9279279279279279
+          },
+          "replaced_from_context": false,
+          "tag": "car_braking"
+        },
+        {
+          "counts": {
+            "abstained_negative": 0,
+            "abstained_positive": 0,
+            "false_negative": 46,
+            "false_positive": 2,
+            "known_pairs": 167,
+            "true_negative": 89,
+            "true_positive": 30
+          },
+          "metrics": {
+            "coverage": 1.0,
+            "overall_accuracy": 0.7125748502994012,
+            "precision": 0.9375,
+            "selective_accuracy": 0.7125748502994012,
+            "selective_balanced_accuracy": 0.6863794100636206,
+            "selective_f1": 0.5555555555555556,
+            "selective_mcc": 0.47164316742796975,
+            "selective_recall": 0.39473684210526316,
+            "selective_specificity": 0.978021978021978,
+            "strict_balanced_accuracy": 0.6863794100636206,
+            "strict_f1": 0.5555555555555556,
+            "strict_recall": 0.39473684210526316,
+            "strict_specificity": 0.978021978021978
+          },
+          "replaced_from_context": false,
+          "tag": "car_stopped"
+        },
+        {
+          "counts": {
+            "abstained_negative": 0,
+            "abstained_positive": 0,
+            "false_negative": 33,
+            "false_positive": 1,
+            "known_pairs": 169,
+            "true_negative": 86,
+            "true_positive": 49
+          },
+          "metrics": {
+            "coverage": 1.0,
+            "overall_accuracy": 0.7988165680473372,
+            "precision": 0.98,
+            "selective_accuracy": 0.7988165680473372,
+            "selective_balanced_accuracy": 0.7930333613680964,
+            "selective_f1": 0.7424242424242423,
+            "selective_mcc": 0.641734122247794,
+            "selective_recall": 0.5975609756097561,
+            "selective_specificity": 0.9885057471264368,
+            "strict_balanced_accuracy": 0.7930333613680964,
+            "strict_f1": 0.7424242424242423,
+            "strict_recall": 0.5975609756097561,
+            "strict_specificity": 0.9885057471264368
+          },
+          "replaced_from_context": false,
+          "tag": "cyclist_present"
+        },
+        {
+          "counts": {
+            "abstained_negative": 0,
+            "abstained_positive": 0,
+            "false_negative": 2,
+            "false_positive": 0,
+            "known_pairs": 169,
+            "true_negative": 165,
+            "true_positive": 2
+          },
+          "metrics": {
+            "coverage": 1.0,
+            "overall_accuracy": 0.9881656804733728,
+            "precision": 1.0,
+            "selective_accuracy": 0.9881656804733728,
+            "selective_balanced_accuracy": 0.75,
+            "selective_f1": 0.6666666666666666,
+            "selective_mcc": 0.7028598551972535,
+            "selective_recall": 0.5,
+            "selective_specificity": 1.0,
+            "strict_balanced_accuracy": 0.75,
+            "strict_f1": 0.6666666666666666,
+            "strict_recall": 0.5,
+            "strict_specificity": 1.0
+          },
+          "replaced_from_context": true,
+          "tag": "ego_lane_change"
+        },
+        {
+          "counts": {
+            "abstained_negative": 0,
+            "abstained_positive": 0,
+            "false_negative": 20,
+            "false_positive": 0,
+            "known_pairs": 167,
+            "true_negative": 25,
+            "true_positive": 122
+          },
+          "metrics": {
+            "coverage": 1.0,
+            "overall_accuracy": 0.8802395209580839,
+            "precision": 1.0,
+            "selective_accuracy": 0.8802395209580839,
+            "selective_balanced_accuracy": 0.9295774647887324,
+            "selective_f1": 0.9242424242424242,
+            "selective_mcc": 0.6908750206873185,
+            "selective_recall": 0.8591549295774648,
+            "selective_specificity": 1.0,
+            "strict_balanced_accuracy": 0.9295774647887324,
+            "strict_f1": 0.9242424242424242,
+            "strict_recall": 0.8591549295774648,
+            "strict_specificity": 1.0
+          },
+          "replaced_from_context": true,
+          "tag": "ego_moving"
+        },
+        {
+          "counts": {
+            "abstained_negative": 0,
+            "abstained_positive": 0,
+            "false_negative": 10,
+            "false_positive": 1,
+            "known_pairs": 166,
+            "true_negative": 112,
+            "true_positive": 43
+          },
+          "metrics": {
+            "coverage": 1.0,
+            "overall_accuracy": 0.9337349397590361,
+            "precision": 0.9772727272727273,
+            "selective_accuracy": 0.9337349397590361,
+            "selective_balanced_accuracy": 0.9012355985974286,
+            "selective_f1": 0.88659793814433,
+            "selective_mcc": 0.8476183621191237,
+            "selective_recall": 0.8113207547169812,
+            "selective_specificity": 0.9911504424778761,
+            "strict_balanced_accuracy": 0.9012355985974286,
+            "strict_f1": 0.88659793814433,
+            "strict_recall": 0.8113207547169812,
+            "strict_specificity": 0.9911504424778761
+          },
+          "replaced_from_context": true,
+          "tag": "ego_stopped"
+        },
+        {
+          "counts": {
+            "abstained_negative": 0,
+            "abstained_positive": 0,
+            "false_negative": 0,
+            "false_positive": 14,
+            "known_pairs": 169,
+            "true_negative": 142,
+            "true_positive": 13
+          },
+          "metrics": {
+            "coverage": 1.0,
+            "overall_accuracy": 0.9171597633136095,
+            "precision": 0.48148148148148145,
+            "selective_accuracy": 0.9171597633136095,
+            "selective_balanced_accuracy": 0.9551282051282051,
+            "selective_f1": 0.65,
+            "selective_mcc": 0.6620208493229436,
+            "selective_recall": 1.0,
+            "selective_specificity": 0.9102564102564102,
+            "strict_balanced_accuracy": 0.9551282051282051,
+            "strict_f1": 0.65,
+            "strict_recall": 1.0,
+            "strict_specificity": 0.9102564102564102
+          },
+          "replaced_from_context": true,
+          "tag": "ego_turn_left"
+        },
+        {
+          "counts": {
+            "abstained_negative": 0,
+            "abstained_positive": 0,
+            "false_negative": 0,
+            "false_positive": 13,
+            "known_pairs": 167,
+            "true_negative": 146,
+            "true_positive": 8
+          },
+          "metrics": {
+            "coverage": 1.0,
+            "overall_accuracy": 0.9221556886227545,
+            "precision": 0.38095238095238093,
+            "selective_accuracy": 0.9221556886227545,
+            "selective_balanced_accuracy": 0.9591194968553459,
+            "selective_f1": 0.5517241379310345,
+            "selective_mcc": 0.5914434300399375,
+            "selective_recall": 1.0,
+            "selective_specificity": 0.9182389937106918,
+            "strict_balanced_accuracy": 0.9591194968553459,
+            "strict_f1": 0.5517241379310345,
+            "strict_recall": 1.0,
+            "strict_specificity": 0.9182389937106918
+          },
+          "replaced_from_context": true,
+          "tag": "ego_turn_right"
+        },
+        {
+          "counts": {
+            "abstained_negative": 0,
+            "abstained_positive": 0,
+            "false_negative": 1,
+            "false_positive": 1,
+            "known_pairs": 169,
+            "true_negative": 159,
+            "true_positive": 8
+          },
+          "metrics": {
+            "coverage": 1.0,
+            "overall_accuracy": 0.9881656804733728,
+            "precision": 0.8888888888888888,
+            "selective_accuracy": 0.9881656804733728,
+            "selective_balanced_accuracy": 0.9413194444444444,
+            "selective_f1": 0.8888888888888888,
+            "selective_mcc": 0.8826388888888889,
+            "selective_recall": 0.8888888888888888,
+            "selective_specificity": 0.99375,
+            "strict_balanced_accuracy": 0.9413194444444444,
+            "strict_f1": 0.8888888888888888,
+            "strict_recall": 0.8888888888888888,
+            "strict_specificity": 0.99375
+          },
+          "replaced_from_context": false,
+          "tag": "motorcycle_present"
+        },
+        {
+          "counts": {
+            "abstained_negative": 0,
+            "abstained_positive": 0,
+            "false_negative": 12,
+            "false_positive": 3,
+            "known_pairs": 165,
+            "true_negative": 137,
+            "true_positive": 13
+          },
+          "metrics": {
+            "coverage": 1.0,
+            "overall_accuracy": 0.9090909090909091,
+            "precision": 0.8125,
+            "selective_accuracy": 0.9090909090909091,
+            "selective_balanced_accuracy": 0.7492857142857143,
+            "selective_f1": 0.6341463414634146,
+            "selective_mcc": 0.6040992319734806,
+            "selective_recall": 0.52,
+            "selective_specificity": 0.9785714285714285,
+            "strict_balanced_accuracy": 0.7492857142857143,
+            "strict_f1": 0.6341463414634146,
+            "strict_recall": 0.52,
+            "strict_specificity": 0.9785714285714285
+          },
+          "replaced_from_context": false,
+          "tag": "pedestrian_crossing"
+        },
+        {
+          "counts": {
+            "abstained_negative": 0,
+            "abstained_positive": 0,
+            "false_negative": 15,
+            "false_positive": 5,
+            "known_pairs": 168,
+            "true_negative": 147,
+            "true_positive": 1
+          },
+          "metrics": {
+            "coverage": 1.0,
+            "overall_accuracy": 0.8809523809523809,
+            "precision": 0.16666666666666666,
+            "selective_accuracy": 0.8809523809523809,
+            "selective_balanced_accuracy": 0.5148026315789473,
+            "selective_f1": 0.09090909090909091,
+            "selective_mcc": 0.0468292905790847,
+            "selective_recall": 0.0625,
+            "selective_specificity": 0.9671052631578947,
+            "strict_balanced_accuracy": 0.5148026315789473,
+            "strict_f1": 0.09090909090909091,
+            "strict_recall": 0.0625,
+            "strict_specificity": 0.9671052631578947
+          },
+          "replaced_from_context": false,
+          "tag": "pedestrian_waiting_to_cross"
+        },
+        {
+          "counts": {
+            "abstained_negative": 0,
+            "abstained_positive": 0,
+            "false_negative": 12,
+            "false_positive": 0,
+            "known_pairs": 168,
+            "true_negative": 135,
+            "true_positive": 21
+          },
+          "metrics": {
+            "coverage": 1.0,
+            "overall_accuracy": 0.9285714285714286,
+            "precision": 1.0,
+            "selective_accuracy": 0.9285714285714286,
+            "selective_balanced_accuracy": 0.8181818181818181,
+            "selective_f1": 0.7777777777777778,
+            "selective_mcc": 0.7644707871564383,
+            "selective_recall": 0.6363636363636364,
+            "selective_specificity": 1.0,
+            "strict_balanced_accuracy": 0.8181818181818181,
+            "strict_f1": 0.7777777777777778,
+            "strict_recall": 0.6363636363636364,
+            "strict_specificity": 1.0
+          },
+          "replaced_from_context": false,
+          "tag": "traffic_light_green"
+        },
+        {
+          "counts": {
+            "abstained_negative": 0,
+            "abstained_positive": 0,
+            "false_negative": 9,
+            "false_positive": 2,
+            "known_pairs": 169,
+            "true_negative": 141,
+            "true_positive": 17
+          },
+          "metrics": {
+            "coverage": 1.0,
+            "overall_accuracy": 0.9349112426035503,
+            "precision": 0.8947368421052632,
+            "selective_accuracy": 0.9349112426035503,
+            "selective_balanced_accuracy": 0.81993006993007,
+            "selective_f1": 0.7555555555555555,
+            "selective_mcc": 0.7308316034052477,
+            "selective_recall": 0.6538461538461539,
+            "selective_specificity": 0.986013986013986,
+            "strict_balanced_accuracy": 0.81993006993007,
+            "strict_f1": 0.7555555555555555,
+            "strict_recall": 0.6538461538461539,
+            "strict_specificity": 0.986013986013986
+          },
+          "replaced_from_context": false,
+          "tag": "traffic_light_red"
+        }
+      ]
+    },
+    {
+      "baseline_profile": "road-adaptive-24-reasoned",
+      "clip_count": 169,
+      "context_profile": "road-adaptive-24-reasoned-visual-motion-ego",
+      "counts": {
+        "abstained_negative": 0,
+        "abstained_positive": 0,
+        "false_negative": 192,
+        "false_positive": 52,
+        "known_pairs": 2181,
+        "true_negative": 1585,
+        "true_positive": 352
+      },
+      "metrics": {
+        "coverage": 1.0,
+        "overall_accuracy": 0.8881247134342045,
+        "precision": 0.8712871287128713,
+        "selective_accuracy": 0.8881247134342045,
+        "selective_balanced_accuracy": 0.8076466994861475,
+        "selective_f1": 0.7426160337552743,
+        "selective_mcc": 0.6852856677908925,
+        "selective_recall": 0.6470588235294118,
+        "selective_specificity": 0.9682345754428833,
+        "strict_balanced_accuracy": 0.8076466994861475,
+        "strict_f1": 0.7426160337552743,
+        "strict_recall": 0.6470588235294118,
+        "strict_specificity": 0.9682345754428833
+      },
+      "paired_correctness": {
+        "improved_pairs": 18,
+        "regressed_pairs": 2,
+        "unchanged_correct_pairs": 1919,
+        "unchanged_incorrect_pairs": 242
+      },
+      "policy": "late_fusion_ego_state",
+      "replaced_tags": [
+        "ego_moving",
+        "ego_stopped"
+      ],
+      "request_passes": 2,
+      "tags": [
+        {
+          "counts": {
+            "abstained_negative": 0,
+            "abstained_positive": 0,
+            "false_negative": 31,
+            "false_positive": 8,
+            "known_pairs": 168,
+            "true_negative": 103,
+            "true_positive": 26
+          },
+          "metrics": {
+            "coverage": 1.0,
+            "overall_accuracy": 0.7678571428571429,
+            "precision": 0.7647058823529411,
+            "selective_accuracy": 0.7678571428571429,
+            "selective_balanced_accuracy": 0.6920341394025604,
+            "selective_f1": 0.5714285714285713,
+            "selective_mcc": 0.4526009890498996,
+            "selective_recall": 0.45614035087719296,
+            "selective_specificity": 0.9279279279279279,
+            "strict_balanced_accuracy": 0.6920341394025604,
+            "strict_f1": 0.5714285714285713,
+            "strict_recall": 0.45614035087719296,
+            "strict_specificity": 0.9279279279279279
+          },
+          "replaced_from_context": false,
+          "tag": "car_braking"
+        },
+        {
+          "counts": {
+            "abstained_negative": 0,
+            "abstained_positive": 0,
+            "false_negative": 46,
+            "false_positive": 2,
+            "known_pairs": 167,
+            "true_negative": 89,
+            "true_positive": 30
+          },
+          "metrics": {
+            "coverage": 1.0,
+            "overall_accuracy": 0.7125748502994012,
+            "precision": 0.9375,
+            "selective_accuracy": 0.7125748502994012,
+            "selective_balanced_accuracy": 0.6863794100636206,
+            "selective_f1": 0.5555555555555556,
+            "selective_mcc": 0.47164316742796975,
+            "selective_recall": 0.39473684210526316,
+            "selective_specificity": 0.978021978021978,
+            "strict_balanced_accuracy": 0.6863794100636206,
+            "strict_f1": 0.5555555555555556,
+            "strict_recall": 0.39473684210526316,
+            "strict_specificity": 0.978021978021978
+          },
+          "replaced_from_context": false,
+          "tag": "car_stopped"
+        },
+        {
+          "counts": {
+            "abstained_negative": 0,
+            "abstained_positive": 0,
+            "false_negative": 33,
+            "false_positive": 1,
+            "known_pairs": 169,
+            "true_negative": 86,
+            "true_positive": 49
+          },
+          "metrics": {
+            "coverage": 1.0,
+            "overall_accuracy": 0.7988165680473372,
+            "precision": 0.98,
+            "selective_accuracy": 0.7988165680473372,
+            "selective_balanced_accuracy": 0.7930333613680964,
+            "selective_f1": 0.7424242424242423,
+            "selective_mcc": 0.641734122247794,
+            "selective_recall": 0.5975609756097561,
+            "selective_specificity": 0.9885057471264368,
+            "strict_balanced_accuracy": 0.7930333613680964,
+            "strict_f1": 0.7424242424242423,
+            "strict_recall": 0.5975609756097561,
+            "strict_specificity": 0.9885057471264368
+          },
+          "replaced_from_context": false,
+          "tag": "cyclist_present"
+        },
+        {
+          "counts": {
+            "abstained_negative": 0,
+            "abstained_positive": 0,
+            "false_negative": 1,
+            "false_positive": 3,
+            "known_pairs": 169,
+            "true_negative": 162,
+            "true_positive": 3
+          },
+          "metrics": {
+            "coverage": 1.0,
+            "overall_accuracy": 0.9763313609467456,
+            "precision": 0.5,
+            "selective_accuracy": 0.9763313609467456,
+            "selective_balanced_accuracy": 0.865909090909091,
+            "selective_f1": 0.6,
+            "selective_mcc": 0.6011816770428444,
+            "selective_recall": 0.75,
+            "selective_specificity": 0.9818181818181818,
+            "strict_balanced_accuracy": 0.865909090909091,
+            "strict_f1": 0.6,
+            "strict_recall": 0.75,
+            "strict_specificity": 0.9818181818181818
+          },
+          "replaced_from_context": false,
+          "tag": "ego_lane_change"
+        },
+        {
+          "counts": {
+            "abstained_negative": 0,
+            "abstained_positive": 0,
+            "false_negative": 20,
+            "false_positive": 0,
+            "known_pairs": 167,
+            "true_negative": 25,
+            "true_positive": 122
+          },
+          "metrics": {
+            "coverage": 1.0,
+            "overall_accuracy": 0.8802395209580839,
+            "precision": 1.0,
+            "selective_accuracy": 0.8802395209580839,
+            "selective_balanced_accuracy": 0.9295774647887324,
+            "selective_f1": 0.9242424242424242,
+            "selective_mcc": 0.6908750206873185,
+            "selective_recall": 0.8591549295774648,
+            "selective_specificity": 1.0,
+            "strict_balanced_accuracy": 0.9295774647887324,
+            "strict_f1": 0.9242424242424242,
+            "strict_recall": 0.8591549295774648,
+            "strict_specificity": 1.0
+          },
+          "replaced_from_context": true,
+          "tag": "ego_moving"
+        },
+        {
+          "counts": {
+            "abstained_negative": 0,
+            "abstained_positive": 0,
+            "false_negative": 10,
+            "false_positive": 1,
+            "known_pairs": 166,
+            "true_negative": 112,
+            "true_positive": 43
+          },
+          "metrics": {
+            "coverage": 1.0,
+            "overall_accuracy": 0.9337349397590361,
+            "precision": 0.9772727272727273,
+            "selective_accuracy": 0.9337349397590361,
+            "selective_balanced_accuracy": 0.9012355985974286,
+            "selective_f1": 0.88659793814433,
+            "selective_mcc": 0.8476183621191237,
+            "selective_recall": 0.8113207547169812,
+            "selective_specificity": 0.9911504424778761,
+            "strict_balanced_accuracy": 0.9012355985974286,
+            "strict_f1": 0.88659793814433,
+            "strict_recall": 0.8113207547169812,
+            "strict_specificity": 0.9911504424778761
+          },
+          "replaced_from_context": true,
+          "tag": "ego_stopped"
+        },
+        {
+          "counts": {
+            "abstained_negative": 0,
+            "abstained_positive": 0,
+            "false_negative": 2,
+            "false_positive": 15,
+            "known_pairs": 169,
+            "true_negative": 141,
+            "true_positive": 11
+          },
+          "metrics": {
+            "coverage": 1.0,
+            "overall_accuracy": 0.8994082840236687,
+            "precision": 0.4230769230769231,
+            "selective_accuracy": 0.8994082840236687,
+            "selective_balanced_accuracy": 0.875,
+            "selective_f1": 0.5641025641025641,
+            "selective_mcc": 0.5539117094069973,
+            "selective_recall": 0.8461538461538461,
+            "selective_specificity": 0.9038461538461539,
+            "strict_balanced_accuracy": 0.875,
+            "strict_f1": 0.5641025641025641,
+            "strict_recall": 0.8461538461538461,
+            "strict_specificity": 0.9038461538461539
+          },
+          "replaced_from_context": false,
+          "tag": "ego_turn_left"
+        },
+        {
+          "counts": {
+            "abstained_negative": 0,
+            "abstained_positive": 0,
+            "false_negative": 0,
+            "false_positive": 11,
+            "known_pairs": 167,
+            "true_negative": 148,
+            "true_positive": 8
+          },
+          "metrics": {
+            "coverage": 1.0,
+            "overall_accuracy": 0.9341317365269461,
+            "precision": 0.42105263157894735,
+            "selective_accuracy": 0.9341317365269461,
+            "selective_balanced_accuracy": 0.9654088050314465,
+            "selective_f1": 0.5925925925925926,
+            "selective_mcc": 0.6260377019293707,
+            "selective_recall": 1.0,
+            "selective_specificity": 0.9308176100628931,
+            "strict_balanced_accuracy": 0.9654088050314465,
+            "strict_f1": 0.5925925925925926,
+            "strict_recall": 1.0,
+            "strict_specificity": 0.9308176100628931
+          },
+          "replaced_from_context": false,
+          "tag": "ego_turn_right"
+        },
+        {
+          "counts": {
+            "abstained_negative": 0,
+            "abstained_positive": 0,
+            "false_negative": 1,
+            "false_positive": 1,
+            "known_pairs": 169,
+            "true_negative": 159,
+            "true_positive": 8
+          },
+          "metrics": {
+            "coverage": 1.0,
+            "overall_accuracy": 0.9881656804733728,
+            "precision": 0.8888888888888888,
+            "selective_accuracy": 0.9881656804733728,
+            "selective_balanced_accuracy": 0.9413194444444444,
+            "selective_f1": 0.8888888888888888,
+            "selective_mcc": 0.8826388888888889,
+            "selective_recall": 0.8888888888888888,
+            "selective_specificity": 0.99375,
+            "strict_balanced_accuracy": 0.9413194444444444,
+            "strict_f1": 0.8888888888888888,
+            "strict_recall": 0.8888888888888888,
+            "strict_specificity": 0.99375
+          },
+          "replaced_from_context": false,
+          "tag": "motorcycle_present"
+        },
+        {
+          "counts": {
+            "abstained_negative": 0,
+            "abstained_positive": 0,
+            "false_negative": 12,
+            "false_positive": 3,
+            "known_pairs": 165,
+            "true_negative": 137,
+            "true_positive": 13
+          },
+          "metrics": {
+            "coverage": 1.0,
+            "overall_accuracy": 0.9090909090909091,
+            "precision": 0.8125,
+            "selective_accuracy": 0.9090909090909091,
+            "selective_balanced_accuracy": 0.7492857142857143,
+            "selective_f1": 0.6341463414634146,
+            "selective_mcc": 0.6040992319734806,
+            "selective_recall": 0.52,
+            "selective_specificity": 0.9785714285714285,
+            "strict_balanced_accuracy": 0.7492857142857143,
+            "strict_f1": 0.6341463414634146,
+            "strict_recall": 0.52,
+            "strict_specificity": 0.9785714285714285
+          },
+          "replaced_from_context": false,
+          "tag": "pedestrian_crossing"
+        },
+        {
+          "counts": {
+            "abstained_negative": 0,
+            "abstained_positive": 0,
+            "false_negative": 15,
+            "false_positive": 5,
+            "known_pairs": 168,
+            "true_negative": 147,
+            "true_positive": 1
+          },
+          "metrics": {
+            "coverage": 1.0,
+            "overall_accuracy": 0.8809523809523809,
+            "precision": 0.16666666666666666,
+            "selective_accuracy": 0.8809523809523809,
+            "selective_balanced_accuracy": 0.5148026315789473,
+            "selective_f1": 0.09090909090909091,
+            "selective_mcc": 0.0468292905790847,
+            "selective_recall": 0.0625,
+            "selective_specificity": 0.9671052631578947,
+            "strict_balanced_accuracy": 0.5148026315789473,
+            "strict_f1": 0.09090909090909091,
+            "strict_recall": 0.0625,
+            "strict_specificity": 0.9671052631578947
+          },
+          "replaced_from_context": false,
+          "tag": "pedestrian_waiting_to_cross"
+        },
+        {
+          "counts": {
+            "abstained_negative": 0,
+            "abstained_positive": 0,
+            "false_negative": 12,
+            "false_positive": 0,
+            "known_pairs": 168,
+            "true_negative": 135,
+            "true_positive": 21
+          },
+          "metrics": {
+            "coverage": 1.0,
+            "overall_accuracy": 0.9285714285714286,
+            "precision": 1.0,
+            "selective_accuracy": 0.9285714285714286,
+            "selective_balanced_accuracy": 0.8181818181818181,
+            "selective_f1": 0.7777777777777778,
+            "selective_mcc": 0.7644707871564383,
+            "selective_recall": 0.6363636363636364,
+            "selective_specificity": 1.0,
+            "strict_balanced_accuracy": 0.8181818181818181,
+            "strict_f1": 0.7777777777777778,
+            "strict_recall": 0.6363636363636364,
+            "strict_specificity": 1.0
+          },
+          "replaced_from_context": false,
+          "tag": "traffic_light_green"
+        },
+        {
+          "counts": {
+            "abstained_negative": 0,
+            "abstained_positive": 0,
+            "false_negative": 9,
+            "false_positive": 2,
+            "known_pairs": 169,
+            "true_negative": 141,
+            "true_positive": 17
+          },
+          "metrics": {
+            "coverage": 1.0,
+            "overall_accuracy": 0.9349112426035503,
+            "precision": 0.8947368421052632,
+            "selective_accuracy": 0.9349112426035503,
+            "selective_balanced_accuracy": 0.81993006993007,
+            "selective_f1": 0.7555555555555555,
+            "selective_mcc": 0.7308316034052477,
+            "selective_recall": 0.6538461538461539,
+            "selective_specificity": 0.986013986013986,
+            "strict_balanced_accuracy": 0.81993006993007,
+            "strict_f1": 0.7555555555555555,
+            "strict_recall": 0.6538461538461539,
+            "strict_specificity": 0.986013986013986
+          },
+          "replaced_from_context": false,
+          "tag": "traffic_light_red"
+        }
+      ]
+    }
+  ],
+  "run_dir": "${ROAD_ARTIFACT_ROOT}/runs/road-super-public-context-development-v1",
+  "schema_version": 1,
+  "split": "development"
+}

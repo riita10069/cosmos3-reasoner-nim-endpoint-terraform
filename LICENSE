@@ -1,0 +1,59 @@
+MIXED-LICENSE NOTICE
+
+This repository contains materials under different licenses. A license that
+applies to one category does not apply to another category unless stated
+explicitly below.
+
+1. Paper and authored documentation
+
+The following files are licensed under the Creative Commons Attribution 4.0
+International license (CC BY 4.0):
+
+- paper/ROAD_COSMOS3_SCENE_LABELING_PAPER.pdf
+- paper/ROAD_COSMOS3_SCENE_LABELING_PAPER.tex
+- paper/ROAD_COSMOS3_SCENE_LABELING_PAPER.md
+- paper/ADVERSARIAL_SELF_REVIEW.md
+- paper/REPRODUCTION.md
+- paper/README.md
+- paper/inputs/README.md
+- paper/road-paper-artifact-manifest.json
+
+See LICENSE-PAPER.md.
+
+2. Derived benchmark and research data
+
+The JSON files under paper/inputs/ are licensed, to the extent that the
+repository author has authority to license copyright and similar rights in
+them, under the Creative Commons Attribution-NonCommercial-ShareAlike 4.0
+International license (CC BY-NC-SA 4.0).
+
+These files include deterministic transformations, aggregate measurements,
+and derived feature summaries produced from public research datasets. They do
+not include the original ROAD videos, ROAD annotation files, Oxford RobotCar
+source files, OPR source images or trajectory files, or the OpenStreetMap
+snapshot.
+
+See LICENSE-DERIVED-DATA.md and THIRD_PARTY_NOTICES.md. OpenStreetMap-derived
+database content is additionally subject to the Open Data Commons Open
+Database License 1.0 (ODbL 1.0).
+
+3. Software
+
+The Creative Commons licenses above do not apply to the Python source code,
+tests, Makefile, or release-verification scripts in this repository. No
+software license is granted for those files unless a separate software
+license is added later. Copyright and other rights are reserved.
+
+4. Third-party materials
+
+No original ROAD, Oxford RobotCar, OPR, OpenStreetMap, NVIDIA model, or other
+third-party source material is licensed by this notice. No rights in those
+materials are granted by the licenses applied to this paper or to the
+repository author's derived files.
+
+Users are responsible for identifying and complying with all applicable
+upstream licenses, attribution requirements, privacy terms, non-commercial
+restrictions, and ShareAlike obligations. See THIRD_PARTY_NOTICES.md.
+
+This notice is intended to describe the repository's licensing boundaries. It
+is not legal advice and does not modify the terms of any referenced license.
