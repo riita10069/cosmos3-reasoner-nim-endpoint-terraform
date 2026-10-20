@@ -1,0 +1,107 @@
+{
+  "schema_version": 1,
+  "dataset": "ROAD",
+  "fold": 3,
+  "fps": 12,
+  "window_seconds": 8,
+  "stride_seconds": 8,
+  "minimum_positive_frames": 6,
+  "require_fully_annotated": true,
+  "tags": [
+    {
+      "id": "ego_moving",
+      "name_ja": "自車走行",
+      "label_type": "av_action",
+      "labels": ["AV-Mov"],
+      "definition": "The ego vehicle is moving forward without a turn or lane-change maneuver."
+    },
+    {
+      "id": "ego_stopped",
+      "name_ja": "自車停止",
+      "label_type": "av_action",
+      "labels": ["AV-Stop"],
+      "definition": "The ego vehicle is stationary."
+    },
+    {
+      "id": "ego_turn_left",
+      "name_ja": "自車左折",
+      "label_type": "av_action",
+      "labels": ["AV-TurLft"],
+      "definition": "The ego vehicle performs a left turn."
+    },
+    {
+      "id": "ego_turn_right",
+      "name_ja": "自車右折",
+      "label_type": "av_action",
+      "labels": ["AV-TurRht"],
+      "definition": "The ego vehicle performs a right turn."
+    },
+    {
+      "id": "ego_lane_change",
+      "name_ja": "自車車線変更",
+      "label_type": "av_action",
+      "labels": ["AV-MovLft", "AV-MovRht"],
+      "definition": "The ego vehicle changes to a lane on either its left or right."
+    },
+    {
+      "id": "car_braking",
+      "name_ja": "車両制動",
+      "label_type": "duplex",
+      "labels": ["Car-Brake"],
+      "definition": "At least one car is braking."
+    },
+    {
+      "id": "car_stopped",
+      "name_ja": "停止車両",
+      "label_type": "duplex",
+      "labels": ["Car-Stop"],
+      "definition": "At least one car is stationary."
+    },
+    {
+      "id": "pedestrian_waiting_to_cross",
+      "name_ja": "歩行者横断待ち",
+      "label_type": "duplex",
+      "labels": ["Ped-Wait2X"],
+      "definition": "At least one pedestrian is waiting to cross the road."
+    },
+    {
+      "id": "pedestrian_crossing",
+      "name_ja": "歩行者横断",
+      "label_type": "duplex",
+      "labels": ["Ped-Xing", "Ped-XingFmLft", "Ped-XingFmRht"],
+      "definition": "At least one pedestrian is crossing the road, in either direction."
+    },
+    {
+      "id": "cyclist_present",
+      "name_ja": "自転車存在",
+      "label_type": "agent",
+      "labels": ["Cyc"],
+      "minimum_positive_frames": 3,
+      "definition": "At least one cyclist is visible."
+    },
+    {
+      "id": "motorcycle_present",
+      "name_ja": "二輪車存在",
+      "label_type": "agent",
+      "labels": ["Mobike"],
+      "minimum_positive_frames": 3,
+      "definition": "At least one motorcyclist or motorcycle is visible."
+    },
+    {
+      "id": "traffic_light_red",
+      "name_ja": "対象信号赤",
+      "label_type": "duplex",
+      "labels": ["TL-Red"],
+      "minimum_positive_frames": 3,
+      "definition": "A traffic light relevant to the ego lane is red."
+    },
+    {
+      "id": "traffic_light_green",
+      "name_ja": "対象信号青",
+      "label_type": "duplex",
+      "labels": ["TL-Green"],
+      "minimum_positive_frames": 3,
+      "definition": "A traffic light relevant to the ego lane is green."
+    }
+  ]
+}

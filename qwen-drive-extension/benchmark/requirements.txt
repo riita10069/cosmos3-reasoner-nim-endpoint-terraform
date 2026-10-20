@@ -1,0 +1,5 @@
+boto3==1.43.46
+httpx==0.28.1
+numpy==2.2.6
+opencv-python-headless==4.12.0.88
+pytest==8.4.1

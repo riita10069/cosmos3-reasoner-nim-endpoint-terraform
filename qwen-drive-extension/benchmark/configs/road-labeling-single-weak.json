@@ -1,0 +1,97 @@
+{
+  "schema_version": 1,
+  "system_prompt": "You classify an ordered eight-second front-facing autonomous-driving video using the ROAD dataset taxonomy. Sampled frames are chronological but may be nonuniform in source time. Judge only visible evidence in the supplied interval. Apply every criterion independently.",
+  "default_prompt_variant": "road-evidence",
+  "prompt_variants": {
+    "road-direct": {
+      "instruction": "For each criterion in the exact order listed, emit 1 when the criterion occurs anywhere in the interval and emit 0 otherwise. Return only the required JSON object.",
+      "output_encoding": "ordered_binary_array"
+    },
+    "road-evidence": {
+      "instruction": "Inspect the complete ordered sequence before classifying. For a temporal action, require a consistent state or motion change across source timestamps; do not infer it from a single ambiguous frame. For an object or traffic-light state, require direct visual evidence. For each criterion in the exact order listed, emit 1 only when supported and emit 0 otherwise. Return only the required JSON object.",
+      "output_encoding": "ordered_binary_array"
+    },
+    "road-reasoned": {
+      "instruction": "Analyze the complete ordered sequence and source timestamps. Check every indexed criterion independently against visible evidence. Temporal actions require consistent evidence across timestamps. Finish with exactly one line of the form FINAL_POSITIVE_INDICES: [0, 2]. Use an empty list when none is supported. Do not write anything after that line.",
+      "output_encoding": "free_positive_indices",
+      "structured_output": false,
+      "repair_prompt_variant": "road-repair",
+      "repair_max_tokens": 64,
+      "repair_temperature": 0
+    },
+    "road-repair": {
+      "instruction": "Return exactly one line beginning with FINAL_POSITIVE_INDICES:. Use only zero-based indices from the current criteria. Keep only criteria directly supported by the video. Use FINAL_POSITIVE_INDICES: [] when none is supported. Do not output analysis or any other text.",
+      "output_encoding": "free_positive_indices",
+      "structured_output": false
+    }
+  },
+  "tag_group_instructions": {
+    "all": "Evaluate every criterion independently. Related labels may coexist, but one label must not force another.",
+    "ego_actions": "Infer ego motion from the camera trajectory and road geometry across time. Distinguish turns from lateral lane changes.",
+    "road_user_actions": "Track the same road user across time. Distinguish stopped, braking, waiting, and crossing.",
+    "objects_signals": "Require direct visibility of the named road user or traffic-light state.",
+    "single_ego_lane_change": "Infer ego motion from the camera trajectory and road geometry across time. Distinguish turns from lateral lane changes.",
+    "single_car_stopped": "Track the same road user across time. Distinguish stopped, braking, waiting, and crossing.",
+    "single_pedestrian_waiting_to_cross": "Track the same road user across time. Distinguish stopped, braking, waiting, and crossing."
+  },
+  "tag_groups": {
+    "all": [
+      "ego_moving",
+      "ego_stopped",
+      "ego_turn_left",
+      "ego_turn_right",
+      "ego_lane_change",
+      "car_braking",
+      "car_stopped",
+      "pedestrian_waiting_to_cross",
+      "pedestrian_crossing",
+      "cyclist_present",
+      "motorcycle_present",
+      "traffic_light_red",
+      "traffic_light_green"
+    ],
+    "ego_actions": [
+      "ego_moving",
+      "ego_stopped",
+      "ego_turn_left",
+      "ego_turn_right",
+      "ego_lane_change"
+    ],
+    "road_user_actions": [
+      "car_braking",
+      "car_stopped",
+      "pedestrian_waiting_to_cross",
+      "pedestrian_crossing"
+    ],
+    "objects_signals": [
+      "cyclist_present",
+      "motorcycle_present",
+      "traffic_light_red",
+      "traffic_light_green"
+    ],
+    "single_ego_lane_change": [
+      "ego_lane_change"
+    ],
+    "single_car_stopped": [
+      "car_stopped"
+    ],
+    "single_pedestrian_waiting_to_cross": [
+      "pedestrian_waiting_to_cross"
+    ]
+  },
+  "tag_definitions": {
+    "ego_moving": "The ego vehicle is on the move along its normal direction of travel during a sustained part of the interval. Do not count an interval whose only ego motion is a turn, lane change, or overtaking maneuver.",
+    "ego_stopped": "The ego vehicle is not moving during a sustained part of the interval.",
+    "ego_turn_left": "The ego vehicle turns left, evidenced by a sustained leftward heading change; distinguish this from a lateral lane change.",
+    "ego_turn_right": "The ego vehicle turns right, evidenced by a sustained rightward heading change; distinguish this from a lateral lane change.",
+    "ego_lane_change": "The ego vehicle moves from its current lane into an adjacent lane on either side without making a road turn.",
+    "car_braking": "At least one visible car slows down and its brake lights are illuminated.",
+    "car_stopped": "At least one visible car is stationary but in a position ready to move; do not count clearly parked inactive cars.",
+    "pedestrian_waiting_to_cross": "At least one pedestrian is stationary on a pavement and faces toward the road as if waiting to cross.",
+    "pedestrian_crossing": "At least one pedestrian crosses the road, including crossing from either side.",
+    "cyclist_present": "At least one cyclist is visible.",
+    "motorcycle_present": "At least one motorcycle or motorcyclist is visible.",
+    "traffic_light_red": "A traffic light relevant to the ego vehicle has its red light illuminated.",
+    "traffic_light_green": "A traffic light relevant to the ego vehicle has its green light illuminated."
+  }
+}

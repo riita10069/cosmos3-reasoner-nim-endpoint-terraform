@@ -1,0 +1,33 @@
+{
+  "schema_version": 1,
+  "description": "Same frame selection and text manifest as road-uniform-24-reasoned / road-adaptive-24-reasoned, encoded at 2 fps so vLLM's Qwen3-VL processor (default 2 fps resampling) keeps all 24 frames.",
+  "profiles": {
+    "road-uniform-24-reasoned-2fps": {
+      "kind": "uniform",
+      "fps": 3,
+      "max_frames": 24,
+      "display_fps": 2,
+      "timestamp_mode": "text-manifest",
+      "prompt_variant": "road-reasoned",
+      "max_tokens": 64,
+      "media_first_prompt": true
+    },
+    "road-adaptive-24-reasoned-2fps": {
+      "kind": "adaptive",
+      "analysis_fps": 4,
+      "nms_seconds": 2,
+      "max_events": 2,
+      "base_fps": 1,
+      "shoulder_seconds": 2,
+      "shoulder_fps": 2,
+      "event_seconds": 1,
+      "event_fps": 4,
+      "max_frames": 24,
+      "display_fps": 2,
+      "timestamp_mode": "text-manifest",
+      "prompt_variant": "road-reasoned",
+      "max_tokens": 64,
+      "media_first_prompt": true
+    }
+  }
+}

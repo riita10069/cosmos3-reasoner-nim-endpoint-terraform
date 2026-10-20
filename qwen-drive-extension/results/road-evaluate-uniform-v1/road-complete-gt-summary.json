@@ -1,0 +1,2825 @@
+{
+  "bootstrap": {
+    "samples": 10000,
+    "seed": 20260808,
+    "unit": "source_video_id"
+  },
+  "clip_count": 875,
+  "dataset": "ROAD",
+  "generated_at": "2026-10-19T19:54:39.166+00:00",
+  "ground_truth_path": "${COSMOS_ARTIFACTS}/road-gt-v2/road-ground-truth.jsonl",
+  "ground_truth_sha256": "17e00dd85a2a22d08436091ff02a78b9ebf2fbbc08d7c4c603ef98fa8c30d5ae",
+  "profiles": [
+    {
+      "benchmark_key": "road-nano-uniform-24-evaluation-full-v1::road-uniform-24-reasoned",
+      "bootstrap_ci95": {
+        "overall_accuracy": [
+          0.8495080873770219,
+          0.8727102803738318
+        ],
+        "selective_mcc": [
+          0.5798732196982425,
+          0.6331692256857469
+        ],
+        "strict_balanced_accuracy": [
+          0.7776941602756526,
+          0.8054586156544312
+        ],
+        "strict_f1": [
+          0.6735789668579891,
+          0.7145305656065511
+        ]
+      },
+      "clip_count": 875,
+      "complete_output_clip_fraction": 1.0,
+      "concurrency": 8,
+      "distribution": {
+        "label_distribution_js_divergence": 0.04816035797568474,
+        "prevalence_mae": 0.08421349240134204,
+        "tags": [
+          {
+            "absolute_error": 0.04965357967667436,
+            "covered_clips": 866,
+            "predicted_prevalence": 0.2251732101616628,
+            "tag": "car_braking",
+            "true_prevalence": 0.17551963048498845
+          },
+          {
+            "absolute_error": 0.09688581314878891,
+            "covered_clips": 867,
+            "predicted_prevalence": 0.21683967704728951,
+            "tag": "car_stopped",
+            "true_prevalence": 0.3137254901960784
+          },
+          {
+            "absolute_error": 0.2208237986270023,
+            "covered_clips": 874,
+            "predicted_prevalence": 0.2734553775743707,
+            "tag": "cyclist_present",
+            "true_prevalence": 0.494279176201373
+          },
+          {
+            "absolute_error": 0.009153318077803204,
+            "covered_clips": 874,
+            "predicted_prevalence": 0.013729977116704805,
+            "tag": "ego_lane_change",
+            "true_prevalence": 0.02288329519450801
+          },
+          {
+            "absolute_error": 0.06781609195402294,
+            "covered_clips": 870,
+            "predicted_prevalence": 0.7379310344827587,
+            "tag": "ego_moving",
+            "true_prevalence": 0.8057471264367816
+          },
+          {
+            "absolute_error": 0.024193548387096753,
+            "covered_clips": 868,
+            "predicted_prevalence": 0.3283410138248848,
+            "tag": "ego_stopped",
+            "true_prevalence": 0.30414746543778803
+          },
+          {
+            "absolute_error": 0.2906574394463668,
+            "covered_clips": 867,
+            "predicted_prevalence": 0.36101499423298733,
+            "tag": "ego_turn_left",
+            "true_prevalence": 0.07035755478662054
+          },
+          {
+            "absolute_error": 0.0068649885583523945,
+            "covered_clips": 874,
+            "predicted_prevalence": 0.07437070938215103,
+            "tag": "ego_turn_right",
+            "true_prevalence": 0.06750572082379863
+          },
+          {
+            "absolute_error": 0.007999999999999997,
+            "covered_clips": 875,
+            "predicted_prevalence": 0.030857142857142857,
+            "tag": "motorcycle_present",
+            "true_prevalence": 0.038857142857142854
+          },
+          {
+            "absolute_error": 0.13641618497109825,
+            "covered_clips": 865,
+            "predicted_prevalence": 0.10057803468208093,
+            "tag": "pedestrian_crossing",
+            "true_prevalence": 0.23699421965317918
+          },
+          {
+            "absolute_error": 0.017341040462427737,
+            "covered_clips": 865,
+            "predicted_prevalence": 0.15953757225433526,
+            "tag": "pedestrian_waiting_to_cross",
+            "true_prevalence": 0.14219653179190753
+          },
+          {
+            "absolute_error": 0.09839816933638446,
+            "covered_clips": 874,
+            "predicted_prevalence": 0.08810068649885583,
+            "tag": "traffic_light_green",
+            "true_prevalence": 0.18649885583524028
+          },
+          {
+            "absolute_error": 0.06857142857142856,
+            "covered_clips": 875,
+            "predicted_prevalence": 0.18971428571428572,
+            "tag": "traffic_light_red",
+            "true_prevalence": 0.2582857142857143
+          }
+        ]
+      },
+      "evidence": {
+        "evidence_hit_pairs": 2707,
+        "evidence_hit_rate": 0.9981563421828908,
+        "positive_event_pairs": 2712,
+        "tags": [
+          {
+            "evidence_hit_pairs": 152,
+            "evidence_hit_rate": 1.0,
+            "positive_event_pairs": 152,
+            "tag": "car_braking"
+          },
+          {
+            "evidence_hit_pairs": 272,
+            "evidence_hit_rate": 1.0,
+            "positive_event_pairs": 272,
+            "tag": "car_stopped"
+          },
+          {
+            "evidence_hit_pairs": 430,
+            "evidence_hit_rate": 0.9953703703703703,
+            "positive_event_pairs": 432,
+            "tag": "cyclist_present"
+          },
+          {
+            "evidence_hit_pairs": 20,
+            "evidence_hit_rate": 1.0,
+            "positive_event_pairs": 20,
+            "tag": "ego_lane_change"
+          },
+          {
+            "evidence_hit_pairs": 701,
+            "evidence_hit_rate": 1.0,
+            "positive_event_pairs": 701,
+            "tag": "ego_moving"
+          },
+          {
+            "evidence_hit_pairs": 264,
+            "evidence_hit_rate": 1.0,
+            "positive_event_pairs": 264,
+            "tag": "ego_stopped"
+          },
+          {
+            "evidence_hit_pairs": 61,
+            "evidence_hit_rate": 1.0,
+            "positive_event_pairs": 61,
+            "tag": "ego_turn_left"
+          },
+          {
+            "evidence_hit_pairs": 59,
+            "evidence_hit_rate": 1.0,
+            "positive_event_pairs": 59,
+            "tag": "ego_turn_right"
+          },
+          {
+            "evidence_hit_pairs": 34,
+            "evidence_hit_rate": 1.0,
+            "positive_event_pairs": 34,
+            "tag": "motorcycle_present"
+          },
+          {
+            "evidence_hit_pairs": 205,
+            "evidence_hit_rate": 1.0,
+            "positive_event_pairs": 205,
+            "tag": "pedestrian_crossing"
+          },
+          {
+            "evidence_hit_pairs": 123,
+            "evidence_hit_rate": 1.0,
+            "positive_event_pairs": 123,
+            "tag": "pedestrian_waiting_to_cross"
+          },
+          {
+            "evidence_hit_pairs": 161,
+            "evidence_hit_rate": 0.9877300613496932,
+            "positive_event_pairs": 163,
+            "tag": "traffic_light_green"
+          },
+          {
+            "evidence_hit_pairs": 225,
+            "evidence_hit_rate": 0.995575221238938,
+            "positive_event_pairs": 226,
+            "tag": "traffic_light_red"
+          }
+        ],
+        "true_positive_with_evidence_hit": 1786,
+        "true_positive_without_evidence_hit": 0
+      },
+      "ignored_prediction_clip_count": 0,
+      "known_pairs": 11314,
+      "macro": {
+        "overall_accuracy": 0.8606394825843215,
+        "precision": 0.6707246737497741,
+        "selective_mcc": 0.5202351910223272,
+        "strict_balanced_accuracy": 0.7539849148678355,
+        "strict_f1": 0.582354271181771,
+        "strict_recall": 0.5785373558937369
+      },
+      "micro": {
+        "coverage": 1.0,
+        "overall_accuracy": 0.8608803252607389,
+        "precision": 0.733771569433032,
+        "selective_accuracy": 0.8608803252607389,
+        "selective_balanced_accuracy": 0.7916116269866581,
+        "selective_f1": 0.6941313641663428,
+        "selective_mcc": 0.6059162828432544,
+        "selective_recall": 0.6585545722713865,
+        "selective_specificity": 0.9246686817019297,
+        "strict_balanced_accuracy": 0.7916116269866581,
+        "strict_f1": 0.6941313641663428,
+        "strict_recall": 0.6585545722713865,
+        "strict_specificity": 0.9246686817019297
+      },
+      "model": "nvidia/Cosmos3-Nano",
+      "output_pair_coverage": 1.0,
+      "output_validity": {
+        "minimum_required": 0.99,
+        "passed": true
+      },
+      "profile": "road-uniform-24-reasoned",
+      "rare_scene_retrieval": {
+        "budgets": [
+          {
+            "enrichment_mean": 3.2560497614178594,
+            "precision_ci95": [
+              0.4444444444444444,
+              0.7777777777777778
+            ],
+            "precision_mean": 0.6065555555555555,
+            "random_precision_expectation": 0.18628571428571428,
+            "random_recall_expectation": 0.010285714285714285,
+            "rare_label_recall_ci95": [
+              0.040229885057471264,
+              0.06321839080459771
+            ],
+            "rare_label_recall_mean": 0.050517241379310344,
+            "recall_ci95": [
+              0.024539877300613498,
+              0.04294478527607362
+            ],
+            "recall_mean": 0.03349079754601227,
+            "review_count": 9,
+            "review_fraction": 0.010285714285714285
+          },
+          {
+            "enrichment_mean": 3.3578674010039045,
+            "precision_ci95": [
+              0.5681818181818182,
+              0.6818181818181818
+            ],
+            "precision_mean": 0.6255227272727273,
+            "random_precision_expectation": 0.18628571428571428,
+            "random_recall_expectation": 0.05028571428571429,
+            "rare_label_recall_ci95": [
+              0.1781609195402299,
+              0.21264367816091953
+            ],
+            "rare_label_recall_mean": 0.19495977011494253,
+            "recall_ci95": [
+              0.15337423312883436,
+              0.18404907975460122
+            ],
+            "recall_mean": 0.16885276073619632,
+            "review_count": 44,
+            "review_fraction": 0.05028571428571429
+          },
+          {
+            "enrichment_mean": 2.6803280117122146,
+            "precision_ci95": [
+              0.4431818181818182,
+              0.5568181818181818
+            ],
+            "precision_mean": 0.4993068181818182,
+            "random_precision_expectation": 0.18628571428571428,
+            "random_recall_expectation": 0.10057142857142858,
+            "rare_label_recall_ci95": [
+              0.26436781609195403,
+              0.3275862068965517
+            ],
+            "rare_label_recall_mean": 0.29555172413793107,
+            "recall_ci95": [
+              0.2392638036809816,
+              0.3006134969325153
+            ],
+            "recall_mean": 0.2695644171779141,
+            "review_count": 88,
+            "review_fraction": 0.10057142857142858
+          },
+          {
+            "enrichment_mean": 2.206717791411043,
+            "precision_ci95": [
+              0.3657142857142857,
+              0.45714285714285713
+            ],
+            "precision_mean": 0.41108,
+            "random_precision_expectation": 0.18628571428571428,
+            "random_recall_expectation": 0.2,
+            "rare_label_recall_ci95": [
+              0.41379310344827586,
+              0.5114942528735632
+            ],
+            "rare_label_recall_mean": 0.463,
+            "recall_ci95": [
+              0.39263803680981596,
+              0.49079754601226994
+            ],
+            "recall_mean": 0.44134355828220856,
+            "review_count": 175,
+            "review_fraction": 0.2
+          }
+        ],
+        "definition": "A rare scene contains at least one GT-positive tag whose prevalence is at most 10%.",
+        "ranking_score": "count of predicted-positive rare tags",
+        "rare_scene_count": 163,
+        "rare_scene_prevalence": 0.18628571428571428,
+        "rare_tags": [
+          "ego_lane_change",
+          "ego_turn_left",
+          "ego_turn_right",
+          "motorcycle_present"
+        ],
+        "rarity_threshold": 0.1,
+        "tie_break_samples": 1000
+      },
+      "run_id": "road-nano-uniform-24-evaluation-full-v1",
+      "runtime": {
+        "clips_per_gpu_hour": 3266.539276474202,
+        "decode_seconds_per_clip": 3.9340335611428574,
+        "estimated_usd_per_1000_clips": 0.6863777870811428,
+        "evaluated_clip_instances": 875,
+        "failed_requests": 0,
+        "gpu_count": 1,
+        "gpu_memory_used_mib_max": 45401.0,
+        "gpu_utilization_percent_mean": 99.43408360128618,
+        "gpu_utilization_percent_p95": 100.0,
+        "instance_hourly_usd": 2.24208,
+        "mm_cache_hit_rate": 0.0,
+        "parseable_requests": 875,
+        "preemptions": 0,
+        "prefill_seconds_per_clip": 1.8083043760000002,
+        "prefix_cache_token_hit_rate": 0.0059065864908491505,
+        "request_count": 875,
+        "request_e2e_seconds_p50": 8.638836,
+        "request_e2e_seconds_p95": 11.443061799999999,
+        "request_e2e_seconds_p99": 13.016369219999998,
+        "requested_clip_count": 875,
+        "successful_clip_count": 875,
+        "successful_requests": 875,
+        "ttft_seconds_p50": 4.93565,
+        "ttft_seconds_p95": 6.186138999999999,
+        "wall_seconds": 964.32332,
+        "wall_seconds_per_clip": 1.1020837942857142
+      },
+      "serving_profile": "nano-server-default",
+      "source_video_count": 15,
+      "tags": [
+        {
+          "abstained_negative": 0,
+          "abstained_positive": 0,
+          "coverage": 1.0,
+          "false_negative": 48,
+          "false_positive": 91,
+          "known_pairs": 866,
+          "overall_accuracy": 0.8394919168591224,
+          "precision": 0.5333333333333333,
+          "selective_accuracy": 0.8394919168591224,
+          "selective_balanced_accuracy": 0.7783797729618163,
+          "selective_f1": 0.5994236311239194,
+          "selective_mcc": 0.5070607635469022,
+          "selective_recall": 0.6842105263157895,
+          "selective_specificity": 0.8725490196078431,
+          "strict_balanced_accuracy": 0.7783797729618163,
+          "strict_f1": 0.5994236311239194,
+          "strict_recall": 0.6842105263157895,
+          "strict_specificity": 0.8725490196078431,
+          "tag": "car_braking",
+          "true_negative": 623,
+          "true_positive": 104
+        },
+        {
+          "abstained_negative": 0,
+          "abstained_positive": 0,
+          "coverage": 1.0,
+          "false_negative": 149,
+          "false_positive": 65,
+          "known_pairs": 867,
+          "overall_accuracy": 0.7531718569780853,
+          "precision": 0.6542553191489362,
+          "selective_accuracy": 0.7531718569780853,
+          "selective_balanced_accuracy": 0.6714810924369748,
+          "selective_f1": 0.5347826086956522,
+          "selective_mcc": 0.38616717966217123,
+          "selective_recall": 0.4522058823529412,
+          "selective_specificity": 0.8907563025210085,
+          "strict_balanced_accuracy": 0.6714810924369748,
+          "strict_f1": 0.5347826086956522,
+          "strict_recall": 0.4522058823529412,
+          "strict_specificity": 0.8907563025210085,
+          "tag": "car_stopped",
+          "true_negative": 530,
+          "true_positive": 123
+        },
+        {
+          "abstained_negative": 0,
+          "abstained_positive": 0,
+          "coverage": 1.0,
+          "false_negative": 200,
+          "false_positive": 7,
+          "known_pairs": 874,
+          "overall_accuracy": 0.7631578947368421,
+          "precision": 0.9707112970711297,
+          "selective_accuracy": 0.7631578947368421,
+          "selective_balanced_accuracy": 0.7605999664823194,
+          "selective_f1": 0.6915052160953802,
+          "selective_mcc": 0.5846171428892839,
+          "selective_recall": 0.5370370370370371,
+          "selective_specificity": 0.9841628959276018,
+          "strict_balanced_accuracy": 0.7605999664823194,
+          "strict_f1": 0.6915052160953802,
+          "strict_recall": 0.5370370370370371,
+          "strict_specificity": 0.9841628959276018,
+          "tag": "cyclist_present",
+          "true_negative": 435,
+          "true_positive": 232
+        },
+        {
+          "abstained_negative": 0,
+          "abstained_positive": 0,
+          "coverage": 1.0,
+          "false_negative": 18,
+          "false_positive": 10,
+          "known_pairs": 874,
+          "overall_accuracy": 0.9679633867276888,
+          "precision": 0.16666666666666666,
+          "selective_accuracy": 0.9679633867276888,
+          "selective_balanced_accuracy": 0.5441451990632319,
+          "selective_f1": 0.125,
+          "selective_mcc": 0.11345226022186451,
+          "selective_recall": 0.1,
+          "selective_specificity": 0.9882903981264637,
+          "strict_balanced_accuracy": 0.5441451990632319,
+          "strict_f1": 0.125,
+          "strict_recall": 0.1,
+          "strict_specificity": 0.9882903981264637,
+          "tag": "ego_lane_change",
+          "true_negative": 844,
+          "true_positive": 2
+        },
+        {
+          "abstained_negative": 0,
+          "abstained_positive": 0,
+          "coverage": 1.0,
+          "false_negative": 65,
+          "false_positive": 6,
+          "known_pairs": 870,
+          "overall_accuracy": 0.9183908045977012,
+          "precision": 0.9906542056074766,
+          "selective_accuracy": 0.9183908045977012,
+          "selective_balanced_accuracy": 0.9358861811950806,
+          "selective_f1": 0.9471332836932242,
+          "selective_mcc": 0.7842788806241844,
+          "selective_recall": 0.9072753209700428,
+          "selective_specificity": 0.9644970414201184,
+          "strict_balanced_accuracy": 0.9358861811950806,
+          "strict_f1": 0.9471332836932242,
+          "strict_recall": 0.9072753209700428,
+          "strict_specificity": 0.9644970414201184,
+          "tag": "ego_moving",
+          "true_negative": 163,
+          "true_positive": 636
+        },
+        {
+          "abstained_negative": 0,
+          "abstained_positive": 0,
+          "coverage": 1.0,
+          "false_negative": 17,
+          "false_positive": 38,
+          "known_pairs": 868,
+          "overall_accuracy": 0.9366359447004609,
+          "precision": 0.8666666666666667,
+          "selective_accuracy": 0.9366359447004609,
+          "selective_balanced_accuracy": 0.9363460766606462,
+          "selective_f1": 0.8998178506375227,
+          "selective_mcc": 0.8549186601578004,
+          "selective_recall": 0.9356060606060606,
+          "selective_specificity": 0.9370860927152318,
+          "strict_balanced_accuracy": 0.9363460766606462,
+          "strict_f1": 0.8998178506375227,
+          "strict_recall": 0.9356060606060606,
+          "strict_specificity": 0.9370860927152318,
+          "tag": "ego_stopped",
+          "true_negative": 566,
+          "true_positive": 247
+        },
+        {
+          "abstained_negative": 0,
+          "abstained_positive": 0,
+          "coverage": 1.0,
+          "false_negative": 9,
+          "false_positive": 261,
+          "known_pairs": 867,
+          "overall_accuracy": 0.6885813148788927,
+          "precision": 0.16613418530351437,
+          "selective_accuracy": 0.6885813148788927,
+          "selective_balanced_accuracy": 0.7643188382215351,
+          "selective_f1": 0.27807486631016043,
+          "selective_mcc": 0.2814903426469439,
+          "selective_recall": 0.8524590163934426,
+          "selective_specificity": 0.6761786600496278,
+          "strict_balanced_accuracy": 0.7643188382215351,
+          "strict_f1": 0.27807486631016043,
+          "strict_recall": 0.8524590163934426,
+          "strict_specificity": 0.6761786600496278,
+          "tag": "ego_turn_left",
+          "true_negative": 545,
+          "true_positive": 52
+        },
+        {
+          "abstained_negative": 0,
+          "abstained_positive": 0,
+          "coverage": 1.0,
+          "false_negative": 24,
+          "false_positive": 30,
+          "known_pairs": 874,
+          "overall_accuracy": 0.9382151029748284,
+          "precision": 0.5384615384615384,
+          "selective_accuracy": 0.9382151029748284,
+          "selective_balanced_accuracy": 0.7782052615160653,
+          "selective_f1": 0.564516129032258,
+          "selective_mcc": 0.5320705310294958,
+          "selective_recall": 0.5932203389830508,
+          "selective_specificity": 0.9631901840490797,
+          "strict_balanced_accuracy": 0.7782052615160653,
+          "strict_f1": 0.564516129032258,
+          "strict_recall": 0.5932203389830508,
+          "strict_specificity": 0.9631901840490797,
+          "tag": "ego_turn_right",
+          "true_negative": 785,
+          "true_positive": 35
+        },
+        {
+          "abstained_negative": 0,
+          "abstained_positive": 0,
+          "coverage": 1.0,
+          "false_negative": 10,
+          "false_positive": 3,
+          "known_pairs": 875,
+          "overall_accuracy": 0.9851428571428571,
+          "precision": 0.8888888888888888,
+          "selective_accuracy": 0.9851428571428571,
+          "selective_balanced_accuracy": 0.8511575855074491,
+          "selective_f1": 0.7868852459016393,
+          "selective_mcc": 0.7848554857342361,
+          "selective_recall": 0.7058823529411765,
+          "selective_specificity": 0.9964328180737217,
+          "strict_balanced_accuracy": 0.8511575855074491,
+          "strict_f1": 0.7868852459016393,
+          "strict_recall": 0.7058823529411765,
+          "strict_specificity": 0.9964328180737217,
+          "tag": "motorcycle_present",
+          "true_negative": 838,
+          "true_positive": 24
+        },
+        {
+          "abstained_negative": 0,
+          "abstained_positive": 0,
+          "coverage": 1.0,
+          "false_negative": 137,
+          "false_positive": 19,
+          "known_pairs": 865,
+          "overall_accuracy": 0.8196531791907514,
+          "precision": 0.7816091954022989,
+          "selective_accuracy": 0.8196531791907514,
+          "selective_balanced_accuracy": 0.651459719142646,
+          "selective_f1": 0.46575342465753433,
+          "selective_mcc": 0.4282788386275342,
+          "selective_recall": 0.33170731707317075,
+          "selective_specificity": 0.9712121212121212,
+          "strict_balanced_accuracy": 0.651459719142646,
+          "strict_f1": 0.46575342465753433,
+          "strict_recall": 0.33170731707317075,
+          "strict_specificity": 0.9712121212121212,
+          "tag": "pedestrian_crossing",
+          "true_negative": 641,
+          "true_positive": 68
+        },
+        {
+          "abstained_negative": 0,
+          "abstained_positive": 0,
+          "coverage": 1.0,
+          "false_negative": 89,
+          "false_positive": 104,
+          "known_pairs": 865,
+          "overall_accuracy": 0.776878612716763,
+          "precision": 0.2463768115942029,
+          "selective_accuracy": 0.776878612716763,
+          "selective_balanced_accuracy": 0.5681305195801284,
+          "selective_f1": 0.26053639846743293,
+          "selective_mcc": 0.1299629187712268,
+          "selective_recall": 0.2764227642276423,
+          "selective_specificity": 0.8598382749326146,
+          "strict_balanced_accuracy": 0.5681305195801284,
+          "strict_f1": 0.26053639846743293,
+          "strict_recall": 0.2764227642276423,
+          "strict_specificity": 0.8598382749326146,
+          "tag": "pedestrian_waiting_to_cross",
+          "true_negative": 638,
+          "true_positive": 34
+        },
+        {
+          "abstained_negative": 0,
+          "abstained_positive": 0,
+          "coverage": 1.0,
+          "false_negative": 86,
+          "false_positive": 0,
+          "known_pairs": 874,
+          "overall_accuracy": 0.9016018306636155,
+          "precision": 1.0,
+          "selective_accuracy": 0.9016018306636155,
+          "selective_balanced_accuracy": 0.7361963190184049,
+          "selective_f1": 0.6416666666666667,
+          "selective_mcc": 0.6491681441296913,
+          "selective_recall": 0.4723926380368098,
+          "selective_specificity": 1.0,
+          "strict_balanced_accuracy": 0.7361963190184049,
+          "strict_f1": 0.6416666666666667,
+          "strict_recall": 0.4723926380368098,
+          "strict_specificity": 1.0,
+          "tag": "traffic_light_green",
+          "true_negative": 711,
+          "true_positive": 77
+        },
+        {
+          "abstained_negative": 0,
+          "abstained_positive": 0,
+          "coverage": 1.0,
+          "false_negative": 74,
+          "false_positive": 14,
+          "known_pairs": 875,
+          "overall_accuracy": 0.8994285714285715,
+          "precision": 0.9156626506024096,
+          "selective_accuracy": 0.8994285714285715,
+          "selective_balanced_accuracy": 0.8254973614955616,
+          "selective_f1": 0.7755102040816327,
+          "selective_mcc": 0.7267363352489196,
+          "selective_recall": 0.672566371681416,
+          "selective_specificity": 0.9784283513097073,
+          "strict_balanced_accuracy": 0.8254973614955616,
+          "strict_f1": 0.7755102040816327,
+          "strict_recall": 0.672566371681416,
+          "strict_specificity": 0.9784283513097073,
+          "tag": "traffic_light_red",
+          "true_negative": 635,
+          "true_positive": 152
+        }
+      ]
+    },
+    {
+      "benchmark_key": "road-qwen-drive-uniform-24-2fps-evaluation-v1::road-uniform-24-reasoned-2fps",
+      "bootstrap_ci95": {
+        "overall_accuracy": [
+          0.8872507957781873,
+          0.905154091392136
+        ],
+        "selective_mcc": [
+          0.6741109134381995,
+          0.724793099221404
+        ],
+        "strict_balanced_accuracy": [
+          0.7932217487759761,
+          0.822276765673022
+        ],
+        "strict_f1": [
+          0.7242095545811217,
+          0.7680161943319839
+        ]
+      },
+      "clip_count": 875,
+      "comparison_reference": "road-nano-uniform-24-evaluation-full-v1::road-uniform-24-reasoned",
+      "complete_output_clip_fraction": 1.0,
+      "concurrency": 8,
+      "disagreement_analysis": {
+        "agreement_pairs": 10216,
+        "candidate_error_rate_on_agreement": 0.08065779169929523,
+        "candidate_error_rate_on_disagreement": 0.31693989071038253,
+        "clips_with_disagreement": 619,
+        "disagreement_pairs": 1098,
+        "paired_clip_count": 875,
+        "reference_error_rate_on_agreement": 0.08065779169929523,
+        "reference_error_rate_on_disagreement": 0.6830601092896175
+      },
+      "distribution": {
+        "label_distribution_js_divergence": 0.02936014718268993,
+        "prevalence_mae": 0.06977138268995363,
+        "tags": [
+          {
+            "absolute_error": 0.0011547344110854618,
+            "covered_clips": 866,
+            "predicted_prevalence": 0.1766743648960739,
+            "tag": "car_braking",
+            "true_prevalence": 0.17551963048498845
+          },
+          {
+            "absolute_error": 0.20530565167243367,
+            "covered_clips": 867,
+            "predicted_prevalence": 0.10841983852364476,
+            "tag": "car_stopped",
+            "true_prevalence": 0.3137254901960784
+          },
+          {
+            "absolute_error": 0.10068649885583525,
+            "covered_clips": 874,
+            "predicted_prevalence": 0.39359267734553777,
+            "tag": "cyclist_present",
+            "true_prevalence": 0.494279176201373
+          },
+          {
+            "absolute_error": 0.020594965675057208,
+            "covered_clips": 874,
+            "predicted_prevalence": 0.002288329519450801,
+            "tag": "ego_lane_change",
+            "true_prevalence": 0.02288329519450801
+          },
+          {
+            "absolute_error": 0.10804597701149421,
+            "covered_clips": 870,
+            "predicted_prevalence": 0.6977011494252874,
+            "tag": "ego_moving",
+            "true_prevalence": 0.8057471264367816
+          },
+          {
+            "absolute_error": 0.04032258064516131,
+            "covered_clips": 868,
+            "predicted_prevalence": 0.2638248847926267,
+            "tag": "ego_stopped",
+            "true_prevalence": 0.30414746543778803
+          },
+          {
+            "absolute_error": 0.027681660899653987,
+            "covered_clips": 867,
+            "predicted_prevalence": 0.04267589388696655,
+            "tag": "ego_turn_left",
+            "true_prevalence": 0.07035755478662054
+          },
+          {
+            "absolute_error": 0.024027459954233416,
+            "covered_clips": 874,
+            "predicted_prevalence": 0.043478260869565216,
+            "tag": "ego_turn_right",
+            "true_prevalence": 0.06750572082379863
+          },
+          {
+            "absolute_error": 0.0,
+            "covered_clips": 875,
+            "predicted_prevalence": 0.038857142857142854,
+            "tag": "motorcycle_present",
+            "true_prevalence": 0.038857142857142854
+          },
+          {
+            "absolute_error": 0.14797687861271674,
+            "covered_clips": 865,
+            "predicted_prevalence": 0.08901734104046242,
+            "tag": "pedestrian_crossing",
+            "true_prevalence": 0.23699421965317918
+          },
+          {
+            "absolute_error": 0.12601156069364164,
+            "covered_clips": 865,
+            "predicted_prevalence": 0.016184971098265895,
+            "tag": "pedestrian_waiting_to_cross",
+            "true_prevalence": 0.14219653179190753
+          },
+          {
+            "absolute_error": 0.06750572082379863,
+            "covered_clips": 874,
+            "predicted_prevalence": 0.11899313501144165,
+            "tag": "traffic_light_green",
+            "true_prevalence": 0.18649885583524028
+          },
+          {
+            "absolute_error": 0.0377142857142857,
+            "covered_clips": 875,
+            "predicted_prevalence": 0.22057142857142858,
+            "tag": "traffic_light_red",
+            "true_prevalence": 0.2582857142857143
+          }
+        ]
+      },
+      "evidence": {
+        "evidence_hit_pairs": 2707,
+        "evidence_hit_rate": 0.9981563421828908,
+        "positive_event_pairs": 2712,
+        "tags": [
+          {
+            "evidence_hit_pairs": 152,
+            "evidence_hit_rate": 1.0,
+            "positive_event_pairs": 152,
+            "tag": "car_braking"
+          },
+          {
+            "evidence_hit_pairs": 272,
+            "evidence_hit_rate": 1.0,
+            "positive_event_pairs": 272,
+            "tag": "car_stopped"
+          },
+          {
+            "evidence_hit_pairs": 430,
+            "evidence_hit_rate": 0.9953703703703703,
+            "positive_event_pairs": 432,
+            "tag": "cyclist_present"
+          },
+          {
+            "evidence_hit_pairs": 20,
+            "evidence_hit_rate": 1.0,
+            "positive_event_pairs": 20,
+            "tag": "ego_lane_change"
+          },
+          {
+            "evidence_hit_pairs": 701,
+            "evidence_hit_rate": 1.0,
+            "positive_event_pairs": 701,
+            "tag": "ego_moving"
+          },
+          {
+            "evidence_hit_pairs": 264,
+            "evidence_hit_rate": 1.0,
+            "positive_event_pairs": 264,
+            "tag": "ego_stopped"
+          },
+          {
+            "evidence_hit_pairs": 61,
+            "evidence_hit_rate": 1.0,
+            "positive_event_pairs": 61,
+            "tag": "ego_turn_left"
+          },
+          {
+            "evidence_hit_pairs": 59,
+            "evidence_hit_rate": 1.0,
+            "positive_event_pairs": 59,
+            "tag": "ego_turn_right"
+          },
+          {
+            "evidence_hit_pairs": 34,
+            "evidence_hit_rate": 1.0,
+            "positive_event_pairs": 34,
+            "tag": "motorcycle_present"
+          },
+          {
+            "evidence_hit_pairs": 205,
+            "evidence_hit_rate": 1.0,
+            "positive_event_pairs": 205,
+            "tag": "pedestrian_crossing"
+          },
+          {
+            "evidence_hit_pairs": 123,
+            "evidence_hit_rate": 1.0,
+            "positive_event_pairs": 123,
+            "tag": "pedestrian_waiting_to_cross"
+          },
+          {
+            "evidence_hit_pairs": 161,
+            "evidence_hit_rate": 0.9877300613496932,
+            "positive_event_pairs": 163,
+            "tag": "traffic_light_green"
+          },
+          {
+            "evidence_hit_pairs": 225,
+            "evidence_hit_rate": 0.995575221238938,
+            "positive_event_pairs": 226,
+            "tag": "traffic_light_red"
+          }
+        ],
+        "true_positive_with_evidence_hit": 1733,
+        "true_positive_without_evidence_hit": 0
+      },
+      "ignored_prediction_clip_count": 0,
+      "known_pairs": 11314,
+      "macro": {
+        "overall_accuracy": 0.896248255781518,
+        "precision": 0.7303542809857182,
+        "selective_mcc": 0.5232968057243389,
+        "strict_balanced_accuracy": 0.7366895541638108,
+        "strict_f1": 0.5653649245717841,
+        "strict_recall": 0.4972165999668233
+      },
+      "micro": {
+        "coverage": 1.0,
+        "overall_accuracy": 0.8964115255435743,
+        "precision": 0.8997923156801662,
+        "selective_accuracy": 0.8964115255435743,
+        "selective_balanced_accuracy": 0.8082875783843917,
+        "selective_f1": 0.7473048727899956,
+        "selective_mcc": 0.7003512399120508,
+        "selective_recall": 0.6390117994100295,
+        "selective_specificity": 0.9775633573587538,
+        "strict_balanced_accuracy": 0.8082875783843917,
+        "strict_f1": 0.7473048727899956,
+        "strict_recall": 0.6390117994100295,
+        "strict_specificity": 0.9775633573587538
+      },
+      "model": "Qwen/Qwen-Drive-1.0-4B",
+      "output_pair_coverage": 1.0,
+      "output_validity": {
+        "minimum_required": 0.99,
+        "passed": true
+      },
+      "paired_delta_ci95": {
+        "overall_accuracy": [
+          0.02880512091038412,
+          0.042813170413207646
+        ],
+        "selective_mcc": [
+          0.07617101977156726,
+          0.11360216803955947
+        ],
+        "strict_balanced_accuracy": [
+          0.007356620653460766,
+          0.026029913509923674
+        ],
+        "strict_f1": [
+          0.03892913432672396,
+          0.06782621764827168
+        ]
+      },
+      "profile": "road-uniform-24-reasoned-2fps",
+      "rare_scene_retrieval": {
+        "budgets": [
+          {
+            "enrichment_mean": 3.0073278800272663,
+            "precision_ci95": [
+              0.3333333333333333,
+              0.7777777777777778
+            ],
+            "precision_mean": 0.5602222222222222,
+            "random_precision_expectation": 0.18628571428571428,
+            "random_recall_expectation": 0.010285714285714285,
+            "rare_label_recall_ci95": [
+              0.022988505747126436,
+              0.05172413793103448
+            ],
+            "rare_label_recall_mean": 0.03637356321839081,
+            "recall_ci95": [
+              0.018404907975460124,
+              0.04294478527607362
+            ],
+            "recall_mean": 0.030932515337423316,
+            "review_count": 9,
+            "review_fraction": 0.010285714285714285
+          },
+          {
+            "enrichment_mean": 3.5186663413273847,
+            "precision_ci95": [
+              0.5454545454545454,
+              0.75
+            ],
+            "precision_mean": 0.6554772727272727,
+            "random_precision_expectation": 0.18628571428571428,
+            "random_recall_expectation": 0.05028571428571429,
+            "rare_label_recall_ci95": [
+              0.14942528735632185,
+              0.21264367816091953
+            ],
+            "rare_label_recall_mean": 0.18301149425287358,
+            "recall_ci95": [
+              0.147239263803681,
+              0.20245398773006135
+            ],
+            "recall_mean": 0.17693865030674846,
+            "review_count": 44,
+            "review_fraction": 0.05028571428571429
+          },
+          {
+            "enrichment_mean": 3.5765563998884553,
+            "precision_ci95": [
+              0.625,
+              0.7045454545454546
+            ],
+            "precision_mean": 0.6662613636363637,
+            "random_precision_expectation": 0.18628571428571428,
+            "random_recall_expectation": 0.10057142857142858,
+            "rare_label_recall_ci95": [
+              0.3448275862068966,
+              0.39080459770114945
+            ],
+            "rare_label_recall_mean": 0.36647126436781613,
+            "recall_ci95": [
+              0.3374233128834356,
+              0.3803680981595092
+            ],
+            "recall_mean": 0.3596993865030675,
+            "review_count": 88,
+            "review_fraction": 0.10057142857142858
+          },
+          {
+            "enrichment_mean": 2.4336503067484663,
+            "precision_ci95": [
+              0.42857142857142855,
+              0.4857142857142857
+            ],
+            "precision_mean": 0.4533542857142857,
+            "random_precision_expectation": 0.18628571428571428,
+            "random_recall_expectation": 0.2,
+            "rare_label_recall_ci95": [
+              0.46551724137931033,
+              0.5287356321839081
+            ],
+            "rare_label_recall_mean": 0.4930057471264368,
+            "recall_ci95": [
+              0.4601226993865031,
+              0.5214723926380368
+            ],
+            "recall_mean": 0.48673006134969327,
+            "review_count": 175,
+            "review_fraction": 0.2
+          }
+        ],
+        "definition": "A rare scene contains at least one GT-positive tag whose prevalence is at most 10%.",
+        "ranking_score": "count of predicted-positive rare tags",
+        "rare_scene_count": 163,
+        "rare_scene_prevalence": 0.18628571428571428,
+        "rare_tags": [
+          "ego_lane_change",
+          "ego_turn_left",
+          "ego_turn_right",
+          "motorcycle_present"
+        ],
+        "rarity_threshold": 0.1,
+        "tie_break_samples": 1000
+      },
+      "run_id": "road-qwen-drive-uniform-24-2fps-evaluation-v1",
+      "runtime": {
+        "clips_per_gpu_hour": 814.5318756704988,
+        "decode_seconds_per_clip": 13.599185363428571,
+        "estimated_usd_per_1000_clips": 1.4879712337866664,
+        "evaluated_clip_instances": 875,
+        "failed_requests": 0,
+        "gpu_count": 1,
+        "gpu_memory_used_mib_max": 22502.0,
+        "gpu_utilization_percent_mean": 99.7643362136685,
+        "gpu_utilization_percent_p95": 100.0,
+        "instance_hourly_usd": 1.212,
+        "mm_cache_hit_rate": 0.3016759776536313,
+        "parseable_requests": 875,
+        "preemptions": 0,
+        "prefill_seconds_per_clip": 18.057706309714288,
+        "prefix_cache_token_hit_rate": 0.0,
+        "request_count": 875,
+        "request_e2e_seconds_p50": 23.413722,
+        "request_e2e_seconds_p95": 60.34009049999999,
+        "request_e2e_seconds_p99": 64.2008438,
+        "requested_clip_count": 875,
+        "successful_clip_count": 875,
+        "successful_requests": 875,
+        "ttft_seconds_p50": 18.653813,
+        "ttft_seconds_p95": 33.7914635,
+        "wall_seconds": 3867.251969,
+        "wall_seconds_per_clip": 4.419716536
+      },
+      "serving_profile": null,
+      "source_video_count": 15,
+      "tags": [
+        {
+          "abstained_negative": 0,
+          "abstained_positive": 0,
+          "coverage": 1.0,
+          "false_negative": 56,
+          "false_positive": 57,
+          "known_pairs": 866,
+          "overall_accuracy": 0.8695150115473441,
+          "precision": 0.6274509803921569,
+          "selective_accuracy": 0.8695150115473441,
+          "selective_balanced_accuracy": 0.7758735072976559,
+          "selective_f1": 0.6295081967213114,
+          "selective_mcc": 0.5503264815979717,
+          "selective_recall": 0.631578947368421,
+          "selective_specificity": 0.9201680672268907,
+          "strict_balanced_accuracy": 0.7758735072976559,
+          "strict_f1": 0.6295081967213114,
+          "strict_recall": 0.631578947368421,
+          "strict_specificity": 0.9201680672268907,
+          "tag": "car_braking",
+          "true_negative": 657,
+          "true_positive": 96
+        },
+        {
+          "abstained_negative": 0,
+          "abstained_positive": 0,
+          "coverage": 1.0,
+          "false_negative": 203,
+          "false_positive": 25,
+          "known_pairs": 867,
+          "overall_accuracy": 0.7370242214532872,
+          "precision": 0.7340425531914894,
+          "selective_accuracy": 0.7370242214532872,
+          "selective_balanced_accuracy": 0.6058298319327731,
+          "selective_f1": 0.3770491803278688,
+          "selective_mcc": 0.31588380683187867,
+          "selective_recall": 0.2536764705882353,
+          "selective_specificity": 0.957983193277311,
+          "strict_balanced_accuracy": 0.6058298319327731,
+          "strict_f1": 0.3770491803278688,
+          "strict_recall": 0.2536764705882353,
+          "strict_specificity": 0.957983193277311,
+          "tag": "car_stopped",
+          "true_negative": 570,
+          "true_positive": 69
+        },
+        {
+          "abstained_negative": 0,
+          "abstained_positive": 0,
+          "coverage": 1.0,
+          "false_negative": 98,
+          "false_positive": 10,
+          "known_pairs": 874,
+          "overall_accuracy": 0.8764302059496567,
+          "precision": 0.9709302325581395,
+          "selective_accuracy": 0.8764302059496567,
+          "selective_balanced_accuracy": 0.8752618568795039,
+          "selective_f1": 0.8608247422680412,
+          "selective_mcc": 0.7680690600583746,
+          "selective_recall": 0.7731481481481481,
+          "selective_specificity": 0.9773755656108597,
+          "strict_balanced_accuracy": 0.8752618568795039,
+          "strict_f1": 0.8608247422680412,
+          "strict_recall": 0.7731481481481481,
+          "strict_specificity": 0.9773755656108597,
+          "tag": "cyclist_present",
+          "true_negative": 432,
+          "true_positive": 334
+        },
+        {
+          "abstained_negative": 0,
+          "abstained_positive": 0,
+          "coverage": 1.0,
+          "false_negative": 20,
+          "false_positive": 2,
+          "known_pairs": 874,
+          "overall_accuracy": 0.9748283752860412,
+          "precision": 0.0,
+          "selective_accuracy": 0.9748283752860412,
+          "selective_balanced_accuracy": 0.49882903981264637,
+          "selective_f1": 0.0,
+          "selective_mcc": -0.00732896787154188,
+          "selective_recall": 0.0,
+          "selective_specificity": 0.9976580796252927,
+          "strict_balanced_accuracy": 0.49882903981264637,
+          "strict_f1": 0.0,
+          "strict_recall": 0.0,
+          "strict_specificity": 0.9976580796252927,
+          "tag": "ego_lane_change",
+          "true_negative": 852,
+          "true_positive": 0
+        },
+        {
+          "abstained_negative": 0,
+          "abstained_positive": 0,
+          "coverage": 1.0,
+          "false_negative": 100,
+          "false_positive": 6,
+          "known_pairs": 870,
+          "overall_accuracy": 0.8781609195402299,
+          "precision": 0.9901153212520593,
+          "selective_accuracy": 0.8781609195402299,
+          "selective_balanced_accuracy": 0.910921844533169,
+          "selective_f1": 0.918960244648318,
+          "selective_mcc": 0.707977353816395,
+          "selective_recall": 0.8573466476462197,
+          "selective_specificity": 0.9644970414201184,
+          "strict_balanced_accuracy": 0.910921844533169,
+          "strict_f1": 0.918960244648318,
+          "strict_recall": 0.8573466476462197,
+          "strict_specificity": 0.9644970414201184,
+          "tag": "ego_moving",
+          "true_negative": 163,
+          "true_positive": 601
+        },
+        {
+          "abstained_negative": 0,
+          "abstained_positive": 0,
+          "coverage": 1.0,
+          "false_negative": 46,
+          "false_positive": 11,
+          "known_pairs": 868,
+          "overall_accuracy": 0.934331797235023,
+          "precision": 0.9519650655021834,
+          "selective_accuracy": 0.934331797235023,
+          "selective_balanced_accuracy": 0.9037728276138872,
+          "selective_f1": 0.8843813387423934,
+          "selective_mcc": 0.8429840304040531,
+          "selective_recall": 0.8257575757575758,
+          "selective_specificity": 0.9817880794701986,
+          "strict_balanced_accuracy": 0.9037728276138872,
+          "strict_f1": 0.8843813387423934,
+          "strict_recall": 0.8257575757575758,
+          "strict_specificity": 0.9817880794701986,
+          "tag": "ego_stopped",
+          "true_negative": 593,
+          "true_positive": 218
+        },
+        {
+          "abstained_negative": 0,
+          "abstained_positive": 0,
+          "coverage": 1.0,
+          "false_negative": 45,
+          "false_positive": 21,
+          "known_pairs": 867,
+          "overall_accuracy": 0.9238754325259516,
+          "precision": 0.43243243243243246,
+          "selective_accuracy": 0.9238754325259516,
+          "selective_balanced_accuracy": 0.6181202456982468,
+          "selective_f1": 0.32653061224489793,
+          "selective_mcc": 0.29891442073034197,
+          "selective_recall": 0.26229508196721313,
+          "selective_specificity": 0.9739454094292804,
+          "strict_balanced_accuracy": 0.6181202456982468,
+          "strict_f1": 0.32653061224489793,
+          "strict_recall": 0.26229508196721313,
+          "strict_specificity": 0.9739454094292804,
+          "tag": "ego_turn_left",
+          "true_negative": 785,
+          "true_positive": 16
+        },
+        {
+          "abstained_negative": 0,
+          "abstained_positive": 0,
+          "coverage": 1.0,
+          "false_negative": 41,
+          "false_positive": 20,
+          "known_pairs": 874,
+          "overall_accuracy": 0.9302059496567505,
+          "precision": 0.47368421052631576,
+          "selective_accuracy": 0.9302059496567505,
+          "selective_balanced_accuracy": 0.6402724342310492,
+          "selective_f1": 0.3711340206185567,
+          "selective_mcc": 0.3451534370400101,
+          "selective_recall": 0.3050847457627119,
+          "selective_specificity": 0.9754601226993865,
+          "strict_balanced_accuracy": 0.6402724342310492,
+          "strict_f1": 0.3711340206185567,
+          "strict_recall": 0.3050847457627119,
+          "strict_specificity": 0.9754601226993865,
+          "tag": "ego_turn_right",
+          "true_negative": 795,
+          "true_positive": 18
+        },
+        {
+          "abstained_negative": 0,
+          "abstained_positive": 0,
+          "coverage": 1.0,
+          "false_negative": 9,
+          "false_positive": 9,
+          "known_pairs": 875,
+          "overall_accuracy": 0.9794285714285714,
+          "precision": 0.7352941176470589,
+          "selective_accuracy": 0.9794285714285714,
+          "selective_balanced_accuracy": 0.8622962859341121,
+          "selective_f1": 0.735294117647059,
+          "selective_mcc": 0.7245925718682241,
+          "selective_recall": 0.7352941176470589,
+          "selective_specificity": 0.9892984542211652,
+          "strict_balanced_accuracy": 0.8622962859341121,
+          "strict_f1": 0.735294117647059,
+          "strict_recall": 0.7352941176470589,
+          "strict_specificity": 0.9892984542211652,
+          "tag": "motorcycle_present",
+          "true_negative": 832,
+          "true_positive": 25
+        },
+        {
+          "abstained_negative": 0,
+          "abstained_positive": 0,
+          "coverage": 1.0,
+          "false_negative": 133,
+          "false_positive": 5,
+          "known_pairs": 865,
+          "overall_accuracy": 0.8404624277456647,
+          "precision": 0.935064935064935,
+          "selective_accuracy": 0.8404624277456647,
+          "selective_balanced_accuracy": 0.6718218773096822,
+          "selective_f1": 0.5106382978723405,
+          "selective_mcc": 0.5131553752064048,
+          "selective_recall": 0.35121951219512193,
+          "selective_specificity": 0.9924242424242424,
+          "strict_balanced_accuracy": 0.6718218773096822,
+          "strict_f1": 0.5106382978723405,
+          "strict_recall": 0.35121951219512193,
+          "strict_specificity": 0.9924242424242424,
+          "tag": "pedestrian_crossing",
+          "true_negative": 655,
+          "true_positive": 72
+        },
+        {
+          "abstained_negative": 0,
+          "abstained_positive": 0,
+          "coverage": 1.0,
+          "false_negative": 112,
+          "false_positive": 3,
+          "known_pairs": 865,
+          "overall_accuracy": 0.8670520231213873,
+          "precision": 0.7857142857142857,
+          "selective_accuracy": 0.8670520231213873,
+          "selective_balanced_accuracy": 0.5426938838121534,
+          "selective_f1": 0.16058394160583941,
+          "selective_mcc": 0.23633136860736764,
+          "selective_recall": 0.08943089430894309,
+          "selective_specificity": 0.9959568733153639,
+          "strict_balanced_accuracy": 0.5426938838121534,
+          "strict_f1": 0.16058394160583941,
+          "strict_recall": 0.08943089430894309,
+          "strict_specificity": 0.9959568733153639,
+          "tag": "pedestrian_waiting_to_cross",
+          "true_negative": 739,
+          "true_positive": 11
+        },
+        {
+          "abstained_negative": 0,
+          "abstained_positive": 0,
+          "coverage": 1.0,
+          "false_negative": 63,
+          "false_positive": 4,
+          "known_pairs": 874,
+          "overall_accuracy": 0.9233409610983981,
+          "precision": 0.9615384615384616,
+          "selective_accuracy": 0.9233409610983981,
+          "selective_balanced_accuracy": 0.8039355267358684,
+          "selective_f1": 0.749063670411985,
+          "selective_mcc": 0.7312704651454326,
+          "selective_recall": 0.6134969325153374,
+          "selective_specificity": 0.9943741209563994,
+          "strict_balanced_accuracy": 0.8039355267358684,
+          "strict_f1": 0.749063670411985,
+          "strict_recall": 0.6134969325153374,
+          "strict_specificity": 0.9943741209563994,
+          "tag": "traffic_light_green",
+          "true_negative": 707,
+          "true_positive": 100
+        },
+        {
+          "abstained_negative": 0,
+          "abstained_positive": 0,
+          "coverage": 1.0,
+          "false_negative": 53,
+          "false_positive": 20,
+          "known_pairs": 875,
+          "overall_accuracy": 0.9165714285714286,
+          "precision": 0.8963730569948186,
+          "selective_accuracy": 0.9165714285714286,
+          "selective_balanced_accuracy": 0.8673350423387922,
+          "selective_f1": 0.8257756563245823,
+          "selective_mcc": 0.7755290709814927,
+          "selective_recall": 0.7654867256637168,
+          "selective_specificity": 0.9691833590138675,
+          "strict_balanced_accuracy": 0.8673350423387922,
+          "strict_f1": 0.8257756563245823,
+          "strict_recall": 0.7654867256637168,
+          "strict_specificity": 0.9691833590138675,
+          "tag": "traffic_light_red",
+          "true_negative": 629,
+          "true_positive": 173
+        }
+      ]
+    },
+    {
+      "benchmark_key": "road-qwen-drive-uniform-24-4fps-evaluation-v1::road-uniform-24-reasoned",
+      "bootstrap_ci95": {
+        "overall_accuracy": [
+          0.8854679802955665,
+          0.9032068007743456
+        ],
+        "selective_mcc": [
+          0.6656116543564119,
+          0.7210190166667593
+        ],
+        "strict_balanced_accuracy": [
+          0.7859329693965937,
+          0.8142425162806071
+        ],
+        "strict_f1": [
+          0.7140871177015756,
+          0.7600425079702444
+        ]
+      },
+      "clip_count": 875,
+      "comparison_reference": "road-nano-uniform-24-evaluation-full-v1::road-uniform-24-reasoned",
+      "complete_output_clip_fraction": 1.0,
+      "concurrency": 8,
+      "disagreement_analysis": {
+        "agreement_pairs": 10228,
+        "candidate_error_rate_on_agreement": 0.08212749315604223,
+        "candidate_error_rate_on_disagreement": 0.3241252302025783,
+        "clips_with_disagreement": 597,
+        "disagreement_pairs": 1086,
+        "paired_clip_count": 875,
+        "reference_error_rate_on_agreement": 0.08212749315604223,
+        "reference_error_rate_on_disagreement": 0.6758747697974218
+      },
+      "distribution": {
+        "label_distribution_js_divergence": 0.03868909751960938,
+        "prevalence_mae": 0.07666831421237597,
+        "tags": [
+          {
+            "absolute_error": 0.006928406466512688,
+            "covered_clips": 866,
+            "predicted_prevalence": 0.16859122401847576,
+            "tag": "car_braking",
+            "true_prevalence": 0.17551963048498845
+          },
+          {
+            "absolute_error": 0.21914648212226068,
+            "covered_clips": 867,
+            "predicted_prevalence": 0.09457900807381776,
+            "tag": "car_stopped",
+            "true_prevalence": 0.3137254901960784
+          },
+          {
+            "absolute_error": 0.11670480549199086,
+            "covered_clips": 874,
+            "predicted_prevalence": 0.37757437070938216,
+            "tag": "cyclist_present",
+            "true_prevalence": 0.494279176201373
+          },
+          {
+            "absolute_error": 0.021739130434782608,
+            "covered_clips": 874,
+            "predicted_prevalence": 0.0011441647597254005,
+            "tag": "ego_lane_change",
+            "true_prevalence": 0.02288329519450801
+          },
+          {
+            "absolute_error": 0.09540229885057472,
+            "covered_clips": 870,
+            "predicted_prevalence": 0.7103448275862069,
+            "tag": "ego_moving",
+            "true_prevalence": 0.8057471264367816
+          },
+          {
+            "absolute_error": 0.05529953917050692,
+            "covered_clips": 868,
+            "predicted_prevalence": 0.2488479262672811,
+            "tag": "ego_stopped",
+            "true_prevalence": 0.30414746543778803
+          },
+          {
+            "absolute_error": 0.02998846597462515,
+            "covered_clips": 867,
+            "predicted_prevalence": 0.040369088811995385,
+            "tag": "ego_turn_left",
+            "true_prevalence": 0.07035755478662054
+          },
+          {
+            "absolute_error": 0.022883295194508012,
+            "covered_clips": 874,
+            "predicted_prevalence": 0.04462242562929062,
+            "tag": "ego_turn_right",
+            "true_prevalence": 0.06750572082379863
+          },
+          {
+            "absolute_error": 0.006857142857142853,
+            "covered_clips": 875,
+            "predicted_prevalence": 0.032,
+            "tag": "motorcycle_present",
+            "true_prevalence": 0.038857142857142854
+          },
+          {
+            "absolute_error": 0.1583815028901734,
+            "covered_clips": 865,
+            "predicted_prevalence": 0.07861271676300578,
+            "tag": "pedestrian_crossing",
+            "true_prevalence": 0.23699421965317918
+          },
+          {
+            "absolute_error": 0.13641618497109828,
+            "covered_clips": 865,
+            "predicted_prevalence": 0.005780346820809248,
+            "tag": "pedestrian_waiting_to_cross",
+            "true_prevalence": 0.14219653179190753
+          },
+          {
+            "absolute_error": 0.07322654462242564,
+            "covered_clips": 874,
+            "predicted_prevalence": 0.11327231121281464,
+            "tag": "traffic_light_green",
+            "true_prevalence": 0.18649885583524028
+          },
+          {
+            "absolute_error": 0.053714285714285714,
+            "covered_clips": 875,
+            "predicted_prevalence": 0.20457142857142857,
+            "tag": "traffic_light_red",
+            "true_prevalence": 0.2582857142857143
+          }
+        ]
+      },
+      "evidence": {
+        "evidence_hit_pairs": 2707,
+        "evidence_hit_rate": 0.9981563421828908,
+        "positive_event_pairs": 2712,
+        "tags": [
+          {
+            "evidence_hit_pairs": 152,
+            "evidence_hit_rate": 1.0,
+            "positive_event_pairs": 152,
+            "tag": "car_braking"
+          },
+          {
+            "evidence_hit_pairs": 272,
+            "evidence_hit_rate": 1.0,
+            "positive_event_pairs": 272,
+            "tag": "car_stopped"
+          },
+          {
+            "evidence_hit_pairs": 430,
+            "evidence_hit_rate": 0.9953703703703703,
+            "positive_event_pairs": 432,
+            "tag": "cyclist_present"
+          },
+          {
+            "evidence_hit_pairs": 20,
+            "evidence_hit_rate": 1.0,
+            "positive_event_pairs": 20,
+            "tag": "ego_lane_change"
+          },
+          {
+            "evidence_hit_pairs": 701,
+            "evidence_hit_rate": 1.0,
+            "positive_event_pairs": 701,
+            "tag": "ego_moving"
+          },
+          {
+            "evidence_hit_pairs": 264,
+            "evidence_hit_rate": 1.0,
+            "positive_event_pairs": 264,
+            "tag": "ego_stopped"
+          },
+          {
+            "evidence_hit_pairs": 61,
+            "evidence_hit_rate": 1.0,
+            "positive_event_pairs": 61,
+            "tag": "ego_turn_left"
+          },
+          {
+            "evidence_hit_pairs": 59,
+            "evidence_hit_rate": 1.0,
+            "positive_event_pairs": 59,
+            "tag": "ego_turn_right"
+          },
+          {
+            "evidence_hit_pairs": 34,
+            "evidence_hit_rate": 1.0,
+            "positive_event_pairs": 34,
+            "tag": "motorcycle_present"
+          },
+          {
+            "evidence_hit_pairs": 205,
+            "evidence_hit_rate": 1.0,
+            "positive_event_pairs": 205,
+            "tag": "pedestrian_crossing"
+          },
+          {
+            "evidence_hit_pairs": 123,
+            "evidence_hit_rate": 1.0,
+            "positive_event_pairs": 123,
+            "tag": "pedestrian_waiting_to_cross"
+          },
+          {
+            "evidence_hit_pairs": 161,
+            "evidence_hit_rate": 0.9877300613496932,
+            "positive_event_pairs": 163,
+            "tag": "traffic_light_green"
+          },
+          {
+            "evidence_hit_pairs": 225,
+            "evidence_hit_rate": 0.995575221238938,
+            "positive_event_pairs": 226,
+            "tag": "traffic_light_red"
+          }
+        ],
+        "true_positive_with_evidence_hit": 1683,
+        "true_positive_without_evidence_hit": 0
+      },
+      "ignored_prediction_clip_count": 0,
+      "known_pairs": 11314,
+      "macro": {
+        "overall_accuracy": 0.8944692685644018,
+        "precision": 0.7389515842323655,
+        "selective_mcc": 0.5073111840548837,
+        "strict_balanced_accuracy": 0.7248946233428465,
+        "strict_f1": 0.5444128029121074,
+        "strict_recall": 0.4697702930118292
+      },
+      "micro": {
+        "coverage": 1.0,
+        "overall_accuracy": 0.894643804136468,
+        "precision": 0.9117009750812568,
+        "selective_accuracy": 0.894643804136468,
+        "selective_balanced_accuracy": 0.8008130698150049,
+        "selective_f1": 0.7384817902588855,
+        "selective_mcc": 0.6950663858614353,
+        "selective_recall": 0.620575221238938,
+        "selective_specificity": 0.9810509183910718,
+        "strict_balanced_accuracy": 0.8008130698150049,
+        "strict_f1": 0.7384817902588855,
+        "strict_recall": 0.620575221238938,
+        "strict_specificity": 0.9810509183910718
+      },
+      "model": "Qwen/Qwen-Drive-1.0-4B",
+      "output_pair_coverage": 1.0,
+      "output_validity": {
+        "minimum_required": 0.99,
+        "passed": true
+      },
+      "paired_delta_ci95": {
+        "overall_accuracy": [
+          0.026222850079463234,
+          0.04166666666666663
+        ],
+        "selective_mcc": [
+          0.06747267437602333,
+          0.11045700561082583
+        ],
+        "strict_balanced_accuracy": [
+          -0.0006729264475744401,
+          0.01872144491689831
+        ],
+        "strict_f1": [
+          0.029062183341538095,
+          0.05959542028323439
+        ]
+      },
+      "profile": "road-uniform-24-reasoned",
+      "rare_scene_retrieval": {
+        "budgets": [
+          {
+            "enrichment_mean": 3.9706032719836397,
+            "precision_ci95": [
+              0.4444444444444444,
+              1.0
+            ],
+            "precision_mean": 0.7396666666666666,
+            "random_precision_expectation": 0.18628571428571428,
+            "random_recall_expectation": 0.010285714285714285,
+            "rare_label_recall_ci95": [
+              0.022988505747126436,
+              0.05747126436781609
+            ],
+            "rare_label_recall_mean": 0.04110344827586207,
+            "recall_ci95": [
+              0.024539877300613498,
+              0.05521472392638037
+            ],
+            "recall_mean": 0.04084049079754601,
+            "review_count": 9,
+            "review_fraction": 0.010285714285714285
+          },
+          {
+            "enrichment_mean": 3.655064835471278,
+            "precision_ci95": [
+              0.5681818181818182,
+              0.7954545454545454
+            ],
+            "precision_mean": 0.6808863636363637,
+            "random_precision_expectation": 0.18628571428571428,
+            "random_recall_expectation": 0.05028571428571429,
+            "rare_label_recall_ci95": [
+              0.15517241379310345,
+              0.22413793103448276
+            ],
+            "rare_label_recall_mean": 0.18939655172413794,
+            "recall_ci95": [
+              0.15337423312883436,
+              0.2147239263803681
+            ],
+            "recall_mean": 0.18379754601226994,
+            "review_count": 44,
+            "review_fraction": 0.05028571428571429
+          },
+          {
+            "enrichment_mean": 3.617244143892917,
+            "precision_ci95": [
+              0.6363636363636364,
+              0.7045454545454546
+            ],
+            "precision_mean": 0.6738409090909091,
+            "random_precision_expectation": 0.18628571428571428,
+            "random_recall_expectation": 0.10057142857142858,
+            "rare_label_recall_ci95": [
+              0.3563218390804598,
+              0.39655172413793105
+            ],
+            "rare_label_recall_mean": 0.3760402298850574,
+            "recall_ci95": [
+              0.34355828220858897,
+              0.3803680981595092
+            ],
+            "recall_mean": 0.36379141104294477,
+            "review_count": 88,
+            "review_fraction": 0.10057142857142858
+          },
+          {
+            "enrichment_mean": 2.363711656441718,
+            "precision_ci95": [
+              0.4114285714285714,
+              0.4742857142857143
+            ],
+            "precision_mean": 0.4403257142857143,
+            "random_precision_expectation": 0.18628571428571428,
+            "random_recall_expectation": 0.2,
+            "rare_label_recall_ci95": [
+              0.4540229885057471,
+              0.5172413793103449
+            ],
+            "rare_label_recall_mean": 0.4851954022988506,
+            "recall_ci95": [
+              0.44171779141104295,
+              0.50920245398773
+            ],
+            "recall_mean": 0.4727423312883436,
+            "review_count": 175,
+            "review_fraction": 0.2
+          }
+        ],
+        "definition": "A rare scene contains at least one GT-positive tag whose prevalence is at most 10%.",
+        "ranking_score": "count of predicted-positive rare tags",
+        "rare_scene_count": 163,
+        "rare_scene_prevalence": 0.18628571428571428,
+        "rare_tags": [
+          "ego_lane_change",
+          "ego_turn_left",
+          "ego_turn_right",
+          "motorcycle_present"
+        ],
+        "rarity_threshold": 0.1,
+        "tie_break_samples": 1000
+      },
+      "run_id": "road-qwen-drive-uniform-24-4fps-evaluation-v1",
+      "runtime": {
+        "clips_per_gpu_hour": 1524.6396867308606,
+        "decode_seconds_per_clip": 7.736998968,
+        "estimated_usd_per_1000_clips": 0.79494192008,
+        "evaluated_clip_instances": 875,
+        "failed_requests": 0,
+        "gpu_count": 1,
+        "gpu_memory_used_mib_max": 21312.0,
+        "gpu_utilization_percent_mean": 99.84520123839009,
+        "gpu_utilization_percent_p95": 100.0,
+        "instance_hourly_usd": 1.212,
+        "mm_cache_hit_rate": 0.16122840690978887,
+        "parseable_requests": 875,
+        "preemptions": 0,
+        "prefill_seconds_per_clip": 8.871220501714285,
+        "prefix_cache_token_hit_rate": 0.0,
+        "request_count": 875,
+        "request_e2e_seconds_p50": 14.074791,
+        "request_e2e_seconds_p95": 44.4205567,
+        "request_e2e_seconds_p99": 46.898733179999994,
+        "requested_clip_count": 875,
+        "successful_clip_count": 875,
+        "successful_requests": 875,
+        "ttft_seconds_p50": 9.999821,
+        "ttft_seconds_p95": 19.904447599999997,
+        "wall_seconds": 2066.061921,
+        "wall_seconds_per_clip": 2.361213624
+      },
+      "serving_profile": null,
+      "source_video_count": 15,
+      "tags": [
+        {
+          "abstained_negative": 0,
+          "abstained_positive": 0,
+          "coverage": 1.0,
+          "false_negative": 62,
+          "false_positive": 56,
+          "known_pairs": 866,
+          "overall_accuracy": 0.8637413394919169,
+          "precision": 0.6164383561643836,
+          "selective_accuracy": 0.8637413394919169,
+          "selective_balanced_accuracy": 0.7568369453044375,
+          "selective_f1": 0.6040268456375838,
+          "selective_mcc": 0.5219341522284212,
+          "selective_recall": 0.5921052631578947,
+          "selective_specificity": 0.9215686274509803,
+          "strict_balanced_accuracy": 0.7568369453044375,
+          "strict_f1": 0.6040268456375838,
+          "strict_recall": 0.5921052631578947,
+          "strict_specificity": 0.9215686274509803,
+          "tag": "car_braking",
+          "true_negative": 658,
+          "true_positive": 90
+        },
+        {
+          "abstained_negative": 0,
+          "abstained_positive": 0,
+          "coverage": 1.0,
+          "false_negative": 209,
+          "false_positive": 19,
+          "known_pairs": 867,
+          "overall_accuracy": 0.7370242214532872,
+          "precision": 0.7682926829268293,
+          "selective_accuracy": 0.7370242214532872,
+          "selective_balanced_accuracy": 0.5998424369747899,
+          "selective_f1": 0.35593220338983045,
+          "selective_mcc": 0.31662583549874024,
+          "selective_recall": 0.23161764705882354,
+          "selective_specificity": 0.9680672268907563,
+          "strict_balanced_accuracy": 0.5998424369747899,
+          "strict_f1": 0.35593220338983045,
+          "strict_recall": 0.23161764705882354,
+          "strict_specificity": 0.9680672268907563,
+          "tag": "car_stopped",
+          "true_negative": 576,
+          "true_positive": 63
+        },
+        {
+          "abstained_negative": 0,
+          "abstained_positive": 0,
+          "coverage": 1.0,
+          "false_negative": 112,
+          "false_positive": 10,
+          "known_pairs": 874,
+          "overall_accuracy": 0.8604118993135011,
+          "precision": 0.9696969696969697,
+          "selective_accuracy": 0.8604118993135011,
+          "selective_balanced_accuracy": 0.8590581531758001,
+          "selective_f1": 0.8398950131233596,
+          "selective_mcc": 0.7406130780117466,
+          "selective_recall": 0.7407407407407407,
+          "selective_specificity": 0.9773755656108597,
+          "strict_balanced_accuracy": 0.8590581531758001,
+          "strict_f1": 0.8398950131233596,
+          "strict_recall": 0.7407407407407407,
+          "strict_specificity": 0.9773755656108597,
+          "tag": "cyclist_present",
+          "true_negative": 432,
+          "true_positive": 320
+        },
+        {
+          "abstained_negative": 0,
+          "abstained_positive": 0,
+          "coverage": 1.0,
+          "false_negative": 20,
+          "false_positive": 1,
+          "known_pairs": 874,
+          "overall_accuracy": 0.9759725400457666,
+          "precision": 0.0,
+          "selective_accuracy": 0.9759725400457666,
+          "selective_balanced_accuracy": 0.4994145199063232,
+          "selective_f1": 0.0,
+          "selective_mcc": -0.005179393896071948,
+          "selective_recall": 0.0,
+          "selective_specificity": 0.9988290398126464,
+          "strict_balanced_accuracy": 0.4994145199063232,
+          "strict_f1": 0.0,
+          "strict_recall": 0.0,
+          "strict_specificity": 0.9988290398126464,
+          "tag": "ego_lane_change",
+          "true_negative": 853,
+          "true_positive": 0
+        },
+        {
+          "abstained_negative": 0,
+          "abstained_positive": 0,
+          "coverage": 1.0,
+          "false_negative": 88,
+          "false_positive": 5,
+          "known_pairs": 870,
+          "overall_accuracy": 0.8931034482758621,
+          "precision": 0.9919093851132686,
+          "selective_accuracy": 0.8931034482758621,
+          "selective_balanced_accuracy": 0.9224396255560526,
+          "selective_f1": 0.929492039423806,
+          "selective_mcc": 0.7368897201512005,
+          "selective_recall": 0.8744650499286734,
+          "selective_specificity": 0.9704142011834319,
+          "strict_balanced_accuracy": 0.9224396255560526,
+          "strict_f1": 0.929492039423806,
+          "strict_recall": 0.8744650499286734,
+          "strict_specificity": 0.9704142011834319,
+          "tag": "ego_moving",
+          "true_negative": 164,
+          "true_positive": 613
+        },
+        {
+          "abstained_negative": 0,
+          "abstained_positive": 0,
+          "coverage": 1.0,
+          "false_negative": 53,
+          "false_positive": 5,
+          "known_pairs": 868,
+          "overall_accuracy": 0.9331797235023042,
+          "precision": 0.9768518518518519,
+          "selective_accuracy": 0.9331797235023042,
+          "selective_balanced_accuracy": 0.8954821392735299,
+          "selective_f1": 0.8791666666666667,
+          "selective_mcc": 0.8416405077172184,
+          "selective_recall": 0.7992424242424242,
+          "selective_specificity": 0.9917218543046358,
+          "strict_balanced_accuracy": 0.8954821392735299,
+          "strict_f1": 0.8791666666666667,
+          "strict_recall": 0.7992424242424242,
+          "strict_specificity": 0.9917218543046358,
+          "tag": "ego_stopped",
+          "true_negative": 599,
+          "true_positive": 211
+        },
+        {
+          "abstained_negative": 0,
+          "abstained_positive": 0,
+          "coverage": 1.0,
+          "false_negative": 46,
+          "false_positive": 20,
+          "known_pairs": 867,
+          "overall_accuracy": 0.9238754325259516,
+          "precision": 0.42857142857142855,
+          "selective_accuracy": 0.9238754325259516,
+          "selective_balanced_accuracy": 0.6105438717813123,
+          "selective_f1": 0.3125,
+          "selective_mcc": 0.28727737274571463,
+          "selective_recall": 0.2459016393442623,
+          "selective_specificity": 0.9751861042183623,
+          "strict_balanced_accuracy": 0.6105438717813123,
+          "strict_f1": 0.3125,
+          "strict_recall": 0.2459016393442623,
+          "strict_specificity": 0.9751861042183623,
+          "tag": "ego_turn_left",
+          "true_negative": 786,
+          "true_positive": 15
+        },
+        {
+          "abstained_negative": 0,
+          "abstained_positive": 0,
+          "coverage": 1.0,
+          "false_negative": 41,
+          "false_positive": 21,
+          "known_pairs": 874,
+          "overall_accuracy": 0.9290617848970252,
+          "precision": 0.46153846153846156,
+          "selective_accuracy": 0.9290617848970252,
+          "selective_balanced_accuracy": 0.6396589372985338,
+          "selective_f1": 0.3673469387755103,
+          "selective_mcc": 0.3394126289789031,
+          "selective_recall": 0.3050847457627119,
+          "selective_specificity": 0.9742331288343559,
+          "strict_balanced_accuracy": 0.6396589372985338,
+          "strict_f1": 0.3673469387755103,
+          "strict_recall": 0.3050847457627119,
+          "strict_specificity": 0.9742331288343559,
+          "tag": "ego_turn_right",
+          "true_negative": 794,
+          "true_positive": 18
+        },
+        {
+          "abstained_negative": 0,
+          "abstained_positive": 0,
+          "coverage": 1.0,
+          "false_negative": 12,
+          "false_positive": 6,
+          "known_pairs": 875,
+          "overall_accuracy": 0.9794285714285714,
+          "precision": 0.7857142857142857,
+          "selective_accuracy": 0.9794285714285714,
+          "selective_balanced_accuracy": 0.8199622298384277,
+          "selective_f1": 0.7096774193548386,
+          "selective_mcc": 0.7026603472766741,
+          "selective_recall": 0.6470588235294118,
+          "selective_specificity": 0.9928656361474435,
+          "strict_balanced_accuracy": 0.8199622298384277,
+          "strict_f1": 0.7096774193548386,
+          "strict_recall": 0.6470588235294118,
+          "strict_specificity": 0.9928656361474435,
+          "tag": "motorcycle_present",
+          "true_negative": 835,
+          "true_positive": 22
+        },
+        {
+          "abstained_negative": 0,
+          "abstained_positive": 0,
+          "coverage": 1.0,
+          "false_negative": 145,
+          "false_positive": 8,
+          "known_pairs": 865,
+          "overall_accuracy": 0.823121387283237,
+          "precision": 0.8823529411764706,
+          "selective_accuracy": 0.823121387283237,
+          "selective_balanced_accuracy": 0.6402808573540281,
+          "selective_f1": 0.43956043956043955,
+          "selective_mcc": 0.4432958732918058,
+          "selective_recall": 0.2926829268292683,
+          "selective_specificity": 0.9878787878787879,
+          "strict_balanced_accuracy": 0.6402808573540281,
+          "strict_f1": 0.43956043956043955,
+          "strict_recall": 0.2926829268292683,
+          "strict_specificity": 0.9878787878787879,
+          "tag": "pedestrian_crossing",
+          "true_negative": 652,
+          "true_positive": 60
+        },
+        {
+          "abstained_negative": 0,
+          "abstained_positive": 0,
+          "coverage": 1.0,
+          "false_negative": 119,
+          "false_positive": 1,
+          "known_pairs": 865,
+          "overall_accuracy": 0.861271676300578,
+          "precision": 0.8,
+          "selective_accuracy": 0.861271676300578,
+          "selective_balanced_accuracy": 0.5155863081541867,
+          "selective_f1": 0.06250000000000001,
+          "selective_mcc": 0.14361292728406508,
+          "selective_recall": 0.032520325203252036,
+          "selective_specificity": 0.9986522911051213,
+          "strict_balanced_accuracy": 0.5155863081541867,
+          "strict_f1": 0.06250000000000001,
+          "strict_recall": 0.032520325203252036,
+          "strict_specificity": 0.9986522911051213,
+          "tag": "pedestrian_waiting_to_cross",
+          "true_negative": 741,
+          "true_positive": 4
+        },
+        {
+          "abstained_negative": 0,
+          "abstained_positive": 0,
+          "coverage": 1.0,
+          "false_negative": 67,
+          "false_positive": 3,
+          "known_pairs": 874,
+          "overall_accuracy": 0.919908466819222,
+          "precision": 0.9696969696969697,
+          "selective_accuracy": 0.919908466819222,
+          "selective_balanced_accuracy": 0.7923688229660117,
+          "selective_f1": 0.732824427480916,
+          "selective_mcc": 0.7186562535120418,
+          "selective_recall": 0.588957055214724,
+          "selective_specificity": 0.9957805907172996,
+          "strict_balanced_accuracy": 0.7923688229660117,
+          "strict_f1": 0.732824427480916,
+          "strict_recall": 0.588957055214724,
+          "strict_specificity": 0.9957805907172996,
+          "tag": "traffic_light_green",
+          "true_negative": 708,
+          "true_positive": 96
+        },
+        {
+          "abstained_negative": 0,
+          "abstained_positive": 0,
+          "coverage": 1.0,
+          "false_negative": 55,
+          "false_positive": 8,
+          "known_pairs": 875,
+          "overall_accuracy": 0.928,
+          "precision": 0.9553072625698324,
+          "selective_accuracy": 0.928,
+          "selective_balanced_accuracy": 0.8721552558735699,
+          "selective_f1": 0.8444444444444444,
+          "selective_mcc": 0.8076060899130283,
+          "selective_recall": 0.7566371681415929,
+          "selective_specificity": 0.987673343605547,
+          "strict_balanced_accuracy": 0.8721552558735699,
+          "strict_f1": 0.8444444444444444,
+          "strict_recall": 0.7566371681415929,
+          "strict_specificity": 0.987673343605547,
+          "tag": "traffic_light_red",
+          "true_negative": 641,
+          "true_positive": 171
+        }
+      ]
+    },
+    {
+      "benchmark_key": "road-super-evaluation-full-v1::road-adaptive-24-reasoned",
+      "bootstrap_ci95": {
+        "overall_accuracy": [
+          0.8768944429672959,
+          0.8990282685512367
+        ],
+        "selective_mcc": [
+          0.6455108200653347,
+          0.7091038907071406
+        ],
+        "strict_balanced_accuracy": [
+          0.8022436716586823,
+          0.831565809959552
+        ],
+        "strict_f1": [
+          0.7186790505675955,
+          0.7680497925311203
+        ]
+      },
+      "clip_count": 875,
+      "comparison_reference": "road-nano-uniform-24-evaluation-full-v1::road-uniform-24-reasoned",
+      "complete_output_clip_fraction": 1.0,
+      "concurrency": 4,
+      "disagreement_analysis": {
+        "agreement_pairs": 10289,
+        "candidate_error_rate_on_agreement": 0.08834677811254738,
+        "candidate_error_rate_on_disagreement": 0.35121951219512193,
+        "clips_with_disagreement": 582,
+        "disagreement_pairs": 1025,
+        "paired_clip_count": 875,
+        "reference_error_rate_on_agreement": 0.08834677811254738,
+        "reference_error_rate_on_disagreement": 0.6487804878048781
+      },
+      "distribution": {
+        "label_distribution_js_divergence": 0.02176113190069795,
+        "prevalence_mae": 0.06594218557021006,
+        "tags": [
+          {
+            "absolute_error": 0.06466512702078522,
+            "covered_clips": 866,
+            "predicted_prevalence": 0.24018475750577367,
+            "tag": "car_braking",
+            "true_prevalence": 0.17551963048498845
+          },
+          {
+            "absolute_error": 0.16493656286043828,
+            "covered_clips": 867,
+            "predicted_prevalence": 0.14878892733564014,
+            "tag": "car_stopped",
+            "true_prevalence": 0.3137254901960784
+          },
+          {
+            "absolute_error": 0.12700228832951949,
+            "covered_clips": 874,
+            "predicted_prevalence": 0.36727688787185353,
+            "tag": "cyclist_present",
+            "true_prevalence": 0.494279176201373
+          },
+          {
+            "absolute_error": 0.0,
+            "covered_clips": 874,
+            "predicted_prevalence": 0.02288329519450801,
+            "tag": "ego_lane_change",
+            "true_prevalence": 0.02288329519450801
+          },
+          {
+            "absolute_error": 0.09080459770114946,
+            "covered_clips": 870,
+            "predicted_prevalence": 0.7149425287356321,
+            "tag": "ego_moving",
+            "true_prevalence": 0.8057471264367816
+          },
+          {
+            "absolute_error": 0.026497695852534586,
+            "covered_clips": 868,
+            "predicted_prevalence": 0.27764976958525345,
+            "tag": "ego_stopped",
+            "true_prevalence": 0.30414746543778803
+          },
+          {
+            "absolute_error": 0.05997693194925027,
+            "covered_clips": 867,
+            "predicted_prevalence": 0.1303344867358708,
+            "tag": "ego_turn_left",
+            "true_prevalence": 0.07035755478662054
+          },
+          {
+            "absolute_error": 0.04118993135011441,
+            "covered_clips": 874,
+            "predicted_prevalence": 0.10869565217391304,
+            "tag": "ego_turn_right",
+            "true_prevalence": 0.06750572082379863
+          },
+          {
+            "absolute_error": 0.0022857142857142868,
+            "covered_clips": 875,
+            "predicted_prevalence": 0.04114285714285714,
+            "tag": "motorcycle_present",
+            "true_prevalence": 0.038857142857142854
+          },
+          {
+            "absolute_error": 0.15260115606936414,
+            "covered_clips": 865,
+            "predicted_prevalence": 0.08439306358381503,
+            "tag": "pedestrian_crossing",
+            "true_prevalence": 0.23699421965317918
+          },
+          {
+            "absolute_error": 0.031213872832369954,
+            "covered_clips": 865,
+            "predicted_prevalence": 0.11098265895953757,
+            "tag": "pedestrian_waiting_to_cross",
+            "true_prevalence": 0.14219653179190753
+          },
+          {
+            "absolute_error": 0.06521739130434784,
+            "covered_clips": 874,
+            "predicted_prevalence": 0.12128146453089245,
+            "tag": "traffic_light_green",
+            "true_prevalence": 0.18649885583524028
+          },
+          {
+            "absolute_error": 0.03085714285714286,
+            "covered_clips": 875,
+            "predicted_prevalence": 0.22742857142857142,
+            "tag": "traffic_light_red",
+            "true_prevalence": 0.2582857142857143
+          }
+        ]
+      },
+      "evidence": {
+        "evidence_hit_pairs": 2711,
+        "evidence_hit_rate": 0.9996312684365781,
+        "positive_event_pairs": 2712,
+        "tags": [
+          {
+            "evidence_hit_pairs": 152,
+            "evidence_hit_rate": 1.0,
+            "positive_event_pairs": 152,
+            "tag": "car_braking"
+          },
+          {
+            "evidence_hit_pairs": 272,
+            "evidence_hit_rate": 1.0,
+            "positive_event_pairs": 272,
+            "tag": "car_stopped"
+          },
+          {
+            "evidence_hit_pairs": 432,
+            "evidence_hit_rate": 1.0,
+            "positive_event_pairs": 432,
+            "tag": "cyclist_present"
+          },
+          {
+            "evidence_hit_pairs": 20,
+            "evidence_hit_rate": 1.0,
+            "positive_event_pairs": 20,
+            "tag": "ego_lane_change"
+          },
+          {
+            "evidence_hit_pairs": 701,
+            "evidence_hit_rate": 1.0,
+            "positive_event_pairs": 701,
+            "tag": "ego_moving"
+          },
+          {
+            "evidence_hit_pairs": 263,
+            "evidence_hit_rate": 0.9962121212121212,
+            "positive_event_pairs": 264,
+            "tag": "ego_stopped"
+          },
+          {
+            "evidence_hit_pairs": 61,
+            "evidence_hit_rate": 1.0,
+            "positive_event_pairs": 61,
+            "tag": "ego_turn_left"
+          },
+          {
+            "evidence_hit_pairs": 59,
+            "evidence_hit_rate": 1.0,
+            "positive_event_pairs": 59,
+            "tag": "ego_turn_right"
+          },
+          {
+            "evidence_hit_pairs": 34,
+            "evidence_hit_rate": 1.0,
+            "positive_event_pairs": 34,
+            "tag": "motorcycle_present"
+          },
+          {
+            "evidence_hit_pairs": 205,
+            "evidence_hit_rate": 1.0,
+            "positive_event_pairs": 205,
+            "tag": "pedestrian_crossing"
+          },
+          {
+            "evidence_hit_pairs": 123,
+            "evidence_hit_rate": 1.0,
+            "positive_event_pairs": 123,
+            "tag": "pedestrian_waiting_to_cross"
+          },
+          {
+            "evidence_hit_pairs": 163,
+            "evidence_hit_rate": 1.0,
+            "positive_event_pairs": 163,
+            "tag": "traffic_light_green"
+          },
+          {
+            "evidence_hit_pairs": 226,
+            "evidence_hit_rate": 1.0,
+            "positive_event_pairs": 226,
+            "tag": "traffic_light_red"
+          }
+        ],
+        "true_positive_with_evidence_hit": 1851,
+        "true_positive_without_evidence_hit": 0
+      },
+      "ignored_prediction_clip_count": 0,
+      "known_pairs": 11314,
+      "macro": {
+        "overall_accuracy": 0.8876457842714779,
+        "precision": 0.6928328121589356,
+        "selective_mcc": 0.5670646298980889,
+        "strict_balanced_accuracy": 0.7848747793596431,
+        "strict_f1": 0.6248280037808395,
+        "strict_recall": 0.6148558933965818
+      },
+      "micro": {
+        "coverage": 1.0,
+        "overall_accuracy": 0.8878380767191091,
+        "precision": 0.8193891102257637,
+        "selective_accuracy": 0.8878380767191091,
+        "selective_balanced_accuracy": 0.8175456469271398,
+        "selective_f1": 0.7447193723596862,
+        "selective_mcc": 0.6782321586501792,
+        "selective_recall": 0.6825221238938053,
+        "selective_specificity": 0.9525691699604744,
+        "strict_balanced_accuracy": 0.8175456469271398,
+        "strict_f1": 0.7447193723596862,
+        "strict_recall": 0.6825221238938053,
+        "strict_specificity": 0.9525691699604744
+      },
+      "model": "nvidia/Cosmos3-Super",
+      "output_pair_coverage": 1.0,
+      "output_validity": {
+        "minimum_required": 0.99,
+        "passed": true
+      },
+      "paired_delta_ci95": {
+        "overall_accuracy": [
+          0.019489247311827995,
+          0.0339081896192619
+        ],
+        "selective_mcc": [
+          0.051403948357047535,
+          0.0909336590933324
+        ],
+        "strict_balanced_accuracy": [
+          0.017226280147019768,
+          0.033477663629375876
+        ],
+        "strict_f1": [
+          0.03566220669396181,
+          0.06357073963988358
+        ]
+      },
+      "profile": "road-adaptive-24-reasoned",
+      "rare_scene_retrieval": {
+        "budgets": [
+          {
+            "enrichment_mean": 4.771642808452625,
+            "precision_ci95": [
+              0.8888888888888888,
+              0.8888888888888888
+            ],
+            "precision_mean": 0.8888888888888888,
+            "random_precision_expectation": 0.18628571428571428,
+            "random_recall_expectation": 0.010285714285714285,
+            "rare_label_recall_ci95": [
+              0.07471264367816093,
+              0.07471264367816093
+            ],
+            "rare_label_recall_mean": 0.07471264367816093,
+            "recall_ci95": [
+              0.049079754601226995,
+              0.049079754601226995
+            ],
+            "recall_mean": 0.049079754601226995,
+            "review_count": 9,
+            "review_fraction": 0.010285714285714285
+          },
+          {
+            "enrichment_mean": 3.1120329057445626,
+            "precision_ci95": [
+              0.45454545454545453,
+              0.7045454545454546
+            ],
+            "precision_mean": 0.5797272727272728,
+            "random_precision_expectation": 0.18628571428571428,
+            "random_recall_expectation": 0.05028571428571429,
+            "rare_label_recall_ci95": [
+              0.14942528735632185,
+              0.21264367816091953
+            ],
+            "rare_label_recall_mean": 0.18017241379310345,
+            "recall_ci95": [
+              0.12269938650306748,
+              0.1901840490797546
+            ],
+            "recall_mean": 0.15649079754601225,
+            "review_count": 44,
+            "review_fraction": 0.05028571428571429
+          },
+          {
+            "enrichment_mean": 2.8883418153931957,
+            "precision_ci95": [
+              0.4659090909090909,
+              0.6136363636363636
+            ],
+            "precision_mean": 0.5380568181818182,
+            "random_precision_expectation": 0.18628571428571428,
+            "random_recall_expectation": 0.10057142857142858,
+            "rare_label_recall_ci95": [
+              0.27011494252873564,
+              0.3563218390804598
+            ],
+            "rare_label_recall_mean": 0.3119022988505747,
+            "recall_ci95": [
+              0.25153374233128833,
+              0.3312883435582822
+            ],
+            "recall_mean": 0.29048466257668715,
+            "review_count": 88,
+            "review_fraction": 0.10057142857142858
+          },
+          {
+            "enrichment_mean": 2.782699386503068,
+            "precision_ci95": [
+              0.4742857142857143,
+              0.56
+            ],
+            "precision_mean": 0.5183771428571429,
+            "random_precision_expectation": 0.18628571428571428,
+            "random_recall_expectation": 0.2,
+            "rare_label_recall_ci95": [
+              0.5229885057471264,
+              0.6206896551724138
+            ],
+            "rare_label_recall_mean": 0.5733850574712644,
+            "recall_ci95": [
+              0.50920245398773,
+              0.6012269938650306
+            ],
+            "recall_mean": 0.5565398773006135,
+            "review_count": 175,
+            "review_fraction": 0.2
+          }
+        ],
+        "definition": "A rare scene contains at least one GT-positive tag whose prevalence is at most 10%.",
+        "ranking_score": "count of predicted-positive rare tags",
+        "rare_scene_count": 163,
+        "rare_scene_prevalence": 0.18628571428571428,
+        "rare_tags": [
+          "ego_lane_change",
+          "ego_turn_left",
+          "ego_turn_right",
+          "motorcycle_present"
+        ],
+        "rarity_threshold": 0.1,
+        "tie_break_samples": 1000
+      },
+      "run_id": "road-super-evaluation-full-v1",
+      "runtime": {
+        "clips_per_gpu_hour": 123.75662107823298,
+        "decode_seconds_per_clip": 10.544403964571428,
+        "estimated_usd_per_1000_clips": 13.484531053454223,
+        "evaluated_clip_instances": 875,
+        "failed_requests": 0,
+        "gpu_count": 4,
+        "gpu_memory_used_mib_max": 21459.0,
+        "gpu_utilization_percent_mean": 94.58276699029126,
+        "gpu_utilization_percent_p95": 100.0,
+        "instance_hourly_usd": 6.6752,
+        "mm_cache_hit_rate": 0.0,
+        "parseable_requests": 875,
+        "preemptions": 0,
+        "prefill_seconds_per_clip": 12.343641109714287,
+        "prefix_cache_token_hit_rate": 0.0061384752319832096,
+        "request_count": 875,
+        "request_e2e_seconds_p50": 29.114271,
+        "request_e2e_seconds_p95": 30.537129099999998,
+        "request_e2e_seconds_p99": 30.81373442,
+        "requested_clip_count": 875,
+        "successful_clip_count": 875,
+        "successful_requests": 875,
+        "ttft_seconds_p50": 17.557232,
+        "ttft_seconds_p95": 28.986508800000003,
+        "wall_seconds": 6363.295904,
+        "wall_seconds_per_clip": 7.272338176
+      },
+      "serving_profile": "super-weights-chunked-8192",
+      "source_video_count": 15,
+      "tags": [
+        {
+          "abstained_negative": 0,
+          "abstained_positive": 0,
+          "coverage": 1.0,
+          "false_negative": 51,
+          "false_positive": 107,
+          "known_pairs": 866,
+          "overall_accuracy": 0.8175519630484989,
+          "precision": 0.4855769230769231,
+          "selective_accuracy": 0.8175519630484989,
+          "selective_balanced_accuracy": 0.7573068701164676,
+          "selective_f1": 0.5611111111111111,
+          "selective_mcc": 0.4582554759613982,
+          "selective_recall": 0.6644736842105263,
+          "selective_specificity": 0.8501400560224089,
+          "strict_balanced_accuracy": 0.7573068701164676,
+          "strict_f1": 0.5611111111111111,
+          "strict_recall": 0.6644736842105263,
+          "strict_specificity": 0.8501400560224089,
+          "tag": "car_braking",
+          "true_negative": 607,
+          "true_positive": 101
+        },
+        {
+          "abstained_negative": 0,
+          "abstained_positive": 0,
+          "coverage": 1.0,
+          "false_negative": 182,
+          "false_positive": 39,
+          "known_pairs": 867,
+          "overall_accuracy": 0.7450980392156863,
+          "precision": 0.6976744186046512,
+          "selective_accuracy": 0.7450980392156863,
+          "selective_balanced_accuracy": 0.6326680672268907,
+          "selective_f1": 0.44887780548628425,
+          "selective_mcc": 0.3459523592493854,
+          "selective_recall": 0.33088235294117646,
+          "selective_specificity": 0.934453781512605,
+          "strict_balanced_accuracy": 0.6326680672268907,
+          "strict_f1": 0.44887780548628425,
+          "strict_recall": 0.33088235294117646,
+          "strict_specificity": 0.934453781512605,
+          "tag": "car_stopped",
+          "true_negative": 556,
+          "true_positive": 90
+        },
+        {
+          "abstained_negative": 0,
+          "abstained_positive": 0,
+          "coverage": 1.0,
+          "false_negative": 119,
+          "false_positive": 8,
+          "known_pairs": 874,
+          "overall_accuracy": 0.8546910755148741,
+          "precision": 0.9750778816199377,
+          "selective_accuracy": 0.8546910755148741,
+          "selective_balanced_accuracy": 0.8532187447628624,
+          "selective_f1": 0.8313413014608234,
+          "selective_mcc": 0.732675492175818,
+          "selective_recall": 0.7245370370370371,
+          "selective_specificity": 0.9819004524886877,
+          "strict_balanced_accuracy": 0.8532187447628624,
+          "strict_f1": 0.8313413014608234,
+          "strict_recall": 0.7245370370370371,
+          "strict_specificity": 0.9819004524886877,
+          "tag": "cyclist_present",
+          "true_negative": 434,
+          "true_positive": 313
+        },
+        {
+          "abstained_negative": 0,
+          "abstained_positive": 0,
+          "coverage": 1.0,
+          "false_negative": 17,
+          "false_positive": 17,
+          "known_pairs": 874,
+          "overall_accuracy": 0.9610983981693364,
+          "precision": 0.15,
+          "selective_accuracy": 0.9610983981693364,
+          "selective_balanced_accuracy": 0.5650468384074941,
+          "selective_f1": 0.15,
+          "selective_mcc": 0.1300936768149883,
+          "selective_recall": 0.15,
+          "selective_specificity": 0.9800936768149883,
+          "strict_balanced_accuracy": 0.5650468384074941,
+          "strict_f1": 0.15,
+          "strict_recall": 0.15,
+          "strict_specificity": 0.9800936768149883,
+          "tag": "ego_lane_change",
+          "true_negative": 837,
+          "true_positive": 3
+        },
+        {
+          "abstained_negative": 0,
+          "abstained_positive": 0,
+          "coverage": 1.0,
+          "false_negative": 83,
+          "false_positive": 4,
+          "known_pairs": 870,
+          "overall_accuracy": 0.9,
+          "precision": 0.9935691318327974,
+          "selective_accuracy": 0.9,
+          "selective_balanced_accuracy": 0.928964539246554,
+          "selective_f1": 0.9342403628117915,
+          "selective_mcc": 0.7518526183454846,
+          "selective_recall": 0.8815977175463623,
+          "selective_specificity": 0.9763313609467456,
+          "strict_balanced_accuracy": 0.928964539246554,
+          "strict_f1": 0.9342403628117915,
+          "strict_recall": 0.8815977175463623,
+          "strict_specificity": 0.9763313609467456,
+          "tag": "ego_moving",
+          "true_negative": 165,
+          "true_positive": 618
+        },
+        {
+          "abstained_negative": 0,
+          "abstained_positive": 0,
+          "coverage": 1.0,
+          "false_negative": 35,
+          "false_positive": 12,
+          "known_pairs": 868,
+          "overall_accuracy": 0.945852534562212,
+          "precision": 0.950207468879668,
+          "selective_accuracy": 0.945852534562212,
+          "selective_balanced_accuracy": 0.9237783463776841,
+          "selective_f1": 0.9069306930693068,
+          "selective_mcc": 0.870656604320868,
+          "selective_recall": 0.8674242424242424,
+          "selective_specificity": 0.9801324503311258,
+          "strict_balanced_accuracy": 0.9237783463776841,
+          "strict_f1": 0.9069306930693068,
+          "strict_recall": 0.8674242424242424,
+          "strict_specificity": 0.9801324503311258,
+          "tag": "ego_stopped",
+          "true_negative": 592,
+          "true_positive": 229
+        },
+        {
+          "abstained_negative": 0,
+          "abstained_positive": 0,
+          "coverage": 1.0,
+          "false_negative": 9,
+          "false_positive": 61,
+          "known_pairs": 867,
+          "overall_accuracy": 0.9192618223760092,
+          "precision": 0.46017699115044247,
+          "selective_accuracy": 0.9192618223760092,
+          "selective_balanced_accuracy": 0.8883883171297238,
+          "selective_f1": 0.5977011494252873,
+          "selective_mcc": 0.5900702201516178,
+          "selective_recall": 0.8524590163934426,
+          "selective_specificity": 0.924317617866005,
+          "strict_balanced_accuracy": 0.8883883171297238,
+          "strict_f1": 0.5977011494252873,
+          "strict_recall": 0.8524590163934426,
+          "strict_specificity": 0.924317617866005,
+          "tag": "ego_turn_left",
+          "true_negative": 745,
+          "true_positive": 52
+        },
+        {
+          "abstained_negative": 0,
+          "abstained_positive": 0,
+          "coverage": 1.0,
+          "false_negative": 16,
+          "false_positive": 52,
+          "known_pairs": 874,
+          "overall_accuracy": 0.9221967963386728,
+          "precision": 0.45263157894736844,
+          "selective_accuracy": 0.9221967963386728,
+          "selective_balanced_accuracy": 0.8325049391702194,
+          "selective_f1": 0.5584415584415585,
+          "selective_mcc": 0.5360463895697097,
+          "selective_recall": 0.7288135593220338,
+          "selective_specificity": 0.9361963190184049,
+          "strict_balanced_accuracy": 0.8325049391702194,
+          "strict_f1": 0.5584415584415585,
+          "strict_recall": 0.7288135593220338,
+          "strict_specificity": 0.9361963190184049,
+          "tag": "ego_turn_right",
+          "true_negative": 763,
+          "true_positive": 43
+        },
+        {
+          "abstained_negative": 0,
+          "abstained_positive": 0,
+          "coverage": 1.0,
+          "false_negative": 6,
+          "false_positive": 8,
+          "known_pairs": 875,
+          "overall_accuracy": 0.984,
+          "precision": 0.7777777777777778,
+          "selective_accuracy": 0.984,
+          "selective_balanced_accuracy": 0.9070084633139819,
+          "selective_f1": 0.7999999999999999,
+          "selective_mcc": 0.7920245826264408,
+          "selective_recall": 0.8235294117647058,
+          "selective_specificity": 0.990487514863258,
+          "strict_balanced_accuracy": 0.9070084633139819,
+          "strict_f1": 0.7999999999999999,
+          "strict_recall": 0.8235294117647058,
+          "strict_specificity": 0.990487514863258,
+          "tag": "motorcycle_present",
+          "true_negative": 833,
+          "true_positive": 28
+        },
+        {
+          "abstained_negative": 0,
+          "abstained_positive": 0,
+          "coverage": 1.0,
+          "false_negative": 138,
+          "false_positive": 6,
+          "known_pairs": 865,
+          "overall_accuracy": 0.8335260115606936,
+          "precision": 0.9178082191780822,
+          "selective_accuracy": 0.8335260115606936,
+          "selective_balanced_accuracy": 0.658869179600887,
+          "selective_f1": 0.48201438848920863,
+          "selective_mcc": 0.486065196904097,
+          "selective_recall": 0.32682926829268294,
+          "selective_specificity": 0.990909090909091,
+          "strict_balanced_accuracy": 0.658869179600887,
+          "strict_f1": 0.48201438848920863,
+          "strict_recall": 0.32682926829268294,
+          "strict_specificity": 0.990909090909091,
+          "tag": "pedestrian_crossing",
+          "true_negative": 654,
+          "true_positive": 67
+        },
+        {
+          "abstained_negative": 0,
+          "abstained_positive": 0,
+          "coverage": 1.0,
+          "false_negative": 92,
+          "false_positive": 65,
+          "known_pairs": 865,
+          "overall_accuracy": 0.8184971098265896,
+          "precision": 0.3229166666666667,
+          "selective_accuracy": 0.8184971098265896,
+          "selective_balanced_accuracy": 0.5822157210790436,
+          "selective_f1": 0.2831050228310502,
+          "selective_mcc": 0.18282710724659873,
+          "selective_recall": 0.25203252032520324,
+          "selective_specificity": 0.9123989218328841,
+          "strict_balanced_accuracy": 0.5822157210790436,
+          "strict_f1": 0.2831050228310502,
+          "strict_recall": 0.25203252032520324,
+          "strict_specificity": 0.9123989218328841,
+          "tag": "pedestrian_waiting_to_cross",
+          "true_negative": 677,
+          "true_positive": 31
+        },
+        {
+          "abstained_negative": 0,
+          "abstained_positive": 0,
+          "coverage": 1.0,
+          "false_negative": 64,
+          "false_positive": 7,
+          "known_pairs": 874,
+          "overall_accuracy": 0.9187643020594966,
+          "precision": 0.9339622641509434,
+          "selective_accuracy": 0.9187643020594966,
+          "selective_balanced_accuracy": 0.7987583374319416,
+          "selective_f1": 0.7360594795539033,
+          "selective_mcc": 0.7129270441532979,
+          "selective_recall": 0.6073619631901841,
+          "selective_specificity": 0.9901547116736991,
+          "strict_balanced_accuracy": 0.7987583374319416,
+          "strict_f1": 0.7360594795539033,
+          "strict_recall": 0.6073619631901841,
+          "strict_specificity": 0.9901547116736991,
+          "tag": "traffic_light_green",
+          "true_negative": 704,
+          "true_positive": 99
+        },
+        {
+          "abstained_negative": 0,
+          "abstained_positive": 0,
+          "coverage": 1.0,
+          "false_negative": 49,
+          "false_positive": 22,
+          "known_pairs": 875,
+          "overall_accuracy": 0.9188571428571428,
+          "precision": 0.8894472361809045,
+          "selective_accuracy": 0.9188571428571428,
+          "selective_balanced_accuracy": 0.8746437678116095,
+          "selective_f1": 0.8329411764705883,
+          "selective_mcc": 0.7823934211554517,
+          "selective_recall": 0.7831858407079646,
+          "selective_specificity": 0.9661016949152542,
+          "strict_balanced_accuracy": 0.8746437678116095,
+          "strict_f1": 0.8329411764705883,
+          "strict_recall": 0.7831858407079646,
+          "strict_specificity": 0.9661016949152542,
+          "tag": "traffic_light_red",
+          "true_negative": 627,
+          "true_positive": 177
+        }
+      ]
+    }
+  ],
+  "reference_benchmark_key": "road-nano-uniform-24-evaluation-full-v1::road-uniform-24-reasoned",
+  "reference_profile": null,
+  "schema_version": 1,
+  "source_video_count": 15,
+  "split": "evaluation",
+  "tags": [
+    "car_braking",
+    "car_stopped",
+    "cyclist_present",
+    "ego_lane_change",
+    "ego_moving",
+    "ego_stopped",
+    "ego_turn_left",
+    "ego_turn_right",
+    "motorcycle_present",
+    "pedestrian_crossing",
+    "pedestrian_waiting_to_cross",
+    "traffic_light_green",
+    "traffic_light_red"
+  ]
+}
