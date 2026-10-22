@@ -1,0 +1,28 @@
+{
+  "schema_version": 1,
+  "experiment_id": "road-open-complete-gt-nano",
+  "seed": 20260808,
+  "model": "nvidia/Cosmos3-Nano",
+  "temperature": 0,
+  "top_p": 1,
+  "max_tokens": 128,
+  "repair_max_tokens": 64,
+  "prompt_variant": "road-evidence",
+  "repair_prompt_variant": "road-repair",
+  "measured_repetitions": 1,
+  "profiles": [
+    "road-uniform-1fps-ts",
+    "road-uniform-2fps-ts",
+    "road-uniform-4fps-ts",
+    "road-adaptive-24-ts",
+    "road-adaptive-24-implicit",
+    "road-uniform-8fps-ts"
+  ],
+  "instance": {
+    "type": "g6e.2xlarge",
+    "gpu_count": 1,
+    "hourly_usd": 2.24208,
+    "price_region": "us-west-2",
+    "price_observed_at": "2026-08-02"
+  }
+}

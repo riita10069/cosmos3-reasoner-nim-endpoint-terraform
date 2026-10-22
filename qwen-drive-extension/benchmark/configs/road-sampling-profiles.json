@@ -1,0 +1,127 @@
+{
+  "schema_version": 1,
+  "profiles": {
+    "road-uniform-1fps-ts": {
+      "kind": "uniform",
+      "fps": 1,
+      "max_frames": 8,
+      "display_fps": 4,
+      "timestamp_mode": "text-manifest",
+      "prompt_variant": "road-evidence",
+      "media_first_prompt": true
+    },
+    "road-uniform-2fps-ts": {
+      "kind": "uniform",
+      "fps": 2,
+      "max_frames": 16,
+      "display_fps": 4,
+      "timestamp_mode": "text-manifest",
+      "prompt_variant": "road-evidence",
+      "media_first_prompt": true
+    },
+    "road-uniform-4fps-ts": {
+      "kind": "uniform",
+      "fps": 4,
+      "max_frames": 32,
+      "display_fps": 4,
+      "timestamp_mode": "text-manifest",
+      "prompt_variant": "road-evidence",
+      "media_first_prompt": true
+    },
+    "road-adaptive-24-ts": {
+      "kind": "adaptive",
+      "analysis_fps": 4,
+      "nms_seconds": 2,
+      "max_events": 2,
+      "base_fps": 1,
+      "shoulder_seconds": 2,
+      "shoulder_fps": 2,
+      "event_seconds": 1,
+      "event_fps": 4,
+      "max_frames": 24,
+      "display_fps": 4,
+      "timestamp_mode": "text-manifest",
+      "prompt_variant": "road-evidence",
+      "media_first_prompt": true
+    },
+    "road-adaptive-24-direct": {
+      "kind": "adaptive",
+      "analysis_fps": 4,
+      "nms_seconds": 2,
+      "max_events": 2,
+      "base_fps": 1,
+      "shoulder_seconds": 2,
+      "shoulder_fps": 2,
+      "event_seconds": 1,
+      "event_fps": 4,
+      "max_frames": 24,
+      "display_fps": 4,
+      "timestamp_mode": "text-manifest",
+      "prompt_variant": "road-direct",
+      "media_first_prompt": true
+    },
+    "road-adaptive-24-reasoned": {
+      "kind": "adaptive",
+      "analysis_fps": 4,
+      "nms_seconds": 2,
+      "max_events": 2,
+      "base_fps": 1,
+      "shoulder_seconds": 2,
+      "shoulder_fps": 2,
+      "event_seconds": 1,
+      "event_fps": 4,
+      "max_frames": 24,
+      "display_fps": 4,
+      "timestamp_mode": "text-manifest",
+      "prompt_variant": "road-reasoned",
+      "max_tokens": 64,
+      "media_first_prompt": true
+    },
+    "road-adaptive-24-grouped": {
+      "kind": "adaptive",
+      "analysis_fps": 4,
+      "nms_seconds": 2,
+      "max_events": 2,
+      "base_fps": 1,
+      "shoulder_seconds": 2,
+      "shoulder_fps": 2,
+      "event_seconds": 1,
+      "event_fps": 4,
+      "max_frames": 24,
+      "display_fps": 4,
+      "timestamp_mode": "text-manifest",
+      "prompt_variant": "road-evidence",
+      "media_first_prompt": true,
+      "tag_groups": [
+        "ego_actions",
+        "road_user_actions",
+        "objects_signals"
+      ]
+    },
+    "road-adaptive-24-implicit": {
+      "kind": "adaptive",
+      "analysis_fps": 4,
+      "nms_seconds": 2,
+      "max_events": 2,
+      "base_fps": 1,
+      "shoulder_seconds": 2,
+      "shoulder_fps": 2,
+      "event_seconds": 1,
+      "event_fps": 4,
+      "max_frames": 24,
+      "display_fps": 4,
+      "timestamp_mode": "implicit-control",
+      "prompt_variant": "road-evidence",
+      "media_first_prompt": true
+    },
+    "road-uniform-8fps-ts": {
+      "kind": "uniform",
+      "fps": 8,
+      "max_frames": 64,
+      "display_fps": 8,
+      "timestamp_mode": "text-manifest",
+      "prompt_variant": "road-evidence",
+      "media_first_prompt": true
+    }
+  }
+}

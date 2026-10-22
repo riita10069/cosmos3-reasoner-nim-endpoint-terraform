@@ -1,0 +1,24 @@
+{
+  "schema_version": 1,
+  "experiment_id": "road-open-complete-gt-super",
+  "seed": 20260808,
+  "model": "nvidia/Cosmos3-Super",
+  "temperature": 0,
+  "top_p": 1,
+  "max_tokens": 128,
+  "repair_max_tokens": 64,
+  "prompt_variant": "road-evidence",
+  "repair_prompt_variant": "road-repair",
+  "measured_repetitions": 1,
+  "profiles": [
+    "road-adaptive-24-ts"
+  ],
+  "instance": {
+    "type": "g6.24xlarge",
+    "gpu_count": 4,
+    "hourly_usd": 6.6752,
+    "price_region": "us-west-2",
+    "price_observed_at": "2026-08-03",
+    "capacity_reservation_id": "redacted"
+  }
+}
